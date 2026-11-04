@@ -109,3 +109,8 @@ contributors, ODbL.
 ## Independent IJCOPI distribution
 
 This repository has an independent history. It preserves the human credits and licences of the source project. The earlier Data_Warehouse_ZMVM publication and the conference URLs remain available. The manuscript and its generator remain in the original working project and are not published here.
+
+For continuing work on another computer, read `AGENTS.md`, `contexto/MEMORIA_COMPARTIDA.md`
+and `contexto/NUEVA_PC.md` in the Git repository. These continuity files travel with a
+Git clone and are excluded from the Pages archive. The manuscript requires a separate
+clone of the original repository on branch `ijcopi-zmvm`.

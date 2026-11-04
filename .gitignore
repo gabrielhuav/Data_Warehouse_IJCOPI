@@ -8,5 +8,13 @@ __pycache__/
 tmp/
 warehouse_ampliado/datos_crudos/
 
+# Solo la continuidad portable se comparte; las evidencias y borradores son locales.
+/contexto/*
+!/contexto/MEMORIA_COMPARTIDA.md
+!/contexto/INICIAR_CONVERSACION.md
+!/contexto/NUEVA_PC.md
+/CLAUDE.md
+/.claude/
+
 
 
