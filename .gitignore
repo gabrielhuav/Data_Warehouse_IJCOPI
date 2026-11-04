@@ -1,0 +1,12 @@
+.venv/
+kg.nt
+consumo.nuevo.json
+__pycache__/
+*.aux
+*.log
+*.out
+tmp/
+warehouse_ampliado/datos_crudos/
+
+
+
