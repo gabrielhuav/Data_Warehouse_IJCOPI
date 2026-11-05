@@ -7,14 +7,16 @@
     <title>Grafo metropolitano del agua</title>
     <meta name="description" content="Grafo de conocimiento del agua en la Zona Metropolitana de Ciudad de México: municipios, colonias, acuíferos, pozos y presas, consultado con SPARQL en el navegador.">
     <link rel="stylesheet" href="assets/vendor/leaflet-1.9.4.css">
-    <link rel="stylesheet" href="assets/estilo.css">
+    <link rel="stylesheet" href="assets/estilo.css?v=20261105-ui2">
     <link rel="stylesheet" href="assets/paginas.css">
-    <link rel="stylesheet" href="ijcopi/zm.css">
+    <link rel="stylesheet" href="ijcopi/zm.css?v=20261105-ui2">
     <script src="assets/i18n.js"></script>
 </head>
 <body>
+<a class="zm-salto" href="ijcopi/grafo-zm.html#contenido">Saltar al contenido / Skip to content</a>
 <header data-barra></header>
-<div class="app-container" role="main">
+<main id="contenido" class="app-container" tabindex="-1">
+    <noscript><p class="status show error">Activa JavaScript para explorar el grafo. / Enable JavaScript to explore the graph.</p></noscript>
     <div class="zm-cabecera">
         <div>
             <h1 data-t="titulo"></h1>
@@ -27,7 +29,7 @@
         </nav>
     </div>
 
-    <div id="status" class="status"></div>
+    <div id="status" class="status" role="status" aria-live="polite" aria-atomic="true"></div>
 
     <div class="zm-kpis">
         <div class="panel zm-kpi"><span data-t="k.tripletas"></span><b id="kTripletas">—</b></div>
@@ -38,10 +40,12 @@
     </div>
 
     <div class="zm-g2">
-        <div class="map-wrap"><div id="map"></div></div>
+        <div class="map-wrap"><div id="map" role="region" aria-label="Mapa del grafo / Graph map"></div></div>
         <aside class="panel zm-lateral">
             <h2 class="zm-sub" data-t="r.titulo"></h2>
             <p class="zm-nota" data-t="r.ayuda"></p>
+            <label for="municipio" data-t="r.municipio"></label>
+            <select id="municipio" class="zm-selector" disabled></select>
             <div id="leyendaGrafo"></div>
             <div id="recorrido"></div>
         </aside>
@@ -57,7 +61,7 @@
                 <textarea id="consulta" spellcheck="false"></textarea>
                 <div class="zm-acciones">
                     <button class="btn btn-primary" id="ejecutar" type="button" disabled data-t="s.ejecutar"></button>
-                    <span id="metrica" class="zm-meta"></span>
+                    <span id="metrica" class="zm-meta" role="status" aria-live="polite"></span>
                 </div>
             </div>
         </div>
@@ -69,11 +73,11 @@
         <p data-t="o.texto"></p>
         <p id="origenHash" class="zm-meta"></p>
     </section>
-</div>
+</main>
 <footer data-pie></footer>
 <script src="assets/vendor/leaflet-1.9.4.js"></script>
 <script src="assets/mapa-teselas.js"></script>
-<script src="assets/nav.js"></script>
+<script src="assets/nav.js?v=20261105-ui2"></script>
 <script src="assets/vendor/n3-1.17.2.min.js"></script>
 <script src="assets/vendor/comunica-browser-v3.js"></script>
 <script src="ijcopi/grafo-zm.js"></script>

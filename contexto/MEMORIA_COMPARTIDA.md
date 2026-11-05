@@ -1,6 +1,6 @@
 # Memoria compartida: IJCOPI de agua
 
-Actualizada: 4 de noviembre de 2026. Hablar con Gabriel en español y brevemente.
+Actualizada: 5 de noviembre de 2026. Hablar con Gabriel en español y brevemente.
 Leer AGENTS.md completo. Esta memoria es el relevo vigente; sus resultados históricos
 no equivalen a verificaciones nuevas. Las rutas dependen de la PC: usar carpetas hermanas.
 
@@ -48,6 +48,49 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Estado actual
 
+- 5 nov, publicación de la revisión: Gabriel autorizó expresamente commit y push de los
+  cambios pendientes con su identidad Git y sin atribuciones de IA. Se prepara un único
+  commit en Data_Warehouse_IJCOPI con Word v3, web y documentación. No se hace commit
+  ni push del original en esta acción; su fuente, conversor, Word y PDF siguen locales.
+- Verificador Springer original repetido para este push: 25 enlaces, fallos: 1, únicamente
+  HTTP 403 de ADIP. AZCATL respondió HTTP 200. El push requiere una excepción expresa nueva
+  para ese único fallo; las autorizaciones anteriores ya se consumieron.
+- Segunda mejora UI/UX local del 5 nov: mapa más amplio con controles en barra superior,
+  navegación principal Mapa/Grafo/Consultas y enlaces CDMX en menú secundario; selector de
+  municipio que encuadra y abre ficha, compartir vista con centro/zoom/indicador/capas/idioma,
+  vista completa y panel de capas desplegable. La ficha se conserva al cambiar idioma.
+  Leyenda y advertencias de comparabilidad permanecen visibles; SQL y conteos van en detalles.
+- Catálogo de consultas rediseñado con títulos humanos ES/EN, búsqueda sin distinguir acentos,
+  filtros por tema, contador y estado vacío; tarjetas de resultados, descarga JSON y detalles
+  técnicos separados. Nuevo archivo necesario incluido en la revisión: ijcopi/consultas-ui.css.
+- QA UI/UX: Edge en escritorio y 390 px; sin desbordamiento de página, mapa visible en la
+  primera pantalla móvil, selector y capas operativos, selección preservada en EN, enlace
+  compartido incluye c/ind/capas/lang. Buscar «sequia» devuelve la consulta correspondiente;
+  vacío/limpiar recupera el catálogo; menú original conserva enlaces y cierra con Escape.
+  La vista ?vista=figura conserva mapa a pantalla completa y controles ocultos. Sintaxis JS
+  y diff sin errores. Datos, consultas SQL y TTL intactos. Esta revisión no modifica el Word.
+- Revisión local del 5 nov autorizada por Gabriel: Word v3 mejorado desde el .tex y el
+  conversor del original (ijcopi-zmvm), regenerado con plantilla y sincronizado en ambos
+  repositorios. También se sincronizó su PDF en el original. v0, autoría y título intactos.
+  Se corrigieron inferencias de facturación/demanda, cotas y alcance del detector, omisión RDF,
+  promesas de disponibilidad, ortografía británica y enlaces metropolitanos al repo nuevo.
+  La declaración de IA conserva su alcance sin afirmar revisión y aprobación humana ya terminadas.
+- Verificación nueva de la revisión: Word mide 15 páginas y 9,318 palabras; v0 mide 5,615
+  palabras (+65.95 %). Resumen 144 palabras y 6 palabras clave. Inspeccionadas las 15 páginas
+  exportadas por Word y rasterizadas con Poppler. Tablas y figuras idénticas a la v3 anterior;
+  ningún token nuevo sin amarillo respecto de esa v3. No se recalcularon los resultados
+  científicos ni se reconstruyó la base: esta tarea no agrega cifras científicas nuevas.
+- Web local mejorada: accesibilidad, selector de municipio del grafo por teclado, estados de carga,
+  errores y reintento, control de respuestas tardías, SHA-256 completo y descarga JSON en consultas.
+  QA real en Edge: mapa, español/inglés, tamaño móvil sin desbordamiento horizontal,
+  selección del grafo, SELECT SPARQL y carga de las 15 consultas. Sintaxis JS y diff comprobados;
+  el subagente comprobó además error HTTP y recuperación en el cargador. Datos y TTL sin cambios.
+- No hubo commit, push ni publicación en esta revisión. Los dos repositorios contienen cambios
+  locales: antes de trabajar o clonar en otra PC, recordar que estos cambios todavía no viajan
+  con Git. Respaldos, PDF de QA y evidencias en tmp/revision_agua/ (local e ignorado).
+- Publicación anterior de v0 y v3: commit 5b91fbd1ec8971b04d3d0a507fad6b8152b09851,
+  autor y committer Gabriel Hurtado, sin atribuciones de IA; push completado y Actions
+  41974331681 terminó correctamente. Esa autorización ya se consumió.
 - Gabriel autorizó expresamente un commit y push con su identidad, sin atribuciones de IA,
   para incorporar solo dw_agua_IJCOPI_v0_base.docx y dw_agua_IJCOPI_v3_grafo.docx,
   manteniendo sus nombres y descartando intermedios. Las dos copias son idénticas por
@@ -63,8 +106,8 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
   autor y committer Gabriel Hurtado, sin atribuciones de asistentes. No se importó historia.
   Actions 41890059542 intento 2 finalizó correctamente. En aquella revisión, 184 archivos
   web coincidieron por SHA-256; las 15 consultas se verificaron sin fallos. Son antecedentes.
-- El paper aún cita Data_Warehouse_ZMVM. No se actualizó ni midió durante la distribución.
-  El relevo histórico reportaba 15 páginas sin margen; requiere verificación nueva al editar.
+- Durante la distribución inicial el paper citaba Data_Warehouse_ZMVM. La revisión local
+  del 5 nov actualiza los enlaces metropolitanos al repo nuevo y vuelve a medir 15 páginas.
   El primer autor de IJCOPI fue confirmado por Gabriel; no cambiar el bloque de autores.
 - El enlace oficial https://datos.cdmx.gob.mx/dataset/consumo-agua continúa en 403.
   Verificación previa a este cambio de contexto: 25 enlaces, fallos: 1, solo ese 403.
@@ -88,17 +131,34 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Siguiente paso
 
-1. Completar y comprobar en el remoto el único commit/push autorizado de v0 y v3 y su
-   documentación. No incluir intermedios, plantilla ni PDF. Verificar identidad humana
-   y ausencia de atribuciones de asistentes. Las excepciones ADIP/AZCATL son solo para ese push.
+0. Confirmar el commit de esta revisión en Data_Warehouse_IJCOPI y obtener excepción nueva
+   para el único ADIP 403 antes del push. Mantener identidad humana y ausencia de firmas,
+   trailers y coautorías de asistentes. Verificar despliegue de Pages después del push.
+1. Gabriel revisa la v3 regenerada y los cambios web locales. Revisión humana de coautores,
+   referencias editoriales de ICOKG y aprobación final de envío siguen pendientes.
+   No crear commit ni hacer push sin autorización nueva para cada acción; ejecutar otra vez
+   el verificador original y pedir excepción específica para los fallos que existan entonces.
+   Incluir el nuevo CSS del catálogo cuando se autorice el commit; conservar las versiones
+   de assets en los enlaces para evitar que una caché mantenga el diseño anterior.
 2. En otra PC, seguir contexto/NUEVA_PC.md y agregar el clon como proyecto local en Codex.
-3. En tarea posterior autorizada, actualizar las URL/cita del paper al nuevo repositorio,
-   regenerar y verificar formato, fuentes y cifras. Revisión humana final y envío pendientes.
+3. Para publicar la revisión, considerar por separado los cambios del original ijcopi-zmvm
+   (fuente, conversor, Word y PDF) y los de esta distribución (Word y web); no mezclar ramas
+   ni tocar los sitios históricos. No incluir intermedios ni plantilla en este repo.
 4. Toda autorización de commit/push se consume al ejecutar esa acción: pedir una nueva
    para cambios posteriores. No enviar correos ni publicar el paper automáticamente.
 
 ## Bitácora
 
+- 2026-11-05: Gabriel autorizó commit y push de la revisión pendiente con las reglas locales.
+  Preparado el commit de Word/web/documentación; verificador original: 25 enlaces, un fallo
+  ADIP 403, AZCATL 200. Push condicionado a excepción expresa nueva. Sin commit del original.
+- 2026-11-05: por petición de mejoras visibles de UI/UX, rediseñados explorador y catálogo,
+  simplificada navegación, añadida selección de municipio y compartir vista; comprobados
+  escritorio, móvil, ES/EN, filtros y vista de figura. Cambios solo locales; sin commit/push.
+- 2026-11-05: revisión autorizada del Word y sitio. Fuente y conversor corregidos en el original,
+  v3 regenerada y sincronizada; 15 páginas, +65.95 % y amarillo comprobados; tablas, figuras,
+  título y autores preservados. Sitio probado en Edge escritorio/móvil y en ES/EN; mejorados
+  acceso por teclado, errores y trazabilidad. Sin cambios de datos ni commit/push/publicación.
 - 2026-11-04: preparados cinco Word ya copiados localmente, integridad y SHA-256 exactos;
   guía de versión vigente, documentación de clon y exclusión de Pages. Sin edición de los
   documentos ni nuevos commit/push. Verificador original: 25 enlaces, un fallo ADIP 403.

@@ -17,6 +17,7 @@
   let tema = leer(K_TEMA, 'escom');
   if (!TEMAS.some(t => t.id === tema)) tema = 'escom';
   let modo = leer(K_MODO, 'claro');           // auto | claro | oscuro
+  if (!['auto', 'claro', 'oscuro'].includes(modo)) modo = 'claro';
 
   const svg = d => '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" ' +
     'stroke="currentColor" stroke-width="2" stroke-linecap="round" ' +
@@ -64,8 +65,12 @@
   const actual = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 
   function construirBarra() {
-    const enlaces = paginas.map(([h, k]) =>
-      `<a href="${h}"${h.split('/').pop().toLowerCase() === actual ? ' aria-current="page"' : ''}>${T(k)}</a>`).join('');
+    const en = I.idioma === 'en';
+    const enlace = ([h, k], corto) =>
+      `<a href="${h}"${h.split('/').pop().toLowerCase() === actual ? ' aria-current="page"' : ''}>${corto || T(k)}</a>`;
+    const enlaces = paginas.slice(0, 3).map((p, i) => enlace(p, (en ? ['Map', 'Graph', 'Queries'] : ['Mapa', 'Grafo', 'Consultas'])[i])).join('');
+    const historicos = paginas.slice(3).map(p => enlace(p)).join('');
+    const historicoActivo = paginas.slice(3).some(([h]) => h === actual);
 
     /* Un segmentado igual que el del tema: dos botones excluyentes con
        aria-pressed. El nombre accesible es la propia etiqueta visible
@@ -92,7 +97,12 @@
             <small>${T('barra.lema')}</small>
           </span>
         </div>
-        <nav class="nav">${enlaces}</nav>
+        <nav class="nav" aria-label="${en ? 'Main navigation' : 'Navegación principal'}">${enlaces}
+          <details class="nav-original${historicoActivo ? ' nav-original-activa' : ''}">
+            <summary>${en ? 'Original CDMX' : 'CDMX original'}</summary>
+            <div class="nav-original-enlaces">${historicos}</div>
+          </details>
+        </nav>
         <div class="temas">
           <div class="segmentado" role="group" aria-label="${T('barra.tema')}">
             ${TEMAS.map(t => `<button class="tema-btn" type="button" data-tema="${t.id}"
@@ -130,16 +140,30 @@
 
   construirBarra();
   construirPie();
+  document.querySelectorAll('.zm-salto').forEach(a => {
+    a.href = location.pathname + location.search + '#contenido';
+  });
 
   pintar();   // otra vez: ahora la barra ya existe y el boton puede recibir su icono
+
+  document.addEventListener('click', e => {
+    document.querySelectorAll('.nav-original[open]').forEach(menu => { if (!menu.contains(e.target)) menu.open = false; });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.nav-original[open]').forEach(menu => { menu.open = false; menu.querySelector('summary').focus(); });
+  });
 
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { if (modo === 'auto') pintar(); });
 
   /* La barra y el pie se generan aquí, así que se rehacen enteros al
      cambiar de idioma; el tema y el modo se conservan tal como estaban. */
   document.addEventListener('idiomacambiado', () => {
+    const foco = document.activeElement;
+    const idiomaFoco = foco && foco.dataset.idioma;
     construirBarra();
     construirPie();
     pintar(false);
+    if (idiomaFoco) document.querySelector(`.idioma-btn[data-idioma="${idiomaFoco}"]`)?.focus();
   });
 })();

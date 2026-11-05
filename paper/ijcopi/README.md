@@ -6,10 +6,18 @@ Versión vigente para revisión: [dw_agua_IJCOPI_v3_grafo.docx](dw_agua_IJCOPI_v
 - [dw_agua_IJCOPI_v3_grafo.docx](dw_agua_IJCOPI_v3_grafo.docx): última versión registrada para revisión.
 
 Solo se incluyen v0 y v3 por decisión de Gabriel; los intermedios y la plantilla no se publican aquí.
-Los dos Word se conservaron byte por byte desde Data_Warehouse_static/paper/ijcopi,
-rama ijcopi-zmvm. No se editaron, regeneraron ni verificaron nuevamente sus cifras o formato
-al copiarlos. La v3 todavía conserva enlaces de Data_Warehouse_ZMVM; su actualización y
-revisión final siguen pendientes. Esta copia no constituye aprobación editorial ni envío.
+La base v0 permanece intacta. El 5 de noviembre de 2026 se revisó la v3 desde su fuente en
+Data_Warehouse_static/paper/ijcopi, rama ijcopi-zmvm, y se regeneró con la plantilla obligatoria.
+Se precisaron las limitaciones de facturación, anomalías y RDF, se uniformó el inglés británico
+y se actualizaron los enlaces de la ampliación a Data_Warehouse_IJCOPI, conservando los de ICOKG.
+La declaración académica de IA se conserva sin afirmar que ya terminó la revisión de todos los autores.
+
+Comprobación nueva con Word: 15 páginas, 9,318 palabras frente a 5,615 de la base (+65.95 %),
+resumen de 144 palabras y 6 palabras clave. Se inspeccionaron las 15 páginas renderizadas.
+No hay texto nuevo sin amarillo frente a la v3 anterior; las diferencias estructurales históricas
+frente a v0 siguen diferenciadas en el verificador. Título, autoría, tablas y figuras se conservaron.
+No se introdujeron nuevas cifras científicas ni se repitió la reconstrucción completa del almacén.
+La aprobación de los coautores y la revisión final para envío siguen pendientes.
 
 Los generadores y fuentes siguen en el repositorio original. Para editar texto o referencias,
 usar allí dw_agua_ijcopi.tex y latex_a_ijcopi.py; no modificar Word a mano. Cada commit y push

@@ -14,7 +14,14 @@
   const TXT = {
     es: {
       titulo: 'Agua en la Zona Metropolitana de Ciudad de México',
-      lema: 'Ampliación del almacén de datos: cada capa es el resultado de una consulta SQL al almacén real, no una copia aparte.',
+      lema: 'Explora facturación, acceso al agua y contexto ambiental por territorio.',
+      'ui.explorador': 'Explorador territorial · IJCOPI', 'ui.buscar': 'Ir a un municipio o alcaldía',
+      'ui.todos': 'Toda la zona metropolitana', 'ui.encuadrar': 'Vista completa', 'ui.compartir': 'Compartir vista',
+      'ui.capas': 'Añadir capas', 'ui.pista': 'Selecciona un territorio para ver su ficha.',
+      'ui.leyenda': 'Cómo leer el mapa', 'ui.leer': 'Fuentes y alcance del indicador',
+      'ui.ficha': 'Ficha del territorio', 'ui.fichaAyuda': 'Selecciona un municipio, una colonia o un elemento del mapa para ver su información.',
+      'ui.inventario': 'Contenido del almacén', 'ui.copiado': 'Enlace copiado. Incluye indicador, capas y encuadre.',
+      'ui.copiarManual': 'Copia este enlace para compartir la vista.', 'ui.limpiar': 'Cerrar ficha',
       'nav.mapa': 'Mapa', 'nav.grafo': 'Grafo', 'nav.consultas': 'Consultas al almacén',
       'c.indicador': 'Indicador', 'c.fecha': 'Fecha del corte', 'c.capas': 'Capas',
       'capa.acuiferos': 'Acuíferos', 'capa.pozos': 'Pozos: cambio de nivel 2010-2019',
@@ -23,6 +30,7 @@
       'o.titulo': 'De dónde sale esta capa', 'o.versql': 'Ver la consulta SQL',
       'o.texto': 'Resultado de {sql}: {filas} filas, exportadas el {fecha}. SHA-256 {hash}…',
       'o.cmd': 'Para ver lo mismo en la base de datos:',
+      'o.error': 'No se pudo cargar el SQL: {msg}. Puedes abrirlo en la página de consultas.',
       'z.cdmx': 'Ciudad de México ({n} alcaldías)', 'z.zm': 'Agregado: Edomex e Hidalgo ({n} municipios)',
       'nota.color': 'Un color más intenso solo indica un valor más alto entre los datos disponibles; no prueba que ahí se consuma más agua.',
       'nota.cobertura': 'Con dato: {n} de {total}.',
@@ -48,7 +56,14 @@
     },
     en: {
       titulo: 'Water in the Mexico City Metropolitan Area',
-      lema: 'Extension of the data warehouse: every layer is the result of a SQL query to the real warehouse, not a separate copy.',
+      lema: 'Explore water billing, access and environmental context by area.',
+      'ui.explorador': 'Territorial explorer · IJCOPI', 'ui.buscar': 'Go to a municipality or borough',
+      'ui.todos': 'Whole metropolitan area', 'ui.encuadrar': 'Full extent', 'ui.compartir': 'Share view',
+      'ui.capas': 'Add layers', 'ui.pista': 'Select an area to open its profile.',
+      'ui.leyenda': 'Reading the map', 'ui.leer': 'Indicator sources and scope',
+      'ui.ficha': 'Territorial profile', 'ui.fichaAyuda': 'Select a municipality, neighbourhood or map feature to see its information.',
+      'ui.inventario': 'Warehouse contents', 'ui.copiado': 'Link copied. It includes the indicator, layers and map extent.',
+      'ui.copiarManual': 'Copy this link to share the view.', 'ui.limpiar': 'Close profile',
       'nav.mapa': 'Map', 'nav.grafo': 'Graph', 'nav.consultas': 'Warehouse queries',
       'c.indicador': 'Indicator', 'c.fecha': 'Date of the reading', 'c.capas': 'Layers',
       'capa.acuiferos': 'Aquifers', 'capa.pozos': 'Wells: level change 2010-2019',
@@ -57,6 +72,7 @@
       'o.titulo': 'Where this layer comes from', 'o.versql': 'Show the SQL query',
       'o.texto': 'Result of {sql}: {filas} rows, exported on {fecha}. SHA-256 {hash}…',
       'o.cmd': 'To see the same result in the database:',
+      'o.error': 'The SQL could not be loaded: {msg}. You can open it on the queries page.',
       'z.cdmx': 'Mexico City ({n} boroughs)', 'z.zm': 'Added: State of Mexico and Hidalgo ({n} municipalities)',
       'nota.color': 'A stronger colour only marks a higher value among the available data; it does not prove that more water is used there.',
       'nota.cobertura': 'With data: {n} of {total}.',
@@ -146,6 +162,7 @@
 
   let mapa, lienzo, capaBase = null, contorno = null, estado = { ind: 'm_litros', fecha: 0, capas: new Set() };
   const D = {}, extras = {}, cortesCache = {};
+  let detalleActual = null;
 
   /* Cortes por quintiles, redondeados para que la leyenda se lea */
   function quintiles(vals) {
@@ -307,6 +324,7 @@
     if (activa) { estado.capas.add(nombre); capa.addTo(mapa); } else { estado.capas.delete(nombre); mapa.removeLayer(capa); }
     leyenda();
     guardarUrl();
+    document.getElementById('capasActivas').textContent = estado.capas.size || '';
   }
 
   /* ---- leyenda y paneles ---- */
@@ -359,14 +377,25 @@
   }
 
   function panel(titulo, sub, pares, sql, extra) {
+    document.getElementById('detalleVacio').hidden = true;
     const dl = pares.filter(p => p[1] != null && p[1] !== '').map(p => `<dt>${esc(p[0])}</dt><dd>${esc(p[1])}</dd>`).join('');
-    document.getElementById('detalle').innerHTML = `<p class="zm-det-t">${esc(titulo)}</p><p class="zm-det-s">${esc(sub || '')}</p>`
-      + `<dl class="zm-det">${dl}</dl>${extra || ''}<div class="zm-sql">${esc(t('sql.ver'))}<pre>${esc(`${BD} -c "${sql}"`)}</pre></div>`;
+    document.getElementById('detalle').innerHTML = `<div class="zm-det-cab"><p class="zm-det-t">${esc(titulo)}</p><button type="button" class="zm-cerrar-ficha" aria-label="${esc(t('ui.limpiar'))}">×</button></div><p class="zm-det-s">${esc(sub || '')}</p>`
+      + `<dl class="zm-det">${dl}</dl>${extra || ''}<details class="zm-sql"><summary>${esc(t('sql.ver'))}</summary><pre>${esc(`${BD} -c "${sql}"`)}</pre></details>`;
+    document.querySelector('.zm-cerrar-ficha').addEventListener('click', limpiarDetalle);
+  }
+
+  function limpiarDetalle() {
+    detalleActual = null;
+    document.getElementById('detalle').innerHTML = '';
+    document.getElementById('detalleVacio').hidden = false;
+    document.getElementById('buscarMunicipio').value = '';
   }
 
   const nombre = id => porId(id)[idioma];
 
   function detalleMunicipio(r) {
+    detalleActual = { mostrar: detalleMunicipio, dato: r };
+    document.getElementById('buscarMunicipio').value = r.cve_mun;
     panel(r.nom_mun, r.nom_ent, [
       [t('pob'), fmt(r.pob_2019, 0)],
       [nombre('m_litros'), r.litros_hab_dia_dom == null ? null : `${fmt(r.litros_hab_dia_dom, 1)} (${r.calidad_volumen})`],
@@ -380,6 +409,7 @@
   }
 
   function detalleColonia(r) {
+    detalleActual = { mostrar: detalleColonia, dato: r };
     panel(r.colonia, r.cve_mun, [
       [t('pob'), fmt(r.pob_total, 0)],
       [nombre('c_sinagua'), fmt(r.pct_sin_agua, 2)],
@@ -392,6 +422,7 @@
   }
 
   function detalleAcuifero(r) {
+    detalleActual = { mostrar: detalleAcuifero, dato: r };
     panel(r.nom_acui, r.clv_acui, [
       [t('acu.r'), fmt(r.extraccion_entre_recarga)],
       [t('acu.d'), fmt(r.deficit_hm3, 1)],
@@ -401,6 +432,7 @@
   }
 
   function detallePozo(r) {
+    detalleActual = { mostrar: detallePozo, dato: r };
     panel(r.nom_pozo, r.nom_acui, [
       [t('pozo.a'), fmt(r.profundidad_2010_m, 2)],
       [t('pozo.b'), fmt(r.profundidad_2019_m, 2)],
@@ -419,6 +451,7 @@
   }
 
   function detallePresa(r) {
+    detalleActual = { mostrar: detallePresa, dato: r };
     panel(r.nombre, r.cuenca_disponibilidad, [
       [t('det.volumen'), `${fmt(r.volumen_ultimo_hm3, 1)} hm³`],
       [t('presa.fecha'), r.ultima_fecha],
@@ -428,13 +461,16 @@
   }
 
   function detalleCalidad(r) {
+    detalleActual = { mostrar: detalleCalidad, dato: r };
     panel(r.nombre, r.municipio, [
       [t('cal.t'), r.tipo_agua], [t('cal.s'), r.semaforo ? t('cal.' + r.semaforo) : null],
       [t('cal.c'), r.contaminantes], [t('cal.p'), r.periodo],
     ], `SELECT nombre, semaforo, contaminantes FROM dim_sitio_calidad WHERE id_sitio = ${r.id_sitio}`);
   }
 
+  let turnoOrigen = 0;
   function origen() {
+    const mio = ++turnoOrigen;
     const ind = porId(estado.ind);
     const m = D.manifiesto.consultas.find(c => c.consulta === ind.consulta + '.sql');
     document.getElementById('origenTexto').textContent = t('o.texto', {
@@ -442,7 +478,11 @@
     document.getElementById('origenComando').textContent = `${t('o.cmd')}\n\ndocker cp warehouse_ampliado/consultas/. data_warehouse_cdmx:/consultas\n${BD} -f /consultas/${m.consulta}`;
     const pre = document.getElementById('origenSql');
     pre.textContent = '';
-    fetch('warehouse_ampliado/consultas/' + m.consulta).then(r => (r.ok ? r.text() : '')).then(s => { pre.textContent = s; }).catch(() => {});
+    fetch('warehouse_ampliado/consultas/' + m.consulta).then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.text();
+    }).then(s => { if (mio === turnoOrigen) pre.textContent = s; })
+      .catch(e => { if (mio === turnoOrigen) pre.textContent = t('o.error', { msg: e.message || e }); });
   }
 
   function traducir() {
@@ -460,6 +500,12 @@
     sel.value = estado.ind;
     document.getElementById('notaIndicador').textContent = porId(estado.ind)[idioma === 'en' ? 'nen' : 'nes'];
     if (D.manifiesto) {
+      const busqueda = document.getElementById('buscarMunicipio');
+      const valor = busqueda.value;
+      busqueda.innerHTML = `<option value="">${esc(t('ui.todos'))}</option>` + [...D.municipios]
+        .sort((a, b) => a.nom_mun.localeCompare(b.nom_mun, loc()))
+        .map(r => `<option value="${esc(r.cve_mun)}">${esc(r.nom_mun)} · ${esc(r.nom_ent)}</option>`).join('');
+      busqueda.value = valor;
       const tablas = filas(D.tablas).reduce((s, r) => s + Number(r.filas), 0);
       document.getElementById('conteos').innerHTML = [
         ['n.fil', tablas], ['n.mun', D.municipios.length], ['n.col', D.colonias.length], ['n.acu', D.acuiferos.length],
@@ -484,10 +530,35 @@
   function elegir(id) {
     estado.ind = id;
     const ind = porId(id);
+    document.getElementById('indicador').value = id;
     document.getElementById('notaIndicador').textContent = ind[idioma === 'en' ? 'nen' : 'nes'];
     document.getElementById('bloqueFecha').hidden = !ind.sequia;
     pintarBase();
     guardarUrl();
+    document.getElementById('compartirEstado').textContent = '';
+    document.getElementById('enlaceVista').hidden = true;
+  }
+
+  function encuadrar() {
+    mapa.fitBounds(L.geoJSON(coleccion('municipio', D.municipios, 'cve_mun')).getBounds(), { padding: [12, 12] });
+  }
+
+  async function compartir() {
+    guardarUrl();
+    const url = new URL(location.href), centro = mapa.getCenter();
+    url.searchParams.set('c', [centro.lat.toFixed(5), centro.lng.toFixed(5), mapa.getZoom()].join(','));
+    url.searchParams.set('lang', idioma);
+    const input = document.getElementById('enlaceVista');
+    input.value = url.href;
+    try {
+      await navigator.clipboard.writeText(url.href);
+      document.getElementById('compartirEstado').textContent = t('ui.copiado');
+      input.hidden = true;
+    } catch (e) {
+      input.hidden = false;
+      input.focus(); input.select();
+      document.getElementById('compartirEstado').textContent = t('ui.copiarManual');
+    }
   }
 
   async function cargar() {
@@ -553,6 +624,22 @@
 
     if (porId(q.get('ind'))) estado.ind = q.get('ind');
     traducir();
+    ['buscarMunicipio', 'vistaCompleta', 'compartirVista'].forEach(id => { document.getElementById(id).disabled = false; });
+    document.getElementById('buscarMunicipio').addEventListener('change', e => {
+      const r = D.municipios.find(m => String(m.cve_mun) === e.target.value);
+      if (!r) { limpiarDetalle(); encuadrar(); return; }
+      const geometria = D.geo.municipio[r.cve_mun];
+      if (geometria) mapa.fitBounds(L.geoJSON(geometria).getBounds(), { padding: [30, 30], maxZoom: 13 });
+      detalleMunicipio(r);
+    });
+    document.getElementById('vistaCompleta').addEventListener('click', encuadrar);
+    document.getElementById('compartirVista').addEventListener('click', compartir);
+    const menuCapas = document.querySelector('.zm-overlays');
+    document.addEventListener('click', e => { if (!menuCapas.contains(e.target)) menuCapas.open = false; });
+    menuCapas.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { menuCapas.open = false; menuCapas.querySelector('summary').focus(); }
+    });
+    if (window.ResizeObserver) new ResizeObserver(() => mapa.invalidateSize()).observe(document.getElementById('map'));
     document.getElementById('indicador').addEventListener('change', e => elegir(e.target.value));
     document.querySelectorAll('[data-capa]').forEach(c => c.addEventListener('change', () => alternar(c.dataset.capa, c.checked)));
     elegir(estado.ind);
@@ -576,7 +663,11 @@
   document.addEventListener('idiomacambiado', e => {
     idioma = (e.detail && e.detail.idioma) || idioma;
     traducir();
-    if (D.manifiesto) { leyenda(); origen(); document.getElementById('detalle').innerHTML = ''; }
+    if (D.manifiesto) {
+      leyenda(); origen();
+      if (detalleActual) detalleActual.mostrar(detalleActual.dato);
+      document.getElementById('compartirEstado').textContent = '';
+    }
   });
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar);

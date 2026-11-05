@@ -22,11 +22,13 @@
       'k.tripletas': 'Tripletas', 'k.municipios': 'Municipios', 'k.fronteras': 'Fronteras entre municipios',
       'k.colonias': 'Colonias', 'k.vecinas': 'Colindancias entre colonias',
       'r.titulo': 'Recorrer el grafo',
-      'r.ayuda': 'Haz clic en un municipio. Sus vecinos y sus acuíferos salen de consultas SPARQL sobre el grafo, y aquí ves cada consulta.',
+      'r.ayuda': 'Elige un municipio en la lista o en el mapa. Sus vecinos y acuíferos salen de consultas SPARQL sobre el grafo, que puedes inspeccionar aquí.',
+      'r.municipio': 'Municipio o alcaldía', 'r.error': 'No se pudo completar el recorrido: {msg}',
       'l.cdmx': 'Alcaldía de la CDMX', 'l.zm': 'Municipio agregado', 'l.arista': 'Frontera entre municipios',
       'l.cruce': 'Frontera que cruza el límite de la CDMX', 'l.sel': 'Municipio elegido',
       vecinos: 'Vecinos de {n}', acuiferos: 'Acuíferos bajo {n}', sindato: 'sin dato', versparql: 'Ver la consulta SPARQL',
-      's.titulo': 'Consultas SPARQL', 's.ayuda': 'Elige un ejemplo o escribe tu consulta. Corre aquí mismo, sobre el grafo completo.',
+      's.titulo': 'Consultas SPARQL', 's.ayuda': 'Elige un ejemplo o escribe una consulta SELECT. Se ejecuta en tu navegador sobre el grafo completo. También puedes usar Ctrl+Enter (⌘+Enter en Mac).',
+      limite: 'Se muestran las primeras {n} filas.',
       's.etiqueta': 'Consulta (la puedes editar)', 's.ejecutar': 'Ejecutar',
       filas: '{n} filas en {ms} ms', sinfilas: 'La consulta no devolvió filas.', corriendo: 'Ejecutando…',
       'o.titulo': 'De dónde sale este grafo',
@@ -41,11 +43,13 @@
       'k.tripletas': 'Triples', 'k.municipios': 'Municipalities', 'k.fronteras': 'Municipal boundaries',
       'k.colonias': 'Neighbourhoods', 'k.vecinas': 'Neighbourhood adjacencies',
       'r.titulo': 'Traverse the graph',
-      'r.ayuda': 'Click a municipality. Its neighbours and aquifers come from SPARQL queries over the graph, shown here.',
+      'r.ayuda': 'Choose a municipality from the list or the map. Its neighbours and aquifers come from SPARQL queries over the graph, shown here.',
+      'r.municipio': 'Municipality or borough', 'r.error': 'The traversal could not be completed: {msg}',
       'l.cdmx': 'Mexico City borough', 'l.zm': 'Added municipality', 'l.arista': 'Boundary between municipalities',
       'l.cruce': 'Boundary crossing the Mexico City limit', 'l.sel': 'Selected municipality',
       vecinos: 'Neighbours of {n}', acuiferos: 'Aquifers under {n}', sindato: 'no data', versparql: 'Show the SPARQL query',
-      's.titulo': 'SPARQL queries', 's.ayuda': 'Pick an example or write your own query. It runs here, over the whole graph.',
+      's.titulo': 'SPARQL queries', 's.ayuda': 'Pick an example or write a SELECT query. It runs in your browser over the whole graph. You can also use Ctrl+Enter (⌘+Enter on Mac).',
+      limite: 'The first {n} rows are shown.',
       's.etiqueta': 'Query (you can edit it)', 's.ejecutar': 'Run',
       filas: '{n} rows in {ms} ms', sinfilas: 'The query returned no rows.', corriendo: 'Running…',
       'o.titulo': 'Where this graph comes from',
@@ -91,7 +95,8 @@
   function tabla(filas, texto) {
     if (!filas.length) return `<p class="zm-meta">${esc(t('sinfilas'))}</p>`;
     const cols = columnas(texto || '', filas);
-    return `<table><thead><tr>${cols.map(c => `<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>`
+    return (filas.length > 300 ? `<p class="zm-meta">${esc(t('limite', { n: 300 }))}</p>` : '')
+      + `<table><thead><tr>${cols.map(c => `<th scope="col">${esc(c)}</th>`).join('')}</tr></thead><tbody>`
       + filas.slice(0, 300).map(f => `<tr>${cols.map(c => {
         const term = [...f.keys()].find(k => k.value === c);
         return `<td>${term ? celda(f.get(term)) : ''}</td>`;
@@ -157,9 +162,13 @@
     Object.keys(nodos).forEach(c => nodos[c].marca.bringToFront());
   }
 
+  let turnoRecorrido = 0;
   async function seleccionar(cve) {
     if (!motor || !nombres[cve]) return;
+    const mio = ++turnoRecorrido;
     seleccion = cve;
+    $('municipio').value = cve;
+    $('recorrido').setAttribute('aria-busy', 'true');
     const qVecinos = `${PREFIJOS}SELECT ?vecino ?estado ?litros ?calidadVolumen ?cmPorAnio WHERE {
   mun:${cve} agua:sharesBoundaryWith ?v .
   ?v rdfs:label ?vecino ; agua:state ?estado ; agua:volumeQuality ?calidadVolumen .
@@ -171,14 +180,22 @@
   ?a rdfs:label ?acuifero ; agua:extractionRechargeRatio ?extraccionEntreRecarga .
   ?otro agua:overliesAquifer ?a .
 } GROUP BY ?acuifero ?extraccionEntreRecarga ORDER BY DESC(?extraccionEntreRecarga)`;
+    try {
     const [vecinos, acuiferos, propios] = await Promise.all([consultar(qVecinos), consultar(qAcuiferos),
       consultar(`${PREFIJOS}SELECT ?v WHERE { mun:${cve} agua:sharesBoundaryWith ?v }`)]);
+    if (mio !== turnoRecorrido) return;
     resaltar(cve, new Set(propios.map(f => clave(f.get('v').value))));
     const n = esc(nombres[cve]);
     $('recorrido').innerHTML = `<h3 class="zm-det-t">${t('vecinos', { n })}</h3><div class="zm-tabla">${tabla(vecinos, qVecinos)}</div>
       <details><summary>${esc(t('versparql'))}</summary><pre class="zm-pre">${esc(qVecinos)}</pre></details>
       <h3 class="zm-det-t" style="margin-top:.8rem">${t('acuiferos', { n })}</h3><div class="zm-tabla">${tabla(acuiferos, qAcuiferos)}</div>
       <details><summary>${esc(t('versparql'))}</summary><pre class="zm-pre">${esc(qAcuiferos)}</pre></details>`;
+    } catch (e) {
+      if (mio !== turnoRecorrido) return;
+      $('recorrido').innerHTML = `<p class="status show error" role="alert">${esc(t('r.error', { msg: e.message || e }))}</p>`;
+    } finally {
+      if (mio === turnoRecorrido) $('recorrido').setAttribute('aria-busy', 'false');
+    }
   }
 
   function leyendaGrafo() {
@@ -206,6 +223,7 @@
   async function ejecutar() {
     const mio = ++turno;
     $('metrica').textContent = t('corriendo');
+    $('salida').setAttribute('aria-busy', 'true');
     const t0 = performance.now();
     try {
       const texto = $('consulta').value;
@@ -218,6 +236,8 @@
       ultima = null;
       $('metrica').textContent = '';
       $('salida').innerHTML = `<p class="status show error">${esc(e.message || e)}</p>`;
+    } finally {
+      if (mio === turno) $('salida').setAttribute('aria-busy', 'false');
     }
   }
 
@@ -243,10 +263,15 @@
   }
 
   async function cargar() {
+    const pedir = async (url, json) => {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
+      return json ? r.json() : r.text();
+    };
     const [ttl, geo, res] = await Promise.all([
-      fetch('ijcopi/kg_zm.ttl').then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.text(); }),
-      fetch('ijcopi/datos/12_geometrias.json').then(r => r.json()),
-      fetch('ijcopi/datos/grafo.json').then(r => r.json()),
+      pedir('ijcopi/kg_zm.ttl', false),
+      pedir('ijcopi/datos/12_geometrias.json', true),
+      pedir('ijcopi/datos/grafo.json', true),
     ]);
     resumen = res;
     pintarHash();
@@ -265,6 +290,10 @@
       consultar(`${PREFIJOS}SELECT ?a ?b WHERE { ?a agua:sharesBoundaryWith ?b }`),
     ]);
     dibujarRed(geometria, municipios, vecinos);
+    $('municipio').innerHTML = Object.keys(nombres).sort((a, b) => nombres[a].localeCompare(nombres[b], loc()))
+      .map(cve => `<option value="${esc(cve)}">${esc(nombres[cve])}</option>`).join('');
+    $('municipio').disabled = false;
+    $('municipio').addEventListener('change', e => seleccionar(e.target.value));
     const { namedNode } = N3.DataFactory;
     const AGUA = 'https://w3id.org/cdmx/agua/', TIPO = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
     $('kTripletas').textContent = fmt(store.size, 0);
@@ -274,7 +303,7 @@
     $('kVecinas').textContent = fmt(store.countQuads(null, namedNode('http://www.opengis.net/ont/geosparql#sfTouches'), null, null) / 2, 0);
 
     ejemplos = await Promise.all(res.consultas.map(async n => {
-      const texto = await fetch(CONSULTAS + n).then(r => r.text());
+      const texto = await pedir(CONSULTAS + n, false);
       const lineas = texto.replace(/\r/g, '').split('\n');
       const linea = p => lineas.find(l => l.startsWith(`# ${p}: `)).slice(p.length + 4).split(' | ');
       return { es: linea('es'), en: linea('en'), texto: lineas.filter(l => !l.startsWith('# ')).join('\n') };
