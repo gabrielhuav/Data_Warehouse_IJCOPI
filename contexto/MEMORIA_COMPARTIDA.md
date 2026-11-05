@@ -15,7 +15,10 @@ no equivalen a verificaciones nuevas. Las rutas dependen de la PC: usar carpetas
 - Conservar main original, release v1.5-icokg2026, Pages y URL del congreso.
   No modificar tampoco la publicación anterior Data_Warehouse_ZMVM ni sus enlaces.
 - Manuscrito en el original: paper/ijcopi/dw_agua_IJCOPI_v3_grafo.docx y PDF.
-  No se copia en esta distribución. Texto: dw_agua_ijcopi.tex; citas APA: latex_a_ijcopi.py.
+  Gabriel decidió incorporar aquí solo copias Word v0_base y v3_grafo, en paper/ijcopi/.
+  Se descartaron de esta copia local v1, v2 y la plantilla, sin tocar el original.
+  El original y los generadores siguen siendo la fuente de trabajo. Texto: dw_agua_ijcopi.tex;
+  citas APA: latex_a_ijcopi.py. Los PDF no se copiaron.
   No editar Word a mano ni cambiar autores sin autorización. Revisar las instrucciones
   propias del original antes de trabajar allí. No tocar camera-ready ni v0 congelada.
 
@@ -45,6 +48,17 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Estado actual
 
+- Gabriel autorizó expresamente un commit y push con su identidad, sin atribuciones de IA,
+  para incorporar solo dw_agua_IJCOPI_v0_base.docx y dw_agua_IJCOPI_v3_grafo.docx,
+  manteniendo sus nombres y descartando intermedios. Las dos copias son idénticas por
+  SHA-256 al original; no se editaron texto, autores, créditos ni declaración académica de IA.
+- También autorizó para este push las excepciones ADIP 403 y timeout de AZCATL.
+  Verificador original repetido inmediatamente antes de preparar el commit: enlaces: 25,
+  fallos: 1, exclusivamente ADIP 403. AZCATL respondió 200 en esta repetición: el timeout
+  anterior queda documentado, no se da por permanente. No se modificaron enlaces ni verificador.
+- paper/ queda excluido de Pages mediante export-ignore. Este cambio incorpora los Word
+  y su documentación para viajar con el clon. Comprobar Git y origin/main para confirmar
+  la publicación; la autorización de este commit y push no cubre acciones posteriores.
 - Publicación inicial independiente: b8ee46a4163c1c1bf5eb242d6b0c49a47d8dc78e,
   autor y committer Gabriel Hurtado, sin atribuciones de asistentes. No se importó historia.
   Actions 41890059542 intento 2 finalizó correctamente. En aquella revisión, 184 archivos
@@ -61,15 +75,22 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
   SHA-256 12aede58872a50856405ea24b6933e4b29b20d1de0e32d7463fabf855259b31d.
   Esto permite reproducir datos, pero no corrige el servidor oficial ni sustituye el gate.
 - Gabriel autorizó publicar el contexto portable mediante un commit y push, sin atribución
-  de IA. Se preparan reglas, memoria, inicio y guía de nueva PC. El push queda condicionado
-  al verificador: el 403 requiere una excepción nueva antes de subir este commit.
+  de IA, y después autorizó expresamente el push de f5dd81d con la única excepción ADIP.
+  Se confirmó por git ls-remote que origin/main ya apunta exactamente a
+  f5dd81d6c62f8806a54ce76b7f2f2d77b812a474, con autor y committer Gabriel Hurtado,
+  sin atribuciones de asistentes ni firma. No fue necesario ejecutar otro push.
+  La comprobación posterior del verificador dio dos fallos: ADIP 403 y timeout del DOI
+  10.24275/AZC2026E1004. No se amplió la excepción ni se hizo push con ese resultado.
 - Los archivos históricos, reportes completos y hooks locales de la PC anterior no viajan
   con el clon. Esta memoria contiene la continuidad necesaria; no afirmar haber leído
-  archivos ausentes. El manuscrito y cambios no publicados requieren copia separada.
+  archivos ausentes. Los Word seleccionados se prepararon para viajar con Git; fuentes, PDF y demás cambios
+  no publicados requieren copia separada.
 
 ## Siguiente paso
 
-1. Obtener excepción expresa para el único 403 de ADIP antes del push de contexto.
+1. Completar y comprobar en el remoto el único commit/push autorizado de v0 y v3 y su
+   documentación. No incluir intermedios, plantilla ni PDF. Verificar identidad humana
+   y ausencia de atribuciones de asistentes. Las excepciones ADIP/AZCATL son solo para ese push.
 2. En otra PC, seguir contexto/NUEVA_PC.md y agregar el clon como proyecto local en Codex.
 3. En tarea posterior autorizada, actualizar las URL/cita del paper al nuevo repositorio,
    regenerar y verificar formato, fuentes y cifras. Revisión humana final y envío pendientes.
@@ -78,9 +99,24 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Bitácora
 
+- 2026-11-04: preparados cinco Word ya copiados localmente, integridad y SHA-256 exactos;
+  guía de versión vigente, documentación de clon y exclusión de Pages. Sin edición de los
+  documentos ni nuevos commit/push. Verificador original: 25 enlaces, un fallo ADIP 403.
+
 - 2026-11-04: distribución independiente de agua publicada con autorización y excepción
   ADIP para el primer push. Verificados sitio, consultas, identidad humana y respaldo CSV.
 - 2026-11-04: preparado relevo local y reforzada autorización individual de commits/push.
 - 2026-11-04: Gabriel pidió contexto clonable y autorizó un commit/push sin atribuciones
   de asistentes. Preparada continuidad portable sin históricos; ADIP sigue siendo el único
   fallo del verificador original y requiere nueva excepción para este push.
+- 2026-11-04: Gabriel autorizó la excepción exclusiva ADIP para f5dd81d; se confirmó que
+  el remoto ya contenía ese commit humano, sin atribuciones ni firma. No se ejecutó otro
+  push. El verificador repetido añadió un timeout de AZCATL; no se eludió el control.
+  Actualización de continuidad solo local, sin nuevo commit.
+- 2026-11-04: Gabriel pidió incluir los Word del paper. Preparadas cinco copias idénticas
+  por SHA-256 (v0 a v3 y plantilla), documentación y exclusión de Pages; sin cambios al
+  original. Pendientes commit y push expresamente autorizados.
+- 2026-11-04: Gabriel limitó la publicación a v0_base y v3_grafo y autorizó expresamente
+  commit/push humano, sin atribuciones de IA, con excepciones ADIP 403 y timeout AZCATL.
+  Retiradas v1, v2 y plantilla solo de esta copia; original intacto. Nueva verificación:
+  25 enlaces, un fallo ADIP; AZCATL recuperó HTTP 200. Excepciones documentadas junto a los Word.

@@ -17,8 +17,11 @@
    AGENTS.md y MEMORIA_COMPARTIDA.md se recuperan con el clon; no hay que copiarlos a mano.
    Cada commit y push requiere autorización nueva. Verifica autor, committer y mensaje
    antes de publicar; no incluyas atribuciones a asistentes de IA.
-5. Para editar el paper, clona por separado https://github.com/gabrielhuav/Data_Warehouse_static
-   y selecciona ijcopi-zmvm, sin modificar su main. El manuscrito está en paper/ijcopi.
+5. Las copias Word del paper (solo v0 base y v3, sin intermedios ni plantilla) están en paper/ijcopi de este repositorio;
+   la versión actual registrada es dw_agua_IJCOPI_v3_grafo.docx. Para regenerar o editar
+   el texto fuente, clona por separado https://github.com/gabrielhuav/Data_Warehouse_static
+   y selecciona ijcopi-zmvm, sin modificar su main. Fuente y generadores siguen en paper/ijcopi
+   del original. No editar las copias Word a mano.
    IMPORTANTE: Git solo recupera lo publicado. Compara con la PC anterior y transfiere
    aparte cualquier Word, PDF, fuente o cambio local no publicado que necesites.
 6. Lee las instrucciones del original y configura sus dependencias antes de generar el

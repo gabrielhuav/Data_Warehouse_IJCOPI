@@ -10,7 +10,8 @@ Todos los commits con mi identidad Git humana, sin asistentes de IA como autores
 committers, coautores, trailers ni firmas. Conserva los créditos humanos y la declaración
 académica de IA. Las autorizaciones anteriores no habilitan acciones futuras.
 
-El paper y generadores siguen en Data_Warehouse_static/paper/ijcopi, rama ijcopi-zmvm.
+Las copias Word base v0 y última v3 están en paper/ijcopi de este repositorio.
+El fuente y los generadores siguen en Data_Warehouse_static/paper/ijcopi, rama ijcopi-zmvm.
 No confundas sus ramas ni alteres los enlaces históricos de ICOKG o Data_Warehouse_ZMVM.
 Las rutas cambian entre PC: localiza las carpetas, no supongas el nombre de usuario.
 Háblame en español y sé breve.
