@@ -20,8 +20,10 @@ repository adds to that work and does not change it.
 
 The original warehouse holds the billed water consumption of Mexico City. This one extends it,
 additively, to the 63 municipalities of the official 2020 metropolitan delimitation: 62 verified
-files, 2.79 million rows and 45 tables, published as a map and as a knowledge graph of 82,393
-triples. The original fact tables are untouched.
+files, 2.79 million rows and 45 tables, published as a map and as a knowledge graph of 91,230
+triples. The original fact tables are untouched. Neighbourhood billing/report rates are explicitly
+labelled as proxies over matched SACMEX units; the map exposes their assigned population
+and coverage separately from CONAPO polygon population. Missing denominators suppress rates.
 
 | Path | Content |
 | --- | --- |

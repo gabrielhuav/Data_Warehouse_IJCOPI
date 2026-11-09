@@ -6,15 +6,18 @@ Versión vigente para revisión: [dw_agua_IJCOPI_v3_grafo.docx](dw_agua_IJCOPI_v
 - [dw_agua_IJCOPI_v3_grafo.docx](dw_agua_IJCOPI_v3_grafo.docx): última versión registrada para revisión.
 
 Solo se incluyen v0 y v3 por decisión de Gabriel; los intermedios y la plantilla no se publican aquí.
-La revisión final del 9 de noviembre de 2026 mide **15 páginas y 9,116 palabras** en Word,
-frente a 5,615 de v0 (**+62.35 %**), con resumen de 144 palabras y seis palabras clave.
-Corrige el grano fiscal y aporta medias por registro con un script reproducible; define AP,
-actualiza las tres listas, refuerza la Discusión y cita la Gaceta Oficial de 2019 sobre tandeo.
-Título, autores, declaración académica de IA, figuras, plantilla y v0 permanecen intactos.
-Las 15 páginas se inspeccionaron renderizadas; cero tokens añadidos frente al respaldo de
-9,431 palabras quedan sin amarillo. El contador histórico contra v0 da 83 por tokenización.
-Word v3 SHA-256: `d33e5f09cc6dc1d64546f8a5ff8b01de579085d1ed9e7d1dff20cda338ebd85f`.
-La prueba exacta maneja empates y ceros sin SciPy; pruebas y evidencia en evaluacion-ml/.
+La revisión posterior al informe independiente del 9 de noviembre de 2026 mide
+**15 páginas y 9,029 palabras** en Word, frente a 5,615 de v0 (**+60.80 %**),
+con resumen de 144 palabras y seis keywords. Se aclararon los tres denominadores
+territoriales/temporales, cobertura y NA, coordenadas válidas y grano de las ingestas.
+Se añadieron tres créditos científicos verificados y se actualizó el grafo a 91,230
+triples: la consulta de volumen no reportado devuelve 27 pares de 21 municipios.
+Título, autores, declaración académica de IA, figuras, plantilla y v0 intactos.
+Las quince páginas se inspeccionaron renderizadas; cero palabras añadidas frente
+al respaldo de 9,116 palabras quedan sin amarillo. El contador histórico contra v0
+sigue en 83 por tokenización/alineación.
+Word v3 SHA-256: `d38e1e48c1741dcf80f3f58f8d62828bfed7089a2a581d4b345f6eeb93ff771e`.
+Las correcciones previas de grano fiscal, AP, tres listas y prueba exacta se conservan.
 La aprobación humana final y los metadatos asignados por la editorial siguen pendientes.
 
 Antecedentes de las revisiones anteriores:
@@ -47,8 +50,8 @@ Los generadores y fuentes siguen en el repositorio original. Para editar texto o
 usar allí dw_agua_ijcopi.tex y latex_a_ijcopi.py; no modificar Word a mano. Cada commit y push
 requiere autorización expresa de Gabriel. Los archivos de esta carpeta viajan con el clon,
 son públicos en GitHub y se excluyen del sitio Pages mediante export-ignore.
-La fuente de esta corrección corresponde al commit
-`22a8ac1d3e5a436a8ae4617f1fa15fef45ed7157` del original, rama ijcopi-zmvm.
+La base de esta revisión es `22a8ac1d3e5a436a8ae4617f1fa15fef45ed7157` del original;
+las fuentes corregidas están en el commit 967b9f9b05017a870495cdea17578eb8bd1d672c, rama ijcopi-zmvm.
 
 ## Enlaces pendientes
 

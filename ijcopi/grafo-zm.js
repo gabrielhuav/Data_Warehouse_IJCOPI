@@ -31,8 +31,10 @@
       limite: 'Se muestran las primeras {n} filas.',
       's.etiqueta': 'Consulta (la puedes editar)', 's.ejecutar': 'Ejecutar',
       filas: '{n} filas en {ms} ms', sinfilas: 'La consulta no devolvió filas.', corriendo: 'Ejecutando…',
+      pares: '{n} pares municipio-acuífero · {m} municipios distintos · {ms} ms',
       'o.titulo': 'De dónde sale este grafo',
-      'o.texto': 'Se materializa desde PostgreSQL con un mapeo R2RML declarativo: nada está escrito a mano. Donde la fuente no reporta un dato, el grafo no lo afirma. Las colonias se unen con geo:sfTouches estricto. Los municipios usan agua:sharesBoundaryWith, una relación propia, porque los polígonos oficiales se solapan unos centímetros y la prueba estricta falla en pares que sí colindan.',
+      'o.texto': 'Se materializa desde PostgreSQL con un mapeo R2RML declarativo. Los datos ausentes no producen una afirmación numérica. Las 16 alcaldías se enlazan con skos:exactMatch al grafo original. Las colonias se unen con geo:sfTouches estricto; los municipios usan agua:sharesBoundaryWith porque sus polígonos oficiales presentan pequeños solapes. En las colonias CONAPO, population es la población oficial del polígono; las tasas proxy usan ratePopulationProxy, la población censal asignada por proximidad a las unidades SACMEX enlazadas, y se omiten si falta cobertura. Estas correspondencias no reasignan los registros al polígono. El espacio de nombres w3id identifica recursos; todavía no ofrece un servicio público de desreferenciación.',
+      'o.vocabulario': 'Descargar el vocabulario RDF (Turtle)',
       'o.hash': '{n} tripletas. SHA-256 {h}…',
       cargando: 'Cargando el grafo…', analizando: 'Analizando {mb} MB de RDF…', error: 'No se pudo cargar el grafo: {msg}',
     },
@@ -52,8 +54,10 @@
       limite: 'The first {n} rows are shown.',
       's.etiqueta': 'Query (you can edit it)', 's.ejecutar': 'Run',
       filas: '{n} rows in {ms} ms', sinfilas: 'The query returned no rows.', corriendo: 'Running…',
+      pares: '{n} municipality-aquifer pairs · {m} distinct municipalities · {ms} ms',
       'o.titulo': 'Where this graph comes from',
-      'o.texto': 'It is materialised from PostgreSQL with a declarative R2RML mapping: nothing is written by hand. Where a source reports no value, the graph asserts none. Neighbourhoods are joined by strict geo:sfTouches. Municipalities use agua:sharesBoundaryWith, a project relation, because the official polygons overlap by centimetres and the strict test fails for pairs that do adjoin.',
+      'o.texto': 'It is materialised from PostgreSQL with a declarative R2RML mapping. Missing values produce no numeric assertion. The 16 boroughs link to the original graph through skos:exactMatch. Neighbourhoods use strict geo:sfTouches; municipalities use agua:sharesBoundaryWith because their official polygons have small overlaps. For CONAPO neighbourhoods, population is the official polygon population; proxy rates use ratePopulationProxy, the census population assigned by proximity to matched SACMEX units, and are omitted when coverage is incomplete. These correspondences do not reallocate records to the polygon. The w3id namespace identifies resources; it does not yet provide a public dereferencing service.',
+      'o.vocabulario': 'Download the RDF vocabulary (Turtle)',
       'o.hash': '{n} triples. SHA-256 {h}…',
       cargando: 'Loading the graph…', analizando: 'Parsing {mb} MB of RDF…', error: 'The graph could not be loaded: {msg}',
     },
@@ -244,6 +248,15 @@
   function pintarSalida() {
     if (!ultima) return;
     $('metrica').textContent = t('filas', { n: fmt(ultima.filas.length, 0), ms: fmt(ultima.ms, 0) });
+    const sinVolumen = ejemplos.find(e => e.nombre === '02_sin_volumen_sobreexplotado.rq'
+      && e.texto.trim() === ultima.texto.trim());
+    if (sinVolumen) {
+      const claves = new Set(ultima.filas.map(f => {
+        const k = [...f.keys()].find(v => v.value === 'claveMunicipal');
+        return k ? f.get(k).value : null;
+      }).filter(v => v != null));
+      $('metrica').textContent = t('pares', { n: fmt(ultima.filas.length, 0), m: fmt(claves.size, 0), ms: fmt(ultima.ms, 0) });
+    }
     $('salida').innerHTML = tabla(ultima.filas, ultima.texto);
   }
 
@@ -264,7 +277,7 @@
 
   async function cargar() {
     const pedir = async (url, json) => {
-      const r = await fetch(url);
+      const r = await fetch(url, { cache: 'no-cache' });
       if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
       return json ? r.json() : r.text();
     };
@@ -306,7 +319,7 @@
       const texto = await pedir(CONSULTAS + n, false);
       const lineas = texto.replace(/\r/g, '').split('\n');
       const linea = p => lineas.find(l => l.startsWith(`# ${p}: `)).slice(p.length + 4).split(' | ');
-      return { es: linea('es'), en: linea('en'), texto: lineas.filter(l => !l.startsWith('# ')).join('\n') };
+      return { nombre: n, es: linea('es'), en: linea('en'), texto: lineas.filter(l => !l.startsWith('# ')).join('\n') };
     }));
     pintarEjemplos();
     $('consulta').value = ejemplos[0].texto;

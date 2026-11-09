@@ -10,7 +10,7 @@ no equivalen a verificaciones nuevas. Las rutas dependen de la PC: usar carpetas
 - Mapa: https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/mapa-zm.html
 - Grafo: https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/grafo-zm.html
 - Consultas: https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/consultas.html
-- Atípicos (página nueva, aún local): https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/atipicos.html
+- Atípicos: https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/atipicos.html
 - Original: https://github.com/gabrielhuav/Data_Warehouse_static, rama ijcopi-zmvm.
   Fuente de la distribución: 984c5144d4669e393262a9cd6ff515ac2ee81ca7.
 - Conservar main original, release v1.5-icokg2026, Pages y URL del congreso.
@@ -49,6 +49,48 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Estado actual
 
+- Commit del original de esta revisión: 967b9f9b05017a870495cdea17578eb8bd1d672c en ijcopi-zmvm,
+  autor/committer Gabriel Hurtado, sin firma ni trailers. Push sujeto al verificador.
+- Revisión posterior al informe independiente del 9 nov: corregidos los hallazgos
+  contrastados con fuentes y datos; descartadas cifras y autorías ajenas a esta versión.
+  Word/PDF regenerados desde fuente: 15 páginas, 9,029 palabras, v0 5,615 (+60.8014 %),
+  resumen 144 y seis keywords. Las quince páginas se inspeccionaron a 150 dpi; cero
+  palabras nuevas sin amarillo frente al respaldo de 9,116 palabras. Título, autores,
+  declaración académica de IA, figuras, plantilla y v0 preservados.
+  Word SHA-256 d38e1e48c1741dcf80f3f58f8d62828bfed7089a2a581d4b345f6eeb93ff771e;
+  PDF SHA-256 416f39d6b1ab0240d34f93d5fc6543c677d1ebdff405c40180a7ea570ae91c59.
+- Datos: vista común de colonias expone población CONAPO, población asignada SACMEX,
+  volumen y cobertura. Tasas etiquetadas como proxies, sin dividir por población de
+  otro soporte; se omiten denominadores parciales. Desempate espacial determinista
+  por menor clave numérica: reconciliados 22 enlaces sin resembrar ni tocar hechos.
+  Reconstrucción cruda y JSON coinciden en diez campos; población unidad por unidad
+  coincide con PostgreSQL. Quince consultas verificadas, 0 fallos.
+- RDF: 91,230 triples; clase simétrica OWL correcta, población/cobertura proxy
+  explícitas, huella decimal estable tras serializar y validación SQL/RDF sin fallos.
+  Consulta 02: 27 pares de 21 municipios; interfaz muestra ambas cantidades ES/EN.
+  Añadidos créditos bibliográficos de clima, vulnerabilidad e Hidro-MX con metadatos
+  primarios; corregida atribución de Huerta en el informe ya versionado.
+- Web: fichas muestran ambos soportes y cobertura, notas ES/EN, fuentes metropolitanas
+  en el pie y vocabulario descargable; datos se revalidan para evitar caché antigua.
+  QA real de mapa/grafo en escritorio y 375 px, catálogo y conteo SPARQL correctos.
+- Gabriel autorizó un commit y push por repositorio para estas correcciones, con
+  identidad Git humana y sin firmas/trailers/atribuciones de asistentes. No autoriza
+  release, DOI, correo ni envío editorial. Cada push exige ejecutar el verificador
+  original intacto: cero fallos o nueva excepción expresa de esa ejecución.
+
+- Publicación del cierre confirmada: original 22a8ac1d3e5a436a8ae4617f1fa15fef45ed7157
+  en ijcopi-zmvm; distribución 2126f8d155bf6ee209425df426c3539eabe64a3c en main.
+  Ambos con identidad humana, sin firmas/trailers de asistentes. Pages 42585668947
+  terminó success y seis archivos web coincidieron por SHA-256 con el despliegue.
+  Gabriel autorizó para esos dos pushes ADIP 403 y dos 504 de GitHub; en las ejecuciones
+  que permitieron publicar solo persistió ADIP 403. Permisos consumidos; históricos intactos.
+- Nueva petición: preparados localmente mensaje y prompt para que Gemini 4 Argon, con
+  Deep Research, revise el paper de agua y la web en esas versiones exactas. Archivos
+  contexto/MENSAJE_GEMINI_DEEP_RESEARCH_AGUA_2026-11-09.txt y
+  contexto/PROMPT_GEMINI_DEEP_RESEARCH_AGUA_2026-11-09.txt, ignorados y sin publicar.
+  Exigen revisión independiente, fuentes primarias y distinguir lectura/observación/
+  ejecución de lo no verificado. No se enviaron a Gemini ni se autorizan nuevas ediciones
+  o acciones Git por preparar estos textos. Solo continuidad local, sin nuevo commit/push.
 - Cierre corregido del 9 nov, autorizado por Gabriel con un commit y push por repositorio
   (original ijcopi-zmvm y distribución main), identidad humana y sin atribuciones/firmas de
   asistentes. No incluye release/DOI, correo o envío editorial. Cada push sigue condicionado
@@ -241,6 +283,18 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Siguiente paso
 
+Cerrar los dos commits autorizados (original ijcopi-zmvm y distribución main),
+verificar identidad humana y repetir el verificador antes de cada push. Si falla,
+obtener una excepción nueva y específica; no reutilizar las del cierre anterior.
+Comprobar remotos y Pages. Después Gabriel y coautores revisan la v3 de 9,029
+palabras para su aval; metadatos editoriales e ICOKG final siguen pendientes.
+Los permisos usados no autorizan acciones posteriores. No crear release/DOI ni
+enviar correo o manuscrito sin otra autorización.
+
+Entregar el mensaje y prompt de Deep Research; adjuntar v3/v0 y, si es útil, PDF en
+Gemini. Al recibir su informe, contrastar cada hallazgo con la versión fijada antes
+de editar. No tratar sus recomendaciones como hechos ni como autorización de Git.
+
 0. Para sismos, abrir como proyecto local Seismic_Data_Geosciences y usar su propio
    contexto/INICIAR_CONVERSACION.md. La carpeta, repo local y remoto público ya están
    creados y conectados, sin commits ni push. Leer sus reglas/memoria y confirmar antecedente y contribución
@@ -266,6 +320,14 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Bitácora
 
+- 2026-11-09: corregida revisión independiente tras contrastar hallazgos; SQL y RDF
+  reproducibles, 22 enlaces deterministas, población/cobertura explícitas y créditos
+  científicos verificados. Word final 15 páginas/9,029 palabras, amarillo e identidad
+  académica preservados. Cierre Git autorizado, sujeto al verificador por push.
+
+- 2026-11-09: preparados mensaje y prompt locales para revisión independiente en Gemini
+  Deep Research, con commits fijos, documentos, web y criterios científicos/editoriales.
+  Registrado cierre Git/Pages confirmado; sin enviar mensajes ni nuevos commits/pushes.
 - 2026-11-09: corregidos hallazgos científicos/UI y reproducibilidad con autorización de
   commit/push por repositorio. Word/PDF en 15 páginas/9,116 palabras, amarillo e identidad
   académica preservados; seis pruebas y QA web correctos. Cierre Git sujeto al verificador.

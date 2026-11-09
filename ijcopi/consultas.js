@@ -39,10 +39,10 @@
 
   // Labels describe existing SQL outputs; neither SQL nor exported data are changed here.
   const FICHAS = {
-    '01': { cat: 'meta', es: ['Fuentes incorporadas al almacén', 'Revisa la procedencia de los archivos cargados y las huellas registradas por el ETL.'], en: ['Sources loaded into the warehouse', 'Inspect the provenance of loaded files and the checksums recorded by the ETL.'] },
+    '01': { cat: 'meta', es: ['Fuentes incorporadas al almacén', 'Revisa procedencia y huellas del ETL. Cada fila es una carga a una tabla: un archivo puede aparecer varias veces; el manifiesto identifica los archivos únicos.'], en: ['Sources loaded into the warehouse', 'Inspect provenance and ETL checksums. Each row records a load into a table: a file may appear more than once; the manifest identifies unique files.'] },
     '02': { cat: 'meta', es: ['Contenido de las tablas', 'Consulta los recuentos de filas de cada tabla en la exportación del almacén.'], en: ['What the tables contain', 'Explore the row counts for each table in the warehouse export.'] },
     '03': { cat: 'territory', es: ['Agua por municipio', 'Compara indicadores municipales y revisa la calidad del volumen facturado antes de interpretarlo.'], en: ['Water by municipality', 'Compare municipal indicators and review the quality of billed volumes before interpreting them.'] },
-    '04': { cat: 'territory', es: ['Agua por colonia', 'Explora acceso al agua, marginación, facturación y reportes sobre las colonias de CONAPO.'], en: ['Water by neighbourhood', 'Explore piped-water access, marginalisation, billing and reports over CONAPO neighbourhoods.'] },
+    '04': { cat: 'territory', es: ['Agua por colonia', 'Explora acceso al agua y marginación en polígonos CONAPO. La facturación y los reportes son contexto de unidades SACMEX enlazadas; sus tasas usan población asignada por proximidad, con cobertura explícita.'], en: ['Water by neighbourhood', 'Explore piped-water access and marginalisation in CONAPO polygons. Billing and reports provide context from linked SACMEX units; their rates use population assigned by proximity, with explicit coverage.'] },
     '05': { cat: 'water', es: ['Balance de los acuíferos', 'Revisa recarga, extracción y cambios de nivel en los acuíferos que cubren la zona metropolitana.'], en: ['Aquifer balance', 'Review recharge, extraction and level changes in aquifers beneath the metropolitan area.'] },
     '06': { cat: 'water', es: ['Cambio de nivel en pozos', 'Compara las lecturas de 2010 y 2019. Un descenso positivo indica un nivel de agua más profundo.'], en: ['Water-level changes in wells', 'Compare readings from 2010 and 2019. A positive decline means a deeper water level.'] },
     '07': { cat: 'water', es: ['Volumen de las presas', 'Consulta ubicación, última lectura disponible y volúmenes medios de las presas incluidas.'], en: ['Reservoir volumes', 'Inspect location, the latest available reading and mean volumes for the included reservoirs.'] },
@@ -161,7 +161,7 @@
   }
 
   async function pedir(url, json) {
-    const respuesta = await fetch(url);
+    const respuesta = await fetch(url, { cache: 'no-cache' });
     if (!respuesta.ok) throw new Error(`${url}: HTTP ${respuesta.status}`);
     return json ? respuesta.json() : respuesta.text();
   }

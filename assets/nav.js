@@ -127,13 +127,20 @@
   }
 
   function construirPie() {
+    const metropolitana = ['mapa-zm.html', 'grafo-zm.html', 'consultas.html', 'atipicos.html'].includes(actual);
+    const en = I.idioma === 'en';
+    const fuentes = metropolitana
+      ? `${en ? 'Metropolitan sources' : 'Fuentes metropolitanas'}: INEGI, CONAGUA, SHCP, CONAPO; MexHiResClimDB, Hidro-MX, InSAR ${en ? 'and' : 'y'} Huerta-Vergara et al. &middot;
+         <a href="warehouse_ampliado/fuentes.json">${en ? 'Source manifest, versions and licences' : 'Manifiesto de fuentes, versiones y licencias'}</a><br>`
+      : '';
     document.querySelectorAll('[data-pie]').forEach(el => {
       el.className = 'pie';
       el.innerHTML = `
       ${T('pie.datos')} <a href="https://datos.cdmx.gob.mx/dataset/consumo-agua" target="_blank" rel="noopener">SACMEX</a>,
       ${T('pie.portal')} &middot;
-      ${T('pie.clima')} <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0) &middot;
+      ${metropolitana ? '' : `${T('pie.clima')} <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0) &middot;`}
       ${T('pie.mapabase')} &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> (ODbL)<br>
+      ${fuentes}
       ${T('pie.artefacto')} <em>Territorial Information Retrieval from Heterogeneous Open Data: Extending a Water Data Warehouse from Mexico City to its Metropolitan Area</em> &middot;
       <a href="https://github.com/gabrielhuav/Data_Warehouse_IJCOPI" target="_blank" rel="noopener">${T('pie.repo')}</a>`;
     });
