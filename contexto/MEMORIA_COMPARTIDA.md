@@ -1,6 +1,6 @@
 # Memoria compartida: IJCOPI de agua
 
-Actualizada: 5 de noviembre de 2026. Hablar con Gabriel en español y brevemente.
+Actualizada: 9 de noviembre de 2026. Hablar con Gabriel en español y brevemente.
 Leer AGENTS.md completo. Esta memoria es el relevo vigente; sus resultados históricos
 no equivalen a verificaciones nuevas. Las rutas dependen de la PC: usar carpetas hermanas.
 
@@ -10,6 +10,7 @@ no equivalen a verificaciones nuevas. Las rutas dependen de la PC: usar carpetas
 - Mapa: https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/mapa-zm.html
 - Grafo: https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/grafo-zm.html
 - Consultas: https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/consultas.html
+- Atípicos (página nueva, aún local): https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/atipicos.html
 - Original: https://github.com/gabrielhuav/Data_Warehouse_static, rama ijcopi-zmvm.
   Fuente de la distribución: 984c5144d4669e393262a9cd6ff515ac2ee81ca7.
 - Conservar main original, release v1.5-icokg2026, Pages y URL del congreso.
@@ -48,6 +49,115 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Estado actual
 
+- Cierre corregido del 9 nov, autorizado por Gabriel con un commit y push por repositorio
+  (original ijcopi-zmvm y distribución main), identidad humana y sin atribuciones/firmas de
+  asistentes. No incluye release/DOI, correo o envío editorial. Cada push sigue condicionado
+  al verificador original sin modificar: cero fallos o excepción expresa de esa ejecución.
+- Fuente, generador, Word/PDF y scripts del original guardados en el commit humano
+  22a8ac1d3e5a436a8ae4617f1fa15fef45ed7157, rama ijcopi-zmvm; sin firma ni trailers.
+  Verificar remoto para saber si el push ya se completó; no repetir la autorización.
+- Word/PDF regenerados: 15 páginas, 9,116 palabras, v0 5,615 (+62.350846 %), resumen 144
+  y seis keywords. Word SHA-256 d33e5f09cc6dc1d64546f8a5ff8b01de579085d1ed9e7d1dff20cda338ebd85f.
+  Copias idénticas; título, autores, IA académica, imágenes, plantilla y v0 intactos. Quince
+  páginas inspeccionadas; cero tokens nuevos sin amarillo contra el respaldo de 9,431 palabras.
+  Contador histórico v0: 83 falsos positivos. Corregidos grano fiscal con cifras/script,
+  definición AP, tres listas implementadas, Discusión y cita fiscal de 2019 (Consejería HTTP 200).
+- Web: Todas conservada al traducir, límites coherentes de listas/CSV, alcance de A_g e
+  incertidumbre de captura/cuota fija precisados ES/EN, KPI móviles en dos columnas. QA real
+  a 375 px sin desbordamiento; catálogo/grafo cargan. Doce conteos intactos, seis pruebas
+  de estadística/grano pasan en ambos repos, prueba exacta sin SciPy y deduplicación correcta.
+  CSV base, SQL, TTL, almacenes e históricos intactos. Evidencias en tmp/correccion_2026-11-09/.
+  Consultar Git local/remoto y Pages para confirmar ejecución del cierre; los permisos usados
+  no autorizan nuevos commits, pushes o publicaciones en otra sesión.
+- Auditoría independiente del informe del 8–9 nov, solo lectura de productos: Word
+  medido de nuevo con Word, 15 páginas/9,431 palabras; v0 5,615 (+67.960819 %), resumen
+  144 y seis keywords. PDF de 15 páginas inspeccionado sin recortes/solapes. Word v3
+  original/copia idénticos (SHA-256 5d1abfc22e396d5d7bf6a823afd90205158dffc021698ba70f140d064aa4963b);
+  v0, título, autores, declaración de IA e imágenes preservados. El verificador histórico
+  marca 79 contra v0 y 53 contra respaldo; no significa añadidos reales sin amarillo:
+  la revisión de párrafos/runs confirmó falsos positivos por alineación y puntuación.
+  Recalculados 10 escenarios distintos, victorias IF 19/20 y AP 20/20, 89 municipios y
+  1,508 colonias (semántica SQL de SUM con nulos), y los 12 conteos del módulo atípicos.
+- Hallazgos pendientes de corregir: 5.2 atribuye índice fiscal a colonias aunque el dato
+  es por manzana/registro y 1,200 de 1,553 colonias mezclan categorías; trabajo futuro
+  todavía incluye tres listas que la nueva web ya implementa. La web generaliza que A_g
+  solo puede detectar excesos (el resultado corresponde al top global observado) y
+  descarta error de captura en Tláhuac/Milpa Alta sin prueba causal. Bug reproducido en
+  navegador: abrir atipicos con ?alcaldia=IZTAPALAPA, elegir Todas y cambiar idioma restaura
+  Iztapalapa. El límite por lista tampoco afecta ceros. comparacion_pareada.py anuncia
+  Wilcoxon exacto pero no fija método/versión; p cambia con SciPy. Ningún producto corregido
+  en esta auditoría, sin commit/push; solo evidencia tmp y continuidad local.
+- Referencia primaria localizada para el pendiente fiscal: Gaceta Oficial CDMX núm. 62,
+  1 abril 2019, pp. 39–40, resolución de tandeo vinculada al art. 172 y transitorio del
+  decreto 31 dic 2018. Texto del PDF oficial SACMEX verificado, no incorporado al paper:
+  https://www.sacmex.cdmx.gob.mx/storage/app/media/tandeo/Tandeo_2019_GOCDMX.pdf
+  Acredita régimen de cuota fija, no cómo se llenó cada campo del dataset ni la causa
+  de los volúmenes extremos. Evidencias locales en tmp/auditoria_2026-11-09/ y
+  tmp/auditoria_paper_2026-11-09/. No se reconstruyó la base ni se repitió la simulación completa.
+- Revisión del 8–9 nov autorizada por Gabriel (ediciones sí; commit y push NUNCA sin pedirlo).
+  Paper: corregidos en dw_agua_ijcopi.tex y latex_a_ijcopi.py del original errores de hoja de ruta,
+  concordancia, unidades/formato de tabla 3, título del recurso (1° Semestre), correlación climática
+  inexistente, «consumo» por «volumen facturado», 10 escenarios de sensibilidad (no 12), precisiones
+  de 5.7 y pie de Fig. 3; comparación pareada A_g/Isolation Forest (19 de 20 semillas; PR-AUC 20 de 20)
+  con evaluacion-ml/comparacion_pareada.py y su evidencia (copiados en ambos repos). Referencias APA:
+  n.d. primero y «Mexico City». v3 regenerada: 15 páginas, 9,431 palabras (+67.96 %), resumen 144;
+  0 palabras nuevas sin amarillo frente a la v3 previa. Word y PDF instalados en el original y Word
+  sincronizado aquí (SHA-256 5d1abfc2…). Respaldo previo en tmp/revision_2026-11-08/antes/.
+- Web local: mapa con ficha traducida (banda 10–400 L), nota para Tláhuac/Milpa Alta, municipio en
+  la ficha de colonia, nota de población (CONAPO 2019 frente a Censo 2020 de la tabla 4), conteos de
+  sequía dinámicos, región de estado limpia y reintento; catálogo con carga diferida (solo manifiesto
+  al inicio); grafo con estado limpio y reintento; página nueva ijcopi/atipicos.html con las tres
+  listas de la sección 5.6, cuyos 12 conteos coinciden con evidencia_ranking_real.txt. Barra con
+  «Atípicos». Probado en navegador: escritorio, 375 px, ES/EN, sin errores de consola. Sin commit/push.
+- Gabriel autorizó expresamente crear el remoto público de sismos y conectarlo a la
+  carpeta local. Creado y verificado https://github.com/gabrielhuav/Seismic_Data_Geosciences,
+  origin HTTPS correcto en Seismic_Data_Geosciences, 0 refs remotas y 0 commits locales.
+  Identidad Git humana confirmada; continuidad autónoma actualizada en el nuevo proyecto.
+  Esta autorización de creación/conexión ya se consumió; no autoriza commit ni push.
+  El repo GitHub está vacío y los archivos siguen locales. Sin publicación de contenido.
+- Gabriel autorizó crear la carpeta y repo local de sismos. Creado
+  C:\Users\gabri\Documents\GitHub Desktop\Seismic_Data_Geosciences, Git inicializado
+  en main sin commits ni remoto. Identidad local Gabriel Hurtado
+  <gabrielhurtadoaviles@gmail.com>, firmas de commit/tag desactivadas. Incluye AGENTS.md,
+  README, .gitignore, .gitattributes y los tres Markdown de continuidad autónoma; prompt
+  TXT como ayuda local ignorada. No hubo commit, push, publicación ni cambios a históricos.
+- Gabriel acepta Computers & Geosciences como destino del nuevo trabajo y solicita
+  prompt completo y mensaje de inicio. Preparados localmente
+  contexto/PROMPT_INICIO_SISMOS_COMPUTERS_GEOSCIENCES.txt y
+  contexto/MENSAJE_INICIO_SISMOS_COMPUTERS_GEOSCIENCES.txt. El anterior prompt para
+  Geotechnics queda marcado como antecedente. Los TXT están ignorados, sin publicar.
+  Verificada guía específica: plantillas editoriales Word/LaTeX cageo, una columna,
+  doble espacio, líneas, resumen 300 palabras, 1–6 keywords, highlights obligatorios,
+  referencias autor–fecha sin abreviar nombres de revistas y código público al enviar.
+  Se mantiene costo personal cero por suscripción y autoría Villa Vargas/Gabriel.
+  Solo se preparó el relevo: no se creó el proyecto ni hubo commit/push/publicación.
+- Condición editorial prioritaria de Gabriel: publicar sismos sin gasto personal.
+  Verificado el 5 nov en navegador, páginas oficiales ScienceDirect: Applied Computing
+  and Geosciences es OA con APC USD 2,230 sin impuestos; no asumir exención ni convenio
+  institucional confirmado. Computers & Geosciences sí ofrece publicación por suscripción
+  sin cargo de publicación al autor, separada de la opción OA de pago. Candidata por
+  evaluar, no destino decidido; requiere aporte computacional y geocientífico novedoso.
+- Gabriel cuestiona el encaje de sismos con Computers and Geotechnics. El destino
+  editorial queda por decidir: el enfoque actual de catálogo/ETL/visualización no
+  acredita por sí solo una contribución geotécnica. Reconfirmado el alcance oficial
+  en Elsevier; no se cambia la investigación para forzar el encaje ni se crea el repo.
+  El prompt preparado para esa revista sigue siendo un borrador local pendiente.
+- Nueva petición del 5 nov: preparado localmente contexto/PROMPT_INICIO_SISMOS_CG.txt
+  para un artículo independiente en Computers and Geotechnics. Autores indicados:
+  José Manuel Villa Vargas primero; Gabriel Hurtado Avilés segundo y de correspondencia.
+  Verificadas guía oficial y plantilla CAS v2.4; Word editable a una columna también
+  admitido. El prompt exige evaluar primero un aporte computacional geotécnico y auditar
+  los datos propuestos de Actronix09/fuentes-alternas, rama sismos-norteamerica.
+  Identificado el antecedente AZCATL Cuando México tiembla, pendiente de confirmar que
+  sea el artículo base referido por Gabriel. No se creó repo ni se hizo commit/push.
+  El prompt queda local e ignorado; no se publica como contexto del paper de agua.
+- Las entradas siguientes conservan antecedentes de las etapas de revisión y publicación;
+  sus permisos ya se consumieron y sus estados intermedios no revocan el cierre confirmado.
+- Publicación confirmada el 5 nov: commit 29a30dce7fd2f8ff26c9d7ecff0f3000248535fa
+  enviado a origin/main con autorización expresa. Autor y committer Gabriel Hurtado;
+  sin firmas, trailers ni coautorías de asistentes. Verificador original repetido justo
+  antes del push: 25 enlaces, fallos: 0; ADIP y AZCATL respondieron 200. No se utilizó
+  la excepción autorizada para ADIP. Este registro de cierre queda local, sin otro commit.
 - 5 nov, publicación de la revisión: Gabriel autorizó expresamente commit y push de los
   cambios pendientes con su identidad Git y sin atribuciones de IA. Se prepara un único
   commit en Data_Warehouse_IJCOPI con Word v3, web y documentación. No se hace commit
@@ -131,15 +241,22 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Siguiente paso
 
-0. Confirmar el commit de esta revisión en Data_Warehouse_IJCOPI y obtener excepción nueva
-   para el único ADIP 403 antes del push. Mantener identidad humana y ausencia de firmas,
-   trailers y coautorías de asistentes. Verificar despliegue de Pages después del push.
-1. Gabriel revisa la v3 regenerada y los cambios web locales. Revisión humana de coautores,
-   referencias editoriales de ICOKG y aprobación final de envío siguen pendientes.
-   No crear commit ni hacer push sin autorización nueva para cada acción; ejecutar otra vez
-   el verificador original y pedir excepción específica para los fallos que existan entonces.
-   Incluir el nuevo CSS del catálogo cuando se autorice el commit; conservar las versiones
-   de assets en los enlaces para evitar que una caché mantenga el diseño anterior.
+0. Para sismos, abrir como proyecto local Seismic_Data_Geosciences y usar su propio
+   contexto/INICIAR_CONVERSACION.md. La carpeta, repo local y remoto público ya están
+   creados y conectados, sin commits ni push. Leer sus reglas/memoria y confirmar antecedente y contribución
+   científica con diagnóstico y plan antes de implementar.
+   No trasladar reglas de IJCOPI o Geotechnics a esta revista. Revalidar costo al enviar;
+   cualquier OA con APC requiere cobertura total o exención confirmada, sin asumirlas.
+   No hay autorización de commit/push del nuevo trabajo.
+   Agua: push de 29a30dc y Pages confirmados (Actions 42085551920, success). Esta autorización ya se
+   consumió. Los cambios de fuente/conversor/Word/PDF del original siguen locales y
+   requieren autorización propia para commit y push. No confundirlos con esta distribución.
+1. Gabriel revisa la v3 corregida (9,116 palabras) y los coautores dan su aval final.
+   Faltan referencia editorial de ICOKG y metadatos que asigne la revista: no inventar DOI,
+   volumen o páginas. El release/DOI de la ampliación requiere autorización y flujo propios.
+   Cita fiscal, Discusión, cifras del índice, prueba exacta y correcciones UI ya atendidas.
+   Confirmar cierre con Git y Pages; cada acción posterior necesita autorización nueva y
+   cada push exige repetir el verificador y obtener excepción específica si hay fallos.
 2. En otra PC, seguir contexto/NUEVA_PC.md y agregar el clon como proyecto local en Codex.
 3. Para publicar la revisión, considerar por separado los cambios del original ijcopi-zmvm
    (fuente, conversor, Word y PDF) y los de esta distribución (Word y web); no mezclar ramas
@@ -149,6 +266,40 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Bitácora
 
+- 2026-11-09: corregidos hallazgos científicos/UI y reproducibilidad con autorización de
+  commit/push por repositorio. Word/PDF en 15 páginas/9,116 palabras, amarillo e identidad
+  académica preservados; seis pruebas y QA web correctos. Cierre Git sujeto al verificador.
+- 2026-11-09: contrastado informe de revisión con Word/PDF, Git, datos crudos y scripts;
+  confirmadas métricas centrales, amarillo y conteos. Detectados pendientes científicos,
+  reproducibilidad Wilcoxon y fallos UI; localizada fuente fiscal primaria de 2019.
+  Productos intactos; solo evidencia y continuidad local, sin commit/push/publicación.
+- 2026-11-09: revisión autorizada del paper y la web. Fuente/conversor corregidos, v3 regenerada
+  (15 páginas, +67.96 %, amarillo comprobado), script de comparación pareada, mejoras de mapa,
+  catálogo y grafo, y página de tres listas de atípicos verificada. Todo local; sin commit ni push.
+- 2026-11-05: con autorización expresa de Gabriel, creado repositorio público
+  gabrielhuav/Seismic_Data_Geosciences y conectado como origin a la carpeta homónima.
+  Verificado remoto vacío y 0 commits locales; identidad humana, sin commit ni push.
+- 2026-11-05: creada por autorización expresa la carpeta Seismic_Data_Geosciences y su
+  repo Git local vacío en main. Identidad humana, firmas desactivadas y continuidad
+  autónoma preparada. Sin commit, remoto, push ni publicación; originales intactos.
+- 2026-11-05: a petición de Gabriel, adaptados prompt y mensaje para Computers &
+  Geosciences con vía de suscripción sin cargo al autor. Guía y plantillas específicas
+  verificadas; corregidas diferencias respecto de Geotechnics. Autoría y autorizaciones
+  individuales preservadas. Entregables TXT locales ignorados; sin repo nuevo ni commit/push.
+- 2026-11-05: Gabriel prioriza publicación sin gasto personal y pregunta por Applied
+  Computing and Geosciences. Comprobado APC oficial USD 2,230 sin impuestos. Verificada
+  la alternativa por suscripción sin cargo al autor en Computers & Geosciences. Destino
+  editorial pendiente; sin cambios al prompt, creación de repo ni commit/push.
+- 2026-11-05: Gabriel replantea el destino Computers and Geotechnics por su alcance.
+  Verificado el alcance en la página oficial de Elsevier; la selección editorial queda
+  pendiente de encaje con la contribución de sismos. Sin cambios al prompt ni commit/push.
+- 2026-11-05: preparado prompt local para el nuevo artículo de sismos; revisados antecedentes,
+  repositorio histórico, fuentes alternativas y guía/plantilla oficial de Computers and
+  Geotechnics. CAS v2.4 y Word a una columna; prioridad a encaje científico geotécnico.
+  Autoría solicitada preservada. Sin creación de repo, cambios a históricos ni commit/push.
+- 2026-11-05: push autorizado de 29a30dc completado y remoto confirmado. Identidad humana,
+  sin atribuciones ni firma de IA. Verificador original: 25 enlaces y 0 fallos, incluidos
+  ADIP 200 y AZCATL 200. No se creó otro commit; cierre de continuidad solo local.
 - 2026-11-05: Gabriel autorizó commit y push de la revisión pendiente con las reglas locales.
   Preparado el commit de Word/web/documentación; verificador original: 25 enlaces, un fallo
   ADIP 403, AZCATL 200. Push condicionado a excepción expresa nueva. Sin commit del original.

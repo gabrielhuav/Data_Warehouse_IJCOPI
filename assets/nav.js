@@ -57,6 +57,7 @@
     ['ijcopi/mapa-zm.html', 'nav.zm'],
     ['ijcopi/grafo-zm.html', 'nav.grafozm'],
     ['ijcopi/consultas.html', 'nav.consultas'],
+    ['ijcopi/atipicos.html', 'nav.atipicos'],
     ['panel.html',    'nav.index'],
     ['mapa.html',     'nav.mapa'],
     ['grafo.html',    'nav.grafo'],
@@ -68,9 +69,9 @@
     const en = I.idioma === 'en';
     const enlace = ([h, k], corto) =>
       `<a href="${h}"${h.split('/').pop().toLowerCase() === actual ? ' aria-current="page"' : ''}>${corto || T(k)}</a>`;
-    const enlaces = paginas.slice(0, 3).map((p, i) => enlace(p, (en ? ['Map', 'Graph', 'Queries'] : ['Mapa', 'Grafo', 'Consultas'])[i])).join('');
-    const historicos = paginas.slice(3).map(p => enlace(p)).join('');
-    const historicoActivo = paginas.slice(3).some(([h]) => h === actual);
+    const enlaces = paginas.slice(0, 4).map((p, i) => enlace(p, (en ? ['Map', 'Graph', 'Queries', 'Atypical'] : ['Mapa', 'Grafo', 'Consultas', 'Atípicos'])[i])).join('');
+    const historicos = paginas.slice(4).map(p => enlace(p)).join('');
+    const historicoActivo = paginas.slice(4).some(([h]) => h === actual);
 
     /* Un segmentado igual que el del tema: dos botones excluyentes con
        aria-pressed. El nombre accesible es la propia etiqueta visible

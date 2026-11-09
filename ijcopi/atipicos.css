@@ -1,0 +1,20 @@
+/* Tres listas de consumos atipicos: estilos acotados a esta pagina. */
+.at-controles{display:flex; flex-wrap:wrap; gap:.8rem 1.2rem; align-items:flex-end; padding:.9rem 1.1rem; margin-bottom:.6rem}
+.at-controles > div{display:flex; flex-direction:column; gap:.3rem; min-width:200px}
+.at-controles label{font-size:.8rem; color:var(--texto-2)}
+.at-aviso{max-width:100ch; margin:.2rem 0 1rem}
+.at-listas{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:1rem; align-items:start}
+.at-listas .zm-card{margin-bottom:0; min-width:0}
+.at-listas .zm-tabla{max-height:520px}
+.at-listas td.num,.at-listas th.num{text-align:right; font-variant-numeric:tabular-nums}
+.at-listas td.colonia{white-space:normal; min-width:9rem}
+.at-verificacion{margin:.5rem 0; padding-left:1.1rem; font-size:.82rem}
+.at-verificacion li{margin:.15rem 0}
+.at-ok{color:var(--ok, #2e7d32); font-weight:700}
+.at-mal{color:var(--error, #c62828); font-weight:700}
+.at-page .zm-origen{margin-top:1rem}
+@media (max-width:600px){
+  .at-page .zm-kpis{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); overflow:visible; padding-bottom:0; gap:.6rem}
+  .at-page .zm-kpis .zm-kpi{min-width:0; padding:.7rem .75rem; overflow-wrap:anywhere}
+  .at-page .zm-kpi span{white-space:normal; line-height:1.35}
+}

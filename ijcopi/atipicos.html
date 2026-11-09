@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>Consumos atípicos en tres listas</title>
+    <meta name="description" content="Explora exceso, déficit y colonias sin volumen facturado en tres listas calculadas en el navegador a partir de la exportación de SACMEX.">
+    <link rel="stylesheet" href="assets/estilo.css?v=20261105-ui2">
+    <link rel="stylesheet" href="assets/paginas.css">
+    <link rel="stylesheet" href="ijcopi/zm.css?v=20261105-ui2">
+    <link rel="stylesheet" href="ijcopi/atipicos.css?v=20261109-r3">
+    <script src="assets/i18n.js"></script>
+</head>
+<body>
+<a class="zm-salto" href="ijcopi/atipicos.html#contenido">Saltar al contenido / Skip to content</a>
+<header data-barra></header>
+<main id="contenido" class="app-container at-page" tabindex="-1">
+    <noscript><p class="status show error">Activa JavaScript para calcular las listas. / Enable JavaScript to compute the lists.</p></noscript>
+    <div class="zm-cabecera">
+        <div>
+            <span class="zm-eyebrow" data-t="eyebrow"></span>
+            <h1 data-t="titulo"></h1>
+            <p data-t="lema"></p>
+        </div>
+        <nav class="zm-nav" aria-label="Versión extendida">
+            <a href="ijcopi/mapa-zm.html" data-t="nav.mapa"></a>
+            <a href="ijcopi/grafo-zm.html" data-t="nav.grafo"></a>
+            <a href="ijcopi/consultas.html" data-t="nav.consultas"></a>
+            <a href="ijcopi/atipicos.html" aria-current="page" data-t="nav.atipicos"></a>
+        </nav>
+    </div>
+
+    <div id="status" class="status" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <div class="zm-kpis" id="kpis" aria-live="polite"></div>
+
+    <section class="panel at-controles" aria-labelledby="controlesTitulo">
+        <h2 id="controlesTitulo" class="sr-only" data-t="controles"></h2>
+        <div>
+            <label for="alcaldia" data-t="alcaldia"></label>
+            <select id="alcaldia" disabled></select>
+        </div>
+        <div>
+            <label for="cuantas" data-t="cuantas"></label>
+            <select id="cuantas" disabled>
+                <option value="15">15</option>
+                <option value="47">47</option>
+                <option value="0" data-t="todas"></option>
+            </select>
+        </div>
+        <button class="btn btn-secondary" type="button" id="descargar" disabled data-t="descargar"></button>
+    </section>
+
+    <p class="zm-nota at-aviso" data-t="aviso"></p>
+
+    <div class="at-listas">
+        <section class="panel zm-card" aria-labelledby="tExceso">
+            <h2 id="tExceso" data-t="l.exceso"></h2>
+            <p class="zm-nota" data-t="l.exceso.ayuda"></p>
+            <div id="exceso" class="zm-tabla" role="region" tabindex="0" aria-labelledby="tExceso"></div>
+        </section>
+        <section class="panel zm-card" aria-labelledby="tDeficit">
+            <h2 id="tDeficit" data-t="l.deficit"></h2>
+            <p class="zm-nota" data-t="l.deficit.ayuda"></p>
+            <div id="deficit" class="zm-tabla" role="region" tabindex="0" aria-labelledby="tDeficit"></div>
+        </section>
+        <section class="panel zm-card" aria-labelledby="tCero">
+            <h2 id="tCero" data-t="l.cero"></h2>
+            <p class="zm-nota" data-t="l.cero.ayuda"></p>
+            <div id="cero" class="zm-tabla" role="region" tabindex="0" aria-labelledby="tCero"></div>
+        </section>
+    </div>
+
+    <section class="panel zm-origen">
+        <details>
+            <summary class="zm-origen-summary" data-t="v.titulo"></summary>
+            <p data-t="v.texto"></p>
+            <ul id="verificacion" class="at-verificacion"></ul>
+            <pre class="zm-pre">py -3 -I evaluacion-ml/ranking_real.py</pre>
+        </details>
+    </section>
+</main>
+<footer data-pie></footer>
+<script src="assets/nav.js?v=20261109"></script>
+<script src="ijcopi/atipicos.js?v=20261109-r2"></script>
+</body>
+</html>

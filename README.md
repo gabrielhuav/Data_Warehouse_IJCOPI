@@ -7,6 +7,9 @@ Conference on Ontologies and Knowledge Graphs (ICOKG 2026)**, prepared for the s
 - **Map → <https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/mapa-zm.html>**
 - **Knowledge graph → <https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/grafo-zm.html>**
 - **Warehouse queries → <https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/consultas.html>**
+- **Atypical consumption in three lists → <https://gabrielhuav.github.io/Data_Warehouse_IJCOPI/ijcopi/atipicos.html>**
+  (excess, deficit and no billed volume, the design of Section 5.6, computed in the browser and
+  checked against `evaluacion-ml/ranking_real.py`)
 
 The conference version remains frozen as release
 [`v1.5-icokg2026`](https://github.com/gabrielhuav/Data_Warehouse_static/releases/tag/v1.5-icokg2026) of
@@ -31,6 +34,11 @@ triples. The original fact tables are untouched.
 | Root pages, `assets/`, `scripts/`, `evaluacion-ml/` | The conference demonstration and its analyses |
 
 ## The map is the warehouse
+
+The three-list interface separates high, low and zero billed volumes without diagnosing
+leaks or measured demand. Fiscal categories are analysed at source-record level.
+[`evaluacion-ml/README.md`](evaluacion-ml/README.md) documents the fiscal calculation,
+average precision and the exact paired sign-permutation test with ties and zero differences.
 
 The map is static: it does not query PostgreSQL live. `etl/exportar_mapa.py` runs each query and
 stores its result in `ijcopi/datos/`, with a hash. `verificacion/verificar_mapa.py` repeats every query

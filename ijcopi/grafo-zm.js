@@ -18,7 +18,7 @@
     es: {
       titulo: 'Grafo del agua en la zona metropolitana',
       lema: 'El almacén ampliado publicado como grafo de conocimiento. Cruza el límite de la CDMX y se consulta con SPARQL en tu navegador, sin servidor.',
-      'nav.mapa': 'Mapa', 'nav.grafo': 'Grafo', 'nav.consultas': 'Consultas al almacén',
+      'nav.mapa': 'Mapa', 'nav.grafo': 'Grafo', 'nav.consultas': 'Consultas al almacén', 'nav.atipicos': 'Atípicos',
       'k.tripletas': 'Tripletas', 'k.municipios': 'Municipios', 'k.fronteras': 'Fronteras entre municipios',
       'k.colonias': 'Colonias', 'k.vecinas': 'Colindancias entre colonias',
       'r.titulo': 'Recorrer el grafo',
@@ -39,7 +39,7 @@
     en: {
       titulo: 'Water graph of the metropolitan area',
       lema: 'The extended warehouse published as a knowledge graph. It crosses the Mexico City boundary and runs SPARQL in your browser, with no server.',
-      'nav.mapa': 'Map', 'nav.grafo': 'Graph', 'nav.consultas': 'Warehouse queries',
+      'nav.mapa': 'Map', 'nav.grafo': 'Graph', 'nav.consultas': 'Warehouse queries', 'nav.atipicos': 'Atypical',
       'k.tripletas': 'Triples', 'k.municipios': 'Municipalities', 'k.fronteras': 'Municipal boundaries',
       'k.colonias': 'Neighbourhoods', 'k.vecinas': 'Neighbourhood adjacencies',
       'r.titulo': 'Traverse the graph',
@@ -339,11 +339,14 @@
     try { MapaTeselas.montar(mapa, { maxZoom: 19 }); } catch (e) { console.error(e); }
     try {
       await cargar();
+      /* La region viva no debe quedarse diciendo «Analizando…» cuando ya termino */
       st.className = 'status';
+      st.textContent = '';
     } catch (e) {
       console.error(e);
-      st.textContent = t('error', { msg: e.message || e });
       st.className = 'status show error';
+      st.innerHTML = `${esc(t('error', { msg: e.message || e }))} <button type="button" class="btn btn-secondary">${esc(idioma === 'en' ? 'Try again' : 'Volver a intentar')}</button>`;
+      st.querySelector('button').addEventListener('click', () => location.reload());
     }
   }
 

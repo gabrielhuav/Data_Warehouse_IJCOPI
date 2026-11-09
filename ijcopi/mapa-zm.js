@@ -22,7 +22,7 @@
       'ui.ficha': 'Ficha del territorio', 'ui.fichaAyuda': 'Selecciona un municipio, una colonia o un elemento del mapa para ver su información.',
       'ui.inventario': 'Contenido del almacén', 'ui.copiado': 'Enlace copiado. Incluye indicador, capas y encuadre.',
       'ui.copiarManual': 'Copia este enlace para compartir la vista.', 'ui.limpiar': 'Cerrar ficha',
-      'nav.mapa': 'Mapa', 'nav.grafo': 'Grafo', 'nav.consultas': 'Consultas al almacén',
+      'nav.mapa': 'Mapa', 'nav.grafo': 'Grafo', 'nav.consultas': 'Consultas al almacén', 'nav.atipicos': 'Atípicos',
       'c.indicador': 'Indicador', 'c.fecha': 'Fecha del corte', 'c.capas': 'Capas',
       'capa.acuiferos': 'Acuíferos', 'capa.pozos': 'Pozos: cambio de nivel 2010-2019',
       'capa.presas': 'Presas', 'capa.calidad': 'Calidad del agua',
@@ -53,6 +53,9 @@
       'sev.-1': 'Sin sequía', 'sev.0': 'D0 Anormalmente seco', 'sev.1': 'D1 Sequía moderada',
       'sev.2': 'D2 Sequía severa', 'sev.3': 'D3 Sequía extrema', 'sev.4': 'D4 Sequía excepcional',
       'gm.Muy bajo': 'Muy bajo', 'gm.Bajo': 'Bajo', 'gm.Medio': 'Medio', 'gm.Alto': 'Alto', 'gm.Muy alto': 'Muy alto',
+      'vol.plausible': 'dentro de la banda de 10 a 400 L', 'vol.atipico': 'fuera de la banda de 10 a 400 L', 'vol.sin dato': 'sin dato',
+      'nota.cdmxBanda': 'Este valor procede de la facturación volumétrica reportada por SACMEX, no de una medición de demanda. Queda fuera de la banda de 10 a 400 L; eso no prueba un error de captura ni permite descartarlo. La cuota fija en zonas de tandeo es una explicación posible que el export no permite confirmar (artículo, sección 5.3).',
+      'pob.mun': 'Población a mitad de 2019 (CONAPO)', 'pob.col': 'Población 2020 (CONAPO)', 'ui.reintentar': 'Volver a intentar',
     },
     en: {
       titulo: 'Water in the Mexico City Metropolitan Area',
@@ -64,7 +67,7 @@
       'ui.ficha': 'Territorial profile', 'ui.fichaAyuda': 'Select a municipality, neighbourhood or map feature to see its information.',
       'ui.inventario': 'Warehouse contents', 'ui.copiado': 'Link copied. It includes the indicator, layers and map extent.',
       'ui.copiarManual': 'Copy this link to share the view.', 'ui.limpiar': 'Close profile',
-      'nav.mapa': 'Map', 'nav.grafo': 'Graph', 'nav.consultas': 'Warehouse queries',
+      'nav.mapa': 'Map', 'nav.grafo': 'Graph', 'nav.consultas': 'Warehouse queries', 'nav.atipicos': 'Atypical',
       'c.indicador': 'Indicator', 'c.fecha': 'Date of the reading', 'c.capas': 'Layers',
       'capa.acuiferos': 'Aquifers', 'capa.pozos': 'Wells: level change 2010-2019',
       'capa.presas': 'Dams', 'capa.calidad': 'Water quality',
@@ -95,6 +98,9 @@
       'sev.-1': 'No drought', 'sev.0': 'D0 Abnormally dry', 'sev.1': 'D1 Moderate drought',
       'sev.2': 'D2 Severe drought', 'sev.3': 'D3 Extreme drought', 'sev.4': 'D4 Exceptional drought',
       'gm.Muy bajo': 'Very low', 'gm.Bajo': 'Low', 'gm.Medio': 'Medium', 'gm.Alto': 'High', 'gm.Muy alto': 'Very high',
+      'vol.plausible': 'within the 10–400 L band', 'vol.atipico': 'outside the 10–400 L band', 'vol.sin dato': 'no data',
+      'nota.cdmxBanda': 'This value comes from volumetric billing reported by SACMEX, not a measure of demand. It falls outside the 10–400 L band; that neither proves nor rules out a data-entry error. Fixed fees in areas with intermittent supply are a possible explanation that the export cannot confirm (article, Section 5.3).',
+      'pob.mun': 'Mid-2019 population (CONAPO)', 'pob.col': '2020 population (CONAPO)', 'ui.reintentar': 'Try again',
     },
   };
 
@@ -113,8 +119,8 @@
   const INDICADORES = [
     { id: 'm_litros', capa: 'municipio', campo: 'litros_hab_dia_dom', consulta: '03_municipios_zm', calidad: true,
       es: 'Litros facturados por habitante al día', en: 'Billed litres per inhabitant per day',
-      nes: 'Alcaldías: SACMEX, enero-junio de 2019, anualizado. Demás municipios: CNGMD 2018. Es facturación doméstica, no consumo. La fuente mide distinto a cada lado del límite.',
-      nen: 'Boroughs: SACMEX, January-June 2019, annualised. Other municipalities: CNGMD 2018. This is domestic billing, not use, and the source differs across the boundary.' },
+      nes: 'Alcaldías: SACMEX, enero-junio de 2019 anualizado (×2), entre 365 días y la población a mitad de 2019 de CONAPO; la tabla 4 del artículo divide entre los residentes del Censo 2020 y 181 días, por eso sus cifras difieren un poco. Demás municipios: CNGMD 2018. Es facturación doméstica, no consumo. La fuente mide distinto a cada lado del límite.',
+      nen: 'Boroughs: SACMEX, January-June 2019 annualised (×2), over 365 days and the CONAPO mid-2019 population; Table 4 of the article divides by 2020 Census residents and 181 days, so its figures differ slightly. Other municipalities: CNGMD 2018. This is domestic billing, not use, and the source differs across the boundary.' },
     { id: 'm_viv', capa: 'municipio', campo: 'pct_viv_agua_dentro', consulta: '03_municipios_zm',
       es: 'Viviendas con agua entubada dentro (%)', en: 'Dwellings with piped water inside (%)',
       nes: 'Censo 2020, ITER.', nen: '2020 Census, ITER.' },
@@ -126,7 +132,7 @@
       nes: 'InSAR 2014-2020 (Khorrami et al.). Negativo: el terreno se hunde.', nen: 'InSAR 2014-2020 (Khorrami et al.). Negative: the ground is sinking.' },
     { id: 'm_sequia', capa: 'municipio', sequia: true, consulta: '09_sequia_zm',
       es: 'Sequía (Monitor de Sequía de México)', en: 'Drought (Mexican Drought Monitor)',
-      nes: 'SMN-CONAGUA. Mueve la fecha: hay 437 cortes desde 2003.', nen: 'SMN-CONAGUA. Move the date: there are 437 readings since 2003.' },
+      nes: 'SMN-CONAGUA. Mueve la fecha: hay {n} cortes desde {anio}.', nen: 'SMN-CONAGUA. Move the date: there are {n} readings since {anio}.' },
     { id: 'c_sinagua', capa: 'colonia', campo: 'pct_sin_agua', cortes: [0.5, 2, 5, 15], consulta: '04_colonias_zm',
       es: 'Ocupantes sin agua entubada (%)', en: 'Occupants without piped water (%)',
       nes: 'CONAPO 2020. Cubre toda la ZM, también fuera de la CDMX.', nen: 'CONAPO 2020. Covers the whole metropolitan area, also outside Mexico City.' },
@@ -147,6 +153,13 @@
       nes: 'Solo CDMX. InSAR 2014-2020. Negativo: el terreno se hunde.', nen: 'Mexico City only. InSAR 2014-2020. Negative: the ground is sinking.' },
   ];
   const porId = id => INDICADORES.find(i => i.id === id);
+  /* Nota del indicador; los conteos de la sequia salen de los datos cargados, no van escritos */
+  const notaDe = ind => {
+    const s = ind[idioma === 'en' ? 'nen' : 'nes'];
+    return D.fechas && D.fechas.length
+      ? s.replace('{n}', fmt(D.fechas.length, 0)).replace('{anio}', D.fechas[0].slice(0, 4))
+      : s.replace(/\s*[^.]*\{n\}[^.]*\./, '');
+  };
 
   let idioma = q.get('lang') === 'en' || q.get('lang') === 'es' ? q.get('lang') : (window.I18N ? I18N.idioma : 'es');
   const t = (k, v) => {
@@ -396,22 +409,27 @@
   function detalleMunicipio(r) {
     detalleActual = { mostrar: detalleMunicipio, dato: r };
     document.getElementById('buscarMunicipio').value = r.cve_mun;
+    /* La banda es un filtro de plausibilidad, no un diagnostico causal. La facturacion de SACMEX
+       fuera de la banda tampoco permite probar ni descartar por si sola errores de captura. */
+    const nota = zona(r) === 'cdmx' && r.calidad_volumen === 'atipico'
+      ? `<p class="zm-nota" role="note">${esc(t('nota.cdmxBanda'))}</p>` : '';
     panel(r.nom_mun, r.nom_ent, [
-      [t('pob'), fmt(r.pob_2019, 0)],
-      [nombre('m_litros'), r.litros_hab_dia_dom == null ? null : `${fmt(r.litros_hab_dia_dom, 1)} (${r.calidad_volumen})`],
+      [t('pob.mun'), fmt(r.pob_2019, 0)],
+      [nombre('m_litros'), r.litros_hab_dia_dom == null ? null : `${fmt(r.litros_hab_dia_dom, 1)} (${t('vol.' + r.calidad_volumen)})`],
       [t('fuente'), r.fuente_volumen],
       [nombre('m_viv'), fmt(r.pct_viv_agua_dentro, 1)],
       [nombre('c_gm'), r.gm_2020 ? t('gm.' + r.gm_2020) : null],
       [nombre('m_recaud'), r.recaudacion_pc_2018 == null ? null : fmt(r.recaudacion_pc_2018, 1)],
       [nombre('m_vlm'), r.vlm_cm_anio == null ? null : fmt(r.vlm_cm_anio, 2)],
       [t('acuifero'), r.acuifero_principal],
-    ], `SELECT nom_mun, pob_2019, litros_hab_dia_dom, calidad_volumen FROM v_zm_indicadores_agua WHERE cve_mun = '${r.cve_mun}'`);
+    ], `SELECT nom_mun, pob_2019, litros_hab_dia_dom, calidad_volumen FROM v_zm_indicadores_agua WHERE cve_mun = '${r.cve_mun}'`, nota);
   }
 
   function detalleColonia(r) {
     detalleActual = { mostrar: detalleColonia, dato: r };
-    panel(r.colonia, r.cve_mun, [
-      [t('pob'), fmt(r.pob_total, 0)],
+    const m = D.munPorCve && D.munPorCve[r.cve_mun];
+    panel(r.colonia, m ? `${m.nom_mun}, ${m.nom_ent}` : r.cve_mun, [
+      [t('pob.col'), fmt(r.pob_total, 0)],
       [nombre('c_sinagua'), fmt(r.pct_sin_agua, 2)],
       [nombre('c_gm'), r.gm_2020 ? t('gm.' + r.gm_2020) : null],
       [nombre('c_litros'), r.litros_hab_dia_dom == null ? null : fmt(r.litros_hab_dia_dom, 1)],
@@ -498,7 +516,7 @@
       sel.appendChild(g);
     });
     sel.value = estado.ind;
-    document.getElementById('notaIndicador').textContent = porId(estado.ind)[idioma === 'en' ? 'nen' : 'nes'];
+    document.getElementById('notaIndicador').textContent = notaDe(porId(estado.ind));
     if (D.manifiesto) {
       const busqueda = document.getElementById('buscarMunicipio');
       const valor = busqueda.value;
@@ -531,7 +549,7 @@
     estado.ind = id;
     const ind = porId(id);
     document.getElementById('indicador').value = id;
-    document.getElementById('notaIndicador').textContent = ind[idioma === 'en' ? 'nen' : 'nes'];
+    document.getElementById('notaIndicador').textContent = notaDe(ind);
     document.getElementById('bloqueFecha').hidden = !ind.sequia;
     pintarBase();
     guardarUrl();
@@ -572,6 +590,7 @@
     D.manifiesto = man;
     D.tablas = tablas;
     D.municipios = filas(mun);
+    D.munPorCve = Object.fromEntries(D.municipios.map(r => [r.cve_mun, r]));
     D.colonias = filas(col);
     D.acuiferos = filas(acu);
     D.pozos = filas(poz);
@@ -607,11 +626,15 @@
     try {
       await cargar();
     } catch (e) {
-      st.textContent = t('error', { msg: e.message });
+      console.error(e);
       st.className = 'status show error';
+      st.innerHTML = `${esc(t('error', { msg: e.message || e }))} <button type="button" class="btn btn-secondary zm-reintentar">${esc(t('ui.reintentar'))}</button>`;
+      st.querySelector('.zm-reintentar').addEventListener('click', () => location.reload());
       return;
     }
+    /* La region viva no debe quedarse diciendo «Cargando…» cuando ya termino */
     st.className = 'status';
+    st.textContent = '';
 
     const fechaQ = q.get('fecha');
     const i = fechaQ ? D.fechas.indexOf(fechaQ) : -1;

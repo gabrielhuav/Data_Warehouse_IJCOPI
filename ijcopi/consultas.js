@@ -4,7 +4,7 @@
 
   const TXT = {
     es: {
-      titulo: 'Explora los datos del mapa', 'nav.mapa': 'Mapa', 'nav.grafo': 'Grafo', 'nav.consultas': 'Consultas al almacén',
+      titulo: 'Explora los datos del mapa', 'nav.mapa': 'Mapa', 'nav.grafo': 'Grafo', 'nav.consultas': 'Consultas al almacén', 'nav.atipicos': 'Atípicos',
       coleccion: 'Catálogo de consultas',
       lema: 'Encuentra un tema, explora su resultado y descarga los datos. El SQL y los pasos para repetir cada consulta están a un clic.',
       pasos: 'Cómo repetir las consultas en PostgreSQL',
@@ -17,9 +17,10 @@
       resultados: 'Consultas disponibles', contador: '{n} de {total} consultas',
       'vacio.titulo': 'No encontramos esa consulta', 'vacio.ayuda': 'Prueba otra palabra o elimina los filtros para ver todos los temas.', limpiar: 'Limpiar filtros',
       verresultado: 'Explorar resultado', tecnico: 'SQL y reproducibilidad', archivo: 'Archivo de consulta', codigo: 'Consulta SQL', repetir: 'Repetir en la base de datos', exportado: 'Resultado exportado',
+      cargandoParte: 'Cargando…', errorParte: 'No se pudo cargar: {msg}',
     },
     en: {
-      titulo: 'Explore the map data', 'nav.mapa': 'Map', 'nav.grafo': 'Graph', 'nav.consultas': 'Warehouse queries',
+      titulo: 'Explore the map data', 'nav.mapa': 'Map', 'nav.grafo': 'Graph', 'nav.consultas': 'Warehouse queries', 'nav.atipicos': 'Atypical',
       coleccion: 'Query catalogue',
       lema: 'Find a topic, explore its result and download the data. The SQL and steps to repeat each query are one click away.',
       pasos: 'How to repeat the queries in PostgreSQL',
@@ -32,6 +33,7 @@
       resultados: 'Available queries', contador: '{n} of {total} queries',
       'vacio.titulo': 'No matching queries', 'vacio.ayuda': 'Try another word or clear the filters to see every topic.', limpiar: 'Clear filters',
       verresultado: 'Explore result', tecnico: 'SQL and reproducibility', archivo: 'Query file', codigo: 'SQL query', repetir: 'Repeat in the database', exportado: 'Exported result',
+      cargandoParte: 'Loading…', errorParte: 'Could not load: {msg}',
     },
   };
 
@@ -62,6 +64,9 @@
   };
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   let cache = null, errorCarga = null, cargando = false, categoria = 'all';
+  /* Resultados y SQL se piden al abrir su ficha, no al cargar la pagina: el catalogo solo
+     necesita el manifiesto, y antes descargaba los 15 resultados (unos 3.5 MB) de entrada. */
+  const PARTES = {};
   const normalizar = s => String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const ficha = c => FICHAS[c.consulta.slice(0, 2)] || { cat: 'meta', es: [c.consulta, ''], en: [c.consulta, ''] };
 
@@ -70,23 +75,59 @@
     return `<span title="${esc(s)}">${esc(s.length > 70 ? s.slice(0, 70) + '…' : s)}</span>`;
   }
 
+  /* Contenido de una parte perezosa (tabla o sql): cargada, con error o pendiente */
+  function parte(c, tipo, titulo) {
+    const p = (PARTES[c.consulta] || {})[tipo];
+    if (p && p.error) {
+      return `<p class="status show error">${esc(t('errorParte', { msg: p.error }))}</p>`
+        + `<button type="button" class="btn btn-secondary cq-reintentar-parte" data-q="${esc(c.consulta)}" data-tipo="${tipo}">${esc(t('reintentar'))}</button>`;
+    }
+    if (!p || p.valor === undefined) return `<p class="zm-meta">${esc(t('cargandoParte'))}</p>`;
+    if (tipo === 'sql') return `<pre>${esc(p.valor)}</pre>`;
+    const tabla = p.valor, n = Math.min(10, tabla.filas.length);
+    const cab = tabla.columnas.map(x => `<th scope="col">${esc(x)}</th>`).join('');
+    const cuerpo = tabla.filas.slice(0, n).map(f => `<tr>${f.map(v => `<td>${celda(v)}</td>`).join('')}</tr>`).join('');
+    return `<p class="zm-meta">${t('primeras', { n })}</p><div class="zm-tabla" role="region" tabindex="0" aria-label="${esc(titulo)}"><table><thead><tr>${cab}</tr></thead><tbody>${cuerpo}</tbody></table></div>`;
+  }
+
+  async function cargarParte(consulta, tipo) {
+    const c = (cache || []).find(x => x.consulta === consulta);
+    if (!c) return;
+    const partes = PARTES[consulta] = PARTES[consulta] || {};
+    if (partes[tipo] && (partes[tipo].valor !== undefined || partes[tipo].pidiendo)) return;
+    partes[tipo] = { pidiendo: true };
+    pintarParte(c, tipo);
+    try {
+      const valor = tipo === 'sql'
+        ? await pedir('warehouse_ampliado/consultas/' + c.consulta, false)
+        : await pedir('ijcopi/datos/' + c.datos, true);
+      partes[tipo] = { valor };
+    } catch (e) {
+      console.error(e);
+      partes[tipo] = { error: e.message || String(e) };
+    }
+    pintarParte(c, tipo);
+  }
+
+  function pintarParte(c, tipo) {
+    const caja = document.querySelector(`[data-parte="${CSS.escape(c.consulta + ':' + tipo)}"]`);
+    if (caja) caja.innerHTML = parte(c, tipo, ficha(c)[idioma][0]);
+  }
+
   function tarjeta(c) {
     const f = ficha(c), [titulo, descripcion] = f[idioma];
-    const n = Math.min(10, c.tabla.filas.length);
-    const cab = c.tabla.columnas.map(x => `<th scope="col">${esc(x)}</th>`).join('');
-    const cuerpo = c.tabla.filas.slice(0, n).map(f => `<tr>${f.map(v => `<td>${celda(v)}</td>`).join('')}</tr>`).join('');
     return `<section class="panel cq-card">
       <div class="cq-card-top"><span class="cq-card-type">${t(f.cat)}</span><span class="cq-card-number">${esc(c.consulta.slice(0, 2))}</span></div>
       <h2>${esc(titulo)}</h2>
       <p class="cq-card-desc">${esc(descripcion)}</p>
       <p class="cq-card-meta"><span>${t('filas', { n: c.filas.toLocaleString(idioma === 'en' ? 'en-GB' : 'es-MX') })}</span><span>JSON</span><span>${t('exportado')}</span></p>
       <a class="cq-download" href="ijcopi/datos/${esc(c.datos)}" download><svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M3 13v4h14v-4"/></svg>${t('datos')}</a>
-      <details><summary>${t('verresultado')}</summary><p class="zm-meta">${t('primeras', { n })}</p><div class="zm-tabla" role="region" tabindex="0" aria-label="${esc(titulo)}"><table><thead><tr>${cab}</tr></thead><tbody>${cuerpo}</tbody></table></div></details>
-      <details><summary>${t('tecnico')}</summary>
+      <details data-q="${esc(c.consulta)}" data-tipo="tabla"><summary>${t('verresultado')}</summary><div data-parte="${esc(c.consulta)}:tabla">${parte(c, 'tabla', titulo)}</div></details>
+      <details data-q="${esc(c.consulta)}" data-tipo="sql"><summary>${t('tecnico')}</summary>
         <p class="cq-tech-caption">${t('archivo')}</p><code class="cq-file">${esc(c.consulta)}</code>
         <p class="cq-tech-caption">${t('repetir')}</p><pre>docker exec data_warehouse_cdmx psql -U postgres -d data_warehouse -f /consultas/${esc(c.consulta)}</pre>
         <p class="cq-tech-caption">${t('hash')}</p><code class="zm-hash">${esc(c.sha256_datos)}</code>
-        <p class="cq-tech-caption">${t('codigo')}</p><pre>${esc(c.sql)}</pre>
+        <p class="cq-tech-caption">${t('codigo')}</p><div data-parte="${esc(c.consulta)}:sql">${parte(c, 'sql', titulo)}</div>
       </details>
     </section>`;
   }
@@ -131,13 +172,7 @@
     pintar();
     try {
       const man = await pedir('ijcopi/datos/manifiesto.json', true);
-      cache = await Promise.all(man.consultas.map(async c => {
-        const [sql, tabla] = await Promise.all([
-          pedir('warehouse_ampliado/consultas/' + c.consulta, false),
-          pedir('ijcopi/datos/' + c.datos, true),
-        ]);
-        return { ...c, sql, tabla };
-      }));
+      cache = man.consultas;
     } catch (e) {
       console.error(e);
       errorCarga = e.message || String(e);
@@ -152,6 +187,17 @@
     pintar();
   });
   document.getElementById('reintentar').addEventListener('click', iniciar);
+  /* toggle no burbujea: se escucha en captura. Abrir una ficha pide solo su parte. */
+  document.getElementById('lista').addEventListener('toggle', e => {
+    const d = e.target;
+    if (d.open && d.dataset && d.dataset.q) cargarParte(d.dataset.q, d.dataset.tipo);
+  }, true);
+  document.getElementById('lista').addEventListener('click', e => {
+    const b = e.target.closest('.cq-reintentar-parte');
+    if (!b) return;
+    delete (PARTES[b.dataset.q] || {})[b.dataset.tipo];
+    cargarParte(b.dataset.q, b.dataset.tipo);
+  });
   document.getElementById('buscar').addEventListener('input', pintarResultados);
   document.getElementById('categorias').addEventListener('click', e => {
     const boton = e.target.closest('[data-categoria]');
