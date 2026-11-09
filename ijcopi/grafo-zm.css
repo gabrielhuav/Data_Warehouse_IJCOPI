@@ -1,0 +1,12 @@
+/* Controles exclusivos del grafo metropolitano. */
+.zm-distancia{margin-top:1rem}
+.zm-distancia-campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:.8rem}
+.zm-distancia-campos fieldset{min-width:0;border:1px solid var(--borde);border-radius:var(--r-s);padding:.75rem 1rem}
+.zm-distancia-campos legend{font-weight:650;color:var(--marca-700);padding:0 .3rem}
+.zm-distancia label,#interior label{display:block;font-weight:600}
+.zm-distancia-resultado{font-size:1rem;font-weight:600;overflow-wrap:anywhere}
+#vistaMetropolitana{margin-bottom:.5rem;max-width:100%;white-space:normal}
+#interior{border-top:1px solid var(--borde);padding-top:.7rem;margin-bottom:1rem}
+.zm-g2>.map-wrap,.zm-g2>.zm-lateral{min-width:0}
+@media(max-width:600px){.zm-distancia-campos{grid-template-columns:minmax(0,1fr);gap:.65rem}.zm-distancia-campos fieldset{padding:.65rem .75rem}}
+html.figura .zm-distancia,html.figura #vistaMetropolitana,html.figura #interior,html.figura #estadoInterior{display:none!important}

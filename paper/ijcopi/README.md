@@ -6,17 +6,24 @@ Versión vigente para revisión: [dw_agua_IJCOPI_v3_grafo.docx](dw_agua_IJCOPI_v
 - [dw_agua_IJCOPI_v3_grafo.docx](dw_agua_IJCOPI_v3_grafo.docx): última versión registrada para revisión.
 
 Solo se incluyen v0 y v3 por decisión de Gabriel; los intermedios y la plantilla no se publican aquí.
-La revisión posterior al informe independiente del 9 de noviembre de 2026 mide
-**15 páginas y 9,029 palabras** en Word, frente a 5,615 de v0 (**+60.80 %**),
-con resumen de 144 palabras y seis keywords. Se aclararon los tres denominadores
-territoriales/temporales, cobertura y NA, coordenadas válidas y grano de las ingestas.
-Se añadieron tres créditos científicos verificados y se actualizó el grafo a 91,230
-triples: la consulta de volumen no reportado devuelve 27 pares de 21 municipios.
-Título, autores, declaración académica de IA, figuras, plantilla y v0 intactos.
-Las quince páginas se inspeccionaron renderizadas; cero palabras añadidas frente
-al respaldo de 9,116 palabras quedan sin amarillo. El contador histórico contra v0
-sigue en 83 por tokenización/alineación.
-Word v3 SHA-256: `d38e1e48c1741dcf80f3f58f8d62828bfed7089a2a581d4b345f6eeb93ff771e`.
+La revisión local del 9 de noviembre de 2026 mide **15 páginas y 9,043 palabras**
+en Word, frente a 5,615 de v0 (**+61.05 %**), ambos recuentos comprobados de nuevo.
+Por instrucción de Gabriel, Roberto Eswart Zagal Flores firma último; Gabriel sigue
+primero y como autor de correspondencia. Se conservan adscripción, correos y ORCID.
+La sección 5.8 describe la expansión municipal a colonias y la distancia aproximada
+entre centroides. El trabajo futuro propone ampliar los datos de población con
+densidad, uso del suelo y acceso al servicio para contextualizar geográficamente
+los volúmenes facturados, sin inferir consumo real ni causalidad.
+Regenerado desde el fuente y conversor en `C:/dev/Data_Warehouse_static`, rama
+`ijcopi-zmvm`, y sincronizado aquí por SHA-256. Las quince páginas se inspeccionaron.
+Los únicos tres párrafos modificados son autoría, sección 5.8 y trabajo futuro;
+los cambios de cuerpo están completamente en amarillo. Título, tablas, imágenes,
+declaración académica de IA, plantilla y v0 se conservan. El contador histórico
+contra v0 da 81 por alineación/tokenización; no representa añadidos nuevos sin amarillo.
+Word v3 SHA-256: `86f7ea1fbc627ad0ab0ea4036f93b9399b55419abce963eb8d028b271081fac9`.
+Gabriel autorizó el cierre con un commit y push por repositorio, con su identidad
+humana y sin firmas ni créditos automáticos. Cada push exige cero fallos del
+verificador Springer; no autoriza envío editorial ni cambios a sitios históricos.
 Las correcciones previas de grano fiscal, AP, tres listas y prueba exacta se conservan.
 La aprobación humana final y los metadatos asignados por la editorial siguen pendientes.
 

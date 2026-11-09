@@ -49,6 +49,44 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Estado actual
 
+- Original publicado y remoto confirmado en ijcopi-zmvm:
+  7375a44025c029ce0d7b77e5100962e0d0c026cd, autor/committer Gabriel Hurtado,
+  sin firma ni trailers. Antes de ese push, nueva ejecución Springer: 25 enlaces,
+  0 fallos. Permiso de commit/push del original consumido. Falta cerrar IJCOPI/main
+  con su permiso ya otorgado y otra ejecución del verificador; detenerse si falla.
+
+- Cierre autorizado por Gabriel el 9 nov: un commit y push por repositorio, con su
+  identidad humana, sin firmas ni créditos automáticos. Orden expresa: detenerse si
+  el verificador Springer presenta fallos, sin excepciones implícitas. Primera ejecución
+  para este cierre: 25 enlaces, 0 fallos; verificador intacto, ADIP y AZCATL HTTP 200.
+  Se volverá a ejecutar antes de cada push. Implementación y QA del grafo confirmados;
+  población CONAPO existente visible, nuevas fuentes demográficas siguen como futuro.
+  No incluye envío editorial, correo, release, DOI ni cambios de sitios históricos.
+
+- Petición vigente del 9 nov: Gabriel autorizó mover al Dr. Roberto Eswart Zagal
+  Flores al último lugar, ampliar navegación/distancias del grafo y trabajo futuro.
+  Fuente actual recuperado en un clon separado `C:/dev/Data_Warehouse_static`, rama
+  `ijcopi-zmvm`, HEAD 967b9f9b; el clon viejo de Descargas sigue intacto en main.
+  Manuscrito regenerado desde .tex/conversor, Word idéntico en ambos repos y PDF
+  en el original: 15 páginas/9,043 palabras, v0 recalculada 5,615 (+61.0507569 %).
+  Se conserva Gabriel primero/correspondencia, adscripción, contactos y ORCID.
+  Secciones 5.8 y 7.3: expansión a colonias, distancia aproximada entre centroides,
+  ampliación de población/densidad/uso del suelo/acceso al agua para contextualizar
+  facturación con territorios/años/cobertura compatibles; sin causalidad ni consumo medido.
+  Quince páginas inspeccionadas, solo tres párrafos modificados; cuerpo modificado
+  todo amarillo, título/tablas/imágenes/declaración IA/v0 intactos.
+  Word SHA-256 86f7ea1fbc627ad0ab0ea4036f93b9399b55419abce963eb8d028b271081fac9;
+  PDF bb59ccc1d85c352cec73f89e5c94430f5bc123f82ea24143a7fa86a8707bda03.
+  Web verificada en Edge, ES/EN, escritorio y 375 px: expansión a todas sus colonias con geometría,
+  colindancias, regreso a la vista global y distancia entre nodos de distintos municipios.
+  Selección preservada al traducir, distancia simétrica y cero en el mismo nodo,
+  sin desbordamiento móvil ni errores JS; vista figura conservada. Centroides del
+  anillo exterior mayor y Haversine, con límites explícitos. Datos/RDF sin cambios.
+  La autorización inicial solo cubría edición; el cierre Git posterior se registra arriba.
+  Evidencia y respaldos locales ignorados: `tmp/autor_grafo_2026-11-09/`.
+
+Los registros siguientes son antecedentes; no autorizan acciones Git adicionales.
+
 - Commit del original de esta revisión: 967b9f9b05017a870495cdea17578eb8bd1d672c en ijcopi-zmvm,
   autor/committer Gabriel Hurtado, sin firma ni trailers. Push sujeto al verificador.
 - Revisión posterior al informe independiente del 9 nov: corregidos los hallazgos
@@ -283,13 +321,15 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Siguiente paso
 
-Cerrar los dos commits autorizados (original ijcopi-zmvm y distribución main),
-verificar identidad humana y repetir el verificador antes de cada push. Si falla,
-obtener una excepción nueva y específica; no reutilizar las del cierre anterior.
-Comprobar remotos y Pages. Después Gabriel y coautores revisan la v3 de 9,029
-palabras para su aval; metadatos editoriales e ICOKG final siguen pendientes.
-Los permisos usados no autorizan acciones posteriores. No crear release/DOI ni
-enviar correo o manuscrito sin otra autorización.
+Original cerrado en 7375a44 (ijcopi-zmvm); completar el commit/push ya autorizado
+de la copia Word y web implementada en este repo independiente (main). Repetir el
+verificador original antes de ese push y detenerse ante cualquier fallo, como ordenó
+Gabriel. Confirmar remoto y despliegue de Pages IJCOPI. QA ES/EN/móvil y figura
+terminada; la v3 tiene 15 páginas.
+No ejecutar publicadores históricos, release/DOI, correo ni envío editorial.
+Metadatos y aval final de coautores pendientes. Permisos consumidos no se reutilizan.
+
+Antecedentes y otros proyectos:
 
 Entregar el mensaje y prompt de Deep Research; adjuntar v3/v0 y, si es útil, PDF en
 Gemini. Al recibir su informe, contrastar cada hallazgo con la versión fijada antes
@@ -319,6 +359,22 @@ de editar. No tratar sus recomendaciones como hechos ni como autorización de Gi
    para cambios posteriores. No enviar correos ni publicar el paper automáticamente.
 
 ## Bitácora
+
+- 2026-11-09: commit/push humano del original 7375a44 completado y remoto confirmado;
+  sin firma, trailers ni créditos automáticos. Verificador repetido inmediatamente
+  antes de ese push: 25 enlaces, 0 fallos. Permiso del original consumido.
+
+- 2026-11-09: Gabriel autorizó un commit y push por repositorio con identidad humana,
+  sin firmas/créditos automáticos y detención ante fallos. Verificador original intacto:
+  25 enlaces, 0 fallos, ADIP/AZCATL 200. Implementación web y QA persistida confirmadas.
+
+- 2026-11-09: a petición de Gabriel, Roberto Eswart Zagal Flores al último lugar;
+  regenerada v3 desde fuente, 15 páginas/9,043 palabras, amarillo e integridad revisados.
+  Trabajo futuro amplía población/contexto geográfico; sección 5.8 acompaña navegación
+  a colonias y distancia entre centroides. Recuperado clon corto del original en su rama
+  de revista, sin tocar main. Web probada en Edge, ES/EN y 375 px, sin errores JS:
+  expansión, distancia, simetría/cero, estado traducido y figura correctos.
+  Evidencias ignoradas en `tmp/grafo_2026-11-09/`. Sin commit/push/publicación/correo.
 
 - 2026-11-09: corregida revisión independiente tras contrastar hallazgos; SQL y RDF
   reproducibles, 22 enlaces deterministas, población/cobertura explícitas y créditos

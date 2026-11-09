@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/estilo.css?v=20261105-ui2">
     <link rel="stylesheet" href="assets/paginas.css">
     <link rel="stylesheet" href="ijcopi/zm.css?v=20261105-ui2">
+    <link rel="stylesheet" href="ijcopi/grafo-zm.css?v=20261109-nodos">
     <script src="assets/i18n.js"></script>
 </head>
 <body>
@@ -47,10 +48,43 @@
             <p class="zm-nota" data-t="r.ayuda"></p>
             <label for="municipio" data-t="r.municipio"></label>
             <select id="municipio" class="zm-selector" disabled></select>
+            <button id="vistaMetropolitana" type="button" class="btn btn-secondary" disabled data-t="r.volver"></button>
             <div id="leyendaGrafo"></div>
+            <p id="estadoInterior" class="zm-meta" role="status" aria-live="polite"></p>
+            <div id="interior" hidden>
+                <label for="colonia" data-t="r.colonia"></label>
+                <select id="colonia" class="zm-selector" disabled></select>
+                <p class="zm-nota" data-t="r.interiorNota"></p>
+            </div>
             <div id="recorrido"></div>
         </aside>
     </div>
+
+    <section class="panel zm-card zm-distancia" aria-labelledby="distanciaTitulo">
+        <h2 id="distanciaTitulo" data-t="d.titulo"></h2>
+        <p class="zm-nota" id="distanciaNota" data-t="d.nota"></p>
+        <div class="zm-distancia-campos">
+            <fieldset>
+                <legend data-t="d.origen"></legend>
+                <label for="distMunicipioA" data-t="r.municipio"></label>
+                <select id="distMunicipioA" class="zm-selector" disabled></select>
+                <label for="distNodoA" data-t="d.nodo"></label>
+                <select id="distNodoA" class="zm-selector" disabled aria-describedby="distanciaNota"></select>
+            </fieldset>
+            <fieldset>
+                <legend data-t="d.destino"></legend>
+                <label for="distMunicipioB" data-t="r.municipio"></label>
+                <select id="distMunicipioB" class="zm-selector" disabled></select>
+                <label for="distNodoB" data-t="d.nodo"></label>
+                <select id="distNodoB" class="zm-selector" disabled aria-describedby="distanciaNota"></select>
+            </fieldset>
+        </div>
+        <p id="distanciaResultado" class="zm-distancia-resultado" role="status" aria-live="polite" aria-atomic="true"></p>
+        <div class="zm-acciones">
+            <button id="verDistancia" type="button" class="btn btn-secondary" disabled data-t="d.ver"></button>
+            <button id="limpiarDistancia" type="button" class="btn btn-secondary" disabled data-t="d.limpiar"></button>
+        </div>
+    </section>
 
     <section class="panel zm-card zm-sparql">
         <h2 data-t="s.titulo"></h2>
@@ -82,6 +116,6 @@
 <script src="assets/nav.js?v=20261109"></script>
 <script src="assets/vendor/n3-1.17.2.min.js"></script>
 <script src="assets/vendor/comunica-browser-v3.js"></script>
-<script src="ijcopi/grafo-zm.js?v=20261109-grafo"></script>
+<script src="ijcopi/grafo-zm.js?v=20261109-nodos"></script>
 </body>
 </html>
