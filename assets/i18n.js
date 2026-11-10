@@ -646,7 +646,8 @@
     return n.indexOf('en') === 0 ? 'en' : 'es';
   }
 
-  var idioma = leer(K_IDIOMA, '');
+  var idiomaURL = new URLSearchParams(location.search).get('lang');
+  var idioma = valido(idiomaURL) ? idiomaURL : leer(K_IDIOMA, '');
   if (!valido(idioma)) idioma = porDefecto();
 
   var pagina = (location.pathname.split('/').pop() || 'index.html')
