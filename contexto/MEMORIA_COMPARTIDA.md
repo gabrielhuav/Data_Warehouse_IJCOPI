@@ -1,6 +1,6 @@
 # Memoria compartida: IJCOPI de agua
 
-Actualizada: 9 de noviembre de 2026. Hablar con Gabriel en español y brevemente.
+Actualizada: 10 de noviembre de 2026. Hablar con Gabriel en español y brevemente.
 Leer AGENTS.md completo. Esta memoria es el relevo vigente; sus resultados históricos
 no equivalen a verificaciones nuevas. Las rutas dependen de la PC: usar carpetas hermanas.
 
@@ -48,6 +48,70 @@ DDL y verificadores. warehouse/: componente original de Omar Fernando Pulido Mor
 con su licencia MIT. El workflow publica un git archive de main, sin commits automáticos.
 
 ## Estado actual
+
+- **Estado vigente (10 nov 2026):** por instrucción de Gabriel se volvió a `main`
+  de este repositorio para arreglar primero el artículo identificado. Base previa de esta revisión:
+  `e6671c07144326f029260eaa7ad15e785ef314ca`; revisión anónima conserva su ref
+  `6f723ea05fb9ca1a419dfb53399507b1f49452c1`. Gabriel autorizó ahora un commit y
+  push de la revisión en main con identidad humana, sin firmas/atribuciones de IA,
+  tras el gate Springer original: cero fallos o excepción expresa de ese push.
+  No hay autorización de amend, otros commits, correo ni envío del manuscrito.
+  No cambiar el original ni los históricos. El resultado exacto del cierre se consulta
+  con Git. Si origin/main contiene el SHA del Word indicado aquí, el permiso de
+  commit/push ya se consumió y no se repite. No reutilizar esta autorización.
+  V3 vigente en `paper/ijcopi/dw_agua_IJCOPI_v3_grafo.docx` y PDF junto al Word
+  (PDF local no incorporado a Git). 15 páginas, 9,098 palabras frente a 5,615 de v0:
+  +62.03 %. Resumen 146 sin etiqueta / 147 con ella; seis keywords. Word y PDF
+  revisados completos a 150 dpi. Fig. 1 recupera exactamente las dos capturas de v0,
+  sus tres leyendas, los dos URL históricos y el crédito OSM. Diagrama conservado como
+  Fig. 2; sensibilidad Fig. 3; vistas metropolitanas Fig. 4. Las tablas de datos,
+  título, autores/contactos, plantilla, márgenes, créditos y declaración IA se conservan.
+  Fig. 4b recapturada del sistema real: San Pablo Xalpa (Azcapotzalco), clave 90020074,
+  y dos vecinas: San Martin Xochinahuac y Santa Barbara. Dos relaciones simétricas
+  verificadas en RDF; captura 1600×1216 en inglés, 20 teselas completas, 0 errores JS y
+  atribución OSM. Sólo cambia este panel y su leyenda; Fig. 1 y Fig. 4a intactas.
+  Evidencia/captura/fuente actualizado en tmp/entrega_fig4b_2026-11-10/ y en el
+  fuente de restauracion_main; todo eso se conserva local, sin subirlo a Git.
+  Contactos reformateados como Paper37 por petición posterior de Gabriel: una línea
+  por autor, nombre en negrita, dos correos separados por punto y coma; Roberto conserva
+  sólo rzagalf@ipn.mx. Mismos once correos y orden de firma; bloque completo amarillo.
+  Cuatro precisiones: ocho escenarios seleccionados en tabla 6; periodos no contemporáneos;
+  precisión ponderada de recalls de picos/descensos; facturación imputada posible en
+  proporción desconocida. Amarillo también en numeraciones cambiadas; sin texto nuevo
+  real fuera de amarillo. v0 byte-idéntica SHA c3a71fa0...; copia anónima DOCX/PDF
+  aebd091c... / b1a1018d... intacta y NO actualizada a esta restauración.
+  Word final SHA-256: 5d3d8161e8d759e3e1ddd31b7e7af7cf3808e2fe76304ccfff79ab608d03d0b9.
+  Se recuperó el fuente de `52782a7` y se reconcilió exactamente con Word `e6671c0`
+  antes de corregirlo. Fuente/conversor/plantilla/insumos en
+  `tmp/restauracion_main_2026-11-10/fuente/`, pruebas e informes en `salida/`.
+  No se editó Word a mano ni se modificó el checkout del original. Los generadores
+  publicados no contienen aún esta restauración; no regenerar desde ellos sin integrar
+  primero esta revisión. El paquete anterior `tmp/correo_agua_ijcopi_2026-11-09/`
+  conserva adjuntos previos; para enviar usar los archivos actuales en `paper/ijcopi/`.
+
+- **PostgreSQL pendiente RESUELTO con ejecución real:** helper portable original sin
+  modificar sobre el contenedor existente `data_warehouse_cdmx`, volumen `warehouse_pgdata`,
+  PostgreSQL 16.15, base `data_warehouse`, 45 tablas. Se inició el contenedor existente;
+  no ETL, reconstrucción ni escritura en el volumen. Transacción REPEATABLE READ READ ONLY,
+  `transaction_read_only=on` y ROLLBACK. Proceso terminó 0: `status=pass`, `passed=true`,
+  `read_only=true`, `live_database_verified=true`. 89 municipios: Pearson
+  0.3221003188410962; Spearman (también rangos promedio) 0.9335716717739189. Enero–junio
+  2019: 39,685 reportes, todos potables y de falta de agua, cero fugas. 15/15 consultas
+  SQL/JSON coinciden en filas y hashes. `resultado_postgresql.json` conservado en raíz,
+  SHA-256 fa51edd8552fd7c4da1b370a220e9d79f5a08947dabf3c5694c73a188568e1a6.
+  Los SQL y JSON de main también coinciden con ese manifiesto; evidencia
+  `tmp/restauracion_main_2026-11-10/salida/verificacion_manifest_main.json`.
+
+- **Estado Git previo conservado:** ya había 5,923 adiciones staged (5,922 bajo tmp/
+  y resultado_postgresql.json). No se agregaron, retiraron ni descartaron aquí. Incluyen
+  evidencias privadas: revisar cuidadosamente antes de cualquier commit autorizado.
+  No ejecutar add -A ni publicar tmp/. El commit autorizado usa --only con tres
+  rutas tracked exactas: Word v3, paper/ijcopi/README.md y esta memoria. Auditar el
+  commit resultante y confirmar que esas 5,923 entradas privadas quedan fuera.
+  El PDF y el resultado PostgreSQL siguen locales y conservados.
+
+Los puntos siguientes son antecedentes; las pendientes PostgreSQL y autorizaciones
+antiguas no sustituyen el estado vigente anterior.
 
 - Nuevo cierre de `main` expresamente autorizado por Gabriel: un commit y push de lo
   pendiente, con su identidad humana, sin firmas, coautorías ni créditos automáticos.
@@ -547,23 +611,19 @@ Los registros siguientes son antecedentes; no autorizan acciones Git adicionales
 
 ## Siguiente paso
 
-Completar el cierre de `main` autorizado arriba: comprobar regresión, identidad,
-commit/push y despliegue Pages, y después verificar el sistema público actualizado.
-La autorización cubre una sola operación de commit y push; no habilita amend ni
-acciones posteriores. No publicar cambios pendientes del repositorio original.
-
-En la PC con el volumen ampliado, clonar codex/revision-anonima en una carpeta separada,
-sin reemplazar checkouts ni modificar el volumen existente. Leer CONTINUAR_EN_OTRA_PC.txt,
-MENSAJE_INICIO_OTRA_PC.txt y el prompt de la nueva rama. Ejecutar el helper de
-verificacion_postgresql/ apuntando al repositorio completo y al contenedor/DSN real:
-son tres lecturas READ ONLY, sin ETL, sin reconstrucción ni cambios de datos.
-Conservar el JSON de resultado y no dar por resuelto el pendiente hasta obtener pass
-contra la base real. Anonymous está activo y la auditoría del ZIP público real está
-aprobada; los únicos checks técnicos pendientes son las tres lecturas PostgreSQL en
-la otra PC, sin ETL ni modificación del volumen.
-Maestras identificadas conservadas; aval de coautores y reparto editorial de archivos
-siguen pendientes. El permiso del commit/push de revisión está consumido; cualquier
-acción Git o envío posterior requiere autorización nueva.
+Gabriel y los coautores revisan la v3 identificada final y efectúan el envío si lo deciden.
+Usar el Word/PDF de `paper/ijcopi/`, con Fig. 1 original restaurada, 15 páginas y
+9,098 palabras. Las tres verificaciones PostgreSQL reales ya aprobaron; conservar su
+JSON y no ejecutar ETL, reconstruir el volumen ni sustituir esta evidencia por expectativas.
+La copia anónima de 6f723ea está preservada como snapshot anterior; no afirmar que contiene
+esta restauración ni incluir el espejo Anonymous en el correo (instrucción de Gabriel).
+Cerrar el único commit y push expresamente autorizados de esta revisión en main,
+excluyendo las 5,923 entradas staged privadas mediante whitelist exacta. Autor y committer
+humanos, sin firma ni trailers; inspeccionar árbol/diff antes de subir. Ejecutar el gate
+Springer original intacto inmediatamente antes del push y exigir cero fallos o excepción
+expresa específica. No reutilizar permisos después de consumirlos ni hacer amend.
+El correo queda como plantilla privada lista para copiar, sin enviar.
+Pendientes humanos: aval de coautores y metadatos que asigne la revista.
 
 Los siguientes pasos anteriores se conservan como antecedentes cronológicos:
 
@@ -608,6 +668,34 @@ de editar. No tratar sus recomendaciones como hechos ni como autorización de Gi
    para cambios posteriores. No enviar correos ni publicar el paper automáticamente.
 
 ## Bitácora
+
+- 2026-11-10: Gabriel pidió una Fig. 4b más visual, como su ejemplo de Azcapotzalco,
+  y autorizó un commit/push de esta revisión en main con identidad humana, sin firmas
+  ni atribuciones automáticas, ejecutando antes el verificador Springer y excluyendo
+  temporales/privados. Recaptura real de San Pablo Xalpa 90020074 y sus dos vecinas,
+  RDF simétrico/teselas completas/0 errores/OSM. Sólo panel b y leyenda sustituidos.
+  Word/PDF regenerados: 15 páginas, 9,098 palabras, +62.03 %, resumen 146,seis keywords. Fig. 1 original,
+  autores/correos/IA/tablas y v0 conservados. Whitelist de 3 archivos públicos existentes;
+  las 5,923 entradas staged privadas no se incluyen. Correo preparado sin enviar.
+
+- 2026-11-10: por instrucción de Gabriel, adaptado el bloque de correos al formato
+  de PublicMunicipalWorks_IJCOPI/paper/ijcopi/Paper37_IJCOPI_v1_extendida.docx.
+  Seis líneas en orden de firma, nombres en negrita, distribución de correos 2/2/2/2/2/1,
+  sin agregar ni quitar direcciones. Bloque amarillo. Regeneración y nueva revisión
+  completa: 15 páginas, 9,098 palabras, +62.03 %, resumen 146, seis keywords.
+  Fig. 1 original y resto de integridad aprobados. Word SHA-256
+  5d3d8161e8d759e3e1ddd31b7e7af7cf3808e2fe76304ccfff79ab608d03d0b9.
+  Original de obras sólo leído; v0 y copia anónima conservadas. Sin acciones Git ni envío.
+
+- 2026-11-10: completadas las tres verificaciones PostgreSQL reales en sólo lectura,
+  proceso 0 y pass/passed=true; resultado_postgresql.json conservado. Por instrucción
+  posterior, vuelta a main y restauración exacta de Fig. 1 desde v0. Conservados diagrama
+  y demás figuras, tablas/cifras, título, autoría, IA, plantilla, v0 y snapshot anónimo.
+  Fuente recuperado/reconciliado con e6671c0 y regeneración; cuatro precisiones editoriales,
+  amarillo de renumeraciones y maquetación sin reducir fuente/márgenes. Word/PDF finales:
+  15 páginas, 9,098 palabras, +62.03 %, resumen 146, seis keywords; inspección visual
+  de las quince páginas e integridad aprobadas. Word SHA 902ba9f5...; evidencia en
+  tmp/restauracion_main_2026-11-10/. Todo local, sin commits/push/publicación/envío.
 
 - 2026-11-09: Gabriel autorizó expresamente cerrar lo pendiente en IJCOPI/main,
   con identidad humana y sin firmas/créditos automáticos. Verificador previo intacto:
