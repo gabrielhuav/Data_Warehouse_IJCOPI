@@ -10,3 +10,10 @@
 .zm-g2>.map-wrap,.zm-g2>.zm-lateral{min-width:0}
 @media(max-width:600px){.zm-distancia-campos{grid-template-columns:minmax(0,1fr);gap:.65rem}.zm-distancia-campos fieldset{padding:.65rem .75rem}}
 html.figura .zm-distancia,html.figura #vistaMetropolitana,html.figura #interior,html.figura #estadoInterior{display:none!important}
+.zm-conexiones{border-top:1px solid var(--borde);padding:.8rem 0;margin:.7rem 0}
+.zm-lista-conexiones{list-style:none;padding:0;margin:.5rem 0;max-height:250px;overflow:auto}
+.zm-lista-conexiones li{padding:.35rem 0;border-bottom:1px solid var(--borde)}
+.zm-lista-conexiones button{display:block;text-align:left;width:100%;padding:.25rem .1rem;border:0;background:transparent;color:var(--marca-700);font:inherit;font-weight:600;cursor:pointer;overflow-wrap:anywhere}
+.zm-lista-conexiones button:hover{text-decoration:underline}
+.zm-lista-conexiones small{display:block;color:var(--texto-3)}
+html.figura #conexionesColonia{display:none!important}

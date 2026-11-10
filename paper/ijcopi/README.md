@@ -6,12 +6,14 @@ Versión vigente para revisión: [dw_agua_IJCOPI_v3_grafo.docx](dw_agua_IJCOPI_v
 - [dw_agua_IJCOPI_v3_grafo.docx](dw_agua_IJCOPI_v3_grafo.docx): última versión registrada para revisión.
 
 Solo se incluyen v0 y v3 por decisión de Gabriel; los intermedios y la plantilla no se publican aquí.
-La revisión local del 9 de noviembre de 2026 mide **15 páginas y 9,014 palabras**
-en Word, frente a 5,615 de v0 (**+60.53 %**). Resumen: 146 palabras; seis keywords.
+La revisión local del 9 de noviembre de 2026 mide **15 páginas y 9,056 palabras**
+en Word, frente a 5,615 de v0 (**+61.28 %**). Resumen: 146 palabras sin la etiqueta
+«Abstract.» (147 al incluirla); seis keywords.
 Por instrucción de Gabriel, Roberto Eswart Zagal Flores firma último; Gabriel sigue
-primero y como autor de correspondencia. Se conservan adscripción, correos y ORCID.
-La sección 5.8 describe la expansión municipal a colonias y la distancia aproximada
-entre centroides. El trabajo futuro propone ampliar los datos de población con
+primero y como autor de correspondencia. El correo del Dr. Roberto cierra el bloque
+de contactos; se conservan todos los correos, adscripción y ORCID.
+La sección 5.8 describe la expansión municipal a colonias, sus conexiones directas
+y la distancia aproximada entre centroides. El trabajo futuro propone ampliar los datos de población con
 densidad, uso del suelo y acceso al servicio para contextualizar geográficamente
 los volúmenes facturados, sin inferir consumo real ni causalidad.
 Regenerado desde el fuente y conversor en `C:/dev/Data_Warehouse_static`, rama
@@ -23,13 +25,20 @@ y los ampliados desde exportaciones SQL verificadas por SHA-256, sin reconstruir
 Se distinguen archivos, registros de facturación, observaciones meteorológicas y filas
 físicas con granos distintos. El resumen separa el alcance del almacén del grafo metropolitano.
 Cero palabras nuevas sin amarillo frente a la revisión anterior; figura con marco amarillo.
-Título, autores, tablas de datos, demás figuras, declaración de IA, plantilla y v0 preservados.
+La figura 3 se recapturó desde el sistema actualizado en inglés: (a) vista metropolitana
+del volumen facturado; (b) Tepalcates y sus siete vecinas, incluidas dos en Iztacalco.
+Las leyendas se ampliaron para leerlas a 8.4 cm, sin ocultar nodos ni conexiones;
+atribución OpenStreetMap visible. Las figuras 1 y 2 ya estaban en inglés.
+Título, autores, tablas de datos, figuras 1 y 2, declaración de IA, plantilla y v0 preservados.
 El generador reproducible, SVG/PNG y evidencia del diagrama se incluyen en `paper/ijcopi/`
 de ambos repositorios. `generar_diagrama_corpus.py` recalcula las cantidades desde sus insumos.
-Word v3 SHA-256: `5051dbebb10345ea1ba65e71c6a84676121bcc7e6115bae5152c6ecb833cb018`.
-El original publicó esta revisión en `52782a7`, con identidad humana sin firma ni trailers.
-Gabriel autorizó también el cierre de IJCOPI; cada push exige repetir el verificador,
-aceptando AZCATL únicamente si es el único fallo. No incluye envío editorial.
+Word v3 SHA-256: `7c62eefda1bb7e27a37f77cff79a76e6f98e39174741f5f1ae3f9ae63625a89e`.
+La revisión anterior se publicó en original `52782a7` e IJCOPI `a0730ed`, con identidad
+humana sin firma ni trailers. Gabriel autorizó un nuevo commit y push de lo pendiente
+en `main`: conexiones, interfaz, manuscrito identificado y capturas actualizadas.
+Esta autorización no incluye otro repositorio ni envío editorial.
+Antes de cualquier push se exige repetir el verificador Springer y obtener cero fallos
+o una excepción expresa para esa ejecución; las autorizaciones consumidas no se reutilizan.
 Las correcciones previas de grano fiscal, AP, tres listas y prueba exacta se conservan.
 La aprobación humana final y los metadatos asignados por la editorial siguen pendientes.
 
@@ -72,7 +81,8 @@ las fuentes corregidas están en el commit 967b9f9b05017a870495cdea17578eb8bd1d6
 - AZCATL: https://doi.org/10.24275/AZC2026E1004 presentó un timeout en la comprobación
   anterior; en la repetición previa a esta publicación respondió HTTP 200. No se modificó el DOI.
 
-La publicación inicial de v0 y v3 tuvo autorización expresa con excepciones ADIP/AZCATL;
-ese permiso ya se consumió. Gabriel autorizó las correcciones, commit y push del cierre
-del 9 de noviembre, pero cada push sigue exigiendo fallos: 0 o excepción expresa para
-esa ejecución. No se cambiaron el verificador ni los enlaces históricos.
+Para este cierre de `main`, el verificador Springer original intacto terminó con
+25 enlaces y un único fallo: ADIP HTTP 403; AZCATL respondió HTTP 200. Gabriel
+autorizó ADIP únicamente si era el único fallo de este push. No se cambiaron
+el verificador ni los enlaces históricos. Esta excepción y el permiso de Git se
+consumen con el cierre; cualquier acción posterior requiere autorización nueva.

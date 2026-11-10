@@ -686,8 +686,9 @@
     else {
       /* En la vista de figura la leyenda queda abajo a la izquierda: el encuadre le deja ese lado */
       const figura = document.documentElement.classList.contains('figura');
+      const margenLeyenda = figura ? document.querySelector('.zm-lateral').getBoundingClientRect().right + 18 : 0;
       mapa.fitBounds(L.geoJSON(coleccion('municipio', D.municipios, 'cve_mun')).getBounds(),
-        figura ? { paddingTopLeft: [350, 10], paddingBottomRight: [10, 10] } : { padding: [12, 12] });
+        figura ? { paddingTopLeft: [margenLeyenda, 10], paddingBottomRight: [10, 10] } : { padding: [12, 12] });
     }
 
     (q.get('capas') || '').split(',').filter(n => ['acuiferos', 'pozos', 'presas', 'calidad'].includes(n)).forEach(n => {

@@ -100,8 +100,14 @@ html.figura .app-container{max-width:none; padding:0}
 html.figura .zm-rejilla{display:block}
 html.figura .map-wrap{border:0; border-radius:0; min-height:0}
 html.figura #map{height:100vh; min-height:0}
-html.figura .zm-lateral{position:fixed; left:10px; bottom:10px; z-index:1000; width:auto; max-width:340px; padding:.55rem .7rem; background:rgba(255,255,255,.94); border:1px solid #999; font-size:.8rem; color:#111}
-html.figura .zm-ley{color:#111}
+html.figura .zm-lateral{position:fixed; left:10px; bottom:10px; z-index:1000; width:auto; max-width:min(350px,calc(100vw - 20px)); padding:12px 14px; background:rgba(255,255,255,.96); border:1px solid #999; font-size:26px; line-height:1.1; color:#111}
+html.figura .zm-ley{color:#111; font-size:inherit; line-height:1.1; gap:.35em; margin-bottom:.18em}
+html.figura .zm-ley-t{font-size:inherit; line-height:1.1; margin:0 0 .4em}
+html.figura .zm-ley-sub{font-size:inherit; line-height:1.1}
+html.figura .zm-ley i{width:24px; height:20px}
+html.figura .zm-ley i.punto{width:18px; height:18px}
+html.figura .zm-ley i.linea{height:0; border-top-width:4px}
+html.figura #leyendaGrafo{margin:0}
 
 /* Exploración: el mapa es el centro; controles y contexto en niveles secundarios. */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

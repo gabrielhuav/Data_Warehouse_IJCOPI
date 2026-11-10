@@ -67,7 +67,7 @@ def main() -> int:
                   yerr=sd, error_kw={"elinewidth": 0.7, "capsize": 2, "ecolor": TINTA_2})
             a.annotate(f"{media:.2f}", (x[i] + desplaz, media + sd), xytext=(0, 2), textcoords="offset points",
                        ha="center", va="bottom", fontsize=6.5, color=TINTA_2)
-    a.set_xticks(x, ["$A_g$\n(deployed)", "Isolation\nForest", "LOF", "log-$A_g$\n(proposed)"], fontsize=7.5)
+    a.set_xticks(x, ["$A_g$\n(deployed)", "Isolation\nForest", "LOF", "log-$A_g$\n(log scale)"], fontsize=7.5)
     a.set(ylim=(0, 1.12), ylabel="Recall at equal alerts")
     a.set_title("(a) Spikes (solid) and drops (hatched)", fontsize=9, color=TINTA, loc="left")
     ejes(a)

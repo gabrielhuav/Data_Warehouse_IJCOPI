@@ -10,7 +10,7 @@ const LABEL = 'http://www.w3.org/2000/01/rdf-schema#label';
 const TOUCHES = 'http://www.opengis.net/ont/geosparql#sfTouches';
 const { namedNode, literal } = N3.DataFactory;
 let store, engine, initialising;
-const neighbourhoods = new Map(), municipalities = new Map();
+const neighbourhoods = new Map(), municipalities = new Map(), neighbourhoodIris = new Map();
 
 const node = value => namedNode(value);
 const local = value => value.slice(value.lastIndexOf('/') + 1);
@@ -68,6 +68,7 @@ async function initialise(message) {
     const subject = subjects[i], m = first(subject.value, AGUA + 'inMunicipality');
     if (!m) continue;
     const cve = local(m.value);
+    neighbourhoodIris.set(local(subject.value), subject.value);
     if (!neighbourhoods.has(cve)) neighbourhoods.set(cve, []);
     neighbourhoods.get(cve).push(subject.value);
     internalRows.push(serialise({ c: subject, m, n: first(subject.value, LABEL), p: first(subject.value, AGUA + 'population') }));
@@ -102,6 +103,18 @@ function traverse({ cve, abrir }) {
   return { vecinos, acuiferos, propios: neighbours.map(v => local(v.value)), adyacencias };
 }
 
+function neighbourhood({ cve }) {
+  const iri = neighbourhoodIris.get(cve);
+  if (!iri) throw new Error('Unknown neighbourhood.');
+  /* sfTouches is symmetric. Read either asserted direction without inventing
+     proximity links or restricting the result to the selected municipality. */
+  const adjacent = new Set(terms(iri, TOUCHES).map(term => term.value));
+  store.getSubjects(node(TOUCHES), node(iri), null).forEach(term => adjacent.add(term.value));
+  const vecinas = [...adjacent].filter(value => value !== iri && neighbourhoodIris.has(local(value)))
+    .map(local).sort();
+  return { cve, vecinas };
+}
+
 self.onmessage = async event => {
   const message = event.data, { id, type } = message;
   try {
@@ -112,6 +125,7 @@ self.onmessage = async event => {
     } else {
       if (!store) throw new Error('The RDF graph is not ready.');
       if (type === 'traverse') result = traverse(message);
+      else if (type === 'neighbourhood') result = neighbourhood(message);
       else if (type === 'query') {
         if (!engine) {
           progress(id, 'engine');

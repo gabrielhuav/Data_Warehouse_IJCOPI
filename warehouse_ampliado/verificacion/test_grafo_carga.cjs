@@ -41,9 +41,19 @@ function reader(text) {
     assert.equal(traversal.result.adyacencias.length, adjacencies);
     assert(traversal.result.adyacencias.every(([a, b]) => inside.has(a) && inside.has(b) && a < b));
   }
+  const border = await worker.call({ id: 3, type: 'neighbourhood', cve: '90070211' });
+  assert.equal(border.error, undefined);
+  assert.deepEqual(border.result.vecinas, ['90060001', '90060002', '90070085', '90070155', '90070216', '90070261', '90070288']);
+  const municipalityByColony = new Map(ready.result.internas.map(r => [r.c.value.split('/').pop(), r.m.value]));
+  assert.equal(border.result.vecinas.filter(cve => !municipalityByColony.get(cve).endsWith('/09007')).length, 2,
+    'A neighbourhood traversal must retain links across its borough boundary');
+  const isolated = await worker.call({ id: 4, type: 'neighbourhood', cve: '130130021' });
+  assert.deepEqual(isolated.result.vecinas, []);
+  const unknown = await worker.call({ id: 5, type: 'neighbourhood', cve: 'missing' });
+  assert.match(unknown.error, /Unknown neighbourhood/);
   // One changed label preserves the triple count but must still fail integrity.
   const corrupted = reader(turtle.replace('Ecatepec de Morelos', 'Ecatepec altered'));
   const rejected = await corrupted.call({ id: 2, type: 'init', expectedHash: summary.sha256, expectedTriples: summary.tripletas });
   assert.match(rejected.error, /SHA-256 mismatch/);
-  console.log('PASS: verified RDF, lazy SPARQL, two municipal traversals and corrupted-data rejection.');
+  console.log('PASS: verified RDF, lazy SPARQL, municipal and neighbourhood traversals, cross-boundary and empty adjacency, corrupted-data rejection.');
 })().catch(error => { console.error(error); process.exitCode = 1; });

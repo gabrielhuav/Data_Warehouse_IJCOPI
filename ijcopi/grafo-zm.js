@@ -5,14 +5,14 @@
    sin ejecutar uniones SPARQL al arrancar. Al expandir un municipio se dibujan todas sus colonias con geometria y sus
    colindancias internas. La linea de distancia es una medicion, no una arista RDF.
    Las consultas de ejemplo son los .rq que verifica verificar_grafo_zm.py. Admite
-   ?mun=<clave>, ?lang= y ?vista=figura. */
+   ?mun=<clave>, ?col=<clave>, ?lang= y ?vista=figura. */
 (function () {
   'use strict';
 
   const q = new URLSearchParams(location.search);
   const CONSULTAS = 'warehouse_ampliado/grafo/consultas/';
   const INICIAL = '09007';   /* Iztapalapa: tiene vecinos a los dos lados del limite */
-  const COLOR = { cdmx: '#00897b', zm: '#7b1fa2', cruce: '#ef6c00', sel: '#ff6f00', arista: '#90a4ae', colonia: '#1565c0', distancia: '#ad1457' };
+  const COLOR = { cdmx: '#00897b', zm: '#7b1fa2', cruce: '#ef6c00', sel: '#ff6f00', arista: '#90a4ae', colonia: '#1565c0', distancia: '#ad1457', conexion: '#c62828', vecina: '#00838f' };
   const PREFIJOS = 'PREFIX agua: <https://w3id.org/cdmx/agua/>\nPREFIX geo:  <http://www.opengis.net/ont/geosparql#>\n'
     + 'PREFIX mun:  <https://w3id.org/cdmx/agua/municipio/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\n';
 
@@ -36,6 +36,13 @@
       'r.interiorNota': 'Los puntos representan colonias CONAPO; las líneas unen polígonos que colindan. No representan tuberías. Se muestran todas las colonias con geometría del municipio elegido.',
       'r.consultaColonias': 'Ver las consultas de colonias y sus colindancias',
       'r.poblacion': 'Población del polígono, CONAPO 2020',
+      'c.titulo': 'Conexiones de {n}', 'c.cargando': 'Consultando las colindancias…',
+      'c.resumen': '{n} colonias colindantes; {e} en otros municipios o alcaldías.',
+      'c.vacio': 'El grafo no registra colonias colindantes con este nodo.',
+      'c.nota': 'Se resaltan las colindancias registradas entre polígonos CONAPO, no tuberías ni rutas de suministro. Pulsa una colonia de la lista para continuar el recorrido.',
+      'c.ver': 'Ver estas conexiones en el mapa', 'c.error': 'No se pudieron consultar las conexiones: {msg}',
+      'c.faltan': '{n} nodos sin geometría se conservan en la lista.',
+      'l.coloniaElegida': 'Colonia elegida', 'l.coloniaVecina': 'Colonia colindante', 'l.conexion': 'Conexión del nodo elegido',
       'l.cdmx': 'Alcaldía de la CDMX', 'l.zm': 'Municipio agregado', 'l.arista': 'Frontera entre municipios',
       'l.cruce': 'Frontera que cruza el límite de la CDMX', 'l.sel': 'Municipio elegido',
       'l.colonia': 'Colonia del municipio elegido', 'l.colindancia': 'Colindancia entre colonias',
@@ -57,7 +64,7 @@
       'fase.index': 'Preparando los nodos y sus relaciones…', 'fase.map': 'Dibujando el grafo…',
       'fase.geometry': 'Preparando las geometrías…', 'espera': 'La operación tardó demasiado. Vuelve a intentarlo.',
       'worker.error': 'No se pudo iniciar el lector del grafo.',
-      filas: '{n} filas en {ms} ms', sinfilas: 'La consulta no devolvió filas.', corriendo: 'Ejecutando…',
+      filas: '{n} filas en {ms} ms', fila: '1 fila en {ms} ms', sinfilas: 'La consulta no devolvió filas.', corriendo: 'Ejecutando…',
       pares: '{n} pares municipio-acuífero · {m} municipios distintos · {ms} ms',
       'o.titulo': 'De dónde sale este grafo',
       'o.texto': 'Se materializa desde PostgreSQL con un mapeo R2RML declarativo. Los datos ausentes no producen una afirmación numérica. Las 16 alcaldías se enlazan con skos:exactMatch al grafo original. Las colonias se unen con geo:sfTouches estricto; los municipios usan agua:sharesBoundaryWith porque sus polígonos oficiales presentan pequeños solapes. En las colonias CONAPO, population es la población oficial del polígono; las tasas proxy usan ratePopulationProxy, la población censal asignada por proximidad a las unidades SACMEX enlazadas, y se omiten si falta cobertura. Estas correspondencias no reasignan los registros al polígono. El espacio de nombres w3id identifica recursos; todavía no ofrece un servicio público de desreferenciación.',
@@ -84,6 +91,13 @@
       'r.interiorNota': 'Points represent CONAPO neighbourhoods; lines join adjacent polygons. They do not represent pipes. All neighbourhoods with geometry in the selected municipality are shown.',
       'r.consultaColonias': 'Show the neighbourhood and adjacency queries',
       'r.poblacion': 'Polygon population, CONAPO 2020',
+      'c.titulo': 'Connections of {n}', 'c.cargando': 'Reading neighbourhood adjacencies…',
+      'c.resumen': '{n} adjacent neighbourhoods; {e} in other municipalities or boroughs.',
+      'c.vacio': 'The graph records no adjacent neighbourhoods for this node.',
+      'c.nota': 'Highlighted connections are recorded adjacencies between CONAPO polygons, not pipes or supply routes. Click a neighbourhood in the list to continue the traversal.',
+      'c.ver': 'Show these connections on the map', 'c.error': 'The connections could not be retrieved: {msg}',
+      'c.faltan': '{n} nodes without geometry remain in the list.',
+      'l.coloniaElegida': 'Selected neighbourhood', 'l.coloniaVecina': 'Adjacent neighbourhood', 'l.conexion': 'Selected node connection',
       'l.cdmx': 'Mexico City borough', 'l.zm': 'Added municipality', 'l.arista': 'Boundary between municipalities',
       'l.cruce': 'Boundary crossing the Mexico City limit', 'l.sel': 'Selected municipality',
       'l.colonia': 'Neighbourhood in the selected municipality', 'l.colindancia': 'Neighbourhood adjacency',
@@ -105,7 +119,7 @@
       'fase.index': 'Preparing nodes and their relationships…', 'fase.map': 'Drawing the graph…',
       'fase.geometry': 'Preparing geometries…', 'espera': 'The operation took too long. Please try again.',
       'worker.error': 'The graph reader could not be started.',
-      filas: '{n} rows in {ms} ms', sinfilas: 'The query returned no rows.', corriendo: 'Running…',
+      filas: '{n} rows in {ms} ms', fila: '1 row in {ms} ms', sinfilas: 'The query returned no rows.', corriendo: 'Running…',
       pares: '{n} municipality-aquifer pairs · {m} distinct municipalities · {ms} ms',
       'o.titulo': 'Where this graph comes from',
       'o.texto': 'It is materialised from PostgreSQL with a declarative R2RML mapping. Missing values produce no numeric assertion. The 16 boroughs link to the original graph through skos:exactMatch. Neighbourhoods use strict geo:sfTouches; municipalities use agua:sharesBoundaryWith because their official polygons have small overlaps. For CONAPO neighbourhoods, population is the official polygon population; proxy rates use ratePopulationProxy, the census population assigned by proximity to matched SACMEX units, and are omitted when coverage is incomplete. These correspondences do not reallocate records to the polygon. The w3id namespace identifies resources; it does not yet provide a public dereferencing service.',
@@ -132,15 +146,17 @@
   const pendientes = new Map();
   const nodos = {}, poligonos = {}, aristas = [], nombres = {};
   const colonias = {}, coloniasMunicipio = {}, geometriasColonia = {}, marcasColonia = {};
-  let capaInterior, capaDistancia, expandido = null, coloniaElegida = null, vecinosActuales = new Set(), turnoDibujo = 0;
-  let adyacenciasActuales = [], consultaColonias = '', consultaAdyacencias = '';
+  let capaInterior, capaDistancia, capaVecindad, expandido = null, coloniaElegida = null, vecinosActuales = new Set(), turnoDibujo = 0;
+  let adyacenciasActuales = [], consultaColonias = '', consultaAdyacencias = '', turnoColonia = 0;
+  const lineasColonia = [], poligonosColonia = {}, conexionesCache = new Map();
+  let vecinasElegidas = [];
 
   const bindings = rows => rows.map(row => new Map(Object.entries(row)));
   const consultar = async (texto, progreso) => bindings(await trabajar('query', { text: texto }, progreso));
   const respirar = () => new Promise(resolve => setTimeout(resolve, 0));
 
   function crearLector() {
-    lector = new Worker(new URL('ijcopi/grafo-zm-worker.js?v=20261109-carga', document.baseURI));
+    lector = new Worker(new URL('ijcopi/grafo-zm-worker.js?v=20261109-conexiones', document.baseURI));
     lector.onmessage = event => {
       const { id, progress, result, error } = event.data, pendiente = pendientes.get(id);
       if (!pendiente) return;
@@ -250,10 +266,10 @@
     Object.keys(poligonos).forEach(c => {
       const elegido = c === cve, vecino = vecinos.has(c);
       poligonos[c].setStyle({ fillColor: elegido ? COLOR.sel : COLOR[zona(c)], fillOpacity: elegido ? 0.55 : vecino ? 0.38 : 0.08,
-        weight: elegido || vecino ? 1.6 : 0.7 });
+        color: COLOR[zona(c)], opacity: 1, weight: elegido || vecino ? 1.6 : 0.7 });
       if (nodos[c]) {
         nodos[c].marca.setRadius(elegido ? 8 : vecino ? 6 : 4.5);
-        nodos[c].marca.setStyle({ fillColor: elegido ? COLOR.sel : COLOR[zona(c)] });
+        nodos[c].marca.setStyle({ fillColor: elegido ? COLOR.sel : COLOR[zona(c)], opacity: 1, fillOpacity: 1 });
       }
     });
     aristas.forEach(e => {
@@ -275,28 +291,141 @@
     return c.punto;
   }
 
+  function limpiarVecindad() {
+    ++turnoColonia;
+    vecinasElegidas = [];
+    capaVecindad.clearLayers();
+    $('conexionesColonia').hidden = true;
+    $('conexionesColonia').setAttribute('aria-busy', 'false');
+    delete $('conexionesColonia').dataset.colonia;
+    $('listaConexiones').innerHTML = '';
+    $('verConexiones').disabled = true;
+  }
+
   function limpiarInterior() {
     ++turnoDibujo;
+    limpiarVecindad();
     capaInterior.clearLayers();
+    lineasColonia.length = 0;
     Object.keys(marcasColonia).forEach(c => delete marcasColonia[c]);
+    Object.keys(poligonosColonia).forEach(c => delete poligonosColonia[c]);
     $('interior').hidden = true;
     $('colonia').disabled = true;
   }
 
-  function elegirColonia(cve, enfocar = true) {
+  function estilizarColonias(elegida, vecinas = []) {
+    const conectadas = new Set(vecinas);
+    const figuraColonia = document.documentElement.classList.contains('figura') && elegida;
+    if (elegida) aristas.forEach(e => e.linea.setStyle({ opacity: figuraColonia ? 0 : 0.12, weight: 0.8 }));
+    else resaltar(seleccion, vecinosActuales);
+    if (figuraColonia) {
+      /* The colony figure uses municipal outlines only as neutral geographical context. */
+      Object.values(nodos).forEach(n => n.marca.setStyle({ opacity: 0, fillOpacity: 0 }));
+      Object.values(poligonos).forEach(p => p.setStyle({ color: '#78909c', opacity: 0.35, fillOpacity: 0, weight: 0.7 }));
+    }
+    lineasColonia.forEach(linea => linea.setStyle({ opacity: figuraColonia ? 0 : elegida ? 0.12 : 0.65 }));
+    Object.entries(marcasColonia).forEach(([cve, marca]) => {
+      const propia = cve === elegida, vecina = conectadas.has(cve);
+      const oculta = figuraColonia && !propia && !vecina;
+      marca.setRadius(propia ? 7 : vecina ? 5.5 : 3.5);
+      marca.setStyle({ fillColor: propia ? COLOR.sel : vecina ? COLOR.vecina : COLOR.colonia,
+        opacity: oculta ? 0 : 1, fillOpacity: oculta ? 0 : propia || vecina || !elegida ? 1 : 0.28 });
+      poligonosColonia[cve].setStyle({ color: propia ? COLOR.sel : vecina ? COLOR.vecina : COLOR.colonia,
+        fillColor: propia ? COLOR.sel : vecina ? COLOR.vecina : COLOR.colonia,
+        opacity: oculta ? 0 : 1, fillOpacity: oculta ? 0 : propia ? 0.2 : vecina ? 0.13 : 0.04,
+        weight: propia || vecina ? 1.5 : 0.6 });
+    });
+  }
+
+  function enfocarConexiones() {
+    const puntos = [coloniaElegida, ...vecinasElegidas].map(puntoColonia).filter(Boolean);
+    if (puntos.length) {
+      const figura = document.documentElement.classList.contains('figura');
+      const margen = figura ? document.querySelector('.zm-lateral').getBoundingClientRect().right + 18 : 42;
+      mapa.fitBounds(L.latLngBounds(puntos), figura
+        ? { paddingTopLeft: [margen, 28], paddingBottomRight: [28, 28], maxZoom: 15 }
+        : { padding: [42, 42], maxZoom: 15 });
+    }
+  }
+
+  async function irColonia(cve) {
+    const colonia = colonias[cve];
+    if (!colonia) return;
+    if (colonia.municipio !== expandido) {
+      const carga = seleccionar(colonia.municipio, true, false), turnoMunicipio = turnoRecorrido;
+      await carga;
+      if (turnoMunicipio !== turnoRecorrido) return;
+    }
+    await elegirColonia(cve);
+  }
+
+  async function elegirColonia(cve, enfocar = true) {
     const c = colonias[cve];
     if (!c || c.municipio !== expandido || !marcasColonia[cve]) return;
+    limpiarVecindad();
+    const mio = turnoColonia;
     coloniaElegida = cve;
     $('colonia').value = cve;
-    Object.entries(marcasColonia).forEach(([k, m]) => {
-      m.setRadius(k === cve ? 7 : 3.5);
-      m.setStyle({ fillColor: k === cve ? COLOR.sel : COLOR.colonia });
-    });
+    estilizarColonias(cve);
+    leyendaGrafo();
+    $('conexionesColonia').hidden = false;
+    $('conexionesColonia').setAttribute('aria-busy', 'true');
+    $('conexionesTitulo').textContent = t('c.titulo', { n: c.nombre });
+    $('estadoConexiones').textContent = t('c.cargando');
     const marca = marcasColonia[cve];
     marca.bringToFront();
     marca.bindPopup(`<b>${esc(c.nombre)}</b><br>${esc(nombres[c.municipio])}`
-      + (c.poblacion == null ? '' : `<br>${esc(t('r.poblacion'))}: ${esc(fmt(c.poblacion, 0))}`)).openPopup();
-    if (enfocar) mapa.setView(puntoColonia(cve), Math.max(13, mapa.getZoom()));
+      + (c.poblacion == null ? '' : `<br>${esc(t('r.poblacion'))}: ${esc(fmt(c.poblacion, 0))}`));
+    /* Figure views keep nearby nodes visible; the normal explorer shows the details. */
+    if (!document.documentElement.classList.contains('figura')) marca.openPopup();
+    try {
+      let datos = conexionesCache.get(cve);
+      if (!datos) {
+        datos = await trabajar('neighbourhood', { cve });
+        conexionesCache.set(cve, datos);
+      }
+      if (mio !== turnoColonia || cve !== coloniaElegida || c.municipio !== expandido) return;
+      const orden = new Intl.Collator(loc()).compare;
+      vecinasElegidas = datos.vecinas.filter(v => colonias[v])
+        .sort((a, b) => orden(colonias[a].nombre, colonias[b].nombre));
+      estilizarColonias(cve, vecinasElegidas);
+      const punto = puntoColonia(cve);
+      let faltan = 0;
+      vecinasElegidas.forEach(vecina => {
+        const destino = puntoColonia(vecina), info = colonias[vecina];
+        if (!destino) { faltan++; return; }
+        L.polyline([punto, destino], { renderer: lienzo, color: COLOR.conexion, weight: 3, opacity: 1, interactive: false })
+          .addTo(capaVecindad);
+        if (!marcasColonia[vecina]) {
+          L.geoJSON(geometriasColonia[vecina], {
+            style: { renderer: lienzo, color: COLOR.vecina, weight: 1.4, fillColor: COLOR.vecina, fillOpacity: 0.13 },
+          }).on('click', () => irColonia(vecina)).addTo(capaVecindad);
+          L.circleMarker(destino, { renderer: lienzo, radius: 5.5, color: '#fff', weight: 1,
+            fillColor: COLOR.vecina, fillOpacity: 1 }).on('click', () => irColonia(vecina))
+            .bindTooltip(esc(`${info.nombre} (${nombres[info.municipio]})`)).addTo(capaVecindad);
+        }
+      });
+      vecinasElegidas.forEach(v => { if (marcasColonia[v]) marcasColonia[v].bringToFront(); });
+      marca.bringToFront();
+      capaDistancia.eachLayer(capa => { if (capa.bringToFront) capa.bringToFront(); });
+      $('estadoConexiones').textContent = vecinasElegidas.length ? t('c.resumen', {
+        n: fmt(vecinasElegidas.length, 0),
+        e: fmt(vecinasElegidas.filter(v => colonias[v].municipio !== c.municipio).length, 0),
+      }) : t('c.vacio');
+      if (faltan) $('estadoConexiones').textContent += ' ' + t('c.faltan', { n: fmt(faltan, 0) });
+      $('listaConexiones').innerHTML = vecinasElegidas.map(vecina => {
+        const info = colonias[vecina];
+        return `<li><button type="button" data-colonia="${esc(vecina)}">${esc(info.nombre)}</button>`
+          + `<small>${esc(nombres[info.municipio])}</small></li>`;
+      }).join('');
+      $('conexionesColonia').dataset.colonia = cve;
+      $('verConexiones').disabled = false;
+      if (enfocar) enfocarConexiones();
+    } catch (e) {
+      if (mio === turnoColonia) $('estadoConexiones').textContent = t('c.error', { msg: e.message || e });
+    } finally {
+      if (mio === turnoColonia) $('conexionesColonia').setAttribute('aria-busy', 'false');
+    }
   }
 
   async function pintarInterior() {
@@ -314,16 +443,17 @@
     for (let i = 0; i < lineas.length; i++) {
       if (dibujo !== turnoDibujo) return;
       const [a, b] = lineas[i];
-      L.polyline([puntoColonia(a), puntoColonia(b)], {
+      const linea = L.polyline([puntoColonia(a), puntoColonia(b)], {
         renderer: lienzo, interactive: false, color: '#546e7a', weight: 1.1, opacity: 0.65,
       }).addTo(capaInterior);
+      lineasColonia.push(linea);
       if (i && i % 200 === 0) await respirar();
     }
     for (let i = 0; i < visibles.length; i++) {
       if (dibujo !== turnoDibujo) return;
       const cve = visibles[i];
       const c = colonias[cve];
-      L.geoJSON(geometriasColonia[cve], {
+      poligonosColonia[cve] = L.geoJSON(geometriasColonia[cve], {
         style: { renderer: lienzo, color: COLOR.colonia, weight: 0.6, fillColor: COLOR.colonia, fillOpacity: 0.08 },
       }).on('click', () => elegirColonia(cve, false)).addTo(capaInterior);
       marcasColonia[cve] = L.circleMarker(puntoColonia(cve), {
@@ -340,7 +470,7 @@
     $('colonia').innerHTML = `<option value="">${esc(t('r.elegirColonia'))}</option>` + todas.map(cve =>
       `<option value="${esc(cve)}"${puntoColonia(cve) ? '' : ' disabled'}>${esc(colonias[cve].nombre)} (${esc(cve)})</option>`).join('');
     $('colonia').disabled = !visibles.length;
-    if (coloniaElegida && marcasColonia[coloniaElegida]) elegirColonia(coloniaElegida, false);
+    if (coloniaElegida && marcasColonia[coloniaElegida]) await elegirColonia(coloniaElegida, false);
   }
 
   function vistaMetropolitana() {
@@ -479,9 +609,16 @@
 
   function leyendaGrafo() {
     const f = (c, k, cls) => `<div class="zm-ley"><i class="${cls}" style="${cls === 'linea' ? 'border-top-color' : 'background'}:${c}"></i>${esc(t(k))}</div>`;
+    if (document.documentElement.classList.contains('figura') && coloniaElegida) {
+      $('leyendaGrafo').innerHTML = `<p class="zm-ley-t">${esc(colonias[coloniaElegida].nombre)}</p>`
+        + f(COLOR.sel, 'l.coloniaElegida', 'punto') + f(COLOR.vecina, 'l.coloniaVecina', 'punto')
+        + f(COLOR.conexion, 'l.conexion', 'linea');
+      return;
+    }
     $('leyendaGrafo').innerHTML = f(COLOR.cdmx, 'l.cdmx', 'punto') + f(COLOR.zm, 'l.zm', 'punto') + f(COLOR.sel, 'l.sel', 'punto')
       + f(COLOR.arista, 'l.arista', 'linea') + f(COLOR.cruce, 'l.cruce', 'linea')
-      + (expandido ? f(COLOR.colonia, 'l.colonia', 'punto') + f('#546e7a', 'l.colindancia', 'linea') : '');
+      + (expandido ? f(COLOR.colonia, 'l.colonia', 'punto') + f('#546e7a', 'l.colindancia', 'linea') : '')
+      + (coloniaElegida ? f(COLOR.sel, 'l.coloniaElegida', 'punto') + f(COLOR.vecina, 'l.coloniaVecina', 'punto') + f(COLOR.conexion, 'l.conexion', 'linea') : '');
   }
 
   function pintarEjemplos() {
@@ -526,7 +663,7 @@
 
   function pintarSalida() {
     if (!ultima) return;
-    $('metrica').textContent = t('filas', { n: fmt(ultima.filas.length, 0), ms: fmt(ultima.ms, 0) });
+    $('metrica').textContent = t(ultima.filas.length === 1 ? 'fila' : 'filas', { n: fmt(ultima.filas.length, 0), ms: fmt(ultima.ms, 0) });
     const sinVolumen = ejemplos.find(e => e.nombre === '02_sin_volumen_sobreexplotado.rq'
       && e.texto.trim() === ultima.texto.trim());
     if (sinVolumen) {
@@ -625,13 +762,17 @@
     $('consulta').addEventListener('keydown', e => {
       if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); ejecutar(); }
     });
-    const pedido = q.get('mun');
+    const pedido = q.get('mun'), pedidaColonia = q.get('col');
+    const coloniaInicial = colonias[pedidaColonia] && colonias[pedidaColonia].municipio === pedido ? pedidaColonia : null;
     if (pedido && nombres[pedido] || q.get('vista') === 'figura') {
-      await seleccionar(pedido && nombres[pedido] ? pedido : INICIAL, Boolean(pedido && nombres[pedido]) && q.get('vista') !== 'figura', false);
+      const abrir = Boolean(pedido && nombres[pedido]) && (q.get('vista') !== 'figura' || Boolean(coloniaInicial));
+      await seleccionar(pedido && nombres[pedido] ? pedido : INICIAL, abrir, false);
+      if (coloniaInicial) await elegirColonia(coloniaInicial, false);
     } else pintarInterior();
     prepararDistancia();
     const puntos = Object.values(nodos).map(n => n.punto);
-    if (expandido && poligonos[expandido]) mapa.fitBounds(poligonos[expandido].getBounds(), { padding: [24, 24], maxZoom: 13 });
+    if (coloniaElegida) enfocarConexiones();
+    else if (expandido && poligonos[expandido]) mapa.fitBounds(poligonos[expandido].getBounds(), { padding: [24, 24], maxZoom: 13 });
     else if (puntos.length) mapa.fitBounds(L.latLngBounds(puntos), { padding: [24, 24] });
     /* The map is usable even if an optional example file cannot be fetched. */
     catalogo.then(({ valor, error }) => {
@@ -658,9 +799,18 @@
     mapa = L.map('map', { preferCanvas: true, zoomSnap: 0.25 }).setView([19.45, -99.1], 9.5);
     capaInterior = L.layerGroup().addTo(mapa);
     capaDistancia = L.layerGroup().addTo(mapa);
+    capaVecindad = L.layerGroup().addTo(mapa);
     $('consulta').addEventListener('input', () => { consultaModificada = true; });
     $('vistaMetropolitana').addEventListener('click', vistaMetropolitana);
-    $('colonia').addEventListener('change', e => elegirColonia(e.target.value));
+    $('colonia').addEventListener('change', e => {
+      if (e.target.value) elegirColonia(e.target.value);
+      else { coloniaElegida = null; limpiarVecindad(); estilizarColonias(null); leyendaGrafo(); mapa.closePopup(); }
+    });
+    $('listaConexiones').addEventListener('click', e => {
+      const boton = e.target.closest('button[data-colonia]');
+      if (boton) irColonia(boton.dataset.colonia);
+    });
+    $('verConexiones').addEventListener('click', enfocarConexiones);
     ['A', 'B'].forEach(lado => {
       $('distMunicipio' + lado).addEventListener('change', () => { opcionesDistancia(lado); pintarDistancia(); });
       $('distNodo' + lado).addEventListener('change', pintarDistancia);

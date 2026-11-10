@@ -49,6 +49,162 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Estado actual
 
+- Nuevo cierre de `main` expresamente autorizado por Gabriel: un commit y push de lo
+  pendiente, con su identidad humana, sin firmas, coautorías ni créditos automáticos.
+  Incluye conexiones entre colonias y navegación externa, ajustes de interfaz/caché,
+  pruebas de regresión y Word identificado revisado de 15 páginas/9,056 palabras.
+  Verificador Springer original intacto ejecutado para este push: 25 enlaces, un fallo
+  exclusivamente ADIP HTTP 403; AZCATL HTTP 200. Se aplica la excepción específica
+  autorizada sólo para este cierre. Evidencia local: tmp/cierre_main_2026-11-09/.
+  Publicación y QA pública aún por confirmar; no dar por actualizado Pages sólo por
+  crear el commit o completar el push. La rama anónima y los originales se conservan.
+
+- Entrega de revisión anónima preparada por instrucción posterior de Gabriel, con las
+  maestras identificadas intactas. Archivos en tmp/entrega_anonima_2026-11-09/paper/:
+  water_data_warehouse_review.docx, 15 páginas/8,954 palabras, SHA-256
+  aebd091ca2609b841f010f1d5c1fe2d78c6206a9987b0a1aaae6a43ffc192580;
+  PDF b1a1018d94394b65af5a450371f9a2345b008f1255683d96ba49290df6e2ae88.
+  Copia fuente independiente en tmp/entrega_anonima_2026-11-09/fuente_repo_revision/,
+  con prompt/mensaje, CONTINUAR_EN_OTRA_PC.txt, MENSAJE_INICIO_OTRA_PC.txt y
+  verificacion_postgresql/. No confundir esta copia con main ni con los sitios históricos.
+
+- Gabriel aclaró que el volumen ampliado está en otra PC y pidió dejar la última
+  verificación para ejecutarla allí. Siguen PENDIENTES las tres comprobaciones reales:
+  correlaciones de 89 municipios, 39,685 reportes y 15 consultas SQL contra exportaciones.
+  El helper portable sólo lectura está probado (formato canónico, frontera Decimal/float
+  2^53, equivalencia Docker/DSN con consulta de control y manejo de error), pero NO está
+  aprobado contra el almacén ampliado real. Exige rangos promedio para Spearman y
+  compara hashes SQL/JSON. No sustituir esas lecturas por antecedentes ni por exports.
+  Diagnóstico aquí: Docker responde, pero el volumen existente sólo tenía la base original;
+  reconstrucción ampliada detenida por la instrucción de Gabriel, sin ejecutar ETL ampliado.
+  Contenedores temporales propios apagados; datos/caché/volúmenes conservados.
+
+- Cierre nuevo autorizado y CONSUMIDO: un commit/push en la rama independiente
+  codex/revision-anonima, con prompt/mensaje y excepción ADIP sólo si era el único fallo.
+  Commit raíz 6f723ea05fb9ca1a419dfb53399507b1f49452c1, Gabriel autor/committer humano,
+  sin firma ni trailers; push y remoto confirmados por la sesión principal.
+  Primer gate Springer intacto: 25 enlaces/2 fallos (ADIP y AZCATL), se detuvo.
+  Repetición previa al push: 25/1 sólo ADIP 403; AZCATL 200; excepción específica aplicada.
+  main permanece a0730ed8f3532c173eace3c4c1c896372cd2f964; original/main e históricos
+  intactos. No hay autorización de otro commit/amend/push ni envío editorial.
+
+- Espejo Anonymous ACTIVO, confirmado en la interfaz con «Your review link is ready»:
+  https://anonymous.4open.science/r/water-data-warehouse-review-9D27/
+  Snapshot del 9 de noviembre de 2026, acceso gratuito hasta el 9 de mayo de 2027,
+  sin actualización automática y sin publicar mediante el Pages original.
+  Verificados acceso al README, ruta del grafo, licencia con cinco nombres personales
+  ocultos y ZIP público descargable. Auditoría del ZIP real APROBADA: 221 archivos,
+  cero identificadores directos o correos fuera de vendor/fuentes, sin privados ni
+  historial. Sólo cuatro máscaras legales previstas; condiciones MIT intactas.
+  Los 15 JSON, manifiestos, RDF y vocabularios son idénticos byte por byte a los finales
+  verificados; Word y PDF coinciden exactamente. ZIP descargado: 74,584,603 bytes,
+  SHA-256 06d524d5406e6bd00ee4f82561b82b5f20e88b6b47efae382371a8b09a8a7923.
+  Evidencia: tmp/entrega_anonima_2026-11-09/anonymous_ui_zip_audit.json.
+  Captura local: tmp/entrega_anonima_2026-11-09/anonymous_publicado.jpg.
+  Esta actualización de continuidad queda local, sin acciones Git ni envío editorial.
+
+- Informe de Claude contrastado independientemente el 9 nov, sólo lectura de productos:
+  Word/PDF coinciden con sus hashes 7c62eefd.../ae644830..., Word idéntico en ambos repos.
+  Medición nueva Microsoft Word: 15 páginas/9,056 palabras; resumen 146 sin etiqueta
+  (147 incluye «Abstract.»), mismo texto que antes. Quince páginas a 150 dpi inspeccionadas,
+  sin recortes/solapes, figuras en inglés. Tablas/datos, autoría, correo final de Roberto,
+  correspondencia y encabezados/pies intactos; recortes de tres frases sólo retóricos.
+  Cero tokens nuevos sin amarillo frente a entrada; doce avisos frente a v0 explicados.
+  Repetidas aquí 23 pruebas pytest (pasan) y prueba Node del grafo (pasa). rdflib 7.2.1
+  sólo instalado en deps ignoradas de auditoría, sin cambiar entorno global.
+  Pendiente del corpus RESUELTO: calculate() de ambos generadores reproduce sus evidencias;
+  sólo difieren hashes de bytes CRLF/LF de dos CSV y fecha local válida de exportación.
+  Contenido canónico, cifras, exports verificados y PNG/SVG coinciden; no igualar hashes
+  de bytes ni modificar CSV. Referencias Hill/Purves/Vetrò/Carrera contrastadas con
+  fuentes primarias, coherentes. Declaración IA actual preservada; conviene explicitar
+  apoyo real al análisis/verificación (política exige declarar usos, no una frase mágica).
+  NO repetidas aquí las tres comprobaciones PostgreSQL ni toda la auditoría estadística;
+  no tratarlas como fallos detectados. Evidencia ignorada en tmp/auditoria_claude_2026-11-09/
+  y tmp/auditoria_claude_word_2026-11-09/. Sin corregir productos, anonimizar, Git o envío.
+
+- Revisión Fable 5.2 del 9 nov COMPLETADA, todo local, sin commit/push/envío.
+  Recalculado sin fallos: tablas 1-6, per cápita, ranking real, índice fiscal, pareada y
+  sensibilidad (20 semillas); 23 pruebas pytest; 15 JSON contra manifiesto; RDF 91,230 triples,
+  15,510 pares sfTouches, 163 fronteras, 27 pares/21 municipios, Tepalcates 7 vecinas (2 en
+  Iztacalco); verificador del grafo publicado y prueba Node pasan. NO recalculado por falta de
+  PostgreSQL (Docker Desktop no arranca): Spearman 0.934/Pearson 0.322 de 89 municipios,
+  39,685 reportes y la comparación viva de las 15 consultas; quedan como antecedente.
+  Web local Edge integrado, 1280 y 375 px, ES/EN: 0 errores de consola, recursos 200,
+  recorrido entre alcaldías, distancia simétrica/cero, idioma conserva selección, COUNT 91,230.
+  Corregido en web: "1 fila/1 row" y claves de caché unificadas (nav.js, zm.css, grafo-zm.js r4).
+  Corregido en paper (fuente/conversor): "static" en amarillo; referencia cruzada rota de 5.3
+  (la advertencia per cápita estaba en la Discusión de v0, ya reescrita) sustituida por cita;
+  ecuación (1) ahora citada; referencias completadas tras Crossref (Hill, Purves, Vetrò, Berro,
+  Soares, fascículos); APA 7: nombre completo de autores corporativos en la lista y sigla
+  definida en la primera cita, "Article" en números de artículo; figura 2 rotula log-A_g como
+  "(log scale)" en vez de "(proposed)" (script y PNG en ambos repos). Para volver a 15 páginas
+  se quitaron tres frases retóricas de 5.7. Confirmado con texto completo: Ramos-Bueno 2021.
+  Word 15 páginas/9,056 palabras (+61.28 % sobre 5,615), resumen 147, seis keywords, quince
+  páginas inspeccionadas, amarillo: 12 tokens de renumeración/título. Word idéntico en ambos:
+  7c62eefda1bb7e27a37f77cff79a76e6f98e39174741f5f1ae3f9ae63625a89e; PDF sólo original
+  ae644830f667d0989dace86cdd059f1bc407e22bea8bc8fa94ded5395aa8e69c.
+  Pendientes humanos: aval de coautores, alcance de la declaración de IA frente a "analytical
+  support" de IJCOPI, metadatos de la revista, y la fase de anonimización.
+  Respaldo de entrada y evidencia: tmp/revision_fable_2026-11-09/.
+
+- Preparados a petición de Gabriel prompt y mensaje de inicio locales para Fable 5.2:
+  contexto/PROMPT_FABLE_5_2_REVISION_AGUA_2026-11-09.txt y
+  contexto/MENSAJE_FABLE_5_2_REVISION_AGUA_2026-11-09.txt (ignorados, sin enviar).
+  Orden actualizado por instrucción posterior: primero revisión/correcciones del paper
+  identificado y sistema; después de atenderlas, Gabriel preparará versión anónima
+  del artículo y del material del repositorio. Fable no debe generar aún copia ciega,
+  portada separada ni anonimizar/duplicar/renombrar/privatizar repositorios.
+  Encarga evaluación/correcciones locales del paper y sistema, con pruebas y resguardo
+  del árbol sin publicar. No modifica el manuscrito ni autoriza Git/envío por sí mismo.
+  Anonimato verificado en fuentes oficiales: convocatoria ICOKG 2026,
+  https://ontologica.cs.buap.mx/icokg2026/cfp.html, especifica doble ciego también para
+  el número especial invitado; IJCOPI confirma doble ciego en submissions y
+  https://ijcopi.org/ojs/editorial-policies. Ser invitado no exime. La guía también
+  pide portada identificada; falta confirmar con comité reparto de archivos y cómo
+  cuenta la portada en 15 páginas. Se mantiene la maestra intacta; copia ciega y material
+  anónimo quedan para la fase posterior, sin alterar citas/enlaces públicos ni prometer
+  anonimato completo si quedan identificadores. No se generó copia ciega ni se contactó al comité.
+
+- Revisión local COMPLETADA del 9 nov, posterior al cierre publicado. Al seleccionar una
+  colonia se resaltan sus vecinas y conexiones RDF geo:sfTouches, con lista navegable
+  incluso hacia otra alcaldía/municipio. Tepalcates: siete vecinas, dos en Iztacalco.
+  Node y Edge pasan: clic real, navegación externa, ES/EN, distancia preservada,
+  selecciones rápidas, vacío, móvil 375 px y arranque frío sin Comunica (~1.4 s).
+  Datos/RDF intactos. Figura reproducible: ?mun=09007&col=90070211&vista=figura&lang=en.
+  El correo de Roberto cierra el bloque de contactos; autoría/correspondencia intactas.
+  Dos capturas nuevas para figura 3 desde la interfaz real, íntegramente en inglés,
+  salvo topónimos propios: 1600×1216, OSM con atribución, leyendas 26 CSS px, sin
+  tapar nodos/conexiones. Figuras 1 y 2 ya estaban en inglés y se conservaron.
+  Capturador reproducible actualizado en original/paper/ijcopi/capturar_mapa.ps1 y .cjs;
+  servir el sitio actualizado IJCOPI y pasar -Base. Comprueba datos, teselas completas,
+  inglés, leyendas y dimensiones antes de sustituir los PNG. No usa plazos virtuales.
+  Word/PDF regenerados desde fuente/conversor: 15 páginas/9,012 palabras (+60.498664 %
+  sobre v0 de 5,615), resumen 146/seis keywords intactos. Quince PNG inspeccionados;
+  cero tokens nuevos sin amarillo. Tablas de datos, figuras 1/2, IA académica, plantilla,
+  encabezados/pies y v0 preservados. Word idéntico en ambos repos:
+  83f8ae3d45ecf2d8b845bf655878cce3209d4cc7c4bfecb9801082e1ad1d3a59;
+  PDF sólo original a237573be4cb0909a5ee1f9535ae2489d872d5d45eb5c1a7b596aeea0780992e.
+  Evidencia ignorada: tmp/vecindad_capturas_2026-11-09/,
+  tmp/capturas_ingles_2026-11-09/final-legible/ y tmp/conexiones_colonia_2026-11-09/.
+  Sin commit/amend/push/publicación de esta revisión: no hay autorización nueva.
+  Pages sigue en a0730ed hasta un cierre autorizado con su verificador previo.
+
+- Cierre COMPLETADO: original ijcopi-zmvm 52782a7eca7f12729751f8782d26f0ae9a4c85bc;
+  IJCOPI/main a0730ed8f3532c173eace3c4c1c896372cd2f964, remotos confirmados.
+  Autor/committer Gabriel Hurtado, sin firmas/trailers/créditos automáticos. Antes de
+  cada push se repitió el verificador intacto: original 25/1 sólo AZCATL (excepción
+  expresa usada en ese push), IJCOPI 25/0, ADIP/AZCATL 200. No se repite autorización.
+  Pages 42726420511 success; HTML/JS/worker publicados coinciden por SHA-256.
+  QA pública Edge con perfil nuevo: controles listos en 2,065 ms, estado de carga vacío,
+  333 colonias/795 colindancias Iztapalapa, distancia entre colonias de municipios
+  distintos y COUNT completo 91,230 correctos; 0 errores JS/recursos propios fallidos.
+  También pasó carrera del catálogo retrasado sin sobrescribir consulta en ejecución.
+  Word/diagrama y generador publicados en ambos repos, sin PDF extra en IJCOPI.
+  Históricos y datos científicos intactos. Evidencia ignorada:
+  `tmp/grafo_2026-11-09/qa-publica-carga.json` y `qa-carga-worker.json`,
+  `tmp/cierre_diagrama_grafo_2026-11-09/`. Este registro posterior queda local,
+  sin otro commit/amend/push. Los permisos de este cierre se consumieron.
+
 - Cierre autorizado el 9 nov por Gabriel: un commit/push por repositorio para diagrama,
   manuscrito y corrección de carga del grafo, identidad humana sin firmas ni créditos
   automáticos. Sólo se admite AZCATL si es el único fallo del verificador de ese push.
@@ -391,10 +547,34 @@ Los registros siguientes son antecedentes; no autorizan acciones Git adicionales
 
 ## Siguiente paso
 
-Original cerrado en 52782a7. Completar el único commit/push IJCOPI autorizado con
-diagrama, Word y arreglo de carga; repetir verificador inmediatamente antes del push,
-aceptar sólo cero fallos o AZCATL como único fallo. Confirmar remoto, Pages y QA pública
-de la carga corregida. No hacer otro commit/amend del original ni consumir permisos futuros.
+Completar el cierre de `main` autorizado arriba: comprobar regresión, identidad,
+commit/push y despliegue Pages, y después verificar el sistema público actualizado.
+La autorización cubre una sola operación de commit y push; no habilita amend ni
+acciones posteriores. No publicar cambios pendientes del repositorio original.
+
+En la PC con el volumen ampliado, clonar codex/revision-anonima en una carpeta separada,
+sin reemplazar checkouts ni modificar el volumen existente. Leer CONTINUAR_EN_OTRA_PC.txt,
+MENSAJE_INICIO_OTRA_PC.txt y el prompt de la nueva rama. Ejecutar el helper de
+verificacion_postgresql/ apuntando al repositorio completo y al contenedor/DSN real:
+son tres lecturas READ ONLY, sin ETL, sin reconstrucción ni cambios de datos.
+Conservar el JSON de resultado y no dar por resuelto el pendiente hasta obtener pass
+contra la base real. Anonymous está activo y la auditoría del ZIP público real está
+aprobada; los únicos checks técnicos pendientes son las tres lecturas PostgreSQL en
+la otra PC, sin ETL ni modificación del volumen.
+Maestras identificadas conservadas; aval de coautores y reparto editorial de archivos
+siguen pendientes. El permiso del commit/push de revisión está consumido; cualquier
+acción Git o envío posterior requiere autorización nueva.
+
+Los siguientes pasos anteriores se conservan como antecedentes cronológicos:
+
+Gabriel revisa conexiones de colonias, correo final de Roberto y nuevas capturas en inglés
+de figura 3, con Word de 15 páginas/9,056 palabras sincronizado en ambos repos. Todo
+esto sigue local; publicar requiere autorización nueva por commit/push/repositorio y
+verificador Springer antes de cada push. No reutilizar excepciones previas.
+Cierre anterior publicado y verificado: original 52782a7 e IJCOPI a0730ed. Aval de
+coautores y metadatos editoriales siguen pendientes.
+No repetir commits, amend o pushes: requieren autorización nueva por acción/repositorio.
+La excepción AZCATL usada no habilita futuros pushes. No enviar el paper automáticamente.
 No ejecutar publicadores históricos, release/DOI, correo ni envío editorial.
 Metadatos y aval final de coautores pendientes. Permisos consumidos no se reutilizan.
 
@@ -428,6 +608,64 @@ de editar. No tratar sus recomendaciones como hechos ni como autorización de Gi
    para cambios posteriores. No enviar correos ni publicar el paper automáticamente.
 
 ## Bitácora
+
+- 2026-11-09: Gabriel autorizó expresamente cerrar lo pendiente en IJCOPI/main,
+  con identidad humana y sin firmas/créditos automáticos. Verificador previo intacto:
+  25 enlaces, sólo ADIP 403; AZCATL 200. Excepción ADIP específica aplicable.
+  Commit/push y despliegue en preparación; tres comprobaciones PostgreSQL siguen
+  pendientes para la PC con el volumen ampliado, sin ejecutar ETL aquí.
+
+- 2026-11-09: auditoría del ZIP público real de Anonymous aprobada: 221 archivos,
+  sin identificadores directos/correos fuera de vendor/fuentes ni privados/historial;
+  cuatro máscaras legales previstas, MIT intacta. JSON/manifiestos/RDF/vocabularios y
+  Word/PDF exactos a finales. ZIP de 74,584,603 bytes, SHA-256 06d524d5...; evidencia
+  anonymous_ui_zip_audit.json. Sólo quedan tres comprobaciones PostgreSQL en otra PC.
+  Continuidad local sin acciones Git ni envío.
+
+- 2026-11-09: Anonymous confirmado activo en su interfaz, snapshot del 9 de noviembre,
+  acceso gratuito hasta el 9 de mayo de 2027, sin actualización automática ni cambios
+  al Pages original. README, ruta del grafo, licencia con cinco nombres ocultos y ZIP
+  descargable verificados. Auditoría del ZIP real pendiente. Captura local guardada;
+  continuidad actualizada sin otro commit, push ni envío.
+
+- 2026-11-09: entrega anónima preparada (Word 15p/8,954, aebd091c...; PDF b1a1018d...),
+  maestras intactas. Gabriel dejó PostgreSQL para la otra PC con su volumen: helper
+  portable probado, tres comprobaciones reales pendientes; reconstrucción local detenida
+  y contenedores propios apagados sin borrar datos. Publicada rama codex/revision-anonima
+  en commit raíz humano 6f723ea; gate 25/2 detenido y repetición 25/1 sólo ADIP autorizado.
+  main intacto, permiso consumido. Espejo Anonymous en preparación, aún sin confirmar activo.
+  Continuidad posterior sólo local, sin más Git ni envío.
+
+- 2026-11-09: contrastado informe Claude con productos y fuentes primarias: Word15p/9056,
+  resumen146 sin etiqueta,15p inspeccionadas, tablas/autoría/amarillo preservados. 23tests
+  y Node pasan. Corpus CRLF/LF/fechas verificado sin error de datos. Sin editar productos,
+  anonimizar o publicar; siguen pendientes tres comprobaciones PostgreSQL y aval humano.
+
+- 2026-11-09: revisión Fable 5.2 completada: cifras, RDF y web verificados; correcciones de
+  referencias, APA, amarillo, figura 2 y referencia cruzada; Word 15 páginas/9,056 palabras
+  sincronizado (7c62eefd...). Sin PostgreSQL en vivo. Sin Git ni envío.
+
+- 2026-11-09: actualizados prompt y mensajito para Fable según secuencia de Gabriel:
+  revisión/correcciones primero, anonimización del artículo y material del repo después.
+  Retiradas órdenes de generar copias ciegas ahora; TXT locales ignorados, sin enviar.
+  Manuscrito/sistema intactos; sin acciones Git, anonimización ni publicación.
+
+- 2026-11-09: preparado prompt de revisión/corrección para Fable 5.2, local ignorado,
+  revisado independientemente. Confirmado doble ciego del número especial en convocatoria
+  ICOKG 2026 y política IJCOPI; reparto de portada/manuscrito por confirmar. Sin modificar
+  paper/sistema, generar versión anónima, enviar mensajes ni efectuar acciones Git.
+
+- 2026-11-09: restauradas conexiones de colonia seleccionada y navegación a vecinas
+  externas; Node/Edge pasan, sin cambiar RDF/datos. Correo de Roberto al final del bloque.
+  Figura 3 recapturada en inglés, leyendas legibles y OSM; generador reproducible actualizado.
+  Word/PDF desde fuente: 15 páginas/9,012 palabras; quince páginas y amarillo revisados,
+  Word idéntico en ambos repos, v0/cifras/autoría/IA intactos. Cambios locales sin Git ni publicación.
+
+- 2026-11-09: cierre terminado: original 52782a7 (gate 25/1 sólo AZCATL autorizado) e
+  IJCOPI a0730ed (gate 25/0), identidad humana sin firma/trailers. Pages 42726420511
+  success y tres archivos web idénticos por SHA-256. QA pública fría: mapa operativo
+  en 2.065 s, colonias/distancia/COUNT correctos, 0 errores; datos/históricos intactos.
+  Continuidad posterior sólo local, sin más commits/amend/pushes.
 
 - 2026-11-09: cierre del diagrama y manuscrito autorizado; publicado original 52782a7,
   identidad humana sin firma/trailers, gate 25/1 sólo AZCATL y excepción aplicada.
