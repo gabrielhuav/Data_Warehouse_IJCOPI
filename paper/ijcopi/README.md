@@ -6,8 +6,8 @@ Versión vigente para revisión: [dw_agua_IJCOPI_v3_grafo.docx](dw_agua_IJCOPI_v
 - [dw_agua_IJCOPI_v3_grafo.docx](dw_agua_IJCOPI_v3_grafo.docx): última versión registrada para revisión.
 
 Solo se incluyen v0 y v3 por decisión de Gabriel; los intermedios y la plantilla no se publican aquí.
-La revisión local del 9 de noviembre de 2026 mide **15 páginas y 9,043 palabras**
-en Word, frente a 5,615 de v0 (**+61.05 %**), ambos recuentos comprobados de nuevo.
+La revisión local del 9 de noviembre de 2026 mide **15 páginas y 9,014 palabras**
+en Word, frente a 5,615 de v0 (**+60.53 %**). Resumen: 146 palabras; seis keywords.
 Por instrucción de Gabriel, Roberto Eswart Zagal Flores firma último; Gabriel sigue
 primero y como autor de correspondencia. Se conservan adscripción, correos y ORCID.
 La sección 5.8 describe la expansión municipal a colonias y la distancia aproximada
@@ -16,14 +16,20 @@ densidad, uso del suelo y acceso al servicio para contextualizar geográficament
 los volúmenes facturados, sin inferir consumo real ni causalidad.
 Regenerado desde el fuente y conversor en `C:/dev/Data_Warehouse_static`, rama
 `ijcopi-zmvm`, y sincronizado aquí por SHA-256. Las quince páginas se inspeccionaron.
-Los únicos tres párrafos modificados son autoría, sección 5.8 y trabajo futuro;
-los cambios de cuerpo están completamente en amarillo. Título, tablas, imágenes,
-declaración académica de IA, plantilla y v0 se conservan. El contador histórico
-contra v0 da 81 por alineación/tokenización; no representa añadidos nuevos sin amarillo.
-Word v3 SHA-256: `86f7ea1fbc627ad0ab0ea4036f93b9399b55419abce963eb8d028b271081fac9`.
-Gabriel autorizó el cierre con un commit y push por repositorio, con su identidad
-humana y sin firmas ni créditos automáticos. Cada push exige cero fallos del
-verificador Springer; no autoriza envío editorial ni cambios a sitios históricos.
+La figura 1 compara los dos CSV originales (SACMEX y Open-Meteo) con 62 archivos
+adicionales por fuente y su integración al almacén. Sustituye las dos capturas antiguas;
+sus archivos y enlaces se conservan. Los conteos originales se recalculan desde los CSV
+y los ampliados desde exportaciones SQL verificadas por SHA-256, sin reconstruir la base.
+Se distinguen archivos, registros de facturación, observaciones meteorológicas y filas
+físicas con granos distintos. El resumen separa el alcance del almacén del grafo metropolitano.
+Cero palabras nuevas sin amarillo frente a la revisión anterior; figura con marco amarillo.
+Título, autores, tablas de datos, demás figuras, declaración de IA, plantilla y v0 preservados.
+El generador reproducible, SVG/PNG y evidencia del diagrama se incluyen en `paper/ijcopi/`
+de ambos repositorios. `generar_diagrama_corpus.py` recalcula las cantidades desde sus insumos.
+Word v3 SHA-256: `5051dbebb10345ea1ba65e71c6a84676121bcc7e6115bae5152c6ecb833cb018`.
+El original publicó esta revisión en `52782a7`, con identidad humana sin firma ni trailers.
+Gabriel autorizó también el cierre de IJCOPI; cada push exige repetir el verificador,
+aceptando AZCATL únicamente si es el único fallo. No incluye envío editorial.
 Las correcciones previas de grano fiscal, AP, tres listas y prueba exacta se conservan.
 La aprobación humana final y los metadatos asignados por la editorial siguen pendientes.
 

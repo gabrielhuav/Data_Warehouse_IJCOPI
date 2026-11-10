@@ -1,8 +1,8 @@
 /* Grafo de conocimiento de la Zona Metropolitana de Ciudad de Mexico.
 
    Carga ijcopi/kg_zm.ttl, materializado con warehouse_ampliado/grafo/mapeo_zm.r2rml.ttl, y lo consulta
-   con SPARQL en el navegador. Las aristas del mapa no vienen de otro archivo: salen de una consulta
-   al grafo. Al expandir un municipio se dibujan todas sus colonias con geometria y sus
+   con SPARQL en un worker del navegador. El recorrido usa indices del mismo RDF verificado,
+   sin ejecutar uniones SPARQL al arrancar. Al expandir un municipio se dibujan todas sus colonias con geometria y sus
    colindancias internas. La linea de distancia es una medicion, no una arista RDF.
    Las consultas de ejemplo son los .rq que verifica verificar_grafo_zm.py. Admite
    ?mun=<clave>, ?lang= y ?vista=figura. */
@@ -24,7 +24,7 @@
       'k.tripletas': 'Tripletas', 'k.municipios': 'Municipios', 'k.fronteras': 'Fronteras entre municipios',
       'k.colonias': 'Colonias', 'k.vecinas': 'Colindancias entre colonias',
       'r.titulo': 'Recorrer el grafo',
-      'r.ayuda': 'Pulsa un nodo de municipio o alcaldía, o elígelo en la lista, para desplegar sus colonias y colindancias. Sus vecinos y acuíferos se consultan en el mismo grafo.',
+      'r.ayuda': 'Pulsa un nodo de municipio o alcaldía, o elígelo en la lista, para desplegar sus colonias y colindancias. Sus vecinos y acuíferos proceden del mismo grafo.',
       'r.municipio': 'Municipio o alcaldía', 'r.error': 'No se pudo completar el recorrido: {msg}',
       'r.volver': 'Ver toda el área metropolitana', 'r.colonia': 'Explorar una colonia',
       'r.elegirMunicipio': 'Elige un municipio o alcaldía…',
@@ -50,6 +50,13 @@
       's.titulo': 'Consultas SPARQL', 's.ayuda': 'Elige un ejemplo o escribe una consulta SELECT. Se ejecuta en tu navegador sobre el grafo completo. También puedes usar Ctrl+Enter (⌘+Enter en Mac).',
       limite: 'Se muestran las primeras {n} filas.',
       's.etiqueta': 'Consulta (la puedes editar)', 's.ejecutar': 'Ejecutar',
+      's.pendiente': 'Elige un ejemplo y pulsa Ejecutar para consultar el grafo completo.',
+      's.motor': 'Preparando el motor de consultas…',
+      'fase.download': 'Descargando y verificando el grafo…', 'fase.parse': 'Leyendo {mb} MB de RDF…',
+      'fase.verify': 'Verificando la integridad del grafo…',
+      'fase.index': 'Preparando los nodos y sus relaciones…', 'fase.map': 'Dibujando el grafo…',
+      'fase.geometry': 'Preparando las geometrías…', 'espera': 'La operación tardó demasiado. Vuelve a intentarlo.',
+      'worker.error': 'No se pudo iniciar el lector del grafo.',
       filas: '{n} filas en {ms} ms', sinfilas: 'La consulta no devolvió filas.', corriendo: 'Ejecutando…',
       pares: '{n} pares municipio-acuífero · {m} municipios distintos · {ms} ms',
       'o.titulo': 'De dónde sale este grafo',
@@ -65,7 +72,7 @@
       'k.tripletas': 'Triples', 'k.municipios': 'Municipalities', 'k.fronteras': 'Municipal boundaries',
       'k.colonias': 'Neighbourhoods', 'k.vecinas': 'Neighbourhood adjacencies',
       'r.titulo': 'Traverse the graph',
-      'r.ayuda': 'Click a municipality or borough node, or choose it from the list, to expand its neighbourhoods and adjacencies. Its neighbours and aquifers are queried from the same graph.',
+      'r.ayuda': 'Click a municipality or borough node, or choose it from the list, to expand its neighbourhoods and adjacencies. Its neighbours and aquifers come from the same graph.',
       'r.municipio': 'Municipality or borough', 'r.error': 'The traversal could not be completed: {msg}',
       'r.volver': 'Show the whole metropolitan area', 'r.colonia': 'Explore a neighbourhood',
       'r.elegirMunicipio': 'Choose a municipality or borough…',
@@ -91,6 +98,13 @@
       's.titulo': 'SPARQL queries', 's.ayuda': 'Pick an example or write a SELECT query. It runs in your browser over the whole graph. You can also use Ctrl+Enter (⌘+Enter on Mac).',
       limite: 'The first {n} rows are shown.',
       's.etiqueta': 'Query (you can edit it)', 's.ejecutar': 'Run',
+      's.pendiente': 'Choose an example and press Run to query the full graph.',
+      's.motor': 'Preparing the query engine…',
+      'fase.download': 'Downloading and verifying the graph…', 'fase.parse': 'Reading {mb} MB of RDF…',
+      'fase.verify': 'Verifying graph integrity…',
+      'fase.index': 'Preparing nodes and their relationships…', 'fase.map': 'Drawing the graph…',
+      'fase.geometry': 'Preparing geometries…', 'espera': 'The operation took too long. Please try again.',
+      'worker.error': 'The graph reader could not be started.',
       filas: '{n} rows in {ms} ms', sinfilas: 'The query returned no rows.', corriendo: 'Running…',
       pares: '{n} municipality-aquifer pairs · {m} distinct municipalities · {ms} ms',
       'o.titulo': 'Where this graph comes from',
@@ -113,13 +127,51 @@
   const zona = cve => (cve.startsWith('09') ? 'cdmx' : 'zm');
   const clave = iri => iri.slice(iri.lastIndexOf('/') + 1);
 
-  let store, motor, mapa, lienzo, resumen, seleccion = null, ejemplos = [], actual = 0, ultima = null;
+  let motor = false, mapa, lienzo, resumen, seleccion = null, ejemplos = [], actual = 0, ultima = null;
+  let lector, solicitud = 0, faseCarga = null, consultaModificada = false;
+  const pendientes = new Map();
   const nodos = {}, poligonos = {}, aristas = [], nombres = {};
   const colonias = {}, coloniasMunicipio = {}, geometriasColonia = {}, marcasColonia = {};
-  let capaInterior, capaDistancia, expandido = null, coloniaElegida = null, vecinosActuales = new Set();
+  let capaInterior, capaDistancia, expandido = null, coloniaElegida = null, vecinosActuales = new Set(), turnoDibujo = 0;
   let adyacenciasActuales = [], consultaColonias = '', consultaAdyacencias = '';
 
-  const consultar = texto => motor.queryBindings(texto, { sources: [store] }).then(b => b.toArray());
+  const bindings = rows => rows.map(row => new Map(Object.entries(row)));
+  const consultar = async (texto, progreso) => bindings(await trabajar('query', { text: texto }, progreso));
+  const respirar = () => new Promise(resolve => setTimeout(resolve, 0));
+
+  function crearLector() {
+    lector = new Worker(new URL('ijcopi/grafo-zm-worker.js?v=20261109-carga', document.baseURI));
+    lector.onmessage = event => {
+      const { id, progress, result, error } = event.data, pendiente = pendientes.get(id);
+      if (!pendiente) return;
+      if (progress) { if (pendiente.progreso) pendiente.progreso(progress); return; }
+      clearTimeout(pendiente.timer); pendientes.delete(id);
+      if (error) pendiente.reject(new Error(error)); else pendiente.resolve(result);
+    };
+    lector.onerror = event => {
+      event.preventDefault();
+      pendientes.forEach(p => { clearTimeout(p.timer); p.reject(new Error(t('worker.error'))); });
+      pendientes.clear(); lector.terminate();
+    };
+  }
+
+  function trabajar(type, datos = {}, progreso) {
+    return new Promise((resolve, reject) => {
+      const id = ++solicitud;
+      const timer = setTimeout(() => {
+        pendientes.delete(id);
+        reject(new Error(t('espera')));
+        if (type === 'init') lector.terminate();
+      }, type === 'init' ? 120000 : 60000);
+      pendientes.set(id, { resolve, reject, progreso, timer });
+      lector.postMessage({ id, type, ...datos });
+    });
+  }
+
+  function mostrarFase(paso) {
+    faseCarga = paso;
+    $('status').textContent = t('fase.' + paso.phase, paso);
+  }
 
   function celda(term) {
     if (!term) return '';
@@ -134,7 +186,7 @@
   function columnas(texto, filas) {
     const m = texto.match(/SELECT\s+(?:DISTINCT\s+)?([\s\S]*?)\s*WHERE/i);
     const pedidas = m ? (m[1].replace(/\([^()]*(\([^()]*\)[^()]*)*\s+AS\s+(\?\w+)\)/gi, '$2').match(/\?\w+/g) || []).map(v => v.slice(1)) : [];
-    return pedidas.length ? pedidas : [...filas[0].keys()].map(k => k.value);
+    return pedidas.length ? pedidas : [...filas[0].keys()].map(k => typeof k === 'string' ? k : k.value);
   }
 
   function tabla(filas, texto) {
@@ -143,7 +195,7 @@
     return (filas.length > 300 ? `<p class="zm-meta">${esc(t('limite', { n: 300 }))}</p>` : '')
       + `<table><thead><tr>${cols.map(c => `<th scope="col">${esc(c)}</th>`).join('')}</tr></thead><tbody>`
       + filas.slice(0, 300).map(f => `<tr>${cols.map(c => {
-        const term = [...f.keys()].find(k => k.value === c);
+        const term = [...f.keys()].find(k => (typeof k === 'string' ? k : k.value) === c);
         return `<td>${term ? celda(f.get(term)) : ''}</td>`;
       }).join('')}</tr>`).join('') + '</tbody></table>';
   }
@@ -216,11 +268,15 @@
   function puntoColonia(cve) {
     const c = colonias[cve];
     if (!c) return null;
-    if (c.punto === undefined) c.punto = geometriasColonia[cve] ? centroide(geometriasColonia[cve]) : null;
+    if (c.punto === undefined) {
+      if (typeof geometriasColonia[cve] === 'string') geometriasColonia[cve] = JSON.parse(geometriasColonia[cve]);
+      c.punto = geometriasColonia[cve] ? centroide(geometriasColonia[cve]) : null;
+    }
     return c.punto;
   }
 
   function limpiarInterior() {
+    ++turnoDibujo;
     capaInterior.clearLayers();
     Object.keys(marcasColonia).forEach(c => delete marcasColonia[c]);
     $('interior').hidden = true;
@@ -243,8 +299,9 @@
     if (enfocar) mapa.setView(puntoColonia(cve), Math.max(13, mapa.getZoom()));
   }
 
-  function pintarInterior() {
+  async function pintarInterior() {
     limpiarInterior();
+    const dibujo = turnoDibujo;
     leyendaGrafo();
     $('vistaMetropolitana').disabled = !expandido;
     if (!expandido) { $('estadoInterior').textContent = t('r.global'); return; }
@@ -254,10 +311,17 @@
     $('estadoInterior').textContent = t(todas.length ? 'r.interior' : 'r.sinInterior', {
       n: nombres[expandido], c: fmt(todas.length, 0), a: fmt(adyacenciasActuales.length, 0),
     }) + (visibles.length < todas.length ? ' ' + t('r.sinGeometria', { n: fmt(todas.length - visibles.length, 0) }) : '');
-    lineas.forEach(([a, b]) => L.polyline([puntoColonia(a), puntoColonia(b)], {
-      renderer: lienzo, interactive: false, color: '#546e7a', weight: 1.1, opacity: 0.65,
-    }).addTo(capaInterior));
-    visibles.forEach(cve => {
+    for (let i = 0; i < lineas.length; i++) {
+      if (dibujo !== turnoDibujo) return;
+      const [a, b] = lineas[i];
+      L.polyline([puntoColonia(a), puntoColonia(b)], {
+        renderer: lienzo, interactive: false, color: '#546e7a', weight: 1.1, opacity: 0.65,
+      }).addTo(capaInterior);
+      if (i && i % 200 === 0) await respirar();
+    }
+    for (let i = 0; i < visibles.length; i++) {
+      if (dibujo !== turnoDibujo) return;
+      const cve = visibles[i];
       const c = colonias[cve];
       L.geoJSON(geometriasColonia[cve], {
         style: { renderer: lienzo, color: COLOR.colonia, weight: 0.6, fillColor: COLOR.colonia, fillOpacity: 0.08 },
@@ -265,7 +329,9 @@
       marcasColonia[cve] = L.circleMarker(puntoColonia(cve), {
         renderer: lienzo, radius: 3.5, color: '#fff', weight: 0.8, fillColor: COLOR.colonia, fillOpacity: 1,
       }).on('click', () => elegirColonia(cve, false)).bindTooltip(esc(c.nombre)).addTo(capaInterior);
-    });
+      if (i && i % 30 === 0) await respirar();
+    }
+    if (dibujo !== turnoDibujo) return;
     /* Los puntos permanecen sobre los poligonos y las colindancias. */
     Object.values(marcasColonia).forEach(m => m.bringToFront());
     if (nodos[expandido]) nodos[expandido].marca.bringToFront();
@@ -386,15 +452,15 @@
   FILTER(STR(?a) < STR(?b))
 }`;
     try {
-    const [vecinos, acuiferos, propios, adyacencias] = await Promise.all([consultar(qVecinos), consultar(qAcuiferos),
-      consultar(`${PREFIJOS}SELECT ?v WHERE { mun:${cve} agua:sharesBoundaryWith ?v }`),
-      abrir ? consultar(qAdyacencias) : Promise.resolve([])]);
+    const datos = await trabajar('traverse', { cve, abrir });
     if (mio !== turnoRecorrido) return;
-    vecinosActuales = new Set(propios.map(f => clave(f.get('v').value)));
+    const vecinos = bindings(datos.vecinos), acuiferos = bindings(datos.acuiferos);
+    vecinosActuales = new Set(datos.propios);
     resaltar(cve, vecinosActuales);
-    adyacenciasActuales = adyacencias.map(f => [clave(f.get('a').value), clave(f.get('b').value)]);
+    adyacenciasActuales = datos.adyacencias;
     consultaColonias = qColonias; consultaAdyacencias = qAdyacencias;
-    pintarInterior();
+    await pintarInterior();
+    if (mio !== turnoRecorrido) return;
     if (expandido && enfocar && poligonos[cve]) mapa.fitBounds(poligonos[cve].getBounds(), { padding: [24, 24], maxZoom: 13 });
     const n = esc(nombres[cve]);
     $('recorrido').innerHTML = `<h3 class="zm-det-t">${t('vecinos', { n })}</h3><div class="zm-tabla">${tabla(vecinos, qVecinos)}</div>
@@ -436,12 +502,15 @@
   let turno = 0;
   async function ejecutar() {
     const mio = ++turno;
+    consultaModificada = true;
     $('metrica').textContent = t('corriendo');
     $('salida').setAttribute('aria-busy', 'true');
     const t0 = performance.now();
     try {
       const texto = $('consulta').value;
-      const filas = await consultar(texto);
+      const filas = await consultar(texto, paso => {
+        if (mio === turno) $('metrica').textContent = t(paso.phase === 'engine' ? 's.motor' : 'corriendo');
+      });
       if (mio !== turno) return;
       ultima = { filas, texto, ms: Math.round(performance.now() - t0) };
       pintarSalida();
@@ -462,7 +531,7 @@
       && e.texto.trim() === ultima.texto.trim());
     if (sinVolumen) {
       const claves = new Set(ultima.filas.map(f => {
-        const k = [...f.keys()].find(v => v.value === 'claveMunicipal');
+        const k = [...f.keys()].find(v => (typeof v === 'string' ? v : v.value) === 'claveMunicipal');
         return k ? f.get(k).value : null;
       }).filter(v => v != null));
       $('metrica').textContent = t('pares', { n: fmt(ultima.filas.length, 0), m: fmt(claves.size, 0), ms: fmt(ultima.ms, 0) });
@@ -482,6 +551,8 @@
     pintarHash();
     if (ejemplos.length) pintarEjemplos();
     pintarSalida();
+    if (faseCarga) mostrarFase(faseCarga);
+    if (!ultima && motor && $('salida').getAttribute('aria-busy') !== 'true') $('salida').textContent = t('s.pendiente');
     if (motor) {
       const anterior = seleccion;
       $('municipio').innerHTML = `<option value="">${esc(t('r.elegirMunicipio'))}</option>` + opcionesMunicipios();
@@ -498,67 +569,62 @@
       if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
       return json ? r.json() : r.text();
     };
-    const [ttl, geo, res] = await Promise.all([
-      pedir('ijcopi/kg_zm.ttl', false),
-      pedir('ijcopi/datos/12_geometrias.json', true),
-      pedir('ijcopi/datos/grafo.json', true),
-    ]);
+    const res = await pedir('ijcopi/datos/grafo.json', true);
     resumen = res;
     pintarHash();
-    $('status').textContent = t('analizando', { mb: (ttl.length / 1048576).toFixed(1) });
-    store = new N3.Store();
-    await new Promise((listo, mal) => {
-      new N3.Parser({ format: 'text/turtle' }).parse(ttl, (err, quad) => {
-        if (err) mal(err); else if (quad) store.addQuad(quad); else listo();
-      });
-    });
-    motor = new Comunica.QueryEngine();
-    const geometria = {};
-    geo.filas.forEach(([capa, cve, g]) => {
-      if (capa === 'municipio') geometria[cve] = JSON.parse(g);
-      if (capa === 'colonia') geometriasColonia[cve] = JSON.parse(g);
-    });
-    const [municipios, vecinos, internas] = await Promise.all([
-      consultar(`${PREFIJOS}SELECT ?m ?n WHERE { ?m a agua:Municipality ; rdfs:label ?n }`),
-      consultar(`${PREFIJOS}SELECT ?a ?b WHERE { ?a agua:sharesBoundaryWith ?b }`),
-      consultar(`${PREFIJOS}SELECT ?c ?m ?n ?p WHERE {
-  ?c a agua:Neighbourhood ; agua:inMunicipality ?m ; rdfs:label ?n .
-  OPTIONAL { ?c agua:population ?p }
-}`),
+    crearLector();
+    /* Fetch the catalogue in parallel, but do not make map readiness depend on
+       running any example query or loading the SPARQL engine. */
+    const catalogo = Promise.all(res.consultas.map(async n => {
+      const texto = await pedir(CONSULTAS + n, false);
+      const lineas = texto.replace(/\r/g, '').split('\n');
+      const linea = p => lineas.find(l => l.startsWith(`# ${p}: `)).slice(p.length + 4).split(' | ');
+      return { nombre: n, es: linea('es'), en: linea('en'), texto: lineas.filter(l => !l.startsWith('# ')).join('\n') };
+    })).then(valor => ({ valor }), error => ({ error }));
+    const [geo, red] = await Promise.all([
+      pedir('ijcopi/datos/12_geometrias.json', true),
+      trabajar('init', { url: new URL('ijcopi/kg_zm.ttl', document.baseURI).href,
+        expectedHash: res.sha256, expectedTriples: res.tripletas }, mostrarFase),
     ]);
+    mostrarFase({ phase: 'geometry' });
+    await respirar();
+    const geometria = {};
+    for (let i = 0; i < geo.filas.length; i++) {
+      const [capa, cve, g] = geo.filas[i];
+      if (capa === 'municipio') geometria[cve] = JSON.parse(g);
+      /* Keep neighbourhood geometry encoded until its municipality is needed. */
+      if (capa === 'colonia') geometriasColonia[cve] = g;
+      if (i && i % 500 === 0) await respirar();
+    }
+    const municipios = bindings(red.municipios), vecinos = bindings(red.vecinos), internas = bindings(red.internas);
     internas.forEach(f => {
       const cve = clave(f.get('c').value), municipio = clave(f.get('m').value);
       colonias[cve] = { nombre: f.get('n').value, municipio, poblacion: f.get('p') ? Number(f.get('p').value) : null };
       if (!coloniasMunicipio[municipio]) coloniasMunicipio[municipio] = [];
       coloniasMunicipio[municipio].push(cve);
     });
-    Object.values(coloniasMunicipio).forEach(lista => lista.sort((a, b) => colonias[a].nombre.localeCompare(colonias[b].nombre, loc())));
+    const orden = new Intl.Collator(loc()).compare;
+    Object.values(coloniasMunicipio).forEach(lista => lista.sort((a, b) => orden(colonias[a].nombre, colonias[b].nombre)));
+    mostrarFase({ phase: 'map' });
+    await respirar();
     dibujarRed(geometria, municipios, vecinos);
+    motor = true;
     $('municipio').innerHTML = `<option value="">${esc(t('r.elegirMunicipio'))}</option>` + opcionesMunicipios();
     $('municipio').disabled = false;
     $('municipio').addEventListener('change', e => e.target.value ? seleccionar(e.target.value) : vistaMetropolitana());
-    const { namedNode } = N3.DataFactory;
-    const AGUA = 'https://w3id.org/cdmx/agua/', TIPO = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
-    $('kTripletas').textContent = fmt(store.size, 0);
-    $('kMunicipios').textContent = fmt(municipios.length, 0);
-    $('kFronteras').textContent = fmt(vecinos.length / 2, 0);
-    $('kColonias').textContent = fmt(store.countQuads(null, namedNode(TIPO), namedNode(AGUA + 'Neighbourhood'), null), 0);
-    $('kVecinas').textContent = fmt(store.countQuads(null, namedNode('http://www.opengis.net/ont/geosparql#sfTouches'), null, null) / 2, 0);
-
-    ejemplos = await Promise.all(res.consultas.map(async n => {
-      const texto = await pedir(CONSULTAS + n, false);
-      const lineas = texto.replace(/\r/g, '').split('\n');
-      const linea = p => lineas.find(l => l.startsWith(`# ${p}: `)).slice(p.length + 4).split(' | ');
-      return { nombre: n, es: linea('es'), en: linea('en'), texto: lineas.filter(l => !l.startsWith('# ')).join('\n') };
-    }));
-    pintarEjemplos();
-    $('consulta').value = ejemplos[0].texto;
+    const stats = red.stats;
+    $('kTripletas').textContent = fmt(stats.tripletas, 0);
+    $('kMunicipios').textContent = fmt(stats.municipios, 0);
+    $('kFronteras').textContent = fmt(stats.fronteras, 0);
+    $('kColonias').textContent = fmt(stats.colonias, 0);
+    $('kVecinas').textContent = fmt(stats.vecinas, 0);
+    $('consulta').value = PREFIJOS + 'SELECT ?clase (COUNT(?s) AS ?total) WHERE { ?s a ?clase } GROUP BY ?clase';
+    $('salida').textContent = t('s.pendiente');
     $('ejecutar').disabled = false;
     $('ejecutar').onclick = ejecutar;
     $('consulta').addEventListener('keydown', e => {
       if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); ejecutar(); }
     });
-    await ejecutar();
     const pedido = q.get('mun');
     if (pedido && nombres[pedido] || q.get('vista') === 'figura') {
       await seleccionar(pedido && nombres[pedido] ? pedido : INICIAL, Boolean(pedido && nombres[pedido]) && q.get('vista') !== 'figura', false);
@@ -567,6 +633,13 @@
     const puntos = Object.values(nodos).map(n => n.punto);
     if (expandido && poligonos[expandido]) mapa.fitBounds(poligonos[expandido].getBounds(), { padding: [24, 24], maxZoom: 13 });
     else if (puntos.length) mapa.fitBounds(L.latLngBounds(puntos), { padding: [24, 24] });
+    /* The map is usable even if an optional example file cannot be fetched. */
+    catalogo.then(({ valor, error }) => {
+      if (error) { console.warn(error); return; }
+      ejemplos = valor;
+      pintarEjemplos();
+      if (!consultaModificada && !ultima && document.activeElement !== $('consulta')) $('consulta').value = ejemplos[0].texto;
+    });
   }
 
   async function iniciar() {
@@ -585,6 +658,7 @@
     mapa = L.map('map', { preferCanvas: true, zoomSnap: 0.25 }).setView([19.45, -99.1], 9.5);
     capaInterior = L.layerGroup().addTo(mapa);
     capaDistancia = L.layerGroup().addTo(mapa);
+    $('consulta').addEventListener('input', () => { consultaModificada = true; });
     $('vistaMetropolitana').addEventListener('click', vistaMetropolitana);
     $('colonia').addEventListener('change', e => elegirColonia(e.target.value));
     ['A', 'B'].forEach(lado => {
@@ -607,8 +681,10 @@
       /* La region viva no debe quedarse diciendo «Analizando…» cuando ya termino */
       st.className = 'status';
       st.textContent = '';
+      faseCarga = null;
     } catch (e) {
       console.error(e);
+      faseCarga = null;
       st.className = 'status show error';
       st.innerHTML = `${esc(t('error', { msg: e.message || e }))} <button type="button" class="btn btn-secondary">${esc(idioma === 'en' ? 'Try again' : 'Volver a intentar')}</button>`;
       st.querySelector('button').addEventListener('click', () => location.reload());
