@@ -1,0 +1,14 @@
+{
+ "tripletas": 91230,
+ "sha256": "bc5a56c1eb9c38047051367e9e9816837a31c7fda3b14f73921c75cd862a9fa9",
+ "consultas": [
+  "01_frontera_cdmx.rq",
+  "02_sin_volumen_sobreexplotado.rq",
+  "03_colonias_frontera.rq",
+  "04_hundimiento_frontera.rq",
+  "05_acuiferos_municipios.rq",
+  "06_pozos_hundimiento.rq",
+  "07_enlace_icokg.rq",
+  "08_composicion.rq"
+ ]
+}

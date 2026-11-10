@@ -1,0 +1,82 @@
+CONTINUAR LA REVISIÓN EN LA PC QUE TIENE EL VOLUMEN POSTGRESQL
+
+Este checkout es la copia preparada para revisión anónima del artículo de agua y
+su artefacto reproducible. Usa la rama codex/revision-anonima. No sustituyas ni
+sobrescribas los repositorios o manuscritos identificados de la PC original.
+
+OBJETIVO INMEDIATO
+Ejecutar las tres verificaciones finales contra el volumen AMPLIADO existente:
+1. Correlaciones entre ingresos CNGMD y recaudación SHCP, 89 municipios de referencia
+   2018: Spearman 0.934 y Pearson 0.322 a tres decimales. Spearman debe usar rangos
+   promedio para empates; el programa también muestra el método histórico.
+2. Enero-junio de 2019: 39,685 reportes de falta de agua potable y cero registros de
+   fugas de agua potable, con los filtros explícitos del programa.
+3. Las quince consultas SQL contra los JSON de este checkout: archivos de referencia
+   y resultados canónicos vivos deben coincidir por SHA-256 con el manifiesto.
+
+ESTADO Y MATERIALES
+- paper/water_data_warehouse_review.docx: copia anónima, 15 páginas, 8,954 palabras;
+  resumen 146 sin etiqueta Abstract., seis keywords, añadidos en amarillo.
+- paper/water_data_warehouse_review.pdf: copia de lectura, metadatos personales vacíos.
+- Los datos, resultados, figuras, referencias científicas y declaración académica
+  de asistencia de IA se conservaron. No elimines esa declaración ni inventes avales.
+- Se retiraron autores, adscripción, correo, ORCID y apellido del encabezado; los
+  enlaces personales se sustituyeron por el artefacto anónimo.
+- Se probaron la carga/integridad/recorridos RDF y el verificador portable. Estas
+  pruebas NO certifican las tres comprobaciones pendientes de la base ampliada.
+- No se reconstruyó aquí el almacén ampliado ni se modificó su volumen original.
+- Los manuscritos y repositorios identificados se conservan por separado en la PC
+  de origen. Esta copia no incluye notas privadas ni su historial de desarrollo.
+- El enlace del material es:
+  https://anonymous.4open.science/r/water-data-warehouse-review-9D27/
+  Comprueba que esté accesible antes de cualquier envío; el visor de archivos y la
+  demostración web son superficies distintas. No inventes URLs de páginas activas.
+
+INSTRUCCIONES PARA EL ASISTENTE EN ESTA PC
+Comprueba primero rama, estado y archivos actuales. No des por verdaderos los
+resultados esperados: calcula y compara. Identifica el contenedor o la conexión
+que contiene el volumen ampliado existente. No elimines volúmenes, no restaures
+encima de otra base, no ejecutes ETL ni cambies datos para hacer pasar la prueba.
+No muestres conexiones con contraseñas, tokens ni otras credenciales.
+
+Desde la raíz de este checkout, con el contenedor correcto encendido:
+
+python verificacion_postgresql/verificar_postgresql.py --repo . --container data_warehouse_cdmx --output resultado_postgresql.json
+
+Sustituye el nombre del contenedor si es diferente. --database y --user permiten
+otra base/rol. Este modo necesita Python 3.10+ y Docker; usa psql del contenedor,
+sin dependencias Python externas. Para PostgreSQL fuera de Docker, instala los
+requisitos de verificacion_postgresql/requirements.txt y configura DW_DSN en el
+entorno de esta PC. Prefiere DW_DSN a poner una contraseña en un comando.
+Lee verificacion_postgresql/LEEME.txt para detalles.
+
+Todas las consultas corren en una transacción REPEATABLE READ, READ ONLY y se
+revierte al terminar. El programa no crea datos ni reexporta archivos. Comprueba
+que termine con código 0 y status=pass/passed=true; sólo entonces declara cerradas
+las tres comprobaciones. Código 1 significa diferencias; código 2 significa que
+no se completó la verificación. No equivalen a aprobado.
+
+Si hay diferencias, identifica consulta, campo, grano, orden, tipo, nulos, filtros
+o versión que las causa. Conserva los originales y el JSON de evidencia. No
+actualices manifiestos ni redondeos para ocultar un fallo. Propón la corrección
+sustentada; si cambia el artículo, regenerar desde fuentes derivadas, mantener
+15 páginas y amarillo, exportar y revisar todas las páginas otra vez.
+
+ANONIMATO Y CONSERVACIÓN
+Los avisos de licencia y créditos humanos se conservan en la fuente; Anonymous
+oculta temporalmente los términos de autoría al presentar el espejo de revisión.
+No compartas el enlace fuente identificado como si fuera el enlace anónimo.
+Conserva licencias, atribuciones de datos y OpenStreetMap, nombres geográficos e
+IRIs científicos. Las citas y datos públicos pueden relacionarse con versiones
+anteriores mediante búsqueda deliberada: no prometas anonimato absoluto.
+
+ENTREGA
+Informa los tres resultados reales, la versión consultada, cuántas consultas
+coincidieron y el archivo resultado_postgresql.json. Si hay fallo o falta acceso,
+decláralo sin certificar la prueba. No envíes correos ni el paper; no publiques,
+crees releases, DOI o cambies los sitios históricos.
+
+Cada commit y push futuro requiere autorización expresa nueva, identidad Git
+humana, sin firmas ni coautorías o créditos automáticos de asistentes. Antes de
+cada push se ejecuta el verificador Springer original intacto: cero fallos o una
+excepción expresa para ese push. No reutilices permisos de esta transferencia.

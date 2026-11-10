@@ -1,0 +1,5 @@
+Continuaremos la revisión del artículo de agua en esta PC, que tiene el volumen PostgreSQL ampliado. Lee completo CONTINUAR_EN_OTRA_PC.txt de la rama codex/revision-anonima.
+
+Ejecuta las tres verificaciones pendientes contra la base real usando el verificador portable y conserva resultado_postgresql.json. Trabaja en modo de sólo lectura, sin reconstruir ni modificar el volumen. No declares aprobada ninguna prueba que no hayas ejecutado.
+
+Conserva los originales y la copia anónima preparada. Informa los resultados y cualquier diferencia antes de proponer cambios. No hagas nuevos commits, push, publicaciones ni envíos sin mi autorización expresa. Cualquier commit autorizado debe usar mi identidad humana, sin firmas ni coautorías o créditos de asistentes.
