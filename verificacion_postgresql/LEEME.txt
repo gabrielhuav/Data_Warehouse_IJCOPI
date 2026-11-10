@@ -1,0 +1,53 @@
+VERIFICACIÓN PENDIENTE EN LA PC CON EL ALMACÉN AMPLIADO
+
+No se certificaron aquí las tres comprobaciones PostgreSQL. Este paquete permite
+ejecutarlas allí contra la base real, sin modificar datos ni regenerar exportaciones.
+Necesita Python 3.10 o posterior y el repositorio completo de la versión revisada.
+
+Opción A: contenedor existente (Python estándar + Docker, sin instalar bibliotecas):
+
+python verificar_postgresql.py --repo "C:/ruta/al/repositorio" --container data_warehouse_cdmx --output resultado_postgresql.json
+
+El contenedor debe estar encendido y contener el almacén AMPLIADO. Si su base o
+usuario tienen otro nombre, añade --database NOMBRE --user USUARIO. Se utiliza psql
+dentro del contenedor, sin pedir ni almacenar contraseñas en el paquete. Si su
+autenticación no lo permite, usa la conexión DSN de la opción B.
+
+Opción B: PostgreSQL local/remoto por DSN:
+
+python -m pip install -r requirements.txt
+
+Configura DW_DSN con tu conexión en el entorno de esa PC y ejecuta:
+
+python verificar_postgresql.py --repo "C:/ruta/al/repositorio" --output resultado_postgresql.json
+
+También admite --dsn, pero es preferible DW_DSN para no dejar credenciales en el
+historial de la terminal. No compartas la conexión ni agregues contraseñas al paquete.
+
+Comprueba:
+1. Correlaciones CNGMD/SHCP: 89 municipios, Spearman 0.934 y Pearson 0.322 redondeados
+   a tres decimales. Spearman debe usar rangos promedio ante empates: se informa también
+   el cálculo heredado con rank() para compararlos. Si el cálculo correcto con rangos
+   promedio cambia el valor publicado a tres decimales, marca fail y pide revisar el paper;
+   no aprueba la comprobación sólo porque coincida el cálculo heredado.
+2. Enero-junio de 2019: 39,685 reportes de falta de agua potable y cero registros de
+   fuga potable, con el filtro de clasificación y fechas del verificador original.
+3. Las 15 consultas SQL: mismo conjunto/hash de SQL, exportaciones de referencia
+   intactas y resultados vivos canónicos idénticos por SHA-256 al manifiesto.
+
+Todas las consultas se ejecutan en una transacción REPEATABLE READ, READ ONLY y se
+revierte al terminar. No se crean tablas, cargan datos, ejecuta ETL o cambian archivos
+del repositorio. El único archivo escrito es el JSON de salida que elijas.
+
+Resultado:
+- Salida 0 y status=pass/passed=true: las tres comprobaciones pasaron en esa PC.
+- Salida 1 y status=fail: hubo diferencias; revisar las consultas indicadas antes de enviar.
+- Salida 2 y status=not_verified: no se completó la verificación; no equivale a aprobado.
+
+Conserva resultado_postgresql.json como evidencia y compártelo para cerrar este pendiente.
+No uses JSON exportados como sustituto de consultar PostgreSQL. Si la carpeta anónima
+no contiene el repositorio completo, apunta --repo al checkout completo de la PC original.
+No reexportes archivos para hacer desaparecer una diferencia sin investigar su causa.
+
+Prueba local del formato, que NO certifica la base de datos:
+python verificar_postgresql.py --self-test

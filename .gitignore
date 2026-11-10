@@ -1,0 +1,5 @@
+.venv*/
+__pycache__/
+*.pyc
+.env*
+warehouse_ampliado/datos_crudos/

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>Consultas al almacén de agua</title>
+    <meta name="description" content="Consultas SQL al almacén de datos ampliado, con su resultado, su hash y los comandos para repetirlas en la base de datos.">
+    <link rel="stylesheet" href="assets/estilo.css?v=20261105-ui2">
+    <link rel="stylesheet" href="assets/paginas.css">
+    <link rel="stylesheet" href="ijcopi/zm.css?v=20261109-figuras">
+    <link rel="stylesheet" href="ijcopi/consultas-ui.css">
+    <script src="assets/i18n.js"></script>
+</head>
+<body>
+<a class="zm-salto" href="ijcopi/consultas.html#contenido">Saltar al contenido / Skip to content</a>
+<header data-barra></header>
+<main id="contenido" class="app-container cq-page" tabindex="-1">
+    <noscript><p class="status show error">Activa JavaScript para ver los resultados. / Enable JavaScript to view the results.</p></noscript>
+    <div class="zm-cabecera">
+        <div>
+            <span class="cq-eyebrow" data-t="coleccion"></span>
+            <h1 data-t="titulo"></h1>
+            <p data-t="lema"></p>
+        </div>
+        <nav class="zm-nav" aria-label="Versión extendida">
+            <a href="ijcopi/mapa-zm.html" data-t="nav.mapa"></a>
+            <a href="ijcopi/grafo-zm.html" data-t="nav.grafo"></a>
+            <a href="ijcopi/consultas.html" aria-current="page" data-t="nav.consultas"></a>
+            <a href="ijcopi/atipicos.html" data-t="nav.atipicos"></a>
+        </nav>
+    </div>
+
+    <section class="panel cq-buscador" aria-labelledby="buscarEtiqueta">
+        <div class="cq-busqueda">
+            <label id="buscarEtiqueta" for="buscar" data-t="buscar"></label>
+            <div class="cq-input-wrap">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+                <input type="search" id="buscar" autocomplete="off" aria-controls="lista" aria-describedby="conteoConsultas">
+            </div>
+        </div>
+        <div id="categorias" class="cq-categorias" role="group"></div>
+    </section>
+
+    <details class="panel cq-reproducir">
+        <summary><span class="cq-reproducir-icon" aria-hidden="true">&lt;/&gt;</span><span data-t="pasos"></span></summary>
+        <div class="cq-reproducir-cuerpo">
+        <p data-t="pasos.t"></p>
+        <pre class="zm-pre">docker start data_warehouse_cdmx
+docker cp warehouse_ampliado/consultas/. data_warehouse_cdmx:/consultas
+docker exec data_warehouse_cdmx psql -U postgres -d data_warehouse -f /consultas/02_tablas_del_almacen.sql
+docker exec -it data_warehouse_cdmx psql -U postgres -d data_warehouse
+warehouse_ampliado/.venv/Scripts/python -I warehouse_ampliado/verificacion/verificar_mapa.py</pre>
+        </div>
+    </details>
+
+    <div id="status" class="status" role="status" aria-live="polite" aria-atomic="true"></div>
+    <button id="reintentar" class="btn" type="button" hidden data-t="reintentar"></button>
+    <div class="cq-resultados-cab"><h2 data-t="resultados"></h2><p id="conteoConsultas" role="status" aria-live="polite" aria-atomic="true"></p></div>
+    <div id="lista" class="cq-lista" aria-busy="true"></div>
+    <section id="sinResultados" class="panel cq-vacio" hidden>
+        <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+        <h2 data-t="vacio.titulo"></h2>
+        <p data-t="vacio.ayuda"></p>
+        <button id="limpiarBusqueda" class="btn" type="button" data-t="limpiar"></button>
+    </section>
+</main>
+<footer data-pie></footer>
+<script src="assets/nav.js?v=20261109-b1"></script>
+<script src="ijcopi/consultas.js?v=20261108"></script>
+</body>
+</html>
