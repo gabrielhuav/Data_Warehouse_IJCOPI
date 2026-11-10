@@ -156,7 +156,9 @@
   const respirar = () => new Promise(resolve => setTimeout(resolve, 0));
 
   function crearLector() {
-    lector = new Worker(new URL('ijcopi/grafo-zm-worker.js?v=20261109-conexiones', document.baseURI));
+    lector = (window.origin === 'null' || location.hostname === 'anonymous.4open.science')
+      ? window.__reviewWorker()
+      : new Worker(new URL('ijcopi/grafo-zm-worker.js?v=20261109-conexiones', document.baseURI));
     lector.onmessage = event => {
       const { id, progress, result, error } = event.data, pendiente = pendientes.get(id);
       if (!pendiente) return;

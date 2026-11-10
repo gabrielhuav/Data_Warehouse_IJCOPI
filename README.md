@@ -31,7 +31,6 @@ available only if the hosting service enables its Pages feature.
 - `warehouse_ampliado/consultas/`: fifteen SQL queries and their instructions.
 - `evaluacion-ml/`: anomaly calculations, exact paired tests and recorded evidence.
 - `scripts/`: original analyses and static export tools.
-- `paper/ijcopi/`: the corpus diagram, generator and count evidence, without the author manuscript.
 - `verificacion_postgresql/`: portable final checks for a PC with the extended database.
 
 The original two CSVs and additional source files have different roles and grains.
@@ -65,3 +64,11 @@ Third-party notices are retained, including the notices for Comunica and Leaflet
 Public data retain their publishers' licences. The base map is Â© OpenStreetMap
 contributors, ODbL. Scientific dataset identifiers and RDF vocabulary IRIs are retained
 so that queries, provenance and integrity checks continue to work.
+
+## Review hosting
+
+The review host uses an opaque-origin sandbox. Classic-script companions transport
+the original JSON, GeoJSON, Turtle and SQL/SPARQL text without changing their bytes.
+The graph reader uses the same RDF parser, fingerprint, traversal and query logic,
+with an asynchronous in-page message bridge when workers are unavailable in that
+sandbox. Normal hosting retains the original worker. No CSP permission is expanded.

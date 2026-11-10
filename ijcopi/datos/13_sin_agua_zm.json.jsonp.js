@@ -1,0 +1,1 @@
+window.__reviewJsonpLoad__("ijcopi/datos/13_sin_agua_zm.json","{\"columnas\":[\"nom_ent\",\"colonias\",\"poblacion\",\"personas_sin_agua\",\"colonias_mas_de_5_pct\",\"poblacion_mas_de_5_pct\"],\"filas\":[[\"Ciudad de M\u00e9xico\",2243,9104569,79639,160,322008],[\"Hidalgo\",137,178363,954,30,5040],[\"M\u00e9xico\",3450,11373118,157495,218,574056]]}");

@@ -1,0 +1,1 @@
+window.__reviewJsonpLoad__("warehouse_ampliado/grafo/consultas/08_composicion.rq","# es: De qu\u00e9 est\u00e1 hecho el grafo | Instancias de cada clase\n# en: What the graph is made of | Instances of each class\nSELECT ?clase (COUNT(?s) AS ?instancias) WHERE {\n  ?s a ?clase .\n} GROUP BY ?clase ORDER BY DESC(?instancias)\n");

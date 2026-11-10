@@ -1,0 +1,1 @@
+window.__reviewJsonpLoad__("warehouse_ampliado/consultas/12_geometrias.sql","-- Geometria simplificada de lo que dibuja el mapa, en GeoJSON.\nSELECT capa, clave, geojson\nFROM   geo_territorio\nORDER  BY capa, clave;\n");
