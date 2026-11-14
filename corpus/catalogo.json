@@ -1,0 +1,3708 @@
+{
+  "schema_version": 1,
+  "part_size_limit_bytes": 20000000,
+  "scope_note": "65 logical input files: 62 extension-manifest entries, two retained original-study CSVs and one auxiliary ITER extract; not 65 independent datasets or observations.",
+  "manifest": {
+    "path": "manifiestos/fuentes.json",
+    "bytes": 30235,
+    "sha256": "ab168444426d047b2fda93bd94a30fa408ad77f83c3f48e38918763546f40ead"
+  },
+  "web_metadata": {
+    "source_pages": "procedencia_web.json",
+    "wayback": "wayback.json",
+    "independently_updatable": true
+  },
+  "summary": {
+    "logical_inputs": 65,
+    "by_scope": {
+      "extension_manifest": 62,
+      "original_study": 2,
+      "auxiliary_extract": 1
+    },
+    "expected_bytes": 2130015245,
+    "preserved_inputs": 65,
+    "missing_ids": [],
+    "physical_data_files": 159,
+    "complete": true
+  },
+  "sources": [
+    {
+      "id": "A1p",
+      "scope": "extension_manifest",
+      "family": "Academic",
+      "name": "MexHiResClimDB, precipitacion mensual 2019",
+      "publisher": "Carrera-Hernandez (2025), Figshare",
+      "original_filename": "monthlyprecip2019.zip",
+      "expected": {
+        "bytes": 47353428,
+        "sha256": "46642fc8f48d8338482e38f385c096072c6ff2231a961b97d46dff3e3c1f2457",
+        "md5": "35fe2578a39b28c1d96cf481b946f98f"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": "10.6084/m9.figshare.28462787.v1",
+      "citation": {
+        "title": "MexHiResClimDB, precipitacion mensual 2019",
+        "creator_or_publisher": "Carrera-Hernandez (2025), Figshare",
+        "doi": "10.6084/m9.figshare.28462787.v1"
+      },
+      "download_url": "https://ndownloader.figshare.com/files/52541417",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://doi.org/10.6084/m9.figshare.28462787.v1",
+          "role": "documented_doi_resolver",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "A1p"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/A1p/monthlyprecip2019.zip.001",
+            "bytes": 20000000,
+            "sha256": "1ff0548cf271b8d66146f229ade2e291752587b25efaa68eee326930ce62b507"
+          },
+          {
+            "path": "originales/A1p/monthlyprecip2019.zip.002",
+            "bytes": 20000000,
+            "sha256": "f9bc15de6fd50f4e4fb52dbd6455744a16aae234542dbb8996fe6575344f5325"
+          },
+          {
+            "path": "originales/A1p/monthlyprecip2019.zip.003",
+            "bytes": 7353428,
+            "sha256": "dfde9a948c6ee55569fccf7114f019c34afb367b33e7f9222d096748f784938c"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/A1p/monthlyprecip2019.zip"
+    },
+    {
+      "id": "A1x",
+      "scope": "extension_manifest",
+      "family": "Academic",
+      "name": "MexHiResClimDB, temperatura maxima mensual 2019",
+      "publisher": "Carrera-Hernandez (2025), Figshare",
+      "original_filename": "monthlytmax2019.zip",
+      "expected": {
+        "bytes": 101520092,
+        "sha256": "106b38b87aae6211ae73201e27e39a28500549e284b252698043a52342ca49be",
+        "md5": "f1a80ade219b13065e8bca5e963de150"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": "10.6084/m9.figshare.28462679.v2",
+      "citation": {
+        "title": "MexHiResClimDB, temperatura maxima mensual 2019",
+        "creator_or_publisher": "Carrera-Hernandez (2025), Figshare",
+        "doi": "10.6084/m9.figshare.28462679.v2"
+      },
+      "download_url": "https://ndownloader.figshare.com/files/52540979",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://doi.org/10.6084/m9.figshare.28462679.v2",
+          "role": "documented_doi_resolver",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "A1x"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/A1x/monthlytmax2019.zip.001",
+            "bytes": 20000000,
+            "sha256": "313bbd00d1a01bfd66f1c390dad224ccd95949c295d95a448edd98c07a320d08"
+          },
+          {
+            "path": "originales/A1x/monthlytmax2019.zip.002",
+            "bytes": 20000000,
+            "sha256": "1500b069a0b0f3c5d39f89cc5543232d48d0db509846c8ef9f478bf243338dbc"
+          },
+          {
+            "path": "originales/A1x/monthlytmax2019.zip.003",
+            "bytes": 20000000,
+            "sha256": "0c155cec0fbe8dca50000a5397726f592153ed74bc31746606aa99c2516be42a"
+          },
+          {
+            "path": "originales/A1x/monthlytmax2019.zip.004",
+            "bytes": 20000000,
+            "sha256": "7d47b0813d34e5d06cfc08b908ae2291ec2da9a995b28234365bbde5432ae55e"
+          },
+          {
+            "path": "originales/A1x/monthlytmax2019.zip.005",
+            "bytes": 20000000,
+            "sha256": "498506a260a9512ceec47235bf6dca8a10b3fdb3c2789c320ff301fbc27a4533"
+          },
+          {
+            "path": "originales/A1x/monthlytmax2019.zip.006",
+            "bytes": 1520092,
+            "sha256": "fc5964310a9bd54856afc8efbf18c9508046f122b77565ebd01a3b96a66c1100"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/A1x/monthlytmax2019.zip"
+    },
+    {
+      "id": "A1n",
+      "scope": "extension_manifest",
+      "family": "Academic",
+      "name": "MexHiResClimDB, temperatura minima mensual 2019",
+      "publisher": "Carrera-Hernandez (2025), Figshare",
+      "original_filename": "monthlytmin2019.zip",
+      "expected": {
+        "bytes": 102422715,
+        "sha256": "c101072e7f08664932b203630dbc9a91557d7c105025011e97ba150e1a94823e",
+        "md5": "2d358f9dc9b75cb50b8b18c1b5832709"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": "10.6084/m9.figshare.28124789.v1",
+      "citation": {
+        "title": "MexHiResClimDB, temperatura minima mensual 2019",
+        "creator_or_publisher": "Carrera-Hernandez (2025), Figshare",
+        "doi": "10.6084/m9.figshare.28124789.v1"
+      },
+      "download_url": "https://ndownloader.figshare.com/files/51452765",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://doi.org/10.6084/m9.figshare.28124789.v1",
+          "role": "documented_doi_resolver",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "A1n"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/A1n/monthlytmin2019.zip.001",
+            "bytes": 20000000,
+            "sha256": "991e41dca36e1a54283ed505ecae22da25fc526e8b10eea66bd0a31e93ea5248"
+          },
+          {
+            "path": "originales/A1n/monthlytmin2019.zip.002",
+            "bytes": 20000000,
+            "sha256": "e951fa5531af0083011c9a482e1736e691b8c5fb80fcb6525da428c5082e5843"
+          },
+          {
+            "path": "originales/A1n/monthlytmin2019.zip.003",
+            "bytes": 20000000,
+            "sha256": "bf3cabb29c983d9165c525c18d70bfbcf3c04dfb18f7503b42c06b45456a33b3"
+          },
+          {
+            "path": "originales/A1n/monthlytmin2019.zip.004",
+            "bytes": 20000000,
+            "sha256": "7d3a8c607d3fe324d8d4a1794bba64fbf34a1ed5d7e0322ee1b52218d77495b1"
+          },
+          {
+            "path": "originales/A1n/monthlytmin2019.zip.005",
+            "bytes": 20000000,
+            "sha256": "349f5d340c519c6646dbaf64813e886ea1434cffa33acc3202eab98c2b2bc51e"
+          },
+          {
+            "path": "originales/A1n/monthlytmin2019.zip.006",
+            "bytes": 2422715,
+            "sha256": "60af3b1146cc6558ca7099dc44505fbd057f1cab5f36125d01ff20ae2e74db92"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/A1n/monthlytmin2019.zip"
+    },
+    {
+      "id": "A1a",
+      "scope": "extension_manifest",
+      "family": "Academic",
+      "name": "MexHiResClimDB, temperatura media mensual 2019",
+      "publisher": "Carrera-Hernandez (2025), Figshare",
+      "original_filename": "monthlytavg2019.zip",
+      "expected": {
+        "bytes": 99056025,
+        "sha256": "38a096c547d048524722bfd111709309e1dc2481e385d63e275f12377d9b7d10",
+        "md5": "127e69028640906460f42b652d8dabb0"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": "10.6084/m9.figshare.28462769.v1",
+      "citation": {
+        "title": "MexHiResClimDB, temperatura media mensual 2019",
+        "creator_or_publisher": "Carrera-Hernandez (2025), Figshare",
+        "doi": "10.6084/m9.figshare.28462769.v1"
+      },
+      "download_url": "https://ndownloader.figshare.com/files/52541174",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://doi.org/10.6084/m9.figshare.28462769.v1",
+          "role": "documented_doi_resolver",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "A1a"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/A1a/monthlytavg2019.zip.001",
+            "bytes": 20000000,
+            "sha256": "1be2295a96c71ce94094728d4fbd5a83a715554e9295747887162f90fbef69de"
+          },
+          {
+            "path": "originales/A1a/monthlytavg2019.zip.002",
+            "bytes": 20000000,
+            "sha256": "d8bae29268636933ff92333277a80a2399f2678ebb74e410160805da3c3098a3"
+          },
+          {
+            "path": "originales/A1a/monthlytavg2019.zip.003",
+            "bytes": 20000000,
+            "sha256": "0250edd22eac19ff8d7f98f50f3afa19f38830629a7989aad2d24b5b866321cf"
+          },
+          {
+            "path": "originales/A1a/monthlytavg2019.zip.004",
+            "bytes": 20000000,
+            "sha256": "2398f339297dc450330458ad81d51da2a770eec70ca5913b94618608fae36119"
+          },
+          {
+            "path": "originales/A1a/monthlytavg2019.zip.005",
+            "bytes": 19056025,
+            "sha256": "63ce51296fa818f4608db86229420d6fdb3daa19d1b86cb4cd902cd3fb904668"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/A1a/monthlytavg2019.zip"
+    },
+    {
+      "id": "A2",
+      "scope": "extension_manifest",
+      "family": "Academic",
+      "name": "InSAR Vertical Land Motion at Mexico City",
+      "publisher": "Khorrami et al. (2023), Virginia Tech",
+      "original_filename": "Fig2_LonLat_dz_std.txt",
+      "expected": {
+        "bytes": 18094737,
+        "sha256": "a993335137df6666a2161872e117a10c5693229b912653a5938c5558ea586a54",
+        "md5": "fc2030d76d4cd3fe34dc0aefc5719746"
+      },
+      "licence": "CC0 1.0",
+      "licence_note": null,
+      "doi": "10.7294/21935947",
+      "citation": {
+        "title": "InSAR Vertical Land Motion at Mexico City",
+        "creator_or_publisher": "Khorrami et al. (2023), Virginia Tech",
+        "doi": "10.7294/21935947"
+      },
+      "download_url": "https://ndownloader.figshare.com/files/38910528",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://doi.org/10.7294/21935947",
+          "role": "documented_doi_resolver",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "A2"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/A2/Fig2_LonLat_dz_std.txt",
+            "bytes": 18094737,
+            "sha256": "a993335137df6666a2161872e117a10c5693229b912653a5938c5558ea586a54"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/A2/Fig2_LonLat_dz_std.txt"
+    },
+    {
+      "id": "A3",
+      "scope": "extension_manifest",
+      "family": "Academic",
+      "name": "Assessment of vulnerability to water shortage in municipalities of Mexico City",
+      "publisher": "Huerta-Vergara et al. (2022), BSGM",
+      "original_filename": "A071021_Huerta.pdf",
+      "expected": {
+        "bytes": 5132456,
+        "sha256": "29beee27003f88dd71f85125e249f7c33e2e8a7295d7237fd507cfb291e3b7ff",
+        "md5": "c0472953e6b92cbf4662548af279896e"
+      },
+      "licence": "CC BY-NC-SA 4.0",
+      "licence_note": null,
+      "doi": "10.18268/BSGM2022v74n1a071021",
+      "citation": {
+        "title": "Assessment of vulnerability to water shortage in municipalities of Mexico City",
+        "creator_or_publisher": "Huerta-Vergara et al. (2022), BSGM",
+        "doi": "10.18268/BSGM2022v74n1a071021"
+      },
+      "download_url": "https://boletinsgm.igeolcu.unam.mx/bsgm/vols/epoca04/7401/A071021_Huerta.pdf",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://doi.org/10.18268/BSGM2022v74n1a071021",
+          "role": "documented_doi_resolver",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "A3"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/A3/A071021_Huerta.pdf",
+            "bytes": 5132456,
+            "sha256": "29beee27003f88dd71f85125e249f7c33e2e8a7295d7237fd507cfb291e3b7ff"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/A3/A071021_Huerta.pdf"
+    },
+    {
+      "id": "B1",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "Censo 2020, AGEB y manzana urbana, CDMX",
+      "publisher": "INEGI",
+      "original_filename": "ageb_mza_urbana_09_cpv2020_csv.zip",
+      "expected": {
+        "bytes": 12990807,
+        "sha256": "1f5f123b8e9a50991d1847271b5a2bf321e813e924e5bcf958cab612311c765a",
+        "md5": "f914e0ee3496660235dee9136c77ade6"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Censo 2020, AGEB y manzana urbana, CDMX",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/ageb_manzana/ageb_mza_urbana_09_cpv2020_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B1"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/B1/ageb_mza_urbana_09_cpv2020_csv.zip",
+            "bytes": 12990807,
+            "sha256": "1f5f123b8e9a50991d1847271b5a2bf321e813e924e5bcf958cab612311c765a"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B1/ageb_mza_urbana_09_cpv2020_csv.zip"
+    },
+    {
+      "id": "B3",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "Marco Geoestadistico 2020, CDMX",
+      "publisher": "INEGI",
+      "original_filename": "09_ciudaddemexico.zip",
+      "expected": {
+        "bytes": 83207305,
+        "sha256": "685b912f5458138a70726cff41aff828473e14264c43289d3b21f86a9df00320",
+        "md5": "712acd4c0af23fe1fe990ba60736062c"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Marco Geoestadistico 2020, CDMX",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463807469/09_ciudaddemexico.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B3"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/B3/09_ciudaddemexico.zip.001",
+            "bytes": 20000000,
+            "sha256": "ee04df9589e430ab9a13d6e5fa14e49692ecd090ee47b83884926502327b6db3"
+          },
+          {
+            "path": "originales/B3/09_ciudaddemexico.zip.002",
+            "bytes": 20000000,
+            "sha256": "349b5169ee3d453e98008e243906f96112fa7d330d29c9cc63543db3d51a7d58"
+          },
+          {
+            "path": "originales/B3/09_ciudaddemexico.zip.003",
+            "bytes": 20000000,
+            "sha256": "5df79dc9843b76504c7740e144d67bf810ac78e5319ae12944c3eda1c060b365"
+          },
+          {
+            "path": "originales/B3/09_ciudaddemexico.zip.004",
+            "bytes": 20000000,
+            "sha256": "8e4b1628aed78ce029627e9c5514f38df640a94e756128766f3c07b3349d3f25"
+          },
+          {
+            "path": "originales/B3/09_ciudaddemexico.zip.005",
+            "bytes": 3207305,
+            "sha256": "c648523848e7495eff38e4c59682ee99fd374822874d9bd0f932bf26c67f18c4"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B3/09_ciudaddemexico.zip"
+    },
+    {
+      "id": "B4",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "Censos Economicos 2019, CDMX",
+      "publisher": "INEGI",
+      "original_filename": "ce2019_cdmx_csv.zip",
+      "expected": {
+        "bytes": 8460887,
+        "sha256": "fc03532a44002b5645a09d2937fc277db68df8bfa93b9fe3b37655af3f24856a",
+        "md5": "781ebf4a6642396140bb8f719584b777"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Censos Economicos 2019, CDMX",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/ce/2019/Datosabiertos/ce2019_cdmx_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/ce/2019/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B4"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/B4/ce2019_cdmx_csv.zip",
+            "bytes": 8460887,
+            "sha256": "fc03532a44002b5645a09d2937fc277db68df8bfa93b9fe3b37655af3f24856a"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B4/ce2019_cdmx_csv.zip"
+    },
+    {
+      "id": "B5",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "DENUE, CDMX",
+      "publisher": "INEGI",
+      "original_filename": "denue_09_csv.zip",
+      "expected": {
+        "bytes": 45439249,
+        "sha256": "ae608f30118f6313e9d537ea22918b2c9e9a3d3f19c2ddf5907f55dbb1642b19",
+        "md5": "e78bf537a5fb6d89d864ffa03b933ec1"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "DENUE, CDMX",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/masiva/denue/denue_09_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/app/mapa/denue/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B5"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/B5/denue_09_csv.zip.001",
+            "bytes": 20000000,
+            "sha256": "30cc4acaa7715c06a4955867b392ed16d576ef7c27d4eacd37ef85337e53e651"
+          },
+          {
+            "path": "originales/B5/denue_09_csv.zip.002",
+            "bytes": 20000000,
+            "sha256": "9dc51087699118c35b2c81b9d4924c9d702572c12d79c8e303b459f2619fb282"
+          },
+          {
+            "path": "originales/B5/denue_09_csv.zip.003",
+            "bytes": 5439249,
+            "sha256": "e648f0f409851c534629efbd271569391915c9f2ceb5ab509a7db2da93d68761"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B5/denue_09_csv.zip"
+    },
+    {
+      "id": "B6",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "Censo 2020, AGEB y manzana urbana, Estado de Mexico",
+      "publisher": "INEGI",
+      "original_filename": "ageb_mza_urbana_15_cpv2020_csv.zip",
+      "expected": {
+        "bytes": 25353813,
+        "sha256": "1216da54c2b25e2eab4de6c16946f3f526f45ffdebcdddf3a230e30c790fecfd",
+        "md5": "4b1fdeb2b87b15282b2d7f62971a0fb1"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Censo 2020, AGEB y manzana urbana, Estado de Mexico",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/ageb_manzana/ageb_mza_urbana_15_cpv2020_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B6"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/B6/ageb_mza_urbana_15_cpv2020_csv.zip.001",
+            "bytes": 20000000,
+            "sha256": "b9756b914015bd347e82a24f7ec3cfdca91d367aa7d087995eca421adc090cb6"
+          },
+          {
+            "path": "originales/B6/ageb_mza_urbana_15_cpv2020_csv.zip.002",
+            "bytes": 5353813,
+            "sha256": "85ab1cb632f62de1917e126222193f77d55933ceb277a491c8d60e6e2b72ed94"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B6/ageb_mza_urbana_15_cpv2020_csv.zip"
+    },
+    {
+      "id": "B8",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "Marco Geoestadistico 2020, Estado de Mexico",
+      "publisher": "INEGI",
+      "original_filename": "15_mexico.zip",
+      "expected": {
+        "bytes": 226724467,
+        "sha256": "dc72ee585dc60f88dc3d7daa431b360cadbee70e0f13fe9ca0c13251795d96cf",
+        "md5": "55a9382ac1b25f4205b663309070f38a"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Marco Geoestadistico 2020, Estado de Mexico",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463807469/15_mexico.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B8"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/B8/15_mexico.zip.001",
+            "bytes": 20000000,
+            "sha256": "2ff0ef68044e7a2cc044bb70a79394526c95c425b9242963f1222a1ff2659b11"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.002",
+            "bytes": 20000000,
+            "sha256": "2dc59c25f53d4bd8d9bdd7bd584b842cf307d2d556408faf7844519c950daf68"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.003",
+            "bytes": 20000000,
+            "sha256": "718a74a09253066ee7a9ef4fb0e6527d71728a9540607dbc9b86f71b7c54fdec"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.004",
+            "bytes": 20000000,
+            "sha256": "fa6f1a2e75f43e8badcec5657aef9c84ec5e8751815ab33f9465ccfd0027bd2d"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.005",
+            "bytes": 20000000,
+            "sha256": "9a99bd695f0e88991749f3f27fe2231b3ae1f9448db8d1b7ac512a1448a2d908"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.006",
+            "bytes": 20000000,
+            "sha256": "ba7e0191f6273142495741585b8e2f6651bd08858157c987db9e43f2a72e06ab"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.007",
+            "bytes": 20000000,
+            "sha256": "280a102950ba53d8fd5bc2eb5adb958f10b63bf4672acf605adc3900823164a3"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.008",
+            "bytes": 20000000,
+            "sha256": "f64919a14da85643b76d6da228d31438792d12f6d291d7125be5903766094c44"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.009",
+            "bytes": 20000000,
+            "sha256": "5820268b3bcd5ba02c72d249a54ee84ef38b3303c039a7d491617cabcb466f1b"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.010",
+            "bytes": 20000000,
+            "sha256": "0d1f7fcedeaa2de5ec146e47ee33b43a813f6d9fac7b3d5e1b4b8438aeaa1af2"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.011",
+            "bytes": 20000000,
+            "sha256": "f1af8915c26408828eac422c0cfd09078e77ed30f5431a53ca1cba42ece6767d"
+          },
+          {
+            "path": "originales/B8/15_mexico.zip.012",
+            "bytes": 6724467,
+            "sha256": "4b5d5b8f17d65fa4db4a8403d17b041bc13214ca35d15702ad00d6b2d1090813"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B8/15_mexico.zip"
+    },
+    {
+      "id": "B9c",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "Censos Economicos 2019, Estado de Mexico",
+      "publisher": "INEGI",
+      "original_filename": "ce2019_mex_csv.zip",
+      "expected": {
+        "bytes": 14225768,
+        "sha256": "9fbcab63540e6a41bdc80dfcdb444476c116c19d085136cea8493d393ac7816e",
+        "md5": "8c27f7c4f266d2202631c7f9ca31f07b"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Censos Economicos 2019, Estado de Mexico",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/ce/2019/Datosabiertos/ce2019_mex_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/ce/2019/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B9c"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/B9c/ce2019_mex_csv.zip",
+            "bytes": 14225768,
+            "sha256": "9fbcab63540e6a41bdc80dfcdb444476c116c19d085136cea8493d393ac7816e"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B9c/ce2019_mex_csv.zip"
+    },
+    {
+      "id": "B9d1",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "DENUE, Estado de Mexico, parte 1",
+      "publisher": "INEGI",
+      "original_filename": "denue_15_1_csv.zip",
+      "expected": {
+        "bytes": 50572588,
+        "sha256": "23021fc24a2046e1aa3ad8c21137ca57988ded26b6f293ec0c929f59dd2cb1ae",
+        "md5": "baa9892b98ca32aec92905bcfbe99a0f"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "DENUE, Estado de Mexico, parte 1",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/masiva/denue/denue_15_1_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/app/mapa/denue/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B9d1"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/B9d1/denue_15_1_csv.zip.001",
+            "bytes": 20000000,
+            "sha256": "1382eefe332e170cc407a4176662668a6e4f6377276c9acf54378fb741e0bead"
+          },
+          {
+            "path": "originales/B9d1/denue_15_1_csv.zip.002",
+            "bytes": 20000000,
+            "sha256": "6b51fe7872c47ea1108ef7b0bcb57292f5b47524863fa14fae88120729ae327c"
+          },
+          {
+            "path": "originales/B9d1/denue_15_1_csv.zip.003",
+            "bytes": 10572588,
+            "sha256": "9b471611128ca0840fbdf13cd75b659e89dda235817feb62c5140e953593178d"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B9d1/denue_15_1_csv.zip"
+    },
+    {
+      "id": "B9d2",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "DENUE, Estado de Mexico, parte 2",
+      "publisher": "INEGI",
+      "original_filename": "denue_15_2_csv.zip",
+      "expected": {
+        "bytes": 30236017,
+        "sha256": "ad53e5fb65f15b491e140a80e79b207b95eb0320e4a69822d5a3cefb7652bc20",
+        "md5": "b390bd76a3b4130a877facb8b7e13b52"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "DENUE, Estado de Mexico, parte 2",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/masiva/denue/denue_15_2_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/app/mapa/denue/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B9d2"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/B9d2/denue_15_2_csv.zip.001",
+            "bytes": 20000000,
+            "sha256": "af3858d52ebcca2f071bfedf594dd9f69d5d45251cf0211097c73e4db34667d9"
+          },
+          {
+            "path": "originales/B9d2/denue_15_2_csv.zip.002",
+            "bytes": 10236017,
+            "sha256": "a4572c74f998221d80340115db6562dda279c3367a73209f529eb80d65e578b5"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B9d2/denue_15_2_csv.zip"
+    },
+    {
+      "id": "B10",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "Censo 2020, ITER nacional",
+      "publisher": "INEGI",
+      "original_filename": "iter_00_cpv2020_csv.zip",
+      "expected": {
+        "bytes": 36615814,
+        "sha256": "9342fdbd45bda5897f2b827a12904843b6f8fb85d4e72da299e09e4d2422ab60",
+        "md5": "c2cae462c540419b8db2e07270c44597"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Censo 2020, ITER nacional",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B10"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/B10/iter_00_cpv2020_csv.zip.001",
+            "bytes": 20000000,
+            "sha256": "0a3e65189810d3dc7c5a7c33a4dc9429a7fb0a1411c1bc150804620586c85a4b"
+          },
+          {
+            "path": "originales/B10/iter_00_cpv2020_csv.zip.002",
+            "bytes": 16615814,
+            "sha256": "45142439927c762cb896ff95c92e042f56c95e67fd43a8da1f66978203a688de"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B10/iter_00_cpv2020_csv.zip"
+    },
+    {
+      "id": "B11",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "Marco Geoestadistico 2020, Hidalgo",
+      "publisher": "INEGI",
+      "original_filename": "13_hidalgo.zip",
+      "expected": {
+        "bytes": 109969226,
+        "sha256": "682645be3b638a3e8036a51a440387b661792058b7edcc6c7daec92c0a4acea1",
+        "md5": "69f155a0cf5988283842dea0253f7993"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Marco Geoestadistico 2020, Hidalgo",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463807469/13_hidalgo.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "B11"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/B11/13_hidalgo.zip.001",
+            "bytes": 20000000,
+            "sha256": "5febaf2cf4eafda30c1fce72392dedf866ba4a0869df5f8ed3aa63493eaa6af8"
+          },
+          {
+            "path": "originales/B11/13_hidalgo.zip.002",
+            "bytes": 20000000,
+            "sha256": "e17b716483524fa77c915679282534ca8b9b9f55697cf70651826051476ab61c"
+          },
+          {
+            "path": "originales/B11/13_hidalgo.zip.003",
+            "bytes": 20000000,
+            "sha256": "27f16ccd18a25b7cef42a73a00e9bf792602bb856f797209f4c7d3b3ca109ac2"
+          },
+          {
+            "path": "originales/B11/13_hidalgo.zip.004",
+            "bytes": 20000000,
+            "sha256": "f8fa6c8db1e1ff7f8b02a8a20e111ac067f2857d8d61cee7260fa911ae3ee82c"
+          },
+          {
+            "path": "originales/B11/13_hidalgo.zip.005",
+            "bytes": 20000000,
+            "sha256": "ee160ed95dc1a3bac5719b5ec01e7cbd0e3299ebaa98a7f25083e4803be6d5b4"
+          },
+          {
+            "path": "originales/B11/13_hidalgo.zip.006",
+            "bytes": 9969226,
+            "sha256": "9b333b7e93cea1ea791d43d87a534626cbd3da8469534ceea08b8fd88de28abb"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/B11/13_hidalgo.zip"
+    },
+    {
+      "id": "C1h",
+      "scope": "extension_manifest",
+      "family": "SACMEX / ADIP",
+      "name": "Reportes de agua 2018-2021",
+      "publisher": "SACMEX / ADIP, copia en Actronix09/fuentes-alternas",
+      "original_filename": "historico_2018_2021.csv",
+      "expected": {
+        "bytes": 32201410,
+        "sha256": "2b9fb9d2022adf76d1fd5100944357c7896b4e97ad80591691913f09292994c9",
+        "md5": "dc406dc6fe35b72ec82e09a7d2fa18f1"
+      },
+      "licence": "CC-BY-4.0-ESP (Portal de Datos Abiertos CDMX)",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Reportes de agua 2018-2021",
+        "creator_or_publisher": "SACMEX / ADIP, copia en Actronix09/fuentes-alternas",
+        "doi": null
+      },
+      "download_url": "https://raw.githubusercontent.com/Actronix09/fuentes-alternas/main/agua-reportes-sacmex/datos/historico_2018_2021.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://datos.cdmx.gob.mx/dataset/reportes-de-agua",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "C1h"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/C1h/historico_2018_2021.csv.001",
+            "bytes": 20000000,
+            "sha256": "727834b71dc1c97d6a96ef2b12bf9564ab41cf5fb23cec896c3cbfc41df382bf"
+          },
+          {
+            "path": "originales/C1h/historico_2018_2021.csv.002",
+            "bytes": 12201410,
+            "sha256": "3fd06f3536e2229f0a1b7167bdad4d6e848edd27b007818660315ddf16ce470e"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/C1h/historico_2018_2021.csv"
+    },
+    {
+      "id": "C1i",
+      "scope": "extension_manifest",
+      "family": "SACMEX / ADIP",
+      "name": "Reportes de agua 2022-2024",
+      "publisher": "SACMEX / ADIP, copia en Actronix09/fuentes-alternas",
+      "original_filename": "incidentes_2022_2024.csv",
+      "expected": {
+        "bytes": 52709679,
+        "sha256": "b4598427aa4669259678428946a84d94341d2372d312f9c5fcc79ea35be6d809",
+        "md5": "a103d81c5fa3e13039edab497227e69b"
+      },
+      "licence": "CC-BY-4.0-ESP (Portal de Datos Abiertos CDMX)",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Reportes de agua 2022-2024",
+        "creator_or_publisher": "SACMEX / ADIP, copia en Actronix09/fuentes-alternas",
+        "doi": null
+      },
+      "download_url": "https://raw.githubusercontent.com/Actronix09/fuentes-alternas/main/agua-reportes-sacmex/datos/incidentes_2022_2024.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://datos.cdmx.gob.mx/dataset/reportes-de-agua",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "C1i"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/C1i/incidentes_2022_2024.csv.001",
+            "bytes": 20000000,
+            "sha256": "358ef86745ef94210b2adc795cd87a70e5b75ee7bf594aa4fd063b530306cea8"
+          },
+          {
+            "path": "originales/C1i/incidentes_2022_2024.csv.002",
+            "bytes": 20000000,
+            "sha256": "041552a5dd774e1f5dca09c078cdb0b05d9045fa56f0acdde6961934f066b7b2"
+          },
+          {
+            "path": "originales/C1i/incidentes_2022_2024.csv.003",
+            "bytes": 12709679,
+            "sha256": "e53e1ba1eb90d76ebdf5f9fb830806c1a8bfa6c419dc21caca71ef8fcf4321cc"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/C1i/incidentes_2022_2024.csv"
+    },
+    {
+      "id": "D1a",
+      "scope": "extension_manifest",
+      "family": "CONAPO",
+      "name": "Las metropolis de Mexico 2020, poblacion por municipio",
+      "publisher": "CONAPO",
+      "original_filename": "municipios_poblacion.csv",
+      "expected": {
+        "bytes": 57820,
+        "sha256": "ff4969270aca885b3c693b8c150ed4a2f00059981f14a3b39d4a6132ee18eece",
+        "md5": "232f9758db5b2a1f1eb2de3658b3c184"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Las metropolis de Mexico 2020, poblacion por municipio",
+        "creator_or_publisher": "CONAPO",
+        "doi": null
+      },
+      "download_url": "https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d/resource/6f57ab97-d1df-4768-beb8-c929c2449923/download/municipios_poblacion.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D1a"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D1a/municipios_poblacion.csv",
+            "bytes": 57820,
+            "sha256": "ff4969270aca885b3c693b8c150ed4a2f00059981f14a3b39d4a6132ee18eece"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D1a/municipios_poblacion.csv"
+    },
+    {
+      "id": "D1b",
+      "scope": "extension_manifest",
+      "family": "CONAPO",
+      "name": "Las metropolis de Mexico 2020, tipificacion de municipios",
+      "publisher": "CONAPO",
+      "original_filename": "municipios_tipologia.csv",
+      "expected": {
+        "bytes": 54768,
+        "sha256": "681b7c7188c7a53063d4067bf68eadd1f3fa1d98a7c1c8b4b73b463bb16255f7",
+        "md5": "b42e30b6adb0a6602caae54afa7afa92"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Las metropolis de Mexico 2020, tipificacion de municipios",
+        "creator_or_publisher": "CONAPO",
+        "doi": null
+      },
+      "download_url": "https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d/resource/e7284215-f596-4025-9b5d-67c12eb84a4f/download/municipios_tipologia.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D1b"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D1b/municipios_tipologia.csv",
+            "bytes": 54768,
+            "sha256": "681b7c7188c7a53063d4067bf68eadd1f3fa1d98a7c1c8b4b73b463bb16255f7"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D1b/municipios_tipologia.csv"
+    },
+    {
+      "id": "D2a",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "CNGMD 2019, Modulo 5, servicio de agua",
+      "publisher": "INEGI",
+      "original_filename": "serv_agua_cngmd2019_csv.zip",
+      "expected": {
+        "bytes": 309510,
+        "sha256": "61ae9a147f29c7afdc8f31ccab73087406a6128223f3f5e823790d42da3463c8",
+        "md5": "19524f8b35cacb8ff61bd287a82d5e4c"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "CNGMD 2019, Modulo 5, servicio de agua",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2019/datosabiertos/m5/serv_agua_cngmd2019_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/cngmd/2019/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D2a"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D2a/serv_agua_cngmd2019_csv.zip",
+            "bytes": 309510,
+            "sha256": "61ae9a147f29c7afdc8f31ccab73087406a6128223f3f5e823790d42da3463c8"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D2a/serv_agua_cngmd2019_csv.zip"
+    },
+    {
+      "id": "D2b",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "CNGMD 2019, Modulo 5, captacion de agua",
+      "publisher": "INEGI",
+      "original_filename": "capta_agua_cngmd2019_csv.zip",
+      "expected": {
+        "bytes": 640067,
+        "sha256": "28625376462e3273d0b199db5ece608ed141f1c37fd7e853b530b20c1c74212d",
+        "md5": "17e18880639ef0962464459ba3d9ec5b"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "CNGMD 2019, Modulo 5, captacion de agua",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2019/datosabiertos/m5/capta_agua_cngmd2019_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/cngmd/2019/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D2b"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D2b/capta_agua_cngmd2019_csv.zip",
+            "bytes": 640067,
+            "sha256": "28625376462e3273d0b199db5ece608ed141f1c37fd7e853b530b20c1c74212d"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D2b/capta_agua_cngmd2019_csv.zip"
+    },
+    {
+      "id": "D2c",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "CNGMD 2019, Modulo 5, plantas potabilizadoras",
+      "publisher": "INEGI",
+      "original_filename": "plantas_pot_cngmd2019_csv.zip",
+      "expected": {
+        "bytes": 126241,
+        "sha256": "8c38e747a861edd0000c44a6425c05212aee0b01017663419c854ee9d8525920",
+        "md5": "e9ff5bcb7b2c1edf132462244bc70939"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "CNGMD 2019, Modulo 5, plantas potabilizadoras",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2019/datosabiertos/m5/plantas_pot_cngmd2019_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/cngmd/2019/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D2c"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D2c/plantas_pot_cngmd2019_csv.zip",
+            "bytes": 126241,
+            "sha256": "8c38e747a861edd0000c44a6425c05212aee0b01017663419c854ee9d8525920"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D2c/plantas_pot_cngmd2019_csv.zip"
+    },
+    {
+      "id": "D2d",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "CNGMD 2019, Modulo 5, administracion del agua",
+      "publisher": "INEGI",
+      "original_filename": "admin_agua_cngmd2019_csv.zip",
+      "expected": {
+        "bytes": 399080,
+        "sha256": "4011973cc66fa86f93a5770ebb0c7af0c667d8a2fcf45171575143c34d728017",
+        "md5": "7b24c44fbd4bc1cb7d1df34bd576deaa"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "CNGMD 2019, Modulo 5, administracion del agua",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2019/datosabiertos/m5/admin_agua_cngmd2019_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/cngmd/2019/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D2d"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D2d/admin_agua_cngmd2019_csv.zip",
+            "bytes": 399080,
+            "sha256": "4011973cc66fa86f93a5770ebb0c7af0c667d8a2fcf45171575143c34d728017"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D2d/admin_agua_cngmd2019_csv.zip"
+    },
+    {
+      "id": "D2e",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "CNGMD 2019, Modulo 5, tratamiento de aguas residuales",
+      "publisher": "INEGI",
+      "original_filename": "trat_aguas_resid_cngmd2019_csv.zip",
+      "expected": {
+        "bytes": 232422,
+        "sha256": "0b5ba634676a5c932f44f8d9e985c305b7aed9a5e212b5ff53a452fae749f946",
+        "md5": "287b475e9619a842e0d4fd88403a6c79"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "CNGMD 2019, Modulo 5, tratamiento de aguas residuales",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2019/datosabiertos/m5/trat_aguas_resid_cngmd2019_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/cngmd/2019/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D2e"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D2e/trat_aguas_resid_cngmd2019_csv.zip",
+            "bytes": 232422,
+            "sha256": "0b5ba634676a5c932f44f8d9e985c305b7aed9a5e212b5ff53a452fae749f946"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D2e/trat_aguas_resid_cngmd2019_csv.zip"
+    },
+    {
+      "id": "D3a",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "CNGMD 2021, Modulo 5, servicio de agua de la red publica",
+      "publisher": "INEGI",
+      "original_filename": "servicio_agua_red_publica_cngmd2021_csv.zip",
+      "expected": {
+        "bytes": 3269148,
+        "sha256": "37d4f251c4b8a5ac78c4aad50e101d5607b5e9bd8292ecf93a10aa98e1f2c5e2",
+        "md5": "86d94540852ed88951cfa6affdbd1048"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "CNGMD 2021, Modulo 5, servicio de agua de la red publica",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2021/datosabiertos/m5/servicio_agua_red_publica_cngmd2021_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/cngmd/2021/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D3a"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D3a/servicio_agua_red_publica_cngmd2021_csv.zip",
+            "bytes": 3269148,
+            "sha256": "37d4f251c4b8a5ac78c4aad50e101d5607b5e9bd8292ecf93a10aa98e1f2c5e2"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D3a/servicio_agua_red_publica_cngmd2021_csv.zip"
+    },
+    {
+      "id": "D3b",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "CNGMD 2021, Modulo 5, captacion de agua",
+      "publisher": "INEGI",
+      "original_filename": "captacion_agua_abastecimiento_pub_cngmd2021_csv.zip",
+      "expected": {
+        "bytes": 587854,
+        "sha256": "ae4e205a07410eb3a0c8ed7cb8fbe7971624e06e1dcc977fac39dcd3d9f1314b",
+        "md5": "500e584f6d1a936c69b751390cac2640"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "CNGMD 2021, Modulo 5, captacion de agua",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2021/datosabiertos/m5/captacion_agua_abastecimiento_pub_cngmd2021_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/cngmd/2021/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D3b"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D3b/captacion_agua_abastecimiento_pub_cngmd2021_csv.zip",
+            "bytes": 587854,
+            "sha256": "ae4e205a07410eb3a0c8ed7cb8fbe7971624e06e1dcc977fac39dcd3d9f1314b"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D3b/captacion_agua_abastecimiento_pub_cngmd2021_csv.zip"
+    },
+    {
+      "id": "D3c",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "CNGMD 2021, Modulo 5, plantas de potabilizacion",
+      "publisher": "INEGI",
+      "original_filename": "plantas_potabilizacion_cngmd2021_csv.zip",
+      "expected": {
+        "bytes": 139092,
+        "sha256": "238a01a3fbc8613e8dd6760dd33e016793264d5f3823dd83c0d5fa593d7a3605",
+        "md5": "6f773e21055b836cbf7d7733f6293706"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "CNGMD 2021, Modulo 5, plantas de potabilizacion",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2021/datosabiertos/m5/plantas_potabilizacion_cngmd2021_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/cngmd/2021/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D3c"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D3c/plantas_potabilizacion_cngmd2021_csv.zip",
+            "bytes": 139092,
+            "sha256": "238a01a3fbc8613e8dd6760dd33e016793264d5f3823dd83c0d5fa593d7a3605"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D3c/plantas_potabilizacion_cngmd2021_csv.zip"
+    },
+    {
+      "id": "D3d",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "CNGMD 2021, Modulo 5, administracion",
+      "publisher": "INEGI",
+      "original_filename": "administracion_cngmd2021_csv.zip",
+      "expected": {
+        "bytes": 592972,
+        "sha256": "990ca151bc849bff2b268cf3d57bff75cf01e0d973b760542dbb152468933bb0",
+        "md5": "c3667485f5f63b1b1630a1222ad05fdb"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "CNGMD 2021, Modulo 5, administracion",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2021/datosabiertos/m5/administracion_cngmd2021_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/cngmd/2021/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D3d"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D3d/administracion_cngmd2021_csv.zip",
+            "bytes": 592972,
+            "sha256": "990ca151bc849bff2b268cf3d57bff75cf01e0d973b760542dbb152468933bb0"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D3d/administracion_cngmd2021_csv.zip"
+    },
+    {
+      "id": "D3e",
+      "scope": "extension_manifest",
+      "family": "INEGI",
+      "name": "CNGMD 2021, Modulo 5, tratamiento de aguas residuales",
+      "publisher": "INEGI",
+      "original_filename": "tratamiento_aguas_residuales_cngmd2021_csv.zip",
+      "expected": {
+        "bytes": 317921,
+        "sha256": "df8b8f092625f722a6575101a5bfe8dfc5f489366d011c74ac3b69a1044995f3",
+        "md5": "b1ec43c1e3ac1919a48c5d9e1e2b7181"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "CNGMD 2021, Modulo 5, tratamiento de aguas residuales",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2021/datosabiertos/m5/tratamiento_aguas_residuales_cngmd2021_csv.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/cngmd/2021/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D3e"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D3e/tratamiento_aguas_residuales_cngmd2021_csv.zip",
+            "bytes": 317921,
+            "sha256": "df8b8f092625f722a6575101a5bfe8dfc5f489366d011c74ac3b69a1044995f3"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D3e/tratamiento_aguas_residuales_cngmd2021_csv.zip"
+    },
+    {
+      "id": "D4",
+      "scope": "extension_manifest",
+      "family": "SHCP",
+      "name": "Derechos de agua municipal",
+      "publisher": "SHCP",
+      "original_filename": "derecho_agua_municipal.csv",
+      "expected": {
+        "bytes": 2561016,
+        "sha256": "50baeabd78d0584bc20fbbbb65b1e5b5e8b71fb89d91efa5e6e6f4224ad5f31e",
+        "md5": "60bec7b7207f5df9688277c7d5949eca"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Derechos de agua municipal",
+        "creator_or_publisher": "SHCP",
+        "doi": null
+      },
+      "download_url": "https://repodatos.atdt.gob.mx/api_update/secretaria_hacienda/derechos_agua_municipal/derecho_agua_municipal.csv",
+      "download_role": "documented_download",
+      "landing_pages": [],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D4"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D4/derecho_agua_municipal.csv",
+            "bytes": 2561016,
+            "sha256": "50baeabd78d0584bc20fbbbb65b1e5b5e8b71fb89d91efa5e6e6f4224ad5f31e"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/derecho_agua_municipal.csv"
+    },
+    {
+      "id": "D5",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Red piezometrica",
+      "publisher": "CONAGUA",
+      "original_filename": "red_piezometrica.zip",
+      "expected": {
+        "bytes": 1707439,
+        "sha256": "6e253e72b81c59b369ea11d1d92269b76ca6dc5efe7311bb8bffa8515cd9bc62",
+        "md5": "93418d0c7bd989f46975a998db70d6c2"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Red piezometrica",
+        "creator_or_publisher": "CONAGUA",
+        "doi": null
+      },
+      "download_url": "https://repodatos.atdt.gob.mx/api_update/conagua/aguas_subterraneas/red_piezometrica.zip",
+      "download_role": "documented_download",
+      "landing_pages": [],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D5"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D5/red_piezometrica.zip",
+            "bytes": 1707439,
+            "sha256": "6e253e72b81c59b369ea11d1d92269b76ca6dc5efe7311bb8bffa8515cd9bc62"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/red_piezometrica.zip"
+    },
+    {
+      "id": "D6",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Disponibilidad de agua subterranea, DOF del 9 de noviembre de 2023",
+      "publisher": "CONAGUA",
+      "original_filename": "disponibilidad_agua_subterranea.zip",
+      "expected": {
+        "bytes": 4111514,
+        "sha256": "14afa0c98cd17392f19882e8890c731571932c87b301a70b8dcd2cb0a30b63f9",
+        "md5": "daa994a76712012e1c3c6cfe0de333fc"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Disponibilidad de agua subterranea, DOF del 9 de noviembre de 2023",
+        "creator_or_publisher": "CONAGUA",
+        "doi": null
+      },
+      "download_url": "https://repodatos.atdt.gob.mx/api_update/conagua/aguas_subterraneas/disponibilidad_agua_subterranea.zip",
+      "download_role": "documented_download",
+      "landing_pages": [],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D6"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D6/disponibilidad_agua_subterranea.zip",
+            "bytes": 4111514,
+            "sha256": "14afa0c98cd17392f19882e8890c731571932c87b301a70b8dcd2cb0a30b63f9"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/disponibilidad_agua_subterranea.zip"
+    },
+    {
+      "id": "D7",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Monitor de Sequia de Mexico, municipios",
+      "publisher": "SMN-CONAGUA",
+      "original_filename": "MunicipiosSequia.xlsx",
+      "expected": {
+        "bytes": 2154580,
+        "sha256": "a7b52a540c82b9d545619b021b2ae0369b0dd34469c8e05bfd0696e3644dc29f",
+        "md5": "788233bb885c1fe834862e7e0fa7227c"
+      },
+      "licence": "Datos del Gobierno Federal; licencia no indicada en la pagina del SMN",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Monitor de Sequia de Mexico, municipios",
+        "creator_or_publisher": "SMN-CONAGUA",
+        "doi": null
+      },
+      "download_url": "https://smn.conagua.gob.mx/tools/RESOURCES/Monitor%20de%20Sequia%20en%20Mexico/MunicipiosSequia.xlsx",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://smn.conagua.gob.mx/es/climatologia/monitor-de-sequia/monitor-de-sequia-en-mexico",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D7"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D7/MunicipiosSequia.xlsx",
+            "bytes": 2154580,
+            "sha256": "a7b52a540c82b9d545619b021b2ae0369b0dd34469c8e05bfd0696e3644dc29f"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/MunicipiosSequia.xlsx"
+    },
+    {
+      "id": "D8a",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "PRONACOSE, vulnerabilidad social a la sequia por municipio",
+      "publisher": "CONAGUA",
+      "original_filename": "vulnerabilidad_social_municipal.csv",
+      "expected": {
+        "bytes": 99425,
+        "sha256": "134d4dd69bcb7c3873965650b2574fde8ae42fd123906c3b847ad93199ed4a58",
+        "md5": "a6d8ec8060fa3ee75a24f3b8f2b8971d"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "PRONACOSE, vulnerabilidad social a la sequia por municipio",
+        "creator_or_publisher": "CONAGUA",
+        "doi": null
+      },
+      "download_url": "https://repodatos.atdt.gob.mx/api_update/conagua/programa_nacional_contra_sequia_pronacose/vulnerabilidad_social_municipal.csv",
+      "download_role": "documented_download",
+      "landing_pages": [],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D8a"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D8a/vulnerabilidad_social_municipal.csv",
+            "bytes": 99425,
+            "sha256": "134d4dd69bcb7c3873965650b2574fde8ae42fd123906c3b847ad93199ed4a58"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/vulnerabilidad_social_municipal.csv"
+    },
+    {
+      "id": "D8b",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "PRONACOSE, vulnerabilidad economica a la sequia por municipio",
+      "publisher": "CONAGUA",
+      "original_filename": "vulnerabilidad_economica_municipal.csv",
+      "expected": {
+        "bytes": 87013,
+        "sha256": "cf4cbbe91cb4fb00c7194cbf507d18335f4d8f3e9072515b826b7126374d51d0",
+        "md5": "3d07ac4fa9997bc4f43c67df52855546"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "PRONACOSE, vulnerabilidad economica a la sequia por municipio",
+        "creator_or_publisher": "CONAGUA",
+        "doi": null
+      },
+      "download_url": "https://repodatos.atdt.gob.mx/api_update/conagua/programa_nacional_contra_sequia_pronacose/vulnerabilidad_economica_municipal.csv",
+      "download_role": "documented_download",
+      "landing_pages": [],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D8b"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D8b/vulnerabilidad_economica_municipal.csv",
+            "bytes": 87013,
+            "sha256": "cf4cbbe91cb4fb00c7194cbf507d18335f4d8f3e9072515b826b7126374d51d0"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/vulnerabilidad_economica_municipal.csv"
+    },
+    {
+      "id": "D8c",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "PRONACOSE, vulnerabilidad ambiental a la sequia por municipio",
+      "publisher": "CONAGUA",
+      "original_filename": "vulnerabilidad_ambiental_municipal.csv",
+      "expected": {
+        "bytes": 86960,
+        "sha256": "f4bf312897f3831889e10fd5c48ed6e3753b0467eef6e149b7060b776af3f4b0",
+        "md5": "4dc7e9bd89ddfeb6d04606ed95a3a3b2"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "PRONACOSE, vulnerabilidad ambiental a la sequia por municipio",
+        "creator_or_publisher": "CONAGUA",
+        "doi": null
+      },
+      "download_url": "https://repodatos.atdt.gob.mx/api_update/conagua/programa_nacional_contra_sequia_pronacose/vulnerabilidad_ambiental_municipal.csv",
+      "download_role": "documented_download",
+      "landing_pages": [],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D8c"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D8c/vulnerabilidad_ambiental_municipal.csv",
+            "bytes": 86960,
+            "sha256": "f4bf312897f3831889e10fd5c48ed6e3753b0467eef6e149b7060b776af3f4b0"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/vulnerabilidad_ambiental_municipal.csv"
+    },
+    {
+      "id": "D9a",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "SIH, presas",
+      "publisher": "CONAGUA",
+      "original_filename": "presas_sih.csv",
+      "expected": {
+        "bytes": 27489,
+        "sha256": "30ec0da75a18e018b3e8bf675c5082086fd0c289b6b497b088fd76a5c58a6f0d",
+        "md5": "f4b91a3b3704f5437b8d009d80d56f62"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "SIH, presas",
+        "creator_or_publisher": "CONAGUA",
+        "doi": null
+      },
+      "download_url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67/resource/35e8d001-6195-45c7-9a1c-58a8594fb3a1/download/presas_sih.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D9a"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D9a/presas_sih.csv",
+            "bytes": 27489,
+            "sha256": "30ec0da75a18e018b3e8bf675c5082086fd0c289b6b497b088fd76a5c58a6f0d"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D9a/presas_sih.csv"
+    },
+    {
+      "id": "D9b",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "SIH, estaciones hidrometricas",
+      "publisher": "CONAGUA",
+      "original_filename": "estaciones_hidrometricas_sih.csv",
+      "expected": {
+        "bytes": 112566,
+        "sha256": "324d97b0c1a36c95c4f623e0fa1563a7a04e10d6e7ad560dc4d7f1d4bef3b17c",
+        "md5": "9445564ee74a2de83b73a0dc9aeb9ab6"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "SIH, estaciones hidrometricas",
+        "creator_or_publisher": "CONAGUA",
+        "doi": null
+      },
+      "download_url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67/resource/3cfc549d-1aa4-4ee0-b4d4-82b21a19136f/download/estaciones_hidrometricas_sih.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D9b"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D9b/estaciones_hidrometricas_sih.csv",
+            "bytes": 112566,
+            "sha256": "324d97b0c1a36c95c4f623e0fa1563a7a04e10d6e7ad560dc4d7f1d4bef3b17c"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D9b/estaciones_hidrometricas_sih.csv"
+    },
+    {
+      "id": "D10",
+      "scope": "extension_manifest",
+      "family": "Academic",
+      "name": "Hidro-MX v2026.10 (HidroXAI-MX)",
+      "publisher": "Sanchez-Ruiz et al. (2026), Zenodo, derivado de CONAGUA-SIH",
+      "original_filename": "HidroXAI-MX-v2026.10.zip",
+      "expected": {
+        "bytes": 883084257,
+        "sha256": "ff8944c00c544f5aee1f794d3a49ac16310d906ec879bf7e3cd34fefbcc8c4f8",
+        "md5": "6d0cee07231a747aa0ea307c828ab99d"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": "10.5281/zenodo.23150556",
+      "citation": {
+        "title": "Hidro-MX v2026.10 (HidroXAI-MX)",
+        "creator_or_publisher": "Sanchez-Ruiz et al. (2026), Zenodo, derivado de CONAGUA-SIH",
+        "doi": "10.5281/zenodo.23150556"
+      },
+      "download_url": "https://zenodo.org/api/records/23150556/files/HidroXAI-MX-v2026.10.zip/content",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.23150556",
+          "role": "documented_doi_resolver",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D10"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.001",
+            "bytes": 20000000,
+            "sha256": "ac534b0e5d2297a2d8764818f78b94b5132fedab52768465b108f1a460cb0850"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.002",
+            "bytes": 20000000,
+            "sha256": "b510dfc299eec5ec57658b3ddd49bab37ab7c3e1a108fa08cf45d21ecf53d1a6"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.003",
+            "bytes": 20000000,
+            "sha256": "00655267ded6f2c84fea1a9ec4d268d08b98505d267855c635be6273e7b5ad23"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.004",
+            "bytes": 20000000,
+            "sha256": "3b2d0200b9237dc54da6d0c824775f0bbb92a2e1f0ba4d7fdecb271bac779166"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.005",
+            "bytes": 20000000,
+            "sha256": "93f976b2cc1874e15b51be8a4aab53bd11461fa4b7190f08aaa2e3c9d3127706"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.006",
+            "bytes": 20000000,
+            "sha256": "de6d5dae093e17b7fa4b70955bf294b455076f4464bb8c9ba946fd1043ab5739"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.007",
+            "bytes": 20000000,
+            "sha256": "9e27cfac9a8a434843486fd5da70c113b68f7b37d8963ac748c9f1e711fc64cb"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.008",
+            "bytes": 20000000,
+            "sha256": "27f7faf21ad0a09127774b013f35d07c985ca58e946f5ff5d513618d082413a2"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.009",
+            "bytes": 20000000,
+            "sha256": "d6e582c068f104cd2835ca977ee563a8ffdfdc612a6ddc36d330fe1d83f1643b"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.010",
+            "bytes": 20000000,
+            "sha256": "c660b012363de6321d803b0de7e67e55cfcc68ef23616f94a8ab6ee597231a2a"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.011",
+            "bytes": 20000000,
+            "sha256": "9c5187a9af80a2dab9c287eddcc281c86dcf1eb725c64cfe6a9ec167b642b3bd"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.012",
+            "bytes": 20000000,
+            "sha256": "17f12b5eae2f5d3c6201b0ba58e9e729c801e42e3d12658d2d78e70bd5692297"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.013",
+            "bytes": 20000000,
+            "sha256": "99a7bf0c49d5ea71e6710a92a086771829a2b1329c2acbd4b9be7223858fce54"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.014",
+            "bytes": 20000000,
+            "sha256": "f4a9515e8167031a91acf10e1df5fa870bd852e76a38ea15b18c3a9dfab606c0"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.015",
+            "bytes": 20000000,
+            "sha256": "576f0a0fc0db5aeec3c203975d860b6d7e83e7b7506c7ff555f63e168d7a3696"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.016",
+            "bytes": 20000000,
+            "sha256": "bf1fccff1fb091574e388dcc92ad2497fb2d61f9c2af417ef1893116fbe6a827"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.017",
+            "bytes": 20000000,
+            "sha256": "952b944338a46769936d2f36cd9e4450924827d2ff144c5afffc5dd59b3a4d96"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.018",
+            "bytes": 20000000,
+            "sha256": "3cd7b3de24d63ae5fad26fc416eb7b1e58b6f5e4139478c86ffc8e0626b5bb56"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.019",
+            "bytes": 20000000,
+            "sha256": "161eaf8d7f604005b3b8b956b47e550308b14d6de0646bc69318047b164c23b3"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.020",
+            "bytes": 20000000,
+            "sha256": "3e07d3634ccc8782f4b639ba54e88d578fdaf5b0033c0fac0b8574a74b0975b0"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.021",
+            "bytes": 20000000,
+            "sha256": "31a28c9e8d8859eb8589e2dfac4abdaa7d7d87e44ef047577ec674a8fa7844a4"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.022",
+            "bytes": 20000000,
+            "sha256": "f23f61c3c9bd530f291adee1466c36b911469d0f46dabfca686cb9515433c19d"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.023",
+            "bytes": 20000000,
+            "sha256": "b55ec8e0afb7fc6ac296fd588b8fd135b58f2c24282b8ba1df9b62e1de69bafa"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.024",
+            "bytes": 20000000,
+            "sha256": "66a30c22a9ea05ed53dc3ca19996a32e3596dd295e63ae216090dfd522202a14"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.025",
+            "bytes": 20000000,
+            "sha256": "7e066e6b1a05fc1b4033642394d8425d32b7a65effc06b13024daf3b904bd2b0"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.026",
+            "bytes": 20000000,
+            "sha256": "dc29aee68c8f27c720920ba7d7a3d3afc737dfa2c9d99059aaf973b0ecc65579"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.027",
+            "bytes": 20000000,
+            "sha256": "eca5c8e4030055ba38ae151ea32d541b96223884bb275ed0d79a01d60482bb43"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.028",
+            "bytes": 20000000,
+            "sha256": "20bfae2edefad7935d48044bdc13fcfc589bebc32617704ad032f6abb35d4f37"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.029",
+            "bytes": 20000000,
+            "sha256": "d9c6688ad5713715a7cb74a77f76f46190331ca9d26319680658db720ccc7522"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.030",
+            "bytes": 20000000,
+            "sha256": "bfefc1cb5af4ba5ce95b29fe5b9b7f1691ad72ba9e6a15a0144bce4f20bc8da5"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.031",
+            "bytes": 20000000,
+            "sha256": "92d007001f31789c7a3752aea84c49fda3665dafb5b06d89c7fe8a45966468fb"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.032",
+            "bytes": 20000000,
+            "sha256": "2166d1ebbf1c4de91c5b1251edf736c7131faa1c845a489c4443e64444647fb9"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.033",
+            "bytes": 20000000,
+            "sha256": "82a5ac828fe17c1f618d6f861a3a6c296a20c5006bda090b0ea387006c343acb"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.034",
+            "bytes": 20000000,
+            "sha256": "264d4c11fb00d32d20971f26138ebccaaa63954d5dfae30ca236c03ba3315de8"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.035",
+            "bytes": 20000000,
+            "sha256": "7493777cbfac4ec8a338d6cda5d932ec8f06a55b97abed36bdacc9adff167b0d"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.036",
+            "bytes": 20000000,
+            "sha256": "c2741b8ad650ded53f2c4c0d02f673ecb8e8356269871045ab0fa46bbb771673"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.037",
+            "bytes": 20000000,
+            "sha256": "bbf9cd7011a78ada47b101545cd87963cf66e0ea2b874579ec03c5c396f44afd"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.038",
+            "bytes": 20000000,
+            "sha256": "23b3c0ac91442dfe29106ae0a60ef32a16c347d891dfa56e81f3e08ed17746fe"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.039",
+            "bytes": 20000000,
+            "sha256": "987726c09164f051dc29472ba74cccdcba8150ce7a6c8b414a9947d1f4a8c4b1"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.040",
+            "bytes": 20000000,
+            "sha256": "11f8fe21605aa3b93b88d9f3950bd292ce7331f24bf4b46a8b7cac7a8a33899b"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.041",
+            "bytes": 20000000,
+            "sha256": "4909405eb70ad9bc01e9e6d4d2f8cd41239831e08378148771c6c937df12fd3f"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.042",
+            "bytes": 20000000,
+            "sha256": "c7681426fcaee6f792e2967f3c4a51433cb368ec32250678de5b0d37efd4c27e"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.043",
+            "bytes": 20000000,
+            "sha256": "b30b5b59dc8fbe67120ae6672c299f8b24039d7d68b78df0dc30ecbc909c1415"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.044",
+            "bytes": 20000000,
+            "sha256": "4b220fc8cdca51b8061761bb28e0b9044964ada5c3311f74eef7467f8ab13fc9"
+          },
+          {
+            "path": "originales/D10/HidroXAI-MX-v2026.10.zip.045",
+            "bytes": 3084257,
+            "sha256": "15de1bb345c4e09fb0db2e6959df2099ddac194815c9cc9a2f834a8bd8c57f87"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D10/HidroXAI-MX-v2026.10.zip"
+    },
+    {
+      "id": "D11",
+      "scope": "extension_manifest",
+      "family": "CONAPO",
+      "name": "Indice de marginacion municipal 2020",
+      "publisher": "CONAPO",
+      "original_filename": "imm_2020-3.csv",
+      "expected": {
+        "bytes": 559021,
+        "sha256": "9725794248f2c2ae86a15580f2b1130868e307837e9b86b4900d8fa562ca669e",
+        "md5": "6739513172dccf34dfff4d7d9e4a6041"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Indice de marginacion municipal 2020",
+        "creator_or_publisher": "CONAPO",
+        "doi": null
+      },
+      "download_url": "https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24/resource/551d8f48-5d0c-4d11-964a-e2911f732615/download/imm_2020-3.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D11"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D11/imm_2020-3.csv",
+            "bytes": 559021,
+            "sha256": "9725794248f2c2ae86a15580f2b1130868e307837e9b86b4900d8fa562ca669e"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D11/imm_2020-3.csv"
+    },
+    {
+      "id": "D12",
+      "scope": "extension_manifest",
+      "family": "CONAPO",
+      "name": "Indice de marginacion urbana por colonia 2020",
+      "publisher": "CONAPO",
+      "original_filename": "imuc_2020.csv",
+      "expected": {
+        "bytes": 28545658,
+        "sha256": "8cb5cf6fdc9ec1d62ab4b0cbf649924ebd2fd1dbba051495b7ac6deed78623dd",
+        "md5": "6894f31620905a02ca612356e774bc90"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Indice de marginacion urbana por colonia 2020",
+        "creator_or_publisher": "CONAPO",
+        "doi": null
+      },
+      "download_url": "https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24/resource/faabdc7b-dc41-4df3-9664-ee14e805f0df/download/imuc_2020.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D12"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/D12/imuc_2020.csv.001",
+            "bytes": 20000000,
+            "sha256": "25a6796122e4cc61b846741a68e7f33056bc00e4caf28f9615e7e612c6c7634c"
+          },
+          {
+            "path": "originales/D12/imuc_2020.csv.002",
+            "bytes": 8545658,
+            "sha256": "bb3da2f73abe641e2aab5c35aa2ab9e4b948e9138ecf3ccae7a1e9573984c269"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D12/imuc_2020.csv"
+    },
+    {
+      "id": "D13",
+      "scope": "extension_manifest",
+      "family": "CONAPO",
+      "name": "Proyecciones de poblacion, indicadores demograficos por municipio",
+      "publisher": "CONAPO",
+      "original_filename": "pobproy_inddemo.csv",
+      "expected": {
+        "bytes": 23415963,
+        "sha256": "64903f768b4bed43672131f8179e14b6ce3b8d7a1671c51de7872a51ad26341e",
+        "md5": "87127b2a48bdee7e3c1d67a912d36d95"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Proyecciones de poblacion, indicadores demograficos por municipio",
+        "creator_or_publisher": "CONAPO",
+        "doi": null
+      },
+      "download_url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D13"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/D13/pobproy_inddemo.csv.001",
+            "bytes": 20000000,
+            "sha256": "feab4101d414c09226dfaf27fa4408bb448793dcaf368ff05c9a3639523cd5c3"
+          },
+          {
+            "path": "originales/D13/pobproy_inddemo.csv.002",
+            "bytes": 3415963,
+            "sha256": "7b3e16af0cfcc21adc17e1497258b8a17ffa882fc21801345d9dd36f52cc999b"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D13/pobproy_inddemo.csv"
+    },
+    {
+      "id": "D14VBRMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Valle de Bravo",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/VBRMX.csv",
+      "expected": {
+        "bytes": 822149,
+        "sha256": "a1a2b2550a54d0baf8d4c5978f96d63643556a24f7c3e434885fd374de720784",
+        "md5": "6d99af88bff99298c2e398d0a9d089f2"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Valle de Bravo",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/VBRMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14VBRMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14VBRMX/VBRMX.csv",
+            "bytes": 822149,
+            "sha256": "a1a2b2550a54d0baf8d4c5978f96d63643556a24f7c3e434885fd374de720784"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/VBRMX.csv"
+    },
+    {
+      "id": "D14VVCMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Villa Victoria",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/VVCMX.csv",
+      "expected": {
+        "bytes": 971718,
+        "sha256": "8cbf1ecb15d0d48d294e64bfed61e9ba54d8f9d205ce8f4adbfcf6c1a27e0d3c",
+        "md5": "da0033867e0cec73854fba10863f5dce"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Villa Victoria",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/VVCMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14VVCMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14VVCMX/VVCMX.csv",
+            "bytes": 971718,
+            "sha256": "8cbf1ecb15d0d48d294e64bfed61e9ba54d8f9d205ce8f4adbfcf6c1a27e0d3c"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/VVCMX.csv"
+    },
+    {
+      "id": "D14DBOMC",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa El Bosque",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/DBOMC.csv",
+      "expected": {
+        "bytes": 845131,
+        "sha256": "2eb1a4c21f4ecd1542c30785c1a0e26fbf0fd6abe52111744942420b8231e51a",
+        "md5": "9ad7ae00a1fdce27e5e9bf518c583896"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa El Bosque",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/DBOMC.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14DBOMC"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14DBOMC/DBOMC.csv",
+            "bytes": 845131,
+            "sha256": "2eb1a4c21f4ecd1542c30785c1a0e26fbf0fd6abe52111744942420b8231e51a"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/DBOMC.csv"
+    },
+    {
+      "id": "D14PMDMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Madin",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/PMDMX.csv",
+      "expected": {
+        "bytes": 897068,
+        "sha256": "b86983ffe6800c01dc221db6bf07bada497cd1be62b78cf91df2e4a3edfa580d",
+        "md5": "8346bee70cb73df64e50b80a4d63ec94"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Madin",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/PMDMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14PMDMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14PMDMX/PMDMX.csv",
+            "bytes": 897068,
+            "sha256": "b86983ffe6800c01dc221db6bf07bada497cd1be62b78cf91df2e4a3edfa580d"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/PMDMX.csv"
+    },
+    {
+      "id": "D14GDLMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Sierra de Guadalupe",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/GDLMX.csv",
+      "expected": {
+        "bytes": 706663,
+        "sha256": "a4fb57b75972e4cfeba62a319c701b5056bef61b9fd216c1641bcd215a8fe359",
+        "md5": "d4284252d643dbbe61a236b874e03845"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Sierra de Guadalupe",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/GDLMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14GDLMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14GDLMX/GDLMX.csv",
+            "bytes": 706663,
+            "sha256": "a4fb57b75972e4cfeba62a319c701b5056bef61b9fd216c1641bcd215a8fe359"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/GDLMX.csv"
+    },
+    {
+      "id": "D14CNPMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa La Concepcion",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/CNPMX.csv",
+      "expected": {
+        "bytes": 866115,
+        "sha256": "df1e20d02042cec518807a56d96f455b84c89258bd008e45ff41a0e3f6c7c253",
+        "md5": "5f90d7caa961a3b0a1491112f868c9fc"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa La Concepcion",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/CNPMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14CNPMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14CNPMX/CNPMX.csv",
+            "bytes": 866115,
+            "sha256": "df1e20d02042cec518807a56d96f455b84c89258bd008e45ff41a0e3f6c7c253"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/CNPMX.csv"
+    },
+    {
+      "id": "D14TXMHD",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Taxhimay",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/TXMHD.csv",
+      "expected": {
+        "bytes": 757623,
+        "sha256": "30cc152c1968d53d15d7f6b3097f2f78d30eb553bb74d1c280b889b30b1bb49b",
+        "md5": "4609af876cbbba314beef283245021cf"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Taxhimay",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/TXMHD.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14TXMHD"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14TXMHD/TXMHD.csv",
+            "bytes": 757623,
+            "sha256": "30cc152c1968d53d15d7f6b3097f2f78d30eb553bb74d1c280b889b30b1bb49b"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/TXMHD.csv"
+    },
+    {
+      "id": "D14DNXMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Danxho",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/DNXMX.csv",
+      "expected": {
+        "bytes": 1152637,
+        "sha256": "9020a50c57733db344c7cb120a550095151b59310b05a598feb4eee8b77e0087",
+        "md5": "ec9b1db57641dfeeeb039db6f68bb4b8"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Danxho",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/DNXMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14DNXMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14DNXMX/DNXMX.csv",
+            "bytes": 1152637,
+            "sha256": "9020a50c57733db344c7cb120a550095151b59310b05a598feb4eee8b77e0087"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/DNXMX.csv"
+    },
+    {
+      "id": "D14HPNMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Huapango",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/HPNMX.csv",
+      "expected": {
+        "bytes": 1118398,
+        "sha256": "7d1cb49bbf43745a9f91bec41dca4442da0eb9aa803431478b1a8a9832c31302",
+        "md5": "dbf987a2a3e918dcf8dd4e472bf06e54"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Huapango",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/HPNMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14HPNMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14HPNMX/HPNMX.csv",
+            "bytes": 1118398,
+            "sha256": "7d1cb49bbf43745a9f91bec41dca4442da0eb9aa803431478b1a8a9832c31302"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/HPNMX.csv"
+    },
+    {
+      "id": "D14PMNMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa El Molino",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/PMNMX.csv",
+      "expected": {
+        "bytes": 1127739,
+        "sha256": "616280cdd4d4216e3bd062f0b1638291154d66c329ee7513df1f6419f7b762bb",
+        "md5": "64ef26ea6d9ee30a3eac9131ab46a467"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa El Molino",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/PMNMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14PMNMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14PMNMX/PMNMX.csv",
+            "bytes": 1127739,
+            "sha256": "616280cdd4d4216e3bd062f0b1638291154d66c329ee7513df1f6419f7b762bb"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/PMNMX.csv"
+    },
+    {
+      "id": "D14PNDMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Nado",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/PNDMX.csv",
+      "expected": {
+        "bytes": 775185,
+        "sha256": "8a89e8d012bd31414c42606d0251eff144a676a2a01d154197ee257b1747da47",
+        "md5": "43e5908ef16bd7b42b09234b2e8860af"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Nado",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/PNDMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14PNDMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14PNDMX/PNDMX.csv",
+            "bytes": 775185,
+            "sha256": "8a89e8d012bd31414c42606d0251eff144a676a2a01d154197ee257b1747da47"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/PNDMX.csv"
+    },
+    {
+      "id": "D14PIRMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Ignacio Ramirez",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/PIRMX.csv",
+      "expected": {
+        "bytes": 1004150,
+        "sha256": "0a94ec58c73adf2aa232ea88c6f60661d51aee94ed39f2db18466c42fcaed2fc",
+        "md5": "290e18bb97857d2a328f7abc5e0a7025"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Ignacio Ramirez",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/PIRMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14PIRMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14PIRMX/PIRMX.csv",
+            "bytes": 1004150,
+            "sha256": "0a94ec58c73adf2aa232ea88c6f60661d51aee94ed39f2db18466c42fcaed2fc"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/PIRMX.csv"
+    },
+    {
+      "id": "D14PFBMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Francisco Jose Trinidad Fabela",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/PFBMX.csv",
+      "expected": {
+        "bytes": 913342,
+        "sha256": "fc81cc61176253e21dd2a681902263727a2830ccbcd4c230d1feffd8cbfcae4b",
+        "md5": "4a9fbd807570af9e165286c698d959f3"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Francisco Jose Trinidad Fabela",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/PFBMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14PFBMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14PFBMX/PFBMX.csv",
+            "bytes": 913342,
+            "sha256": "fc81cc61176253e21dd2a681902263727a2830ccbcd4c230d1feffd8cbfcae4b"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/PFBMX.csv"
+    },
+    {
+      "id": "D14SBBMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa Jose Antonio Alzate",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/SBBMX.csv",
+      "expected": {
+        "bytes": 1007671,
+        "sha256": "0eb3f4873cc89592dd82e1f4b622236dea81833a806ee9851be96f21a38d70d9",
+        "md5": "6b58fcc9f0695c0a8ecd15c30a036f61"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa Jose Antonio Alzate",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/SBBMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14SBBMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14SBBMX/SBBMX.csv",
+            "bytes": 1007671,
+            "sha256": "0eb3f4873cc89592dd82e1f4b622236dea81833a806ee9851be96f21a38d70d9"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/SBBMX.csv"
+    },
+    {
+      "id": "D14TPTMX",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Serie diaria de la presa San Andres Tepetitlan",
+      "publisher": "CONAGUA, SIH",
+      "original_filename": "presas/TPTMX.csv",
+      "expected": {
+        "bytes": 1014367,
+        "sha256": "10a88c377eb385f92fdce803b2fe44396fe7d5c56efc3e9b48fcbb860566beb1",
+        "md5": "c39eb1df76bcd0a1c61d6f9615673e03"
+      },
+      "licence": "Terminos de Libre Uso MX; citar CONAGUA, Sistema de Informacion Hidrologica",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Serie diaria de la presa San Andres Tepetitlan",
+        "creator_or_publisher": "CONAGUA, SIH",
+        "doi": null
+      },
+      "download_url": "https://sih.conagua.gob.mx/basedatos/Presas/TPTMX.csv",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D14TPTMX"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D14TPTMX/TPTMX.csv",
+            "bytes": 1014367,
+            "sha256": "10a88c377eb385f92fdce803b2fe44396fe7d5c56efc3e9b48fcbb860566beb1"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/snapshots/presas/TPTMX.csv"
+    },
+    {
+      "id": "D15",
+      "scope": "extension_manifest",
+      "family": "CONAPO",
+      "name": "Indice de marginacion urbana por colonia 2020, poligonos",
+      "publisher": "CONAPO",
+      "original_filename": "colonias_imc2020_shp.zip",
+      "expected": {
+        "bytes": 47661321,
+        "sha256": "a4d56719c10c447ea5094ff1c35564b76d47705c35ad5c559d7ee589e94f06e2",
+        "md5": "fe4351153253f9e7dae78d1067172452"
+      },
+      "licence": "CC BY 4.0",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Indice de marginacion urbana por colonia 2020, poligonos",
+        "creator_or_publisher": "CONAPO",
+        "doi": null
+      },
+      "download_url": "https://repodatos.atdt.gob.mx/CONAPO/indices_marginacion/colonias_imc2020_shp.zip",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D15"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": true,
+        "files": [
+          {
+            "path": "originales/D15/colonias_imc2020_shp.zip.001",
+            "bytes": 20000000,
+            "sha256": "7371427f7fd76386cb5ccbc89dc6e2428082993572b2739035e588647f41ca51"
+          },
+          {
+            "path": "originales/D15/colonias_imc2020_shp.zip.002",
+            "bytes": 20000000,
+            "sha256": "3eb6ceeb8a4035942fbff0a798abd5ad7d3c3d3897e236c278d7641df2ce0464"
+          },
+          {
+            "path": "originales/D15/colonias_imc2020_shp.zip.003",
+            "bytes": 7661321,
+            "sha256": "7162757d9a9c0ff10e6d584832be2bd30aec47eceac466260ace8a3fe2a9b659"
+          }
+        ],
+        "existing_part_bytes_reused": true
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D15/colonias_imc2020_shp.zip"
+    },
+    {
+      "id": "D16a",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Calidad del agua subterranea por sitio, 2012-2025",
+      "publisher": "CONAGUA, RENAMECA",
+      "original_filename": "Calidad_del_Agua_Subterr_nea_p_2012-2025.xlsx",
+      "expected": {
+        "bytes": 798796,
+        "sha256": "73bea46df52d97de2a7e39560f53a790c8bf67523a5630bd9cf38ea165f2a3fe",
+        "md5": "16616c15cef5efe6bc7854c450e99a73"
+      },
+      "licence": "Datos del Gobierno Federal; licencia no indicada en la pagina",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Calidad del agua subterranea por sitio, 2012-2025",
+        "creator_or_publisher": "CONAGUA, RENAMECA",
+        "doi": null
+      },
+      "download_url": "https://www.gob.mx/cms/uploads/attachment/file/1084131/Calidad_del_Agua_Subterr_nea_p_2012-2025.xlsx",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.gob.mx/conagua/es/articulos/indicadores-de-calidad-del-agua?idiom=es",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D16a"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D16a/Calidad_del_Agua_Subterr_nea_p_2012-2025.xlsx",
+            "bytes": 798796,
+            "sha256": "73bea46df52d97de2a7e39560f53a790c8bf67523a5630bd9cf38ea165f2a3fe"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D16a/Calidad_del_Agua_Subterr_nea_p_2012-2025.xlsx"
+    },
+    {
+      "id": "D16b",
+      "scope": "extension_manifest",
+      "family": "CONAGUA / SMN",
+      "name": "Calidad del agua superficial por sitio, 2012-2025",
+      "publisher": "CONAGUA, RENAMECA",
+      "original_filename": "Calidad_del_Agua_Superficial_p_2012-2025.xlsx",
+      "expected": {
+        "bytes": 1378410,
+        "sha256": "7b28dfa787eb5a9ac90e094d4792092d359163e40333986f566554155d5a483b",
+        "md5": "f319971b841c3f707aa676892671dc53"
+      },
+      "licence": "Datos del Gobierno Federal; licencia no indicada en la pagina",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "Calidad del agua superficial por sitio, 2012-2025",
+        "creator_or_publisher": "CONAGUA, RENAMECA",
+        "doi": null
+      },
+      "download_url": "https://www.gob.mx/cms/uploads/attachment/file/1084133/Calidad_del_Agua_Superficial_p_2012-2025.xlsx",
+      "download_role": "documented_download",
+      "landing_pages": [
+        {
+          "url": "https://www.gob.mx/conagua/es/articulos/indicadores-de-calidad-del-agua?idiom=es",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "D16b"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/D16b/Calidad_del_Agua_Superficial_p_2012-2025.xlsx",
+            "bytes": 1378410,
+            "sha256": "7b28dfa787eb5a9ac90e094d4792092d359163e40333986f566554155d5a483b"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse_ampliado/datos_crudos/D16b/Calidad_del_Agua_Superficial_p_2012-2025.xlsx"
+    },
+    {
+      "id": "ORIGINAL_SACMEX_2019",
+      "scope": "original_study",
+      "family": "SACMEX_ADIP",
+      "name": "SACMEX billed water consumption, first semester 2019",
+      "publisher": "SACMEX / Gobierno de la Ciudad de Mexico",
+      "original_filename": "consumo_agua_historico_2019.csv",
+      "expected": {
+        "bytes": 10468723,
+        "sha256": "12aede58872a50856405ea24b6933e4b29b20d1de0e32d7463fabf855259b31d",
+        "md5": "41495b035b8b85c0c90e6a179ade5223"
+      },
+      "licence": null,
+      "licence_note": "Repository credit names SACMEX; no explicit original CSV license was found in warehouse/README.md. Do not infer the repository software license.",
+      "doi": null,
+      "citation": {
+        "title": "SACMEX billed water consumption, first semester 2019",
+        "creator_or_publisher": "SACMEX / Gobierno de la Ciudad de Mexico",
+        "doi": null
+      },
+      "download_url": null,
+      "download_role": null,
+      "landing_pages": [
+        {
+          "url": "https://datos.cdmx.gob.mx/dataset/consumo-agua",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": null,
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "ORIGINAL_SACMEX_2019"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/ORIGINAL_SACMEX_2019/consumo_agua_historico_2019.csv",
+            "bytes": 10468723,
+            "sha256": "12aede58872a50856405ea24b6933e4b29b20d1de0e32d7463fabf855259b31d"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse/data/consumo_agua_historico_2019.csv"
+    },
+    {
+      "id": "ORIGINAL_OPENMETEO_2019",
+      "scope": "original_study",
+      "family": "OpenMeteo",
+      "name": "Open-Meteo hourly weather, first semester 2019, 19.44 N / 99.11 W / 2233 m",
+      "publisher": "Open-Meteo",
+      "original_filename": "open-meteo-19.44N99.11W2233m.csv",
+      "expected": {
+        "bytes": 129978,
+        "sha256": "3f7e6523150aae80e6fe88dfba3697b277dae72c255e4fcaeef17cc22a471933",
+        "md5": "956f61ace79e87d275eab68205ea7571"
+      },
+      "licence": null,
+      "licence_note": "Repository credits Open-Meteo but does not pin retrieval request or license alongside this CSV; source page requires archival confirmation.",
+      "doi": null,
+      "citation": {
+        "title": "Open-Meteo hourly weather, first semester 2019, 19.44 N / 99.11 W / 2233 m",
+        "creator_or_publisher": "Open-Meteo",
+        "doi": null
+      },
+      "download_url": null,
+      "download_role": null,
+      "landing_pages": [
+        {
+          "url": "https://open-meteo.com/",
+          "role": "landing",
+          "documented_verbatim": true,
+          "deduced_unverified": false
+        }
+      ],
+      "provenance_note": "No exact original retrieval URL is recorded in inspected repo references; do not invent an archive API request or replace retained bytes.",
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "ORIGINAL_OPENMETEO_2019"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/ORIGINAL_OPENMETEO_2019/open-meteo-19.44N99.11W2233m.csv",
+            "bytes": 129978,
+            "sha256": "3f7e6523150aae80e6fe88dfba3697b277dae72c255e4fcaeef17cc22a471933"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse/data/open-meteo-19.44N99.11W2233m.csv"
+    },
+    {
+      "id": "AUX_ITER_CDMX_2020",
+      "scope": "auxiliary_extract",
+      "family": "INEGI",
+      "name": "INEGI ITER 2020 CDMX: 17 unmodified rows where LOC=0000 (city plus 16 boroughs)",
+      "publisher": "INEGI",
+      "original_filename": "iter_09_cpv2020_alcaldias.csv",
+      "expected": {
+        "bytes": 31782,
+        "sha256": "31c0f13f2935b79b5369b5a6ee93165d4610feb87e7b5320fd3e1542c32b47a1",
+        "md5": "fcc04ab406e6659c9a2f5708547e935d"
+      },
+      "licence": "Terminos de Libre Uso del INEGI",
+      "licence_note": null,
+      "doi": null,
+      "citation": {
+        "title": "INEGI ITER 2020 CDMX: 17 unmodified rows where LOC=0000 (city plus 16 boroughs)",
+        "creator_or_publisher": "INEGI",
+        "doi": null
+      },
+      "download_url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_09_cpv2020_csv.zip",
+      "download_role": "documented_upstream_download",
+      "landing_pages": [
+        {
+          "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+          "role": "landing",
+          "documented_verbatim": false,
+          "deduced_unverified": true
+        }
+      ],
+      "provenance_note": "Auxiliary extract, not a third original-study input or a 63rd extension entry. Extraction criterion documented by scripts/per_capita_alcaldia.py: LOC=0000 (city plus 16 boroughs).",
+      "web_evidence": {
+        "source_pages_file": "procedencia_web.json",
+        "wayback_file": "wayback.json",
+        "join_key": "AUX_ITER_CDMX_2020"
+      },
+      "availability": "preserved",
+      "storage": {
+        "split": false,
+        "files": [
+          {
+            "path": "originales/AUX_ITER_CDMX_2020/iter_09_cpv2020_alcaldias.csv",
+            "bytes": 31782,
+            "sha256": "31c0f13f2935b79b5369b5a6ee93165d4610feb87e7b5320fd3e1542c32b47a1"
+          }
+        ],
+        "existing_part_bytes_reused": false
+      },
+      "restore_path": "warehouse/data/iter_09_cpv2020_alcaldias.csv"
+    }
+  ]
+}

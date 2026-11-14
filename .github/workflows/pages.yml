@@ -24,7 +24,7 @@ jobs:
       - name: Prepare the tracked public site
         run: |
           mkdir _site
-          git archive HEAD | tar -x -C _site
+          git archive HEAD | tar --exclude='corpus' --exclude='corpus/*' -x -C _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "capture_count": 29,
+  "captures": [
+    {
+      "id": "openmeteo",
+      "path": "capturas/openmeteo.jpg",
+      "bytes": 146574,
+      "sha256": "20f9d40fae5620a75eae6541bdd49095a11df7dbaca6ea8e1c0354181a9f57a1",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "sacmex_consumo",
+      "path": "capturas/sacmex_consumo.jpg",
+      "bytes": 107700,
+      "sha256": "d80998d07c0905a74e821a904a567f50a247fa439a787ed634ad1a3d27c24217",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "inegi_cpv2020",
+      "path": "capturas/inegi_cpv2020.jpg",
+      "bytes": 111844,
+      "sha256": "0a5e99773e091db69e502373e07c0278180c4bace3bb0200b8c3e5aeae2980c9",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "inegi_marco2020",
+      "path": "capturas/inegi_marco2020.jpg",
+      "bytes": 15061,
+      "sha256": "f22ebf8875c584e69a8f6d4c8a9eb91c6ef9a66e52789378b59f843910ad2983",
+      "width": 1699,
+      "height": 854
+    },
+    {
+      "id": "inegi_ce2019",
+      "path": "capturas/inegi_ce2019.jpg",
+      "bytes": 82072,
+      "sha256": "1bfa207e4307243908a97a9ac2dadcc4135dfa2c54f3bfc16172b60bc2ddb7bd",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "inegi_denue",
+      "path": "capturas/inegi_denue.jpg",
+      "bytes": 50048,
+      "sha256": "7b48a008f196be24c6a175655555db3d74769168b495db72f3089c49342bd2dc",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "inegi_cngmd2019",
+      "path": "capturas/inegi_cngmd2019.jpg",
+      "bytes": 87363,
+      "sha256": "236f7ba26f63ffdcb7918b062d5e3631c766cb6f20648a80e04fd2df7a382b7a",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "inegi_cngmd2021",
+      "path": "capturas/inegi_cngmd2021.jpg",
+      "bytes": 139658,
+      "sha256": "dbc518ea5d3cb871567551df0398f967aaf49a02c5a2f4699415c6fcb6b219b7",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "conapo_delimitacion",
+      "path": "capturas/conapo_delimitacion.jpg",
+      "bytes": 161540,
+      "sha256": "e3eab1cefbe9a3d3a1d712eed27da1dbbb847be221b78d3911fbf1eaa1c76bf2",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "conapo_marginacion",
+      "path": "capturas/conapo_marginacion.jpg",
+      "bytes": 163063,
+      "sha256": "8b93b63961fb8067795cb454a5c8784d3eadb161ada01ff46890330f3978ebdf",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "conapo_proyecciones",
+      "path": "capturas/conapo_proyecciones.jpg",
+      "bytes": 101448,
+      "sha256": "16736f9cb0182993f196dddca04aa8f8e33bc639a930ad215465e15185b9ed2c",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "conagua_sih",
+      "path": "capturas/conagua_sih.jpg",
+      "bytes": 73626,
+      "sha256": "bb934077eeb2ab2abb9f9a86f33e9f094e8d6c83ebcac155ac10124b26d97d25",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "conagua_calidad",
+      "path": "capturas/conagua_calidad.jpg",
+      "bytes": 83262,
+      "sha256": "bc194a1d36734ef6eebcc6f3efeedbd030af0badbe8066832c46f107dee898ec",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "smn_sequia",
+      "path": "capturas/smn_sequia.jpg",
+      "bytes": 60073,
+      "sha256": "8ae8d75d12a973c70dbcf9908581f9196d5fb5f4d9b3e21a73b349e1f8085892",
+      "width": 1669,
+      "height": 839
+    },
+    {
+      "id": "mexhires_tmin",
+      "path": "capturas/mexhires_tmin.jpg",
+      "bytes": 101966,
+      "sha256": "00772c5313164e9ad058259978ffb0877a105a56a7e9982063e628e21e9954d6",
+      "width": 1699,
+      "height": 854
+    },
+    {
+      "id": "mexhires_tmedia",
+      "path": "capturas/mexhires_tmedia.jpg",
+      "bytes": 107745,
+      "sha256": "7c055a03662bb3e22b1951895f3c9be70b563c1f6265bad43c713bd452ee5373",
+      "width": 1699,
+      "height": 854
+    },
+    {
+      "id": "mexhires_precipitacion",
+      "path": "capturas/mexhires_precipitacion.jpg",
+      "bytes": 118110,
+      "sha256": "8b1058c3fd856a33a2902f94317147dbb9b307a5a4db61bc192da450636ea7ac",
+      "width": 1699,
+      "height": 854
+    },
+    {
+      "id": "mexhires_tmax",
+      "path": "capturas/mexhires_tmax.jpg",
+      "bytes": 107524,
+      "sha256": "4b552e1e66a65818d8bca7208e615caa82a15df269597752d97fcf3fb4d240c8",
+      "width": 1699,
+      "height": 854
+    },
+    {
+      "id": "insar_virginiatech",
+      "path": "capturas/insar_virginiatech.jpg",
+      "bytes": 123968,
+      "sha256": "2f537516c5ce18d3a4ea6102ff18801b56c0c1e0524baea60f634d575b147a93",
+      "width": 1699,
+      "height": 854
+    },
+    {
+      "id": "hidromx_zenodo",
+      "path": "capturas/hidromx_zenodo.jpg",
+      "bytes": 239053,
+      "sha256": "1abacc7329de848fa7d8cb32518666e43ed91b14b270c7a5a890a68aaaf94ec3",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "sacmex_reportes",
+      "path": "capturas/sacmex_reportes.jpg",
+      "bytes": 105559,
+      "sha256": "759f5a2cb5454e6d7a475b827b337a26ffadcb0df9eb6f0b3df9095c5397683e",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "huerta_pdf_preview",
+      "path": "capturas/huerta_pdf_preview.jpg",
+      "bytes": 389046,
+      "sha256": "2a3a52544a7c4f3851918173efd396ce65c17b640ea35aadb14f645675d84e06",
+      "width": 1020,
+      "height": 1320
+    },
+    {
+      "id": "wayback_sacmex",
+      "path": "capturas/wayback_sacmex.jpg",
+      "bytes": 122871,
+      "sha256": "a2fe234176ecb174028f429a7b826149a1cd6e81666c22bed4e7d898902baacc",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "conagua_sih_portal",
+      "path": "capturas/conagua_sih_portal.jpg",
+      "bytes": 91224,
+      "sha256": "64fa1ec2ffbe385d0b10dd2d2eb3228332f033a9be29591d9c96110df5dcd14c",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "reportes_mirror",
+      "path": "capturas/reportes_mirror.jpg",
+      "bytes": 75780,
+      "sha256": "b4d0dc4e7f997d866af658b5195fea389f21e5d44787ea5be0cad0c6be92dcd0",
+      "width": 1531,
+      "height": 769
+    },
+    {
+      "id": "osm_attribution",
+      "path": "capturas/osm_attribution.jpg",
+      "bytes": 135629,
+      "sha256": "f025bc34da0fa9fffaae3426d58af5775f78e87b7dba0909f5c0e6f2f6a0fc0e",
+      "width": 1684,
+      "height": 846
+    },
+    {
+      "id": "conagua_pronacose",
+      "path": "capturas/conagua_pronacose.jpg",
+      "bytes": 167982,
+      "sha256": "edb306057aa162da672de4bbac1597a6510685a9294021c34ebc111148b89f14",
+      "width": 1684,
+      "height": 893
+    },
+    {
+      "id": "conagua_subterraneas",
+      "path": "capturas/conagua_subterraneas.jpg",
+      "bytes": 156237,
+      "sha256": "94baebdf8521273ba43d1b7e117b93977df1ec067723353f27022d3e646a96f6",
+      "width": 1684,
+      "height": 893
+    },
+    {
+      "id": "shcp_derechos",
+      "path": "capturas/shcp_derechos.jpg",
+      "bytes": 166644,
+      "sha256": "83c2afbc87449cecb4aac6da9b81fcaee8cbc7550a219953786ed86373b74e01",
+      "width": 1684,
+      "height": 893
+    }
+  ]
+}

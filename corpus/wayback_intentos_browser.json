@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-14T01:02:42.8255731+00:00",
+  "observed_date_local": "2026-11-13",
+  "time_zone": "America/Mexico_City",
+  "browser": "Microsoft Edge",
+  "authenticated_session_observed": true,
+  "scope": "Public publisher-source URLs only; no mail, credentials or private attachments were submitted",
+  "new_captures_confirmed": 0,
+  "errors": {
+    "internal_error": "This snapshot cannot be displayed due to an internal error."
+  },
+  "attempts": [
+    {
+      "result_url": "https://web.archive.org/save",
+      "new_snapshot_url": null,
+      "result": "internal_error",
+      "target_url": "https://datos.cdmx.gob.mx/dataset/consumo-agua",
+      "workflow": "Wayback homepage Save Page Now form"
+    },
+    {
+      "result_url": "https://web.archive.org/save",
+      "new_snapshot_url": null,
+      "result": "internal_error",
+      "target_url": "https://www.datos.gob.mx/dataset/programa_nacional_contra_sequia_pronacose",
+      "workflow": "Wayback homepage Save Page Now form, repeated later in a fresh tab"
+    }
+  ],
+  "existing_replay_verified": {
+    "source_url": "https://datos.cdmx.gob.mx/dataset/consumo-agua",
+    "browser_replay": "opened successfully",
+    "download_bytes_verified": false,
+    "snapshot_timestamp": "20250905213619",
+    "snapshot_url": "https://web.archive.org/web/20250905213619/https://datos.cdmx.gob.mx/dataset/consumo-agua",
+    "screenshot": "capturas/wayback_sacmex.jpg"
+  },
+  "interpretation": "Existing snapshots and a verified replay are separate from new Save Page Now captures. No successful new capture is asserted."
+}

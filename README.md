@@ -32,6 +32,7 @@ and coverage separately from CONAPO polygon population. Missing denominators sup
 | `warehouse_ampliado/consultas/` | The 15 SQL queries behind the map and the article |
 | `warehouse_ampliado/grafo/` | The R2RML mapping, the vocabulary and the SPARQL queries of the graph |
 | `warehouse/` | The original warehouse: star schema, ETL, source data and container |
+| [`corpus/`](corpus/README.md) | Preserved inputs, source provenance, screenshots, hashes and Wayback records |
 | `reports/` | Sources, corrections, discarded datasets and the implemented model |
 | Root pages, `assets/`, `scripts/`, `evaluacion-ml/` | The conference demonstration and its analyses |
 
@@ -58,9 +59,24 @@ official polygons overlap by centimetres and the strict test fails for pairs tha
 that a source does not report produces no triple. See
 [`warehouse_ampliado/README.md`](warehouse_ampliado/README.md) to rebuild and verify it.
 
+## Preserved source corpus
+
+The [input index](corpus/INDICE.md) catalogues 65 retained logical files: the two
+original CSVs, the 62 extension-manifest entries and one auxiliary ITER extract.
+The catalogue separates source pages, download URLs, licences, current screenshots
+and existing Wayback snapshots. Large inputs use byte-preserving parts; the
+[verification and reconstruction instructions](corpus/README.md) require no database
+or network access. Archive availability and incomplete capture attempts remain
+explicit in [the Wayback records](corpus/wayback.json).
+
+The source repository retains this preservation package. The Pages workflow
+excludes it from the website bundle so that raw-input storage does not enlarge
+the interactive application deployment.
+
 ## Rebuilding it
 
-You need Docker, Python 3.10 and about 2 GB of disk. On Windows, clone into a short path: with a very
+You need Docker, Python 3.10 and disk space for the preserved inputs, extracted files
+and PostgreSQL. On Windows, clone into a short path: with a very
 long one, the `shapely` DLLs fail to load. From the repository root:
 
 ```bash

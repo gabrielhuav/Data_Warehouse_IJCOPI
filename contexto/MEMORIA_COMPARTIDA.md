@@ -1,6 +1,6 @@
 # Memoria compartida: IJCOPI de agua
 
-Actualizada: 10 de noviembre de 2026. Hablar con Gabriel en español y brevemente.
+Actualizada: 13 de noviembre de 2026. Hablar con Gabriel en español y brevemente.
 Leer AGENTS.md completo. Esta memoria es el relevo vigente; sus resultados históricos
 no equivalen a verificaciones nuevas. Las rutas dependen de la PC: usar carpetas hermanas.
 
@@ -49,7 +49,74 @@ con su licencia MIT. El workflow publica un git archive de main, sin commits aut
 
 ## Estado actual
 
-- **Estado vigente (10 nov 2026):** por instrucción de Gabriel se volvió a `main`
+- **Cierre del corpus autorizado (13 nov 2026):** Gabriel autoriza un commit y push
+  en IJCOPI/main con su identidad humana, sin firmas, coautorías ni créditos de IA.
+  Corrige el alcance de Wayback: únicamente fuentes del corpus; se excluyen las URL
+  sólo bibliográficas y de atribución visual. El filtro permanente deja 101 URL,
+  34 con snapshot existente y 67 sin disponibilidad reportada; 65/65 insumos cubiertos.
+  Los informes anteriores más amplios se conservan sólo como evidencia privada.
+  Cero capturas nuevas confirmadas: la revisión del perfil distingue Uploads de Web
+  Archives y no encontró capturas de este corpus. No se subieron archivos al perfil.
+  Verificador Springer original intacto previo a este cierre: 25 enlaces, cero fallos,
+  incluidos ADIP y AZCATL HTTP 200. Evidencia en tmp/publicar_corpus_2026-11-13/.
+  Commit/push y Pages por confirmar; no reutilizar el permiso una vez consumido.
+
+- **Estado vigente (13 nov 2026), continuidad local:** Gabriel informó que ya envió
+  las versiones identificada y anónima y recibió acuse. La revisión principal observó
+  en la interfaz el envío del 10 nov a las 01:33, con Word/PDF identificados y un
+  enlace para la revisión anónima, y el acuse del 10 nov a las 18:43. Se registra sólo
+  el hecho general: no se reproducen mensajes ni enlaces privados y no se auditaron
+  los hashes de los adjuntos enviados. El envío ya no es un pendiente; no reenviar.
+
+- **PostgreSQL resuelto el 10 nov:** las tres comprobaciones reales de sólo lectura
+  aprobaron, con `resultado_postgresql.json` conservado en IJCOPI. No volver a tratar
+  como pendientes las correlaciones, los reportes de 2019 ni las 15 consultas SQL/JSON.
+  Esta sesión de respaldo no ejecutó ETL ni modificó el volumen o los resultados.
+
+- **Respaldo local del corpus COMPLETADO:** `corpus/` de IJCOPI conserva 65 insumos
+  lógicos: 62 del manifiesto ampliado, dos CSV del estudio original y el extracto
+  auxiliar ITER (17 filas: ciudad y 16 alcaldías), separado del ZIP completo de origen.
+  Total recalculado: 2,130,015,245 bytes en 159 archivos físicos, ninguno mayor de
+  20,000,000 bytes. Verificador final terminó 0, 65/65 insumos y cero faltantes;
+  tamaños, MD5/SHA-256 y concatenaciones coinciden con los pines. Se recuperaron B8,
+  B11, D10, D16a y D16b desde sus URL originales; D10 se reanudó por rangos y sólo se
+  aceptó tras verificar el ZIP completo. Las tres partes originales de D15 y el
+  manifiesto científico permanecen byte-idénticos. Cachés y trazas privadas conservadas.
+  `INDICE.md` final tiene 65 filas; QA aprobó 232 enlaces locales y 18 anclas.
+
+- **Procedencia y capturas:** catálogo JSON/CSV, manifiesto copiado, scripts estándar
+  de preparación/verificación/restauración y README preparados localmente. Hay 29
+  imágenes de evidencia y cobertura de página para los 65/65 ID: incluye previsualización
+  de A3 sólo lectura, una captura histórica SACMEX y evidencia OSM separada de los
+  insumos científicos. Bibliografía inventariada: 42 referencias y 39 URL únicas;
+  no se copiaron artículos de pago ni documentos Word al corpus. Licencias y créditos
+  existentes conservados; los avisos sin licencia explícita se distinguen como tales.
+
+- **Wayback sigue INCOMPLETO:** alcance corregido a 101 URL del corpus; 34 tienen
+  snapshot previo disponible y 67 no devuelven un `closest` disponible. Los informes
+  anteriores con bibliografía y otras URL quedan sólo como antecedentes privados.
+  Cero errores API pendientes;
+  hubo errores transitorios en observaciones anteriores, ya resueltos. Esta consulta
+  de disponibilidad no certifica los bytes archivados ni demuestra que una URL nunca
+  se haya archivado. El snapshot SACMEX `20250905213619` sí se abrió en la interfaz.
+  Save Page Now falla con error interno en Edge con sesión iniciada, incluido el último
+  reintento del 13 nov: **cero capturas nuevas confirmadas**. Cola de reintentos guardada;
+  no afirmar que las fuentes ya se preservaron de nuevo en Internet Archive.
+
+- **Publicación y límites:** cambios preparados sólo en la distribución IJCOPI.
+  Su workflow excluye `corpus/` del despliegue Pages mediante `tar`, sin añadir
+  `export-ignore` al corpus, para que un futuro ZIP de GitHub pueda conservarlo.
+  README raíz enlaza el respaldo. No hubo commit, push, correo ni despliegue nuevos;
+  este trabajo no autoriza acciones Git futuras. Manuscritos, base de datos y sitios
+  históricos intactos. Evidencias locales: `tmp/respaldo_corpus_2026-11-13/`, incluidos
+  `inventario_local.json`, `verificacion_corpus.json`, `qa_indice_final.json`,
+  `qa_entrega_corpus.json` y `qa_exclusion_pages.json`; no publicar las rutas privadas.
+
+Los registros siguientes son antecedentes cronológicos. Los pendientes antiguos de
+PostgreSQL y de envío quedaron resueltos; las autorizaciones antiguas no habilitan
+commit, push, publicación o correo para este respaldo.
+
+- **Estado anterior (10 nov 2026):** por instrucción de Gabriel se volvió a `main`
   de este repositorio para arreglar primero el artículo identificado. Base previa de esta revisión:
   `e6671c07144326f029260eaa7ad15e785ef314ca`; revisión anónima conserva su ref
   `6f723ea05fb9ca1a419dfb53399507b1f49452c1`. Gabriel autorizó ahora un commit y
@@ -611,6 +678,28 @@ Los registros siguientes son antecedentes; no autorizan acciones Git adicionales
 
 ## Siguiente paso
 
+Completar el único cierre autorizado del corpus en main y comprobar su remoto y
+Pages. Wayback sigue limitado al corpus y pendiente de nuevas capturas confirmadas.
+El mensaje para el artículo de obras públicas es un relevo separado: la autorización
+de Git de agua no se transfiere a ese proyecto.
+
+Pendiente vigente al 13 nov: reintentar la cola de Wayback cuando Save Page Now
+vuelva a responder y confirmar cada captura nueva mediante su URL/fecha real.
+Las 34 capturas existentes y las 67 respuestas sin `closest` no completan ese paso.
+Conservar el corpus local ya verificado y sus evidencias; no repetir ETL ni reabrir
+las tres comprobaciones PostgreSQL, resueltas el 10 nov. El envío y el acuse ya ocurrieron;
+no reenviar el manuscrito ni preparar otro envío automáticamente.
+
+Gabriel autorizó el cierre actual del corpus con un commit y push, identidad humana
+y sin firmas ni créditos automáticos. El permiso se consume con esas acciones;
+cualquier otra requiere autorización nueva. Ejecutar antes de cada push el verificador
+Springer original intacto: cero fallos o excepción expresa para ese push. No incluir
+privados ni evidencias de correo.
+El corpus está excluido de Pages; no modificar los sitios históricos ni el manuscrito.
+
+Los pasos siguientes se conservan únicamente como antecedentes, superados en lo
+relativo a PostgreSQL y al envío. No ejecutar permisos ni pendientes antiguos.
+
 Gabriel y los coautores revisan la v3 identificada final y efectúan el envío si lo deciden.
 Usar el Word/PDF de `paper/ijcopi/`, con Fig. 1 original restaurada, 15 páginas y
 9,098 palabras. Las tres verificaciones PostgreSQL reales ya aprobaron; conservar su
@@ -668,6 +757,22 @@ de editar. No tratar sus recomendaciones como hechos ni como autorización de Gi
    para cambios posteriores. No enviar correos ni publicar el paper automáticamente.
 
 ## Bitácora
+
+- 2026-11-13: Gabriel autorizó commit y push humano del corpus y restringió Wayback
+  a fuentes del corpus. Filtradas las consultas/colas a 101 URL (34 existentes, 67 sin
+  disponibilidad); no se crearon capturas nuevas. Perfil de Archive comprobado sin
+  publicar información ajena al estudio. Gate Springer previo: 25 enlaces/0 fallos.
+  Cierre de Git en preparación; mensaje de respaldo para obras públicas solicitado.
+
+- 2026-11-13: continuidad local tras el envío identificado/anónimo y el acuse
+  observados en interfaz; sin exportar mensajes, enlaces privados ni auditar hashes
+  de adjuntos. PostgreSQL ya resuelto el 10 nov. Respaldo `corpus/` aprobado 65/65,
+  159 archivos, 2,130,015,245 bytes; cinco faltantes recuperados con pines exactos,
+  D15/manifiesto intactos, 29 capturas con cobertura de 65 ID e índice QA aprobado.
+  Wayback: 128 URL, 38 snapshots previos, 90 sin disponibilidad y cero errores
+  pendientes; Save Page Now con error interno, ninguna captura nueva confirmada.
+  Cola conservada para reintento. Workflow preparado excluye corpus de Pages,
+  sin export-ignore del corpus. Sólo edición local; sin nuevas acciones Git ni envío.
 
 - 2026-11-10: Gabriel pidió una Fig. 4b más visual, como su ejemplo de Azcapotzalco,
   y autorizó un commit/push de esta revisión en main con identidad humana, sin firmas

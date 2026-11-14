@@ -1,0 +1,2807 @@
+{
+  "schema_version": 1,
+  "scope": "Only source URLs associated with the 65 logical corpus input IDs; bibliography-only and visual-attribution URLs are excluded.",
+  "generated_at_utc": "2026-11-14T01:19:49+00:00",
+  "method": {
+    "documentation": "https://archive.org/help/wayback_api.php",
+    "endpoint": "https://archive.org/wayback/available",
+    "http_method": "GET",
+    "timestamp_parameter_used": false,
+    "authentication_used": false,
+    "cookies_used": false,
+    "new_capture_requests_by_this_script": false,
+    "minimum_request_interval_seconds": 1.05
+  },
+  "summary": {
+    "unique_urls": 101,
+    "imported_observation_rows": 104,
+    "logical_corpus_inputs": 65,
+    "logical_inputs_with_checks": 65,
+    "source_url_associations": 175,
+    "api_error_observation_rows": 3,
+    "rate_limited_observation_rows": 0,
+    "queried_urls": 101,
+    "existing_snapshot_available": 34,
+    "no_available_snapshot_reported": 67,
+    "api_errors": 0,
+    "not_queried": 0,
+    "first_check_utc": "2026-11-14T00:18:44+00:00",
+    "last_check_utc": "2026-11-14T00:56:11+00:00",
+    "new_captures_confirmed": 0
+  },
+  "new_capture_status": "none_confirmed",
+  "limitations": [
+    "Availability is positive only when API HTTP status is 200, closest.available is true and closest.status is 200.",
+    "A negative response reports no currently available closest snapshot; it does not prove the URL was never archived.",
+    "Existing snapshot metadata does not verify archived file bytes, corpus equivalence, completeness, historical retrieval or licensing.",
+    "Live source-page screenshots are separate observations and do not confirm a new Wayback capture.",
+    "Browser Save Page Now attempts were reported to fail internally; no new snapshot is confirmed by this evidence.",
+    "The retry queue includes all URLs without a confirmed new capture, prioritising URLs with no available snapshot or an unresolved API check."
+  ],
+  "checks": [
+    {
+      "id": "WB-244d89692d02",
+      "url": "https://boletinsgm.igeolcu.unam.mx/bsgm/vols/epoca04/7401/A071021_Huerta.pdf",
+      "source_ids": [
+        "A3"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download",
+        "observed_final_url",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "huerta_pdf_preview"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:50+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260221163754",
+        "url": "http://web.archive.org/web/20260221163754/http://boletinsgm.igeolcu.unam.mx/bsgm/vols/epoca04/7401/A071021_Huerta.pdf"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-558d03b65c72",
+      "url": "https://data.lib.vt.edu/articles/dataset/InSAR-based_Vertical_Land_Motion_at_Mexico_City/21935947",
+      "source_ids": [
+        "A2"
+      ],
+      "roles": [
+        "observed_final_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "insar_virginiatech"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:54+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-447477cfdcbb",
+      "url": "https://datos.cdmx.gob.mx/dataset/consumo-agua",
+      "source_ids": [
+        "ORIGINAL_SACMEX_2019"
+      ],
+      "roles": [
+        "additional_original_documentation",
+        "landing",
+        "observed_final_url",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "sacmex_consumo",
+        "wayback_sacmex"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:20:10+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20250905213619",
+        "url": "http://web.archive.org/web/20250905213619/https://datos.cdmx.gob.mx/dataset/consumo-agua"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-c5baf6aafc16",
+      "url": "https://datos.cdmx.gob.mx/dataset/reportes-de-agua",
+      "source_ids": [
+        "C1h",
+        "C1i"
+      ],
+      "roles": [
+        "landing",
+        "observed_final_url",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "sacmex_reportes"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:22:32+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20251206091609",
+        "url": "http://web.archive.org/web/20251206091609/https://www.datos.cdmx.gob.mx/dataset/reportes-de-agua"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-c58242f9ef3a",
+      "url": "https://doi.org/10.18268/BSGM2022v74n1a071021",
+      "source_ids": [
+        "A3"
+      ],
+      "roles": [
+        "documented_doi_resolver"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:22:04+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-3db2871223d2",
+      "url": "https://doi.org/10.5281/zenodo.23150556",
+      "source_ids": [
+        "D10"
+      ],
+      "roles": [
+        "documented_doi_resolver",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "hidromx_zenodo"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:22:37+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-06d25def1dee",
+      "url": "https://doi.org/10.6084/m9.figshare.28124789.v1",
+      "source_ids": [
+        "A1n"
+      ],
+      "roles": [
+        "documented_doi_resolver",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "mexhires_tmin"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:27+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-4cb326419989",
+      "url": "https://doi.org/10.6084/m9.figshare.28462679.v2",
+      "source_ids": [
+        "A1x"
+      ],
+      "roles": [
+        "documented_doi_resolver",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "mexhires_tmax"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:24+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-e74f4bc3fba2",
+      "url": "https://doi.org/10.6084/m9.figshare.28462769.v1",
+      "source_ids": [
+        "A1a"
+      ],
+      "roles": [
+        "documented_doi_resolver",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "mexhires_tmedia"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:28+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-e05cb4b78190",
+      "url": "https://doi.org/10.6084/m9.figshare.28462787.v1",
+      "source_ids": [
+        "A1p"
+      ],
+      "roles": [
+        "documented_doi_resolver",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "mexhires_precipitacion"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:23+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-4de9893afabc",
+      "url": "https://doi.org/10.7294/21935947",
+      "source_ids": [
+        "A2"
+      ],
+      "roles": [
+        "documented_doi_resolver",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "insar_virginiatech"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:29+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-8b4b30e47b5d",
+      "url": "https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClimDB_monthly_average_temperature_data_for_Mexico_/28462769/1",
+      "source_ids": [
+        "A1a"
+      ],
+      "roles": [
+        "observed_final_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "mexhires_tmedia"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:51+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20250628063409",
+        "url": "http://web.archive.org/web/20250628063409/https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClimDB_monthly_average_temperature_data_for_Mexico_/28462769/1"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-baad0324f982",
+      "url": "https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClimDB_monthly_maximum_temperature_data_for_Mexico_The_data_are_distributed_as_GeoTiffs_in_geographical_coordinates_at_a_20_arcsec_resolution_with_each_file_containing_the_twelve_months_of_e/28462679/2",
+      "source_ids": [
+        "A1x"
+      ],
+      "roles": [
+        "observed_final_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "mexhires_tmax"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:53+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-455f65e633a6",
+      "url": "https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClim_monthly_accumulated_precipitation_data_for_Mexico/28462787/1",
+      "source_ids": [
+        "A1p"
+      ],
+      "roles": [
+        "observed_final_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "mexhires_precipitacion"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:52+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20250403051315",
+        "url": "http://web.archive.org/web/20250403051315/https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClim_monthly_accumulated_precipitation_data_for_Mexico/28462787/1"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-0114e1c73b38",
+      "url": "https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClim_monthly_minimum_temperature_data_for_Mexico/28124789/1",
+      "source_ids": [
+        "A1n"
+      ],
+      "roles": [
+        "observed_final_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "mexhires_tmin"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:50+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20250402193820",
+        "url": "http://web.archive.org/web/20250402193820/https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClim_monthly_minimum_temperature_data_for_Mexico/28124789/1"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-0570a6fa0128",
+      "url": "https://github.com/Actronix09/fuentes-alternas/tree/main/agua-reportes-sacmex",
+      "source_ids": [
+        "C1h",
+        "C1i"
+      ],
+      "roles": [
+        "observed_final_url",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "reportes_mirror"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:49:36+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-c3e882bc95a9",
+      "url": "https://ndownloader.figshare.com/files/38910528",
+      "source_ids": [
+        "A2"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:49+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-bb1f37aa0157",
+      "url": "https://ndownloader.figshare.com/files/51452765",
+      "source_ids": [
+        "A1n"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:46+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-bd4bd9adf0b9",
+      "url": "https://ndownloader.figshare.com/files/52540979",
+      "source_ids": [
+        "A1x"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:45+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-5811ca68d9d0",
+      "url": "https://ndownloader.figshare.com/files/52541174",
+      "source_ids": [
+        "A1a"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:48+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-66d57fae5b29",
+      "url": "https://ndownloader.figshare.com/files/52541417",
+      "source_ids": [
+        "A1p"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:44+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-9062de724650",
+      "url": "https://open-meteo.com/",
+      "source_ids": [
+        "ORIGINAL_OPENMETEO_2019"
+      ],
+      "roles": [
+        "landing",
+        "provenance_page"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:39+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261114001829",
+        "url": "http://web.archive.org/web/20261114001829/https://open-meteo.com/"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-56babdb30dca",
+      "url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "source_ids": [
+        "ORIGINAL_OPENMETEO_2019"
+      ],
+      "roles": [
+        "additional_original_documentation",
+        "observed_final_url",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "openmeteo"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:20:12+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261105073129",
+        "url": "http://web.archive.org/web/20261105073129/https://open-meteo.com/en/docs/historical-weather-api"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-b9119c05ede8",
+      "url": "https://raw.githubusercontent.com/Actronix09/fuentes-alternas/main/agua-reportes-sacmex/datos/historico_2018_2021.csv",
+      "source_ids": [
+        "C1h"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:03+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-1f1a2788a9bc",
+      "url": "https://raw.githubusercontent.com/Actronix09/fuentes-alternas/main/agua-reportes-sacmex/datos/incidentes_2022_2024.csv",
+      "source_ids": [
+        "C1i"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:04+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-3dd2f539b2d5",
+      "url": "https://repodatos.atdt.gob.mx/CONAPO/indices_marginacion/colonias_imc2020_shp.zip",
+      "source_ids": [
+        "D15"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:20:05+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-6d4155cc0982",
+      "url": "https://repodatos.atdt.gob.mx/api_update/conagua/aguas_subterraneas/disponibilidad_agua_subterranea.zip",
+      "source_ids": [
+        "D6"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:31+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-9b36d29a1965",
+      "url": "https://repodatos.atdt.gob.mx/api_update/conagua/aguas_subterraneas/red_piezometrica.zip",
+      "source_ids": [
+        "D5"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:29+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-d52f07d6cb86",
+      "url": "https://repodatos.atdt.gob.mx/api_update/conagua/programa_nacional_contra_sequia_pronacose/vulnerabilidad_ambiental_municipal.csv",
+      "source_ids": [
+        "D8c"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:36+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-7e02b112e88e",
+      "url": "https://repodatos.atdt.gob.mx/api_update/conagua/programa_nacional_contra_sequia_pronacose/vulnerabilidad_economica_municipal.csv",
+      "source_ids": [
+        "D8b"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:35+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-98a5930f4a41",
+      "url": "https://repodatos.atdt.gob.mx/api_update/conagua/programa_nacional_contra_sequia_pronacose/vulnerabilidad_social_municipal.csv",
+      "source_ids": [
+        "D8a"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:34+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-fee3b0c9562c",
+      "url": "https://repodatos.atdt.gob.mx/api_update/secretaria_hacienda/derechos_agua_municipal/derecho_agua_municipal.csv",
+      "source_ids": [
+        "D4"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:28+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260225184535",
+        "url": "http://web.archive.org/web/20260225184535/https://repodatos.atdt.gob.mx/api_update/secretaria_hacienda/derechos_agua_municipal/derecho_agua_municipal.csv"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-96124896dcb7",
+      "url": "https://sih.conagua.gob.mx/",
+      "source_ids": [
+        "D14CNPMX",
+        "D14DBOMC",
+        "D14DNXMX",
+        "D14GDLMX",
+        "D14HPNMX",
+        "D14PFBMX",
+        "D14PIRMX",
+        "D14PMDMX",
+        "D14PMNMX",
+        "D14PNDMX",
+        "D14SBBMX",
+        "D14TPTMX",
+        "D14TXMHD",
+        "D14VBRMX",
+        "D14VVCMX"
+      ],
+      "roles": [
+        "observed_final_url",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "conagua_sih_portal"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:49:35+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261008084249",
+        "url": "http://web.archive.org/web/20261008084249/https://sih.conagua.gob.mx/"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-e1f851f06f1a",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/CNPMX.csv",
+      "source_ids": [
+        "D14CNPMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:51+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-1d8a9c8d17f4",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/DBOMC.csv",
+      "source_ids": [
+        "D14DBOMC"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:46+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-692a60157546",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/DNXMX.csv",
+      "source_ids": [
+        "D14DNXMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:54+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-111540706229",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/GDLMX.csv",
+      "source_ids": [
+        "D14GDLMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:49+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-6f5566a85c2a",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/HPNMX.csv",
+      "source_ids": [
+        "D14HPNMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:56+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-aa72ff38c233",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/PFBMX.csv",
+      "source_ids": [
+        "D14PFBMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:20:00+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-9eb7ec042261",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/PIRMX.csv",
+      "source_ids": [
+        "D14PIRMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:59+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-19919e8a5e5e",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/PMDMX.csv",
+      "source_ids": [
+        "D14PMDMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:48+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-b934b7ebe76c",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/PMNMX.csv",
+      "source_ids": [
+        "D14PMNMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:57+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-07e3b8b9fd5b",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/PNDMX.csv",
+      "source_ids": [
+        "D14PNDMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:58+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-7c3b68506513",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/SBBMX.csv",
+      "source_ids": [
+        "D14SBBMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:20:01+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-531b1111af5c",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/TPTMX.csv",
+      "source_ids": [
+        "D14TPTMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:20:02+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-ff3a621a32ea",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/TXMHD.csv",
+      "source_ids": [
+        "D14TXMHD"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:52+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-cf0c3a96a36f",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/VBRMX.csv",
+      "source_ids": [
+        "D14VBRMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:44+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-ba9115a7f75e",
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/VVCMX.csv",
+      "source_ids": [
+        "D14VVCMX"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:45+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-4ba56a069ffc",
+      "url": "https://smn.conagua.gob.mx/es/climatologia/monitor-de-sequia/monitor-de-sequia-en-mexico",
+      "source_ids": [
+        "D7"
+      ],
+      "roles": [
+        "landing",
+        "observed_final_url",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "smn_sequia"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:20+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261108195020",
+        "url": "http://web.archive.org/web/20261108195020/https://smn.conagua.gob.mx/es/climatologia/monitor-de-sequia/monitor-de-sequia-en-mexico"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-fc569cb9fe34",
+      "url": "https://smn.conagua.gob.mx/tools/RESOURCES/Monitor%20de%20Sequia%20en%20Mexico/MunicipiosSequia.xlsx",
+      "source_ids": [
+        "D7"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:33+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260908020120",
+        "url": "http://web.archive.org/web/20260908020120/https://smn.conagua.gob.mx/tools/RESOURCES/Monitor%20de%20Sequia%20en%20Mexico/MunicipiosSequia.xlsx"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-25936264c8fc",
+      "url": "https://www.datos.gob.mx/dataset/aguas_subterraneas",
+      "source_ids": [
+        "D5",
+        "D6"
+      ],
+      "roles": [
+        "observed_final_url",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "conagua_subterraneas"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:21:48+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-147b125b95a2",
+      "url": "https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24",
+      "source_ids": [
+        "D11",
+        "D12",
+        "D15"
+      ],
+      "roles": [
+        "landing",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "conapo_marginacion"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:21:50+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-ccfafc15712d",
+      "url": "https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24/resource/551d8f48-5d0c-4d11-964a-e2911f732615/download/imm_2020-3.csv",
+      "source_ids": [
+        "D11"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:41+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260208112903",
+        "url": "http://web.archive.org/web/20260208112903/https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24/resource/551d8f48-5d0c-4d11-964a-e2911f732615/download/imm_2020-3.csv"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-bc11abeda429",
+      "url": "https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24/resource/faabdc7b-dc41-4df3-9664-ee14e805f0df/download/imuc_2020.csv",
+      "source_ids": [
+        "D12"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:42+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260208112924",
+        "url": "http://web.archive.org/web/20260208112924/https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24/resource/faabdc7b-dc41-4df3-9664-ee14e805f0df/download/imuc_2020.csv"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-695f8b70c940",
+      "url": "https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d",
+      "source_ids": [
+        "D1a",
+        "D1b"
+      ],
+      "roles": [
+        "landing",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "conapo_delimitacion"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:21:51+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-c5e55409aa1d",
+      "url": "https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d/resource/6f57ab97-d1df-4768-beb8-c929c2449923/download/municipios_poblacion.csv",
+      "source_ids": [
+        "D1a"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:05+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20250515113922",
+        "url": "http://web.archive.org/web/20250515113922/https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d/resource/6f57ab97-d1df-4768-beb8-c929c2449923/download/municipios_poblacion.csv"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-b0397f28f5fe",
+      "url": "https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d/resource/e7284215-f596-4025-9b5d-67c12eb84a4f/download/municipios_tipologia.csv",
+      "source_ids": [
+        "D1b"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:06+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20250515114620",
+        "url": "http://web.archive.org/web/20250515114620/https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d/resource/e7284215-f596-4025-9b5d-67c12eb84a4f/download/municipios_tipologia.csv"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-abf2a96ad004",
+      "url": "https://www.datos.gob.mx/dataset/derechos_agua_municipal",
+      "source_ids": [
+        "D4"
+      ],
+      "roles": [
+        "observed_final_url",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "shcp_derechos"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:22:38+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260617131943",
+        "url": "http://web.archive.org/web/20260617131943/https://www.datos.gob.mx/dataset/derechos_agua_municipal"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-d39491c282db",
+      "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+      "source_ids": [
+        "D14CNPMX",
+        "D14DBOMC",
+        "D14DNXMX",
+        "D14GDLMX",
+        "D14HPNMX",
+        "D14PFBMX",
+        "D14PIRMX",
+        "D14PMDMX",
+        "D14PMNMX",
+        "D14PNDMX",
+        "D14SBBMX",
+        "D14TPTMX",
+        "D14TXMHD",
+        "D14VBRMX",
+        "D14VVCMX",
+        "D9a",
+        "D9b"
+      ],
+      "roles": [
+        "landing",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "conagua_sih"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:21+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-70c6e86e1139",
+      "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67/resource/35e8d001-6195-45c7-9a1c-58a8594fb3a1/download/presas_sih.csv",
+      "source_ids": [
+        "D9a"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:37+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20250515114519",
+        "url": "http://web.archive.org/web/20250515114519/https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67/resource/35e8d001-6195-45c7-9a1c-58a8594fb3a1/download/presas_sih.csv"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-a80a9c51ca49",
+      "url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67/resource/3cfc549d-1aa4-4ee0-b4d4-82b21a19136f/download/estaciones_hidrometricas_sih.csv",
+      "source_ids": [
+        "D9b"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:38+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20250515112622",
+        "url": "http://web.archive.org/web/20250515112622/https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67/resource/3cfc549d-1aa4-4ee0-b4d4-82b21a19136f/download/estaciones_hidrometricas_sih.csv"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-7b9b365aab27",
+      "url": "https://www.datos.gob.mx/dataset/estaciones_sistema_informacion_hidrologica",
+      "source_ids": [
+        "D14CNPMX",
+        "D14DBOMC",
+        "D14DNXMX",
+        "D14GDLMX",
+        "D14HPNMX",
+        "D14PFBMX",
+        "D14PIRMX",
+        "D14PMDMX",
+        "D14PMNMX",
+        "D14PNDMX",
+        "D14SBBMX",
+        "D14TPTMX",
+        "D14TXMHD",
+        "D14VBRMX",
+        "D14VVCMX",
+        "D9a",
+        "D9b"
+      ],
+      "roles": [
+        "observed_final_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "conagua_sih"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:46+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260120055327",
+        "url": "http://web.archive.org/web/20260120055327/https://www.datos.gob.mx/dataset/estaciones_sistema_informacion_hidrologica"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-ac29dee2cf4f",
+      "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a",
+      "source_ids": [
+        "D13"
+      ],
+      "roles": [
+        "landing",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "conapo_proyecciones"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:22+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-7e7f47ecdb2c",
+      "url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv",
+      "source_ids": [
+        "D13"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:43+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20250515120904",
+        "url": "http://web.archive.org/web/20250515120904/https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a/resource/e9160552-769b-41ee-88d1-afc765552608/download/pobproy_inddemo.csv"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-30168d29f032",
+      "url": "https://www.datos.gob.mx/dataset/indices_marginacion",
+      "source_ids": [
+        "D11",
+        "D12",
+        "D15"
+      ],
+      "roles": [
+        "observed_final_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "conapo_marginacion"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:41+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261010040915",
+        "url": "http://web.archive.org/web/20261010040915/https://www.datos.gob.mx/dataset/indices_marginacion"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-7f24d2816c3f",
+      "url": "https://www.datos.gob.mx/dataset/metropolis_mexico_2020",
+      "source_ids": [
+        "D1a",
+        "D1b"
+      ],
+      "roles": [
+        "observed_final_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "conapo_delimitacion"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:40+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20251205033350",
+        "url": "http://web.archive.org/web/20251205033350/https://datos.gob.mx/dataset/metropolis_mexico_2020"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-42d2369b222e",
+      "url": "https://www.datos.gob.mx/dataset/programa_nacional_contra_sequia_pronacose",
+      "source_ids": [
+        "D8a",
+        "D8b",
+        "D8c"
+      ],
+      "roles": [
+        "observed_final_url",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "conagua_pronacose"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:56:11+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-77f6bb1de7e4",
+      "url": "https://www.datos.gob.mx/dataset/proyecciones-de-poblacion",
+      "source_ids": [
+        "D13"
+      ],
+      "roles": [
+        "observed_final_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "conapo_proyecciones"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:42+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260619124724",
+        "url": "http://web.archive.org/web/20260619124724/https://www.datos.gob.mx/dataset/proyecciones-de-poblacion"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-d33d084ce890",
+      "url": "https://www.gob.mx/cms/uploads/attachment/file/1084131/Calidad_del_Agua_Subterr_nea_p_2012-2025.xlsx",
+      "source_ids": [
+        "D16a"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:20:07+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261018111725",
+        "url": "http://web.archive.org/web/20261018111725/https://www.gob.mx/cms/uploads/attachment/file/1084131/Calidad_del_Agua_Subterr_nea_p_2012-2025.xlsx"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-86b4824f2f48",
+      "url": "https://www.gob.mx/cms/uploads/attachment/file/1084133/Calidad_del_Agua_Superficial_p_2012-2025.xlsx",
+      "source_ids": [
+        "D16b"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:20:08+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-c7f62dd05f5d",
+      "url": "https://www.gob.mx/conagua/es/articulos/indicadores-de-calidad-del-agua?idiom=es",
+      "source_ids": [
+        "D16a",
+        "D16b"
+      ],
+      "roles": [
+        "landing",
+        "observed_final_url",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "conagua_calidad"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:21:43+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-9fc1b872609b",
+      "url": "https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469",
+      "source_ids": [
+        "B11",
+        "B3",
+        "B8"
+      ],
+      "roles": [
+        "landing",
+        "observed_final_url",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "inegi_marco2020"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:34+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261011072844",
+        "url": "http://web.archive.org/web/20261011072844/https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-6c8c3f0917b4",
+      "url": "https://www.inegi.org.mx/app/mapa/denue/",
+      "source_ids": [
+        "B5",
+        "B9d1",
+        "B9d2"
+      ],
+      "roles": [
+        "landing",
+        "observed_final_url",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "inegi_denue"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:36+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261021172815",
+        "url": "http://web.archive.org/web/20261021172815/https://www.inegi.org.mx/app/mapa/denue/"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-4d0de9746a28",
+      "url": "https://www.inegi.org.mx/contenidos/masiva/denue/denue_09_csv.zip",
+      "source_ids": [
+        "B5"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:54+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260209230115",
+        "url": "http://web.archive.org/web/20260209230115/https://www.inegi.org.mx/contenidos/masiva/denue/denue_09_csv.zip"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-78563c887b8a",
+      "url": "https://www.inegi.org.mx/contenidos/masiva/denue/denue_15_1_csv.zip",
+      "source_ids": [
+        "B9d1"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:59+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-85ceea7acece",
+      "url": "https://www.inegi.org.mx/contenidos/masiva/denue/denue_15_2_csv.zip",
+      "source_ids": [
+        "B9d2"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:00+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-f0542e1fccb1",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463807469/09_ciudaddemexico.zip",
+      "source_ids": [
+        "B3"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:52+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-558ee9a6a1f0",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463807469/13_hidalgo.zip",
+      "source_ids": [
+        "B11"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:02+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-3bb80a6226bb",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463807469/15_mexico.zip",
+      "source_ids": [
+        "B8"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:56+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-6531098b73e3",
+      "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/ageb_manzana/ageb_mza_urbana_09_cpv2020_csv.zip",
+      "source_ids": [
+        "B1"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:51+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-cb5de3a45867",
+      "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/ageb_manzana/ageb_mza_urbana_15_cpv2020_csv.zip",
+      "source_ids": [
+        "B6"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:55+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-ae7fb60b5fbc",
+      "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
+      "source_ids": [
+        "B10"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:01+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260915090611",
+        "url": "http://web.archive.org/web/20260915090611/https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-9f2628fcb4c1",
+      "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_09_cpv2020_csv.zip",
+      "source_ids": [
+        "AUX_ITER_CDMX_2020"
+      ],
+      "roles": [
+        "documented_upstream_download",
+        "provenance_page"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:49:33+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20260918032848",
+        "url": "http://web.archive.org/web/20260918032848/https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_09_cpv2020_csv.zip"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-3c510c87e008",
+      "url": "https://www.inegi.org.mx/contenidos/programas/ce/2019/Datosabiertos/ce2019_cdmx_csv.zip",
+      "source_ids": [
+        "B4"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:53+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-e3ed03af4035",
+      "url": "https://www.inegi.org.mx/contenidos/programas/ce/2019/Datosabiertos/ce2019_mex_csv.zip",
+      "source_ids": [
+        "B9c"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:18:57+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-573bd3f2f354",
+      "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2019/datosabiertos/m5/admin_agua_cngmd2019_csv.zip",
+      "source_ids": [
+        "D2d"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:20+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-dc570feac1cc",
+      "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2019/datosabiertos/m5/capta_agua_cngmd2019_csv.zip",
+      "source_ids": [
+        "D2b"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:18+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-f746de9ada12",
+      "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2019/datosabiertos/m5/plantas_pot_cngmd2019_csv.zip",
+      "source_ids": [
+        "D2c"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:19+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-316b37c9e0c7",
+      "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2019/datosabiertos/m5/serv_agua_cngmd2019_csv.zip",
+      "source_ids": [
+        "D2a"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:07+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-540cd78336df",
+      "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2019/datosabiertos/m5/trat_aguas_resid_cngmd2019_csv.zip",
+      "source_ids": [
+        "D2e"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:21+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-36fcc261f6c9",
+      "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2021/datosabiertos/m5/administracion_cngmd2021_csv.zip",
+      "source_ids": [
+        "D3d"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:25+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-05a7b43a3e73",
+      "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2021/datosabiertos/m5/captacion_agua_abastecimiento_pub_cngmd2021_csv.zip",
+      "source_ids": [
+        "D3b"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:23+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-8e09ffd54e3e",
+      "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2021/datosabiertos/m5/plantas_potabilizacion_cngmd2021_csv.zip",
+      "source_ids": [
+        "D3c"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:24+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-d2a1072ea14e",
+      "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2021/datosabiertos/m5/servicio_agua_red_publica_cngmd2021_csv.zip",
+      "source_ids": [
+        "D3a"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:22+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-f10ce65559b8",
+      "url": "https://www.inegi.org.mx/contenidos/programas/cngmd/2021/datosabiertos/m5/tratamiento_aguas_residuales_cngmd2021_csv.zip",
+      "source_ids": [
+        "D3e"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:26+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-0ebc65813d30",
+      "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+      "source_ids": [
+        "AUX_ITER_CDMX_2020",
+        "B1",
+        "B10",
+        "B6"
+      ],
+      "roles": [
+        "landing",
+        "observed_final_url",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "inegi_cpv2020"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:22:07+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261109054125",
+        "url": "http://web.archive.org/web/20261109054125/https://www.inegi.org.mx/programas/ccpv/2020/"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-b6e4dc3fe4e2",
+      "url": "https://www.inegi.org.mx/programas/ce/2019/",
+      "source_ids": [
+        "B4",
+        "B9c"
+      ],
+      "roles": [
+        "landing",
+        "observed_final_url",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "inegi_ce2019"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:35+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261105114830",
+        "url": "http://web.archive.org/web/20261105114830/https://www.inegi.org.mx/programas/ce/2019/"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-df23ba315823",
+      "url": "https://www.inegi.org.mx/programas/cngmd/2019/",
+      "source_ids": [
+        "D2a",
+        "D2b",
+        "D2c",
+        "D2d",
+        "D2e"
+      ],
+      "roles": [
+        "landing",
+        "observed_final_url",
+        "observed_requested_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "inegi_cngmd2019"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:33:38+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261011112855",
+        "url": "http://web.archive.org/web/20261011112855/https://www.inegi.org.mx/programas/cngmd/2019/"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-99dab245a7f2",
+      "url": "https://www.inegi.org.mx/programas/cngmd/2021/",
+      "source_ids": [
+        "D3a",
+        "D3b",
+        "D3c",
+        "D3d",
+        "D3e"
+      ],
+      "roles": [
+        "landing",
+        "observed_final_url",
+        "observed_requested_url"
+      ],
+      "capture_ids": [
+        "inegi_cngmd2021"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:22:06+00:00",
+      "closest": {
+        "available": true,
+        "status": "200",
+        "timestamp": "20261021190548",
+        "url": "http://web.archive.org/web/20261021190548/https://www.inegi.org.mx/programas/cngmd/2021/"
+      },
+      "status": "existing_snapshot_available",
+      "archived": true,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-6494f999dc3e",
+      "url": "https://zenodo.org/api/records/23150556/files/HidroXAI-MX-v2026.10.zip/content",
+      "source_ids": [
+        "D10"
+      ],
+      "roles": [
+        "documented_download",
+        "manifest",
+        "manifest_download"
+      ],
+      "capture_ids": [],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:19:39+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    },
+    {
+      "id": "WB-9c1b8367eabe",
+      "url": "https://zenodo.org/records/23150556",
+      "source_ids": [
+        "D10"
+      ],
+      "roles": [
+        "observed_final_url",
+        "provenance_page"
+      ],
+      "capture_ids": [
+        "hidromx_zenodo"
+      ],
+      "queried": true,
+      "HTTP_API": 200,
+      "checked_at_utc": "2026-11-14T00:49:34+00:00",
+      "closest": {
+        "available": null,
+        "status": null,
+        "timestamp": null,
+        "url": null
+      },
+      "status": "no_available_snapshot_reported",
+      "archived": false,
+      "bytes_verified": false,
+      "new_capture_confirmed": false
+    }
+  ]
+}

@@ -1,0 +1,817 @@
+{
+  "schema_version": 1,
+  "notes": [
+    "Current source-page screenshots do not establish historical download time or byte identity.",
+    "Shared series pages, community mirrors, preserved-PDF previews and existing Wayback replays are distinguished."
+  ],
+  "captures": [
+    {
+      "id": "openmeteo",
+      "source_ids": [
+        "ORIGINAL_OPENMETEO_2019"
+      ],
+      "requested_url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "final_url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "title": "🏛️ Historical Weather API | Open-Meteo.com",
+      "headings": [
+        "Historical Weather API",
+        "Location and Time",
+        "Hourly Weather Variables",
+        "Additional Variables And Options",
+        "Solar Radiation Variables",
+        "ERA5-Ensemble Spread Variables"
+      ],
+      "captured_at_utc": "2026-11-14T00:20:51.085Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Provider documentation; the form defaults are not the parameters of the retained 2019 CSV.",
+      "screenshot": "capturas/openmeteo.jpg"
+    },
+    {
+      "id": "sacmex_consumo",
+      "source_ids": [
+        "ORIGINAL_SACMEX_2019"
+      ],
+      "requested_url": "https://datos.cdmx.gob.mx/dataset/consumo-agua",
+      "final_url": "https://datos.cdmx.gob.mx/dataset/consumo-agua",
+      "title": "Consumo de agua - Conjunto de datos - CKAN",
+      "headings": [
+        "Consumo de agua",
+        "Sistema de Aguas de la Ciudad de México (SACMEX)",
+        "Categorías",
+        "Formatos",
+        "Licencias",
+        "Compartir"
+      ],
+      "captured_at_utc": "2026-11-14T00:21:31.437Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Current source dataset page; historical CSV bytes are preserved separately.",
+      "screenshot": "capturas/sacmex_consumo.jpg"
+    },
+    {
+      "id": "inegi_cpv2020",
+      "source_ids": [
+        "B1",
+        "B6",
+        "B10",
+        "AUX_ITER_CDMX_2020"
+      ],
+      "requested_url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+      "final_url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+      "title": "Censo de Población y Vivienda (CPV) 2020",
+      "headings": [
+        "Censo de Población y Vivienda (CPV) 2020",
+        "Menú del sitio",
+        "Menú de navegación",
+        "Menú Información Demográfica y Social",
+        "Censo de Población y Vivienda (CPV) 2020",
+        "Pestaña Resultados generales"
+      ],
+      "captured_at_utc": "2026-11-14T00:23:54.89Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Official programme page, shared by state packages and the auxiliary extract.",
+      "screenshot": "capturas/inegi_cpv2020.jpg"
+    },
+    {
+      "id": "inegi_marco2020",
+      "source_ids": [
+        "B3",
+        "B8",
+        "B11"
+      ],
+      "requested_url": "https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469",
+      "final_url": "https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469",
+      "title": "Publicaciones y mapas",
+      "headings": [],
+      "captured_at_utc": "2026-11-14T00:23:56.063Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/inegi_marco2020.jpg",
+      "classification_evidence": {
+        "title": "Publicaciones y mapas",
+        "headings": []
+      }
+    },
+    {
+      "id": "inegi_ce2019",
+      "source_ids": [
+        "B4",
+        "B9c"
+      ],
+      "requested_url": "https://www.inegi.org.mx/programas/ce/2019/",
+      "final_url": "https://www.inegi.org.mx/programas/ce/2019/",
+      "title": "Censos Económicos (CE) 2019",
+      "headings": [
+        "Censos Económicos (CE) 2019",
+        "Menú de navegación",
+        "Menú Información Económica",
+        "Censos Económicos (CE) 2019",
+        "Pestaña Información general",
+        "Pestaña Documentación"
+      ],
+      "captured_at_utc": "2026-11-14T00:23:57.734Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/inegi_ce2019.jpg",
+      "classification_evidence": {
+        "title": "Censos Económicos (CE) 2019",
+        "headings": [
+          "Censos Económicos (CE) 2019",
+          "Menú de navegación",
+          "Menú Información Económica",
+          "Censos Económicos (CE) 2019"
+        ]
+      }
+    },
+    {
+      "id": "inegi_denue",
+      "source_ids": [
+        "B5",
+        "B9d1",
+        "B9d2"
+      ],
+      "requested_url": "https://www.inegi.org.mx/app/mapa/denue/",
+      "final_url": "https://www.inegi.org.mx/app/mapa/denue/",
+      "title": "Directorio Estadístico Nacional de Unidades Económicas. DENUE",
+      "headings": [
+        "Menú del sitio",
+        "Directorio Estadístico Nacional de Unidades Económicas"
+      ],
+      "captured_at_utc": "2026-11-14T00:23:59.21Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/inegi_denue.jpg",
+      "classification_evidence": {
+        "title": "Directorio Estadístico Nacional de Unidades Económicas. DENUE",
+        "headings": [
+          "Menú del sitio",
+          "Directorio Estadístico Nacional de Unidades Económicas"
+        ]
+      }
+    },
+    {
+      "id": "inegi_cngmd2019",
+      "source_ids": [
+        "D2a",
+        "D2b",
+        "D2c",
+        "D2d",
+        "D2e"
+      ],
+      "requested_url": "https://www.inegi.org.mx/programas/cngmd/2019/",
+      "final_url": "https://www.inegi.org.mx/programas/cngmd/2019/",
+      "title": "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2019",
+      "headings": [
+        "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2019",
+        "Menú de navegación",
+        "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2019",
+        "Pestaña Documentación",
+        "Pestaña Tabulados",
+        "Pestaña Microdatos"
+      ],
+      "captured_at_utc": "2026-11-14T00:24:13.475Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/inegi_cngmd2019.jpg",
+      "classification_evidence": {
+        "title": "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2019",
+        "headings": [
+          "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2019",
+          "Menú de navegación",
+          "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2019",
+          "Pestaña Documentación"
+        ]
+      }
+    },
+    {
+      "id": "inegi_cngmd2021",
+      "source_ids": [
+        "D3a",
+        "D3b",
+        "D3c",
+        "D3d",
+        "D3e"
+      ],
+      "requested_url": "https://www.inegi.org.mx/programas/cngmd/2021/",
+      "final_url": "https://www.inegi.org.mx/programas/cngmd/2021/",
+      "title": "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2021",
+      "headings": [
+        "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2021",
+        "Menú de navegación",
+        "Menú Información de Gobierno, Seguridad Pública e Impartición de Justicia",
+        "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2021",
+        "Pestaña Documentación",
+        "Pestaña Tabulados"
+      ],
+      "captured_at_utc": "2026-11-14T00:24:14.839Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/inegi_cngmd2021.jpg",
+      "classification_evidence": {
+        "title": "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2021",
+        "headings": [
+          "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2021",
+          "Menú de navegación",
+          "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México (CNGMD) 2021",
+          "Pestaña Documentación"
+        ]
+      }
+    },
+    {
+      "id": "conapo_delimitacion",
+      "source_ids": [
+        "D1a",
+        "D1b"
+      ],
+      "requested_url": "https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d",
+      "final_url": "https://www.datos.gob.mx/dataset/metropolis_mexico_2020",
+      "title": "Las metrópolis de México, 2020 - Base de datos - datos.gob.mx",
+      "headings": [
+        "Las metrópolis de México, 2020",
+        "Secretaría Técnica del Consejo Nacional de Población (STCONAPO)",
+        "Social",
+        "Licencia",
+        "",
+        "Bases de datos"
+      ],
+      "captured_at_utc": "2026-11-14T00:24:17.563Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/conapo_delimitacion.jpg",
+      "classification_evidence": {
+        "title": "Las metrópolis de México, 2020 - Base de datos - datos.gob.mx",
+        "headings": [
+          "Las metrópolis de México, 2020",
+          "Secretaría Técnica del Consejo Nacional de Población (STCONAPO)",
+          "Social",
+          "Licencia"
+        ]
+      }
+    },
+    {
+      "id": "conapo_marginacion",
+      "source_ids": [
+        "D11",
+        "D12",
+        "D15"
+      ],
+      "requested_url": "https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24",
+      "final_url": "https://www.datos.gob.mx/dataset/indices_marginacion",
+      "title": "Índices de marginación - Base de datos - datos.gob.mx",
+      "headings": [
+        "Índices de marginación",
+        "Secretaría Técnica del Consejo Nacional de Población (STCONAPO)",
+        "Social",
+        "Licencia",
+        "",
+        "Bases de datos"
+      ],
+      "captured_at_utc": "2026-11-14T00:24:20.034Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/conapo_marginacion.jpg",
+      "classification_evidence": {
+        "title": "Índices de marginación - Base de datos - datos.gob.mx",
+        "headings": [
+          "Índices de marginación",
+          "Secretaría Técnica del Consejo Nacional de Población (STCONAPO)",
+          "Social",
+          "Licencia"
+        ]
+      }
+    },
+    {
+      "id": "conapo_proyecciones",
+      "source_ids": [
+        "D13"
+      ],
+      "requested_url": "https://www.datos.gob.mx/dataset/f2b9b220-3ef7-4e3a-bde6-87e1dac78c6a",
+      "final_url": "https://www.datos.gob.mx/dataset/proyecciones-de-poblacion",
+      "title": "Proyecciones de población - Base de datos - datos.gob.mx",
+      "headings": [
+        "Proyecciones de población",
+        "Secretaría Técnica del Consejo Nacional de Población (STCONAPO)",
+        "Social",
+        "Licencia",
+        "",
+        "Bases de datos"
+      ],
+      "captured_at_utc": "2026-11-14T00:24:46.361Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/conapo_proyecciones.jpg",
+      "classification_evidence": {
+        "title": "Proyecciones de población - Base de datos - datos.gob.mx",
+        "headings": [
+          "Proyecciones de población",
+          "Secretaría Técnica del Consejo Nacional de Población (STCONAPO)",
+          "Social",
+          "Licencia"
+        ]
+      }
+    },
+    {
+      "id": "conagua_sih",
+      "source_ids": [
+        "D9a",
+        "D9b"
+      ],
+      "requested_url": "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67",
+      "final_url": "https://www.datos.gob.mx/dataset/estaciones_sistema_informacion_hidrologica",
+      "title": "Estaciones del Sistema de Información Hidrológica - Base de datos - datos.gob.mx",
+      "headings": [
+        "Estaciones del Sistema de Información Hidrológica",
+        "Comisión Nacional del Agua (CONAGUA)",
+        "Social",
+        "Licencia",
+        "",
+        "Bases de datos"
+      ],
+      "captured_at_utc": "2026-11-14T00:24:48.023Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Dataset page for the two SIH station inventory downloads. Time-series provenance is separately documented by conagua_sih_portal.",
+      "screenshot": "capturas/conagua_sih.jpg",
+      "classification_evidence": {
+        "title": "Estaciones del Sistema de Información Hidrológica - Base de datos - datos.gob.mx",
+        "headings": [
+          "Estaciones del Sistema de Información Hidrológica",
+          "Comisión Nacional del Agua (CONAGUA)",
+          "Social",
+          "Licencia"
+        ]
+      }
+    },
+    {
+      "id": "conagua_calidad",
+      "source_ids": [
+        "D16a",
+        "D16b"
+      ],
+      "requested_url": "https://www.gob.mx/conagua/es/articulos/indicadores-de-calidad-del-agua?idiom=es",
+      "final_url": "https://www.gob.mx/conagua/es/articulos/indicadores-de-calidad-del-agua?idiom=es",
+      "title": "Indicadores de Calidad del Agua | Comisión Nacional del Agua | Gobierno | gob.mx",
+      "headings": [
+        "Indicadores de Calidad del Agua",
+        "Conagua"
+      ],
+      "captured_at_utc": "2026-11-14T00:24:50.086Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/conagua_calidad.jpg",
+      "classification_evidence": {
+        "title": "Indicadores de Calidad del Agua | Comisión Nacional del Agua | Gobierno | gob.mx",
+        "headings": [
+          "Indicadores de Calidad del Agua",
+          "Conagua"
+        ]
+      }
+    },
+    {
+      "id": "smn_sequia",
+      "source_ids": [
+        "D7"
+      ],
+      "requested_url": "https://smn.conagua.gob.mx/es/climatologia/monitor-de-sequia/monitor-de-sequia-en-mexico",
+      "final_url": "https://smn.conagua.gob.mx/es/climatologia/monitor-de-sequia/monitor-de-sequia-en-mexico",
+      "title": "Monitor de Sequía en México",
+      "headings": [
+        "Monitor de Sequía en México (MSM)"
+      ],
+      "captured_at_utc": "2026-11-14T00:24:53.081Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/smn_sequia.jpg",
+      "classification_evidence": {
+        "title": "Monitor de Sequía en México",
+        "headings": [
+          "Monitor de Sequía en México (MSM)"
+        ]
+      }
+    },
+    {
+      "id": "mexhires_tmin",
+      "source_ids": [
+        "A1n"
+      ],
+      "requested_url": "https://doi.org/10.6084/m9.figshare.28124789.v1",
+      "final_url": "https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClim_monthly_minimum_temperature_data_for_Mexico/28124789/1",
+      "title": "Item - Mexico's High Resolution Climate Database (MexHiResClim): monthly minimum temperature data for Mexico - figshare - Figshare",
+      "headings": [
+        "Mexico's High Resolution Climate Database (MexHiResClim): monthly minimum temperature data for Mexico",
+        "FUNDING",
+        "HISTORY",
+        "USAGE METRICS",
+        "CATEGORIES",
+        "KEYWORDS"
+      ],
+      "captured_at_utc": "2026-11-14T00:26:37.434Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/mexhires_tmin.jpg",
+      "classification_evidence": {
+        "title": "Item - Mexico's High Resolution Climate Database (MexHiResClim): monthly minimum temperature data for Mexico - figshare - Figshare",
+        "headings": [
+          "Mexico's High Resolution Climate Database (MexHiResClim): monthly minimum temperature data for Mexico",
+          "FUNDING",
+          "HISTORY",
+          "USAGE METRICS"
+        ]
+      }
+    },
+    {
+      "id": "mexhires_tmedia",
+      "source_ids": [
+        "A1a"
+      ],
+      "requested_url": "https://doi.org/10.6084/m9.figshare.28462769.v1",
+      "final_url": "https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClimDB_monthly_average_temperature_data_for_Mexico_/28462769/1",
+      "title": "Item - Mexico's High Resolution Climate Database (MexHiResClimDB): monthly average temperature data for Mexico. - figshare - Figshare",
+      "headings": [
+        "Mexico's High Resolution Climate Database (MexHiResClimDB): monthly average temperature data for Mexico.",
+        "FUNDING",
+        "HISTORY",
+        "USAGE METRICS",
+        "CATEGORIES",
+        "KEYWORDS"
+      ],
+      "captured_at_utc": "2026-11-14T00:26:38.566Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; the frozen download and its integrity are catalogued separately.",
+      "screenshot": "capturas/mexhires_tmedia.jpg",
+      "classification_evidence": {
+        "title": "Item - Mexico's High Resolution Climate Database (MexHiResClimDB): monthly average temperature data for Mexico. - figshare - Figshare",
+        "headings": [
+          "Mexico's High Resolution Climate Database (MexHiResClimDB): monthly average temperature data for Mexico.",
+          "FUNDING",
+          "HISTORY",
+          "USAGE METRICS"
+        ]
+      }
+    },
+    {
+      "id": "mexhires_precipitacion",
+      "source_ids": [
+        "A1p"
+      ],
+      "requested_url": "https://doi.org/10.6084/m9.figshare.28462787.v1",
+      "final_url": "https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClim_monthly_accumulated_precipitation_data_for_Mexico/28462787/1",
+      "title": "Item - Mexico's High Resolution Climate Database (MexHiResClim): monthly accumulated precipitation data for Mexico - figshare - Figshare",
+      "headings": [
+        "Mexico's High Resolution Climate Database (MexHiResClim): monthly accumulated precipitation data for Mexico",
+        "FUNDING",
+        "HISTORY",
+        "USAGE METRICS",
+        "CATEGORIES",
+        "KEYWORDS"
+      ],
+      "captured_at_utc": "2026-11-14T00:28:04.077Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; frozen downloads and integrity are catalogued separately.",
+      "screenshot": "capturas/mexhires_precipitacion.jpg",
+      "classification_evidence": {
+        "title": "Item - Mexico's High Resolution Climate Database (MexHiResClim): monthly accumulated precipitation data for Mexico - figshare - Figshare",
+        "headings": [
+          "Mexico's High Resolution Climate Database (MexHiResClim): monthly accumulated precipitation data for Mexico",
+          "FUNDING",
+          "HISTORY",
+          "USAGE METRICS"
+        ]
+      }
+    },
+    {
+      "id": "mexhires_tmax",
+      "source_ids": [
+        "A1x"
+      ],
+      "requested_url": "https://doi.org/10.6084/m9.figshare.28462679.v2",
+      "final_url": "https://figshare.com/articles/dataset/Mexico_s_High_Resolution_Climate_Database_MexHiResClimDB_monthly_maximum_temperature_data_for_Mexico_The_data_are_distributed_as_GeoTiffs_in_geographical_coordinates_at_a_20_arcsec_resolution_with_each_file_containing_the_twelve_months_of_e/28462679/2",
+      "title": "Item - Mexico's High Resolution Climate Database (MexHiResClimDB): monthly maximum temperature data for Mexico. - figshare - Figshare",
+      "headings": [
+        "Mexico's High Resolution Climate Database (MexHiResClimDB): monthly maximum temperature data for Mexico.",
+        "FUNDING",
+        "HISTORY",
+        "USAGE METRICS",
+        "CATEGORIES",
+        "KEYWORDS"
+      ],
+      "captured_at_utc": "2026-11-14T00:28:05.154Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; frozen downloads and integrity are catalogued separately.",
+      "screenshot": "capturas/mexhires_tmax.jpg",
+      "classification_evidence": {
+        "title": "Item - Mexico's High Resolution Climate Database (MexHiResClimDB): monthly maximum temperature data for Mexico. - figshare - Figshare",
+        "headings": [
+          "Mexico's High Resolution Climate Database (MexHiResClimDB): monthly maximum temperature data for Mexico.",
+          "FUNDING",
+          "HISTORY",
+          "USAGE METRICS"
+        ]
+      }
+    },
+    {
+      "id": "insar_virginiatech",
+      "source_ids": [
+        "A2"
+      ],
+      "requested_url": "https://doi.org/10.7294/21935947",
+      "final_url": "https://data.lib.vt.edu/articles/dataset/InSAR-based_Vertical_Land_Motion_at_Mexico_City/21935947",
+      "title": "Item - InSAR-based Vertical Land Motion at Mexico City - Virginia Tech - Figshare",
+      "headings": [
+        "InSAR-based Vertical Land Motion at Mexico City",
+        "FUNDING",
+        "HISTORY",
+        "RELATED MATERIALS",
+        "PUBLISHER",
+        "LOCATION"
+      ],
+      "captured_at_utc": "2026-11-14T00:28:09.235Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; frozen downloads and integrity are catalogued separately.",
+      "screenshot": "capturas/insar_virginiatech.jpg",
+      "classification_evidence": {
+        "title": "Item - InSAR-based Vertical Land Motion at Mexico City - Virginia Tech - Figshare",
+        "headings": [
+          "InSAR-based Vertical Land Motion at Mexico City",
+          "FUNDING",
+          "HISTORY",
+          "RELATED MATERIALS"
+        ]
+      }
+    },
+    {
+      "id": "hidromx_zenodo",
+      "source_ids": [
+        "D10"
+      ],
+      "requested_url": "https://doi.org/10.5281/zenodo.23150556",
+      "final_url": "https://zenodo.org/records/23150556",
+      "title": "Hidro-MX v2026.10: a reproducible hydroclimatic dataset for Mexican pilot basins (CONAGUA-SIH and INEGI) | Zenodo",
+      "headings": [
+        "Hidro-MX v2026.10: a reproducible hydroclimatic dataset for Mexican pilot basins (CONAGUA-SIH and INEGI)",
+        "Description",
+        "Files",
+        "Additional details",
+        "Versions",
+        "External resources"
+      ],
+      "captured_at_utc": "2026-11-14T00:28:37.244Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; frozen downloads and integrity are catalogued separately.",
+      "screenshot": "capturas/hidromx_zenodo.jpg",
+      "classification_evidence": {
+        "title": "Hidro-MX v2026.10: a reproducible hydroclimatic dataset for Mexican pilot basins (CONAGUA-SIH and INEGI) | Zenodo",
+        "headings": [
+          "Hidro-MX v2026.10: a reproducible hydroclimatic dataset for Mexican pilot basins (CONAGUA-SIH and INEGI)",
+          "Description",
+          "Files",
+          "Additional details"
+        ]
+      }
+    },
+    {
+      "id": "sacmex_reportes",
+      "source_ids": [
+        "C1h",
+        "C1i"
+      ],
+      "requested_url": "https://datos.cdmx.gob.mx/dataset/reportes-de-agua",
+      "final_url": "https://datos.cdmx.gob.mx/dataset/reportes-de-agua",
+      "title": "Reportes de agua - Conjunto de datos - CKAN",
+      "headings": [
+        "Reportes de agua",
+        "Sistema de Aguas de la Ciudad de México (SACMEX)",
+        "Categorías",
+        "Etiquetas",
+        "Formatos",
+        "Licencias"
+      ],
+      "captured_at_utc": "2026-11-14T00:28:39.131Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; frozen downloads and integrity are catalogued separately.",
+      "screenshot": "capturas/sacmex_reportes.jpg",
+      "classification_evidence": {
+        "title": "Reportes de agua - Conjunto de datos - CKAN",
+        "headings": [
+          "Reportes de agua",
+          "Sistema de Aguas de la Ciudad de México (SACMEX)",
+          "Categorías",
+          "Etiquetas"
+        ]
+      }
+    },
+    {
+      "id": "huerta_pdf_preview",
+      "source_ids": [
+        "A3"
+      ],
+      "requested_url": "https://boletinsgm.igeolcu.unam.mx/bsgm/vols/epoca04/7401/A071021_Huerta.pdf",
+      "final_url": "https://boletinsgm.igeolcu.unam.mx/bsgm/vols/epoca04/7401/A071021_Huerta.pdf",
+      "title": "Assessment of vulnerability to water shortage in the municipalities of Mexico City",
+      "captured_at_utc": "2026-11-14T00:33:01.834Z",
+      "capture_kind": "rendered_preserved_pdf_first_page",
+      "status": "visible",
+      "note": "Rendered read-only from the SHA-256-verified A3 PDF with Poppler at 120 dpi; not a browser screenshot or a Wayback capture. The publisher PDF viewer did not render in Edge.",
+      "screenshot": "capturas/huerta_pdf_preview.jpg"
+    },
+    {
+      "id": "wayback_sacmex",
+      "source_ids": [
+        "ORIGINAL_SACMEX_2019"
+      ],
+      "requested_url": "https://datos.cdmx.gob.mx/dataset/consumo-agua",
+      "final_url": "https://web.archive.org/web/20250905213619/https://datos.cdmx.gob.mx/dataset/consumo-agua",
+      "title": "Consumo de agua - historical Wayback replay",
+      "captured_at_utc": "2026-11-14T00:33:01.834Z",
+      "capture_kind": "existing_wayback_replay",
+      "status": "visible",
+      "note": "Existing snapshot reported by the availability API and opened successfully in Edge. No new capture was created; CSV byte equivalence is not asserted.",
+      "screenshot": "capturas/wayback_sacmex.jpg"
+    },
+    {
+      "id": "conagua_sih_portal",
+      "source_ids": [
+        "D14VBRMX",
+        "D14VVCMX",
+        "D14DBOMC",
+        "D14PMDMX",
+        "D14GDLMX",
+        "D14CNPMX",
+        "D14TXMHD",
+        "D14DNXMX",
+        "D14HPNMX",
+        "D14PMNMX",
+        "D14PNDMX",
+        "D14PIRMX",
+        "D14PFBMX",
+        "D14SBBMX",
+        "D14TPTMX"
+      ],
+      "requested_url": "https://sih.conagua.gob.mx/",
+      "final_url": "https://sih.conagua.gob.mx/",
+      "title": "SIH",
+      "headings": [
+        "Sistema de Información Hidrológica (SIH)",
+        " ",
+        " ",
+        "Aviso importante"
+      ],
+      "captured_at_utc": "2026-11-14T00:33:04.309Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; frozen downloads and integrity are catalogued separately.",
+      "screenshot": "capturas/conagua_sih_portal.jpg",
+      "classification_evidence": {
+        "title": "SIH",
+        "headings": [
+          "Sistema de Información Hidrológica (SIH)",
+          " ",
+          " ",
+          "Aviso importante"
+        ]
+      }
+    },
+    {
+      "id": "reportes_mirror",
+      "source_ids": [
+        "C1h",
+        "C1i"
+      ],
+      "requested_url": "https://github.com/Actronix09/fuentes-alternas/tree/main/agua-reportes-sacmex",
+      "final_url": "https://github.com/Actronix09/fuentes-alternas/tree/main/agua-reportes-sacmex",
+      "title": "fuentes-alternas/agua-reportes-sacmex at main · Actronix09/fuentes-alternas",
+      "headings": [
+        "Repository navigation",
+        "",
+        "Breadcrumbs",
+        "agua-reportes-sacmex",
+        "Directory actions",
+        "More options"
+      ],
+      "captured_at_utc": "2026-11-14T00:33:06.664Z",
+      "capture_kind": "community_mirror_page",
+      "status": "visible",
+      "note": "Public mirror from which the two manifest-pinned report files were obtained; the official SACMEX source page is separately captured.",
+      "screenshot": "capturas/reportes_mirror.jpg",
+      "classification_evidence": {
+        "title": "fuentes-alternas/agua-reportes-sacmex at main · Actronix09/fuentes-alternas",
+        "headings": [
+          "Repository navigation",
+          "",
+          "Breadcrumbs",
+          "agua-reportes-sacmex"
+        ]
+      }
+    },
+    {
+      "id": "osm_attribution",
+      "source_ids": [
+        "VISUAL_OSM_CDMX"
+      ],
+      "requested_url": "https://www.openstreetmap.org/copyright",
+      "final_url": "https://www.openstreetmap.org/copyright",
+      "title": "Derechos de Autor y Licencia | OpenStreetMap",
+      "headings": [
+        "OpenStreetMap",
+        "Seleccionar idioma",
+        "",
+        "Acerca de esta traducción",
+        "Derechos de Autor y Licencia"
+      ],
+      "captured_at_utc": "2026-11-14T00:33:09.458Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live source/series landing page; frozen downloads and integrity are catalogued separately.",
+      "screenshot": "capturas/osm_attribution.jpg",
+      "classification_evidence": {
+        "title": "Derechos de Autor y Licencia | OpenStreetMap",
+        "headings": [
+          "OpenStreetMap",
+          "Seleccionar idioma",
+          "",
+          "Acerca de esta traducción"
+        ]
+      }
+    },
+    {
+      "id": "conagua_pronacose",
+      "source_ids": [
+        "D8a",
+        "D8b",
+        "D8c"
+      ],
+      "requested_url": "https://www.datos.gob.mx/dataset/programa_nacional_contra_sequia_pronacose",
+      "final_url": "https://www.datos.gob.mx/dataset/programa_nacional_contra_sequia_pronacose",
+      "title": "Programa Nacional Contra la Sequía (PRONACOSE) - Base de datos - datos.gob.mx",
+      "headings": [
+        "Programa Nacional Contra la Sequía (PRONACOSE)",
+        "Comisión Nacional del Agua (CONAGUA)",
+        "Social",
+        "Licencia",
+        "",
+        "Bases de datos"
+      ],
+      "captured_at_utc": "2026-11-14T00:50:47.63Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Live publisher source page; historical file bytes are verified separately.",
+      "screenshot": "capturas/conagua_pronacose.jpg"
+    },
+    {
+      "id": "conagua_subterraneas",
+      "source_ids": [
+        "D5",
+        "D6"
+      ],
+      "requested_url": "https://www.datos.gob.mx/dataset/aguas_subterraneas",
+      "final_url": "https://www.datos.gob.mx/dataset/aguas_subterraneas",
+      "title": "Aguas subterráneas - Base de datos - datos.gob.mx",
+      "headings": [
+        "Aguas subterráneas",
+        "Comisión Nacional del Agua (CONAGUA)"
+      ],
+      "captured_at_utc": "2026-11-14T00:52:38.203Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Official page links both exact manifest download URLs. Recovered metadata from the observed CUA result; screenshot bytes were already saved.",
+      "screenshot": "capturas/conagua_subterraneas.jpg"
+    },
+    {
+      "id": "shcp_derechos",
+      "source_ids": [
+        "D4"
+      ],
+      "requested_url": "https://www.datos.gob.mx/dataset/derechos_agua_municipal",
+      "final_url": "https://www.datos.gob.mx/dataset/derechos_agua_municipal",
+      "title": "Derechos de agua municipal - Base de datos - datos.gob.mx",
+      "headings": [
+        "Derechos de agua municipal",
+        "Secretaría de Hacienda y Crédito Público (SHCP)"
+      ],
+      "captured_at_utc": "2026-11-14T00:53:29.711Z",
+      "capture_kind": "live_publisher_page",
+      "status": "visible",
+      "note": "Official page links the exact manifest download URL. Recovered metadata from the observed CUA result; screenshot bytes were already saved.",
+      "screenshot": "capturas/shcp_derechos.jpg"
+    }
+  ]
+}

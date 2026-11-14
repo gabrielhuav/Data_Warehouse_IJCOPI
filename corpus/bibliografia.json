@@ -1,0 +1,501 @@
+{
+  "schema_version": 1,
+  "extracted_at_utc": "2026-11-14T00:21:39+00:00",
+  "scope": "Bibliographic titles and public URL/DOI targets only; no author lists, contacts or source document copies.",
+  "archive_checks": "Not part of the bibliography catalogue; no Wayback requests or links are generated for references.",
+  "reference_count": 42,
+  "unique_url_count": 39,
+  "urls": [
+    {
+      "id": "BIB-02",
+      "titles": [
+        "A content-driven ETL processes for open data"
+      ],
+      "url": "https://doi.org/10.1007/978-3-319-10518-5_3",
+      "dois": [
+        "10.1007/978-3-319-10518-5_3"
+      ],
+      "bibliography_indices": [
+        2
+      ]
+    },
+    {
+      "id": "BIB-03",
+      "titles": [
+        "LOF: Identifying density-based local outliers"
+      ],
+      "url": "https://doi.org/10.1145/342009.335388",
+      "dois": [
+        "10.1145/342009.335388"
+      ],
+      "bibliography_indices": [
+        3
+      ]
+    },
+    {
+      "id": "BIB-04",
+      "titles": [
+        "GeoSPARQL 1.1: Motivations, details and applications of the decadal update to the most important geospatial LOD standard"
+      ],
+      "url": "https://doi.org/10.3390/ijgi11020117",
+      "dois": [
+        "10.3390/ijgi11020117"
+      ],
+      "bibliography_indices": [
+        4
+      ]
+    },
+    {
+      "id": "BIB-05",
+      "titles": [
+        "Mexico’s High Resolution Climate Database (MexHiResClimDB): A new daily high-resolution gridded climate dataset for Mexico covering 1951–2020"
+      ],
+      "url": "https://doi.org/10.5194/essd-17-6911-2025",
+      "dois": [
+        "10.5194/essd-17-6911-2025"
+      ],
+      "bibliography_indices": [
+        5
+      ]
+    },
+    {
+      "id": "BIB-06",
+      "titles": [
+        "Indicadores de calidad del agua [Data set]"
+      ],
+      "url": "https://www.gob.mx/conagua/es/articulos/indicadores-de-calidad-del-agua?idiom=es",
+      "dois": [],
+      "bibliography_indices": [
+        6
+      ]
+    },
+    {
+      "id": "BIB-07",
+      "titles": [
+        "Aguas subterráneas [Data set]"
+      ],
+      "url": "https://www.datos.gob.mx/dataset/aguas_subterraneas",
+      "dois": [],
+      "bibliography_indices": [
+        7
+      ]
+    },
+    {
+      "id": "BIB-08",
+      "titles": [
+        "Sistema de Información Hidrológica: Series diarias de presas [Data set, 15 CSV files]"
+      ],
+      "url": "https://sih.conagua.gob.mx/basedatos/Presas/VBRMX.csv",
+      "dois": [],
+      "bibliography_indices": [
+        8
+      ]
+    },
+    {
+      "id": "BIB-09",
+      "titles": [
+        "Índices de marginación [Data set]"
+      ],
+      "url": "https://www.datos.gob.mx/dataset/d8f2a534-bcee-4114-853d-82982a81ce24",
+      "dois": [],
+      "bibliography_indices": [
+        9
+      ]
+    },
+    {
+      "id": "BIB-10",
+      "titles": [
+        "Las metrópolis de México, 2020 [Data set]"
+      ],
+      "url": "https://www.datos.gob.mx/dataset/da65ccd9-888c-4ce8-b3b5-6bd867be344d",
+      "dois": [],
+      "bibliography_indices": [
+        10
+      ]
+    },
+    {
+      "id": "BIB-11",
+      "titles": [
+        "Enhancing spatio-temporal analysis of urban water leak reports through LLM-based semantic enrichment and open data: A case study of Mexico City"
+      ],
+      "url": "https://doi.org/10.1007/978-3-032-42081-7_6",
+      "dois": [
+        "10.1007/978-3-032-42081-7_6"
+      ],
+      "bibliography_indices": [
+        11
+      ]
+    },
+    {
+      "id": "BIB-12",
+      "titles": [
+        "Gaceta Oficial de la Ciudad de México (No"
+      ],
+      "url": "https://data.consejeria.cdmx.gob.mx/portal_old/uploads/gacetas/989c31738f67577540092747c82e52f7.pdf",
+      "dois": [],
+      "bibliography_indices": [
+        12
+      ]
+    },
+    {
+      "id": "BIB-13",
+      "titles": [
+        "Analyzing water consumption patterns in Mexico City: A GIS and data science approach"
+      ],
+      "url": "https://doi.org/10.1007/978-3-032-01723-9_9",
+      "dois": [
+        "10.1007/978-3-032-01723-9_9"
+      ],
+      "bibliography_indices": [
+        13
+      ]
+    },
+    {
+      "id": "BIB-14",
+      "titles": [
+        "Operationalizing an open-source dashboard for communicating results of wastewater-based surveillance"
+      ],
+      "url": "https://doi.org/10.1016/j.mex.2023.102299",
+      "dois": [
+        "10.1016/j.mex.2023.102299"
+      ],
+      "bibliography_indices": [
+        14
+      ]
+    },
+    {
+      "id": "BIB-15",
+      "titles": [
+        "Assessment of vulnerability to water shortage in the municipalities of Mexico City"
+      ],
+      "url": "https://doi.org/10.18268/BSGM2022v74n1a071021",
+      "dois": [
+        "10.18268/BSGM2022v74n1a071021"
+      ],
+      "bibliography_indices": [
+        15
+      ]
+    },
+    {
+      "id": "BIB-16",
+      "titles": [
+        "Resolución del recurso de revisión INFOCDMX/RR.IP.0679/2022"
+      ],
+      "url": "https://documentosobligaciones.infocdmx.org.mx/ST/LTAIPRC-2016-OT/Art133/Fr01/2022/T02-INFOCDMX.RR.IP.0679.2022.pdf",
+      "dois": [],
+      "bibliography_indices": [
+        16
+      ]
+    },
+    {
+      "id": "BIB-17",
+      "titles": [
+        "Censo Nacional de Gobiernos Municipales y Demarcaciones Territoriales de la Ciudad de México, 2019 and 2021 editions [Data set]"
+      ],
+      "url": "https://www.inegi.org.mx/programas/cngmd/2021/",
+      "dois": [],
+      "bibliography_indices": [
+        17
+      ]
+    },
+    {
+      "id": "BIB-18",
+      "titles": [
+        "Censo de Población y Vivienda 2020: Principales resultados por localidad (ITER), Ciudad de México [Data set, CSV]"
+      ],
+      "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+      "dois": [],
+      "bibliography_indices": [
+        18
+      ]
+    },
+    {
+      "id": "BIB-19",
+      "titles": [
+        "Groundwater volume loss in Mexico City constrained by InSAR and GRACE observations and mechanical models"
+      ],
+      "url": "https://doi.org/10.1029/2022GL101962",
+      "dois": [
+        "10.1029/2022GL101962"
+      ],
+      "bibliography_indices": [
+        19
+      ]
+    },
+    {
+      "id": "BIB-21",
+      "titles": [
+        "The Water Health Open Knowledge Graph"
+      ],
+      "url": "https://doi.org/10.1038/s41597-025-04537-4",
+      "dois": [
+        "10.1038/s41597-025-04537-4"
+      ],
+      "bibliography_indices": [
+        21
+      ]
+    },
+    {
+      "id": "BIB-22",
+      "titles": [
+        "Isolation forest"
+      ],
+      "url": "https://doi.org/10.1109/ICDM.2008.17",
+      "dois": [
+        "10.1109/ICDM.2008.17"
+      ],
+      "bibliography_indices": [
+        22
+      ]
+    },
+    {
+      "id": "BIB-23",
+      "titles": [
+        "Mexico City’s decline in per capita domestic water use: A comprehensive spatial-temporal study"
+      ],
+      "url": "https://doi.org/10.1080/1573062X.2024.2423400",
+      "dois": [
+        "10.1080/1573062X.2024.2423400"
+      ],
+      "bibliography_indices": [
+        23
+      ]
+    },
+    {
+      "id": "BIB-24",
+      "titles": [
+        "Spatial inequality of domestic water consumption in Mexico City"
+      ],
+      "url": "https://doi.org/10.1016/j.wre.2022.100210",
+      "dois": [
+        "10.1016/j.wre.2022.100210"
+      ],
+      "bibliography_indices": [
+        24
+      ]
+    },
+    {
+      "id": "BIB-25",
+      "titles": [
+        "Geographic information retrieval: Progress and challenges in spatial search of text"
+      ],
+      "url": "https://doi.org/10.1561/1500000034",
+      "dois": [
+        "10.1561/1500000034"
+      ],
+      "bibliography_indices": [
+        25
+      ]
+    },
+    {
+      "id": "BIB-26",
+      "titles": [
+        "Urban water consumption analysis through a spatial panel modeling approach: A case study of Mexico City, 2004–2022"
+      ],
+      "url": "https://doi.org/10.2166/ws.2024.191",
+      "dois": [
+        "10.2166/ws.2024.191"
+      ],
+      "bibliography_indices": [
+        26
+      ]
+    },
+    {
+      "id": "BIB-27",
+      "titles": [
+        "Socio-spatial analysis of residential water demand in Mexico City"
+      ],
+      "url": "https://doi.org/10.24850/j-tyca-2021-02-02",
+      "dois": [
+        "10.24850/j-tyca-2021-02-02"
+      ],
+      "bibliography_indices": [
+        27
+      ]
+    },
+    {
+      "id": "BIB-28",
+      "titles": [
+        "Editorial: Knowledge graph technologies—The next frontier of the food, agriculture, and water domains"
+      ],
+      "url": "https://doi.org/10.3389/frai.2023.1319844",
+      "dois": [
+        "10.3389/frai.2023.1319844"
+      ],
+      "bibliography_indices": [
+        28
+      ]
+    },
+    {
+      "id": "BIB-29",
+      "titles": [
+        "Reportes de agua [Data set, CSV]"
+      ],
+      "url": "https://datos.cdmx.gob.mx/dataset/reportes-de-agua",
+      "dois": [],
+      "bibliography_indices": [
+        29
+      ]
+    },
+    {
+      "id": "BIB-30",
+      "titles": [
+        "Consumo de agua: Consumo Agua (1° Semestre 2019) [Data set with data dictionary and clarifying note]"
+      ],
+      "url": "https://datos.cdmx.gob.mx/dataset/consumo-agua",
+      "dois": [],
+      "bibliography_indices": [
+        30
+      ]
+    },
+    {
+      "id": "BIB-31",
+      "titles": [
+        "The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets"
+      ],
+      "url": "https://doi.org/10.1371/journal.pone.0118432",
+      "dois": [
+        "10.1371/journal.pone.0118432"
+      ],
+      "bibliography_indices": [
+        31
+      ]
+    },
+    {
+      "id": "BIB-32",
+      "titles": [
+        "Ten simple rules for reproducible computational research"
+      ],
+      "url": "https://doi.org/10.1371/journal.pcbi.1003285",
+      "dois": [
+        "10.1371/journal.pcbi.1003285"
+      ],
+      "bibliography_indices": [
+        32
+      ]
+    },
+    {
+      "id": "BIB-33",
+      "titles": [
+        "Hidro-MX v2026.10: A reproducible hydroclimatic dataset for Mexican pilot basins (CONAGUA-SIH and INEGI) [Data set]"
+      ],
+      "url": "https://doi.org/10.5281/zenodo.23150556",
+      "dois": [
+        "10.5281/zenodo.23150556"
+      ],
+      "bibliography_indices": [
+        33
+      ]
+    },
+    {
+      "id": "BIB-34",
+      "titles": [
+        "Derechos de agua municipal [Data set]"
+      ],
+      "url": "https://www.datos.gob.mx/dataset/derechos_agua_municipal",
+      "dois": [],
+      "bibliography_indices": [
+        34
+      ]
+    },
+    {
+      "id": "BIB-35",
+      "titles": [
+        "Monitor de Sequía de México: Municipios [Data set]"
+      ],
+      "url": "https://smn.conagua.gob.mx/tools/RESOURCES/Monitor%20de%20Sequia%20en%20Mexico/MunicipiosSequia.xlsx",
+      "dois": [],
+      "bibliography_indices": [
+        35
+      ]
+    },
+    {
+      "id": "BIB-36",
+      "titles": [
+        "Data warehouse for the monitoring and analysis of water supply and consumption"
+      ],
+      "url": "https://doi.org/10.1007/978-3-030-14850-8_1",
+      "dois": [
+        "10.1007/978-3-030-14850-8_1"
+      ],
+      "bibliography_indices": [
+        36
+      ]
+    },
+    {
+      "id": "BIB-37",
+      "titles": [
+        "A survey of extract–transform–load technology"
+      ],
+      "url": "https://doi.org/10.4018/jdwm.2009070101",
+      "dois": [
+        "10.4018/jdwm.2009070101"
+      ],
+      "bibliography_indices": [
+        37
+      ]
+    },
+    {
+      "id": "BIB-39",
+      "titles": [
+        "Open data quality measurement framework: Definition and application to open government data"
+      ],
+      "url": "https://doi.org/10.1016/j.giq.2016.02.001",
+      "dois": [
+        "10.1016/j.giq.2016.02.001"
+      ],
+      "bibliography_indices": [
+        39
+      ]
+    },
+    {
+      "id": "BIB-40",
+      "titles": [
+        "Cuando México tiembla: La historia contada por los datos"
+      ],
+      "url": "https://doi.org/10.24275/AZC2026E1004",
+      "dois": [
+        "10.24275/AZC2026E1004"
+      ],
+      "bibliography_indices": [
+        40
+      ]
+    },
+    {
+      "id": "BIB-41",
+      "titles": [
+        "R2RML: RDB to RDF mapping language [W3C Recommendation]"
+      ],
+      "url": "https://www.w3.org/TR/r2rml/",
+      "dois": [],
+      "bibliography_indices": [
+        41
+      ]
+    },
+    {
+      "id": "BIB-42",
+      "titles": [
+        "The RDF Data Cube vocabulary [W3C Recommendation]"
+      ],
+      "url": "https://www.w3.org/TR/vocab-data-cube/",
+      "dois": [],
+      "bibliography_indices": [
+        42
+      ]
+    }
+  ],
+  "references_without_url": [
+    {
+      "bibliography_index": 1,
+      "title": "A sensor and semantic data warehouse for integrated water resource management"
+    },
+    {
+      "bibliography_index": 20,
+      "title": "The data warehouse toolkit: The definitive guide to dimensional modeling (3rd ed.)"
+    },
+    {
+      "bibliography_index": 38,
+      "title": "Territorial information retrieval from heterogeneous open data through the construction of a data warehouse for water management in Mexico City"
+    }
+  ]
+}
